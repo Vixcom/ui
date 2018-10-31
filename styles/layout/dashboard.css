@@ -1,0 +1,164 @@
+/* General scrollbar */
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color)
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent
+}
+
+/* Sidebar scrollbar */
+.sidebar-content::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+  background-color: #ffffff
+}
+
+.sidebar-container {
+  display: flex;
+  width: 100%
+}
+
+.sidebar-toggler {
+  cursor: pointer;
+}
+
+.sidebar {
+  border-right: thin solid #333333;
+  position: absolute;
+  left: 0;
+  width: 25vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: transform 0.5s, opacity 0.25s;
+}
+
+.sidebar .sidebar-toggler {
+  display: none;
+}
+
+.sidebar-content {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.sidebar .app-brand {
+  text-align: center;
+  padding: 1.5em;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0
+}
+
+.sidebar .sidebar-nav {
+  display: block;
+}
+
+.sidebar .sidebar-nav .nav-item {
+  color: #ffffff;
+  display: block;
+  padding: 1em 2em
+}
+
+.sidebar .sidebar-nav .nav-item+.nav-item {
+  border-top: thin solid var(--divider-color, #f7f7f7)
+}
+
+.sidebar .sidebar-nav .nav-item .icon {
+  margin-right: 1em;
+}
+
+.page-container {
+  position: absolute;
+  right: 0;
+  width: 75vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: width 0.5s, filter 0.5s;
+}
+
+.sidebar-toggled .page-container {
+  width: 100%;
+}
+
+.topbar {
+  padding: 0.5em;
+  display: flex;
+  box-shadow: 1px 1px 3px #33333380
+}
+
+.page-content {
+  padding: 1em;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/* Mini PC <---> Tablets */
+/* @media (max-width:768px) { */
+@media (min-width:576px) and (max-width:768px) {
+  .sidebar-toggled .sidebar {
+    width: 12.5vw
+  }
+
+  .sidebar-toggled .sidebar .app-brand {
+    opacity: 0;
+  }
+
+  .sidebar-toggled .sidebar .sidebar-nav .nav-item .icon {
+    margin-right: 0
+  }
+
+  .sidebar-toggled .sidebar .sidebar-nav .nav-item .label {
+    display: none;
+  }
+
+  .sidebar-toggled .page-container {
+    width: 87.5vw
+  }
+
+}
+
+/* Mobile --> BELOW */
+@media (max-width:576px) {
+  .sidebar .sidebar-toggler {
+    display: block;
+    padding: 1em 1em 0;
+  }
+
+  .sidebar .sidebar-nav .nav-item .label {
+    display: unset;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .sidebar-toggled .sidebar {
+    width: 80vw;
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .sidebar-toggled .page-container {
+    filter: blur(1px)
+  }
+
+  .page-container,
+  .sidebar-toggled .page-container {
+    width: 100%;
+  }
+
+}

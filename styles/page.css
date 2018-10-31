@@ -1,0 +1,13 @@
+body {
+  font-family: 'krub';
+  cursor: default;
+}
+
+section {
+  min-height: 100vh
+}
+
+@font-face {
+  font-family: 'krub';
+  src: url(../fonts/krub/Krub-Light.ttf), url(../fonts/krub/Krub-Regular.ttf), url(../fonts/krub/Krub-Bold.ttf)
+}
