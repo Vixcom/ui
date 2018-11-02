@@ -10,16 +10,16 @@
   <link rel="stylesheet" href="./styles/mdb.css">
   <link rel="stylesheet" href="./styles/themify.css">
   <link rel="stylesheet" href="./styles/color.css">
-  <link rel="stylesheet" href="./styles/layout/dashboard.css">
+  <link rel="stylesheet" href="./styles/sidebar.css">
   <link rel="stylesheet" href="./styles/page.css">
   <script src="./scripts/jquery.min.js"></script>
 </head>
 
 <body class="sidebar-container">
-  <section class="sidebar bg-dark">
-    <i class="sidebar-toggler ti ti-close" data-toggle="collapse" data-target=".sidebar"></i>
+  <section class="sidebar bg-dark" with-backdrop>
+    <i class="sidebar-toggler ti ti-close" data-toggle="sidebar"></i>
     <div class="sidebar-content">
-      <h2 class="app-brand">ADMIN</h2>
+      <h2 class="app-brand"><i class="icon ti ti-bolt font-5"></i><b class="label">ADMIN</b></h2>
       <nav class="sidebar-nav">
         <a class="nav-item" href="#"><i class="ti ti-dashboard icon"></i><span class="label">Dashboard</span></a>
         <a class="nav-item" href="#"><i class="ti ti-comment icon"></i><span class="label">Posts</span></a>
@@ -31,7 +31,7 @@
   </section>
   <div class="page-container">
     <header class="topbar bg-secondary text-white">
-      <i class="sidebar-toggler ti ti-menu" data-toggle="collapse" data-target=".sidebar"></i>
+      <i class="sidebar-toggler ti ti-menu" data-toggle="sidebar" data-target=".sidebar"></i>
     </header>
     <div class="page-content bg-white text-center">
       <i class="ti ti-bolt font-5"></i>
