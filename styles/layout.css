@@ -1,0 +1,10 @@
+.scroll-container {
+  overflow: hidden;
+  height: 100%
+}
+
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%
+}
