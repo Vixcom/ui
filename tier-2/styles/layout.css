@@ -1,0 +1,43 @@
+/* General scrollbar */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.3em;
+  height: 0.3em;
+}
+
+::-webkit-scrollbar-corner {
+  display: none
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 0.5em
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.scroll-container {
+  /* display: flex; */
+  /* flex-direction: column; */
+  overflow: hidden;
+  height: 100%
+}
+
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%
+}
