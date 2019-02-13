@@ -58,6 +58,17 @@
     </div>
   </section>
   <script src="./scripts/sidebar.min.js"></script>
+  <script>
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log('Response', this.response);
+      }
+    }
+    xhr.open('GET', 'https://firebasestorage.googleapis.com/v0/b/royal-girls-academy.appspot.com/o/notebody%2FtnDEMO112019%2Fpages%2F0%2Fcontent?alt=media&token=d0562f34-4868-437d-8636-9232be515f56', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send();
+  </script>
 </body>
 
 </html>
