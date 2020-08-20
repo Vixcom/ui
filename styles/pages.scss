@@ -1,0 +1,66 @@
+@import 'variables';
+
+/* Landing Page */
+.app-logo {
+  max-width: 10rem;
+}
+
+/* Tablets/Mini PC <---> THE ENTIRE UNIVERSE  */
+@media (min-width:767.98px) {
+  #landing-page {
+    padding: 3rem;
+  }
+}
+
+/* Dashboard Overview Page */
+#overview-summary {
+  [class*=col] {
+    .flex-card {
+      height: 100%;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+
+        .title {
+          display: flex;
+          align-items: flex-start;
+
+          font: {
+            weight: normal;
+            size: 90%;
+          }
+
+          color: lighten($secondary, 20%);
+          margin-bottom: auto;
+        }
+      }
+    }
+  }
+}
+
+/* Wallet Page */
+#wallet-details-card {
+  background-color: $secondary;
+  color: $white;
+  padding: 0;
+
+  .card-body,
+  .card-bandage {
+    padding: 2rem 3rem;
+  }
+
+  .card-bandage {
+    /* border-radius: inherit; */
+    transform: scale(1.025);
+    background-color: $secondary-dark;
+  }
+}
+
+/* Payment-Links Page */
+/* #new-payment-link-modal {
+  .modal-body {
+    padding: 3rem 0 3rem 20%;
+  }
+} */
