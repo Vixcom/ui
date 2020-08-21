@@ -6,7 +6,15 @@
 */
 #sidebar-trigger {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
+  height: 100vh;
+
+
+  &,
+  &::after,
+  &::before {
+    background-color: transparent;
+  }
 }
 
 .sidebar-toggler {
@@ -18,8 +26,8 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* Sidebar */
@@ -27,21 +35,25 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 22.5%;
-  height: 100vh;
-  flex: 1 1 22.5%;
+  width: 30%;
+  height: 100%;
+  flex: 1 1 30%;
   min-height: 100vh;
-  border-right: thin solid #333333;
-  transition: width 0.5s, transform 0.5s, opacity 0.25s;
+  border-right: thin solid $secondary;
+  transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
   overflow: hidden;
 
   /* Sidebar scrollbar */
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     width: 0;
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: currentColor
+  } */
+
+  .sidebar-header {
+    padding: 1rem;
   }
 
   .label {
@@ -53,7 +65,8 @@
     font-size: 120%;
 
     .nav-item {
-      display: block;
+      display: flex;
+      align-items: center;
       padding: 1em 2em;
       text-decoration: none;
       font-weight: bold;
@@ -70,10 +83,14 @@
       }
 
       .label {
-        color: $default;
-        margin-left: 1em;
+        color: $secondary;
       }
     }
+
+  }
+
+  .icon {
+    margin-right: 1em;
   }
 }
 
@@ -83,14 +100,20 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   flex: 1 1 100%;
   transition: width 0.5s;
   overflow: hidden;
 
   #sidebar-trigger:checked~& {
-    position: absolute;
-    width: 100vw;
+    /* position: absolute; */
+    /* width: 100%; */
+
+    >footer {
+      background-color: $primary !important;
+      color: $white;
+    }
+
   }
 
   .app-header {
@@ -100,10 +123,6 @@
     color: $white;
     background-color: darken($secondary, 10%);
     position: relative;
-
-    #sidebar-trigger:checked~.sidebar-toggler {
-      transform: translateX(0)
-    }
 
     .app-title {
       margin-bottom: 0;
@@ -143,81 +162,99 @@
   transition: margin 0.2s
 }
 
-/* Tablets/Mini PC <---> THE ENTIRE UNIVERSE  */
-@media (min-width:767.98px) {
-  #sidebar-trigger:not(:checked)~.app-header .sidebar-toggler {
+/* Above <--- Tablets/Mini PC */
+@media (min-width:768px) {
+  #sidebar-trigger:checked~.sidebar {
+    width: 0;
+    flex-basis: 0;
+  }
+
+  #sidebar-trigger:not(:checked)~.page-container .app-header .sidebar-toggler {
     display: none;
   }
+
 }
 
-/* Mobile <---> Tablets/Mini PC  */
+/* Mobile <---> Tablets/Mini PC */
 @media (min-width:576px) and (max-width:767.98px) {
   #sidebar-trigger:checked~ {
     .sidebar {
-      width: 12.5vw;
+      width: 15%;
+      flex-basis: 15%;
 
-      .app-brand .label,
+      .sidebar-header .title {
+        display: none;
+      }
+
+      .sidebar-header .label,
       .sidebar-nav .nav-item .label {
         opacity: 0;
         margin-left: 2em;
       }
     }
+  }
 
-    .page-container {
-      width: 87.5vw
+  .sidebar {
+
+    #sidebar-trigger:not(:checked)~& .nav-item {
+      padding: 1rem;
     }
+
+    .sidebar-toggler {
+      display: none;
+    }
+  }
+}
+
+/* Tablets/Mini PC --> BELOW */
+@media (max-width:767.98px) {
+  .btn {
+    min-width: auto;
   }
 }
 
 /* Mobile --> BELOW */
 @media (max-width:575.98px) {
-  // .sidebar .sidebar-toggler {
-  //   display: block;
-  // }
+  #sidebar-trigger {
+    transition: background-color 0.5s ease-in;
+
+    &:checked {
+      width: 100vw;
+      background-color: transparentize($black, 0.2);
+      z-index: 1;
+
+      ~ {
+
+        .sidebar {
+          transform: translateX(0);
+          opacity: 1;
+        }
+
+        .sidebar-toggler {
+          transform: translateX(-50%)
+        }
+      }
+    }
+  }
 
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 80vw;
+    width: 80%;
+    flex: 80%;
     transform: translateX(-100%);
     opacity: 0;
-    box-shadow: 1px 0 50px #0000006b;
+    box-shadow: 1px 0 50px transparentize($black, 0.2);
     z-index: 2;
   }
 
 
-  .page-container::before {
-    content: '';
-    display: block;
-    transition: background-color 0.2s;
-  }
-
-  #sidebar-trigger:checked~.page-container::before {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0000006b;
-    z-index: 1;
-  }
-
-  #sidebar-trigger:checked~.sidebar {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
   .page-container {
-    width: 100vw;
-  }
 
-  #sidebar-trigger:checked~.sidebar-toggler {
-    transform: translateX(-50%)
-  }
-
-  .page-content {
-    padding: 3em 1em;
+    .page-content {
+      padding: 3em 1em;
+    }
   }
 }
