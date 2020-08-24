@@ -173,13 +173,17 @@
   right: 0;
   background-color: #ffffffb0;
   z-index: 1;
+
+  &.show {
+    display: flex
+  }
 }
 
-.page-loading.show {
-  display: flex
-}
+.show,
+.collapsed {
 
-.collapsed[class*="collapse-icon"],
-.collapsed [class*="collapse-icon"] {
-  transform: rotateX(-0.5turn);
+  &[class*="collapse-icon"],
+  [class*="collapse-icon"] {
+    transform: rotateX(-0.5turn);
+  }
 }

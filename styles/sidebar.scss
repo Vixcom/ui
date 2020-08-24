@@ -105,12 +105,17 @@
   transition: width 0.5s;
   overflow: hidden;
 
+  footer {
+    background-color: $secondary;
+    color: $white;
+  }
+
   #sidebar-trigger:checked~& {
     /* position: absolute; */
     /* width: 100%; */
 
     >footer {
-      background-color: $primary !important;
+      background-color: $primary;
       color: $white;
     }
 
@@ -132,25 +137,6 @@
         max-width: 10rem;
       }
     }
-  }
-}
-
-.page-header {
-  margin: 1rem 0;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-
-  .page-title {
-    text-transform: capitalize;
-    margin-right: auto;
-    color: $primary;
-
-    font: {
-      size: 200%;
-      weight: normal;
-    }
-
   }
 }
 

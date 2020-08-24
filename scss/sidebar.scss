@@ -1,0 +1,246 @@
+@import 'variables';
+
+/**
+* @Description:
+* The overall containing body holding both the sidebar and the rest of the page body
+*/
+#sidebar-trigger {
+  position: absolute;
+  z-index: 0;
+  height: 100vh;
+
+
+  &,
+  &::after,
+  &::before {
+    background-color: transparent;
+  }
+}
+
+.sidebar-toggler {
+  font-size: 120%;
+  margin-bottom: 0;
+}
+
+.sidebar-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  flex: 1 1 30%;
+  min-height: 100vh;
+  border-right: thin solid $secondary;
+  transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
+  overflow: hidden;
+
+  /* Sidebar scrollbar */
+  /* ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: currentColor
+  } */
+
+  .sidebar-header {
+    padding: 1rem;
+  }
+
+  .label {
+    transition: margin 0.25s, opacity 0.5s;
+  }
+
+  .sidebar-nav {
+    border-top: 2px solid $accent;
+    font-size: 120%;
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 1em 2em;
+      text-decoration: none;
+      font-weight: bold;
+
+      &.active {
+        background-color: lighten($primary, 40%);
+        border-right: 2px solid $primary;
+      }
+
+      &:hover {
+        .label {
+          color: darken($secondary, 5%)
+        }
+      }
+
+      .label {
+        color: $secondary;
+      }
+    }
+
+  }
+
+  .icon {
+    margin-right: 1em;
+  }
+}
+
+/* Page */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 100%;
+  transition: width 0.5s;
+  overflow: hidden;
+
+  footer {
+    background-color: $secondary;
+    color: $white;
+  }
+
+  #sidebar-trigger:checked~& {
+    /* position: absolute; */
+    /* width: 100%; */
+
+    >footer {
+      background-color: $primary;
+      color: $white;
+    }
+
+  }
+
+  .app-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    color: $white;
+    background-color: darken($secondary, 10%);
+    position: relative;
+
+    .app-title {
+      margin-bottom: 0;
+      font-size: 125%;
+
+      @include unify-selector(img, &) {
+        max-width: 10rem;
+      }
+    }
+  }
+}
+
+.page-content {
+  position: relative;
+  padding: 3em;
+  width: 100%;
+  border: thin solid $white;
+  transition: margin 0.2s
+}
+
+/* Above <--- Tablets/Mini PC */
+@media (min-width:768px) {
+  #sidebar-trigger:checked~.sidebar {
+    width: 0;
+    flex-basis: 0;
+  }
+
+  #sidebar-trigger:not(:checked)~.page-container .app-header .sidebar-toggler {
+    display: none;
+  }
+
+}
+
+/* Mobile <---> Tablets/Mini PC */
+@media (min-width:576px) and (max-width:767.98px) {
+  #sidebar-trigger:checked~ {
+    .sidebar {
+      width: 15%;
+      flex-basis: 15%;
+
+      .sidebar-header .title {
+        display: none;
+      }
+
+      .sidebar-header .label,
+      .sidebar-nav .nav-item .label {
+        opacity: 0;
+        margin-left: 2em;
+      }
+    }
+  }
+
+  .sidebar {
+
+    #sidebar-trigger:not(:checked)~& .nav-item {
+      padding: 1rem;
+    }
+
+    .sidebar-toggler {
+      display: none;
+    }
+  }
+}
+
+/* Tablets/Mini PC --> BELOW */
+@media (max-width:767.98px) {
+  .btn {
+    min-width: auto;
+  }
+}
+
+/* Mobile --> BELOW */
+@media (max-width:575.98px) {
+  #sidebar-trigger {
+    transition: background-color 0.5s ease-in;
+
+    &:checked {
+      width: 100vw;
+      background-color: transparentize($black, 0.2);
+      z-index: 1;
+
+      ~ {
+
+        .sidebar {
+          transform: translateX(0);
+          opacity: 1;
+        }
+
+        .sidebar-toggler {
+          transform: translateX(-50%)
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    flex: 80%;
+    transform: translateX(-100%);
+    opacity: 0;
+    box-shadow: 1px 0 50px transparentize($black, 0.2);
+    z-index: 2;
+  }
+
+
+  .page-container {
+
+    .page-content {
+      padding: 3em 1em;
+    }
+  }
+}

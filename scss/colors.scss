@@ -1,0 +1,95 @@
+@import 'variables';
+
+/*.bg-night {
+  $default-background: #06155c !important;
+  $default: #FFFFFF;
+  $accent: #01DBDA !important;
+  $accent-dark: #03DBDB !important;
+  $primary: #01DBDA;
+  $secondary: #06155c;
+}
+
+.bg-night .no-night{
+  $default-background: unset !important;
+  $default: unset;
+  $accent: unset !important;
+  $accent-dark: unset !important;
+  $primary: unset;
+  $secondary: unset;
+} */
+
+// Texts
+@each $k,
+$v in $app-colors-mapped {
+  @include mapped-color-variant(".text-#{$k}", $v);
+}
+
+// Background
+@each $k,
+$v in $app-colors-mapped {
+  @include mapped-bg-fg-variant(".bg-#{$k}", $v);
+  @include mapped-alert-variant(".alert-#{$k}", $v);
+  @include mapped-outline-variant(".bg-outline-#{$k}", $v);
+}
+
+@each $k,
+$v in $app-g-bg-mapped {
+  @include mapped-g-bg-fg-variant(".bg-g-#{$k}", $v);
+}
+
+// Buttons
+@each $k,
+$v in $app-colors-mapped {
+  @include mapped-bg-fg-variant(".btn-#{$k}", $v);
+  @include mapped-outline-variant(".btn-outline-#{$k}", $v);
+}
+
+// Badges
+@each $k,
+$v in $app-colors-mapped {
+  @include mapped-bg-fg-variant(".badge-#{$k}", $v);
+}
+
+:disabled,
+.disabled,
+[disable] {
+  cursor: not-allowed !important;
+  filter: grayscale(.8)
+}
+
+.btn.focus,
+:focus-within,
+:focus {
+  outline: none;
+  box-shadow: none !important
+}
+
+.inactive {
+  color: #BCBCCB
+}
+
+.blur {
+  filter: blur(5px)
+}
+
+/* select, .ng-select */
+// input::placeholder,
+// input::-webkit-input-placeholder {
+//   color: #aaaaaa !important
+// }
+
+option[disabled]:first-of-type {
+  display: none;
+}
+
+body a,
+.link {
+  color: $accent;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+body a:hover,
+.link:hover {
+  color: $accent-dark
+}
