@@ -87,9 +87,8 @@ body a,
   color: $accent;
   cursor: pointer;
   text-decoration: none !important;
-}
 
-body a:hover,
-.link:hover {
-  color: $accent-dark
+  &:hover {
+    color: darken($accent, 10%);
+  }
 }

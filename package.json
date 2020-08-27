@@ -1,0 +1,7 @@
+{
+  "name": "onedisk-dashoard",
+  "scripts": {
+    "generate-styles": "sass styles:css --no-source-map",
+    "watch-styles": "sass styles:css --no-source-map --watch"
+  }
+}

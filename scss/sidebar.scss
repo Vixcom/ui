@@ -1,14 +1,13 @@
-@import 'variables';
-
 /**
 * @Description:
 * The overall containing body holding both the sidebar and the rest of the page body
 */
+@debug 'Primary: #{$primary}';
+
 #sidebar-trigger {
   position: absolute;
   z-index: 0;
   height: 100vh;
-
 
   &,
   &::after,
@@ -39,6 +38,7 @@
   height: 100%;
   flex: 1 1 30%;
   min-height: 100vh;
+  background-color: $primary;
   border-right: thin solid $secondary;
   transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
   overflow: hidden;

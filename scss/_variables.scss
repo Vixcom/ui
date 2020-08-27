@@ -18,7 +18,6 @@ $default-background: #FFFFFF !default;
 $accent: #E42026 !default;
 $accent-dark: #BB252A !default;
 $primary: #E42026 !default;
-$primary-background: #E42026 !default;
 $secondary: #114957 !default;
 $secondary-light: #1C7D7D !default;
 $secondary-dark: #002839 !default;
@@ -98,10 +97,17 @@ $app-g-bg-mapped: (primary: (bg: $g-primary, fg: $white),
     border: none;
   }
 
-  a#{$selector}:hover,
-  button#{$selector}:hover {
-    background-color: darken(map-get($cm, "bg"), 10%) !important;
-    color: map-get($cm, "fg") !important;
+  a#{$selector},
+  button#{$selector} {
+    &:hover {
+      /* filter: brightness(110%) contrast(90%); */
+      background-color: darken(map-get($cm, "bg"), 10%) !important;
+      color: map-get($cm, "fg") !important;
+    }
+
+    &:active {
+      background-color: darken(map-get($cm, "bg"), 20%) !important;
+    }
   }
 }
 
@@ -140,11 +146,19 @@ $app-g-bg-mapped: (primary: (bg: $g-primary, fg: $white),
 
   }
 
-  a#{$selector}:hover,
-  button#{$selector}:hover {
-    background-color: map-get($cm, "bg");
-    color: map-get($cm, "fg");
-    border: 1px solid map-get($cm, "bg");
+  a#{$selector},
+  button#{$selector} {
+    &:hover {
+      background-color: darken(map-get($cm, "bg"), 10%);
+      color: map-get($cm, "fg");
+      /* border: 1px solid map-get($cm, "bg"); */
+      border: none;
+    }
+
+    &:active {
+      background-color: darken(map-get($cm, "bg"), 20%) !important;
+      border: none !important;
+    }
   }
 }
 
