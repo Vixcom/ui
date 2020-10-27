@@ -1,0 +1,90 @@
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$sizes: (0, 25, 50, 75, 100);
+$n-sizes: (unset, auto);
+$limits: ('', 'min-', 'max-');
+$types: ('', 'v');
+
+@mixin layoutSizer($_size, $_limit, $_type, $_breakpoint, $_dimension: '%', $_useDimension: false) {
+  #{'.'}#{$_limit}#{$_type}#{'h-'}#{$_breakpoint}#{$_size} {
+    $__dimension: if($_type=='v', 'vh', $_dimension);
+    $__dimension: if($_useDimension, $__dimension, '');
+    #{$_limit}height: #{$_size}#{$__dimension} !important;
+  }
+
+  #{'.'}#{$_limit}#{$_type}#{'w-'}#{$_breakpoint}#{$_size} {
+    $__dimension: if($_type=='v', 'vw', $_dimension);
+    $__dimension: if($_useDimension, $__dimension, '');
+    #{$_limit}width: #{$_size}#{$__dimension} !important;
+  }
+}
+
+@mixin layoutSizeLooper($size, $dimension, $useDimension: false) {
+  @each $limit in $limits {
+    @each $type in $types {
+      @include layoutSizer($size, $limit, $type, '', $dimension, $useDimension);
+
+      @each $k,
+      $breakpoint in $grid-breakpoints {
+        @media (min-width:$breakpoint) {
+          @include layoutSizer($size, $limit, $type, #{$k}#{'-'}, $dimension, $useDimension);
+        }
+      }
+    }
+  }
+}
+
+@each $size in $sizes {
+  @include layoutSizeLooper($size, '%', true)
+}
+
+@each $size in $n-sizes {
+  @include layoutSizeLooper($size, '')
+}
+
+.h1,
+h1,
+.font-5 {
+  font-size: 200%
+}
+
+.h2,
+h2,
+.font-4 {
+  font-size: 180%
+}
+
+.h3,
+h3,
+.font-3 {
+  font-size: 160%
+}
+
+.h4,
+h4,
+.font-2 {
+  font-size: 140%
+}
+
+.h5,
+h5,
+.font-1 {
+  font-size: 120%
+}
+
+.h6,
+h6,
+.font-0 {
+  font-size: 100%
+}
+
+.font-sm {
+  font-size: 75%
+}
+
+.font-md {
+  font-size: 90%
+}
+
+.font-lg {
+  font-size: 250%
+}

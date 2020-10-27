@@ -28,19 +28,17 @@ $v in $app-colors-mapped {
 @each $k,
 $v in $app-colors-mapped {
   @include mapped-bg-fg-variant(".bg-#{$k}", $v);
+  @include mapped-g-bg-fg-variant(".bg-g-#{$k}", $v);
+  @include mapped-tabs-variant(".tabs-#{$k}", $v);
   @include mapped-alert-variant(".alert-#{$k}", $v);
   @include mapped-outline-variant(".bg-outline-#{$k}", $v);
-}
-
-@each $k,
-$v in $app-g-bg-mapped {
-  @include mapped-g-bg-fg-variant(".bg-g-#{$k}", $v);
 }
 
 // Buttons
 @each $k,
 $v in $app-colors-mapped {
   @include mapped-bg-fg-variant(".btn-#{$k}", $v);
+  @include mapped-bg-fg-variant(".btn-g-#{$k}", $v);
   @include mapped-outline-variant(".btn-outline-#{$k}", $v);
 }
 

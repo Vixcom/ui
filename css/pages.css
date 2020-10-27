@@ -1,3 +1,4 @@
+/* primefaces.org */
 /* Landing Page */
 /* ABPVE <--- Tablets/Mini PC  */
 @media (min-width: 767.98px) {
@@ -19,13 +20,13 @@
   align-items: flex-start;
   font-weight: normal;
   font-size: 90%;
-  color: #2291ac;
+  color: #9a4bb3;
   margin-bottom: auto;
 }
 
 /* Wallet Page */
 #wallet-details-card {
-  background-color: #114957;
+  background-color: #5c2d6b;
   color: #FFFFFF;
   padding: 0;
 }

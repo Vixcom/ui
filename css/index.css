@@ -1,14 +1,16 @@
-/* 
+/**
 * @Author: Vixson
 * @Description: Unique and Very Responsive Admin Dashboard UI
 */
-@import 'bootstrap.css';
 @import 'fontawesome.css';
+@import 'bootstrap.css';
 @import 'animations.css';
 @import 'colors.css';
+@import 'sizes.css';
 @import 'app.css';
 @import 'pages.css';
 @import 'sidebar.css';
+/* primefaces.org */
 body {
   font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #FFFFFF;
@@ -18,7 +20,7 @@ body {
 
 @font-face {
   font-family: "Montserrat";
-  src: url("fonts/Montserrat-Light.ttf");
+  src: url("/fonts/Montserrat-Light.ttf");
   font-weight: lighter;
 }
 @font-face {
