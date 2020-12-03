@@ -21,12 +21,8 @@
 
 $default: #5B5B5B !default;
 $default-background: #FFFFFF !default;
-$accent: #34A853 !default;
-$accent-dark: #34A853 !default;
 $primary: #34A853 !default;
 $secondary: #5c2d6b !default;
-$secondary-light: #1C7D7D !default;
-$secondary-dark: #002839 !default;
 $white: #FFFFFF !default;
 $black: #000000 !default;
 $green: #1D5C2E !default;
@@ -45,40 +41,35 @@ $muted-light: #ECECEC !default;
 $border-color: #E4E4E4 !default;
 $card-shadow: 0 1px 30px -10px transparentize($black, 0.5) !default;
 
-/* primefaces.org */
-$primaryTextColor: $primary;
-
 $app-font-size: 0.85rem;
 
 $app-colors-mapped: () !default;
+$app-hsl-mapped: () !default;
 
-$app-colors-mapped: map-merge(('accent': (bg: $accent, fg: #FFFFFF),
-    'primary': (bg: $primary, fg: #FFFFFF),
-    'secondary': (bg: $secondary, fg: #FFFFFF),
-    'secondary-light': (bg: $secondary-light, fg: #FFFFFF),
-    'secondary-dark': (bg: $secondary-dark, fg: #FFFFFF),
-    'default': (bg: $default, fg: $white),
+$app-colors-mapped: map-merge(('default': (bg: $default, fg: $white),
+    'primary': (bg: $primary, fg: $white),
+    'secondary': (bg: $secondary, fg: $white),
     'white': (bg: $white, fg: $default),
     'black': (bg: $black, fg: $white),
     'gold': (bg: $gold, fg: $white),
     'info': (bg: $info, fg: $white),
-    'failed': (bg: $danger, fg: $white),
-    'denied': (bg: $danger, fg: $white),
-    'debit': (bg: $danger, fg: $white),
-    'danger': (bg: $danger, fg: $white),
+    // 'failed': (bg: $danger, fg: $white),
+    // 'denied': (bg: $danger, fg: $white),
+    // 'debit': (bg: $danger, fg: $white),
+    // 'danger': (bg: $danger, fg: $white),
+    // 'false': (bg: $danger, fg: $white),
     'error': (bg: $danger, fg: $white),
-    'false': (bg: $danger, fg: $white),
-    'paid': (bg: $success, fg: $white),
-    'approved': (bg: $success, fg: $white),
-    'credit': (bg: $success, fg: $white),
-    'credited': (bg: $success, fg: $white),
+    // 'paid': (bg: $success, fg: $white),
+    // 'approved': (bg: $success, fg: $white),
+    // 'credit': (bg: $success, fg: $white),
+    // 'credited': (bg: $success, fg: $white),
+    // 'successful': (bg: $success, fg: $white),
+    // 'completed': (bg: $success, fg: $white),
+    // 'true': (bg: $success, fg: $white),
     'success': (bg: $success, fg: $white),
-    'successful': (bg: $success, fg: $white),
-    'completed': (bg: $success, fg: $white),
-    'true': (bg: $success, fg: $white),
-    'processing': (bg: $warning, fg: $white),
-    'pending': (bg: $warning, fg: $white),
-    'warning': (bg: $warning, fg: $white),
+    // 'processing': (bg: $warning, fg: $white),
+    // 'pending': (bg: $warning, fg: $white),
+    // 'warning': (bg: $warning, fg: $white),
     'warn': (bg: $warning, fg: $white),
     'pink': (bg: $pink, fg: $white),
     'orange': (bg: $orange, fg: $white),
@@ -87,8 +78,10 @@ $app-colors-mapped: map-merge(('accent': (bg: $accent, fg: #FFFFFF),
     'blue': (bg: $blue, fg: $white),
     'yellow': (bg: $yellow, fg: $white),
     'muted': (bg: $muted, fg: $white),
-    'muted-light': (bg: $muted-light, fg: $secondary),
+    // 'muted-light': (bg: $muted-light, fg: $secondary),
     'transparent': (bg: transparent, fg: $default)), $app-colors-mapped);
+
+/* HSL Darken = level - n; Lighten = level + n */
 
 // /* Functions and Mixins */
 
@@ -98,6 +91,35 @@ $app-colors-mapped: map-merge(('accent': (bg: $accent, fg: #FFFFFF),
 //   color: darken($color, 10%);
 //   font-weight: normal;
 // }
+
+@mixin mapped-color-var-variant($selector, $k, $cm) {
+  #{$selector} {
+    background-color: hsl(var(--#{$k}-hs), var(--#{$k}-l));
+    color: var(--#{$k}-c, map-get($cm, "c"));
+    border-color: hsl(var(--#{$k}-hs), var(--#{$k}-l));
+
+    &.is-blur {
+      backdrop-filter: blur(10px);
+      background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.5);
+
+      &:hover {
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.25);
+      }
+    }
+  }
+
+  a#{$selector},
+  button#{$selector} {
+    &:hover {
+      background-color: hsl(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%));
+      color: var(--#{$k}-c, map-get($cm, "c"));
+    }
+
+    &:active {
+      background-color: hsl(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%)) !important;
+    }
+  }
+}
 
 @mixin mapped-tabs-variant($selector, $cm) {
   #{$selector} {
@@ -129,7 +151,7 @@ $app-colors-mapped: map-merge(('accent': (bg: $accent, fg: #FFFFFF),
   }
 }
 
-@mixin mapped-bg-fg-variant($selector, $cm) {
+@mixin mapped-color-variant($selector, $cm) {
   #{$selector} {
     background-color: map-get($cm, "bg") !important;
     color: map-get($cm, "fg") !important;
@@ -160,7 +182,7 @@ $app-colors-mapped: map-merge(('accent': (bg: $accent, fg: #FFFFFF),
 
 }
 
-@mixin mapped-g-bg-fg-variant($selector, $cm) {
+@mixin mapped-g-color-variant($selector, $cm) {
   #{$selector} {
     background: linear-gradient(map-get($cm, "bg"), darken(map-get($cm, "bg"), 10%)) !important;
     color: map-get($cm, "fg");
@@ -180,14 +202,17 @@ $app-colors-mapped: map-merge(('accent': (bg: $accent, fg: #FFFFFF),
   }
 }
 
-@mixin mapped-color-variant($selector, $cm) {
-  #{$selector} {
-    color: map-get($cm, "bg") !important;
-  }
 
-  a#{$selector}:hover,
-  button#{$selector}:hover {
-    color: darken(map-get($cm, "bg"), 10%) !important;
+@mixin mapped-alert-var-variant($selector, $k, $cm) {
+  #{$selector} {
+    background-color: hsl(var(--#{$k}-hs), calc(var(--#{$k}-l) + 45%));
+    color: hsl(var(--#{$k}-hs), calc(var(--#{$k}-l) - 45%));
+    border-color: hsl(var(--#{$k}-hs), var(--#{$k}-l));
+
+    &.is-blur:not(:hover) {
+      backdrop-filter: blur(10px);
+      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 45%), 0.5);
+    }
   }
 }
 
@@ -199,11 +224,36 @@ $app-colors-mapped: map-merge(('accent': (bg: $accent, fg: #FFFFFF),
   }
 }
 
+@mixin mapped-outline-var-variant($selector, $k, $cm) {
+  #{$selector} {
+    background-color: transparent;
+    color: hsl(var(--#{$k}-hs), var(--#{$k}-l));
+    border-color: currentColor;
+
+    &.is-blur {
+      backdrop-filter: blur(10px);
+      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 45%), 0.5);
+    }
+  }
+
+  a#{$selector},
+  button#{$selector} {
+    &:hover {
+      background-color: hsl(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%));
+      color: var(--#{$k}-c, map-get($cm, "c"));
+    }
+
+    &:active {
+      background-color: hsl(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%));
+    }
+  }
+}
+
 @mixin mapped-outline-variant($selector, $cm) {
   #{$selector} {
     background-color: transparent;
     color: map-get($cm, "bg");
-    border: 1px solid currentColor;
+    border-color: currentColor;
 
   }
 

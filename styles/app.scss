@@ -2,7 +2,7 @@
 @import 'variables';
 
 * {
-  scrollbar-color: $muted-light transparent;
+  scrollbar-color: lighten($muted, 60%) transparent;
   scrollbar-width: thin;
   cursor: default;
   /* word-break: break-word; */
@@ -21,7 +21,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $muted-light;
+  background-color: lighten($muted, 60%);
   border-radius: 0
 }
 
@@ -32,12 +32,12 @@
 
 ::-moz-selection {
   color: $white;
-  background: $secondary-light;
+  background: lighten($secondary, 20%);
 }
 
 ::selection {
   color: $white;
-  background: $secondary-light;
+  background: lighten($secondary, 20%);
 }
 
 /* Scrollbar - End */
@@ -49,8 +49,8 @@ h4,
 h5,
 h6,
 .title {
-  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
+  font-family: 'AppTitle', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
   /* color: $primary; */
 }
 
@@ -287,7 +287,7 @@ label {
 
   .active,
   input:checked+.label {
-    color: $accent;
+    color: $secondary;
     font-weight: bold;
   }
 
@@ -321,7 +321,7 @@ input {
     padding: 0 !important;
     margin: 0;
     border-radius: 0.5rem;
-    background-color: $muted-light;
+    background-color: lighten($muted, 10%);
     opacity: 1;
 
     &::before {
@@ -334,7 +334,7 @@ input {
       transition: width 0.25s ease;
 
       .bg-secondary & {
-        background-color: $muted-light
+        background-color: lighten($muted, 10%)
       }
     }
 
@@ -347,7 +347,7 @@ input {
       width: 1rem;
       height: 1rem;
       padding: 0.25rem;
-      background-color: $accent;
+      background-color: $secondary;
       border-radius: 50%;
       transform: translate(0, -50%);
       transition: left 0.25s ease, transform 0.25s ease;
@@ -727,7 +727,7 @@ input {
   align-items: center;
 
   &:focus {
-    outline: 1px solid lighten($accent, 50%);
+    outline: 1px solid lighten($secondary, 50%);
   }
 
   &:not(.no-rounded) {
@@ -846,7 +846,7 @@ input {
 
   thead,
   .tabular-header {
-    color: $secondary-light;
+    color: var(--secondary, lighten($secondary, 10%));
     font-weight: bold;
 
     &.sticky {
@@ -871,7 +871,7 @@ input {
 
 
     &:nth-child(even):not(.tabular-header) {
-      background-color: $muted-light;
+      background-color: lighten($muted, 10%);
     }
 
     [class*=col] {

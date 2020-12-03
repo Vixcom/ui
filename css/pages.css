@@ -1,4 +1,4 @@
-/* primefaces.org */
+/* HSL Darken = level - n; Lighten = level + n */
 /* Landing Page */
 /* ABPVE <--- Tablets/Mini PC  */
 @media (min-width: 767.98px) {
@@ -37,7 +37,7 @@
 #wallet-details-card .card-bandage {
   /* border-radius: inherit; */
   transform: scale(1.025);
-  background-color: #002839;
+  background-color: #5c2d6b;
 }
 
 /* Payment-Links Page */

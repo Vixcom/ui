@@ -1,0 +1,43 @@
+{
+  "hosting": [{
+    "target": "prod",
+    "public": "./",
+    "ignore": [
+      "firebase.json",
+      "**/.git/**",
+      "**/node_modules/**"
+    ],
+    "appAssociation": "AUTO",
+    "rewrites": [{
+      "source": "**",
+      "destination": "/index.html"
+    }],
+    "headers": [{
+      "source": "**/*.@(eot|otf|ttf|ttc|woff)",
+      "headers": [{
+        "key": "Access-Control-Allow-Origin",
+        "value": "*"
+      }]
+    }]
+  }, {
+    "target": "dashboard",
+    "public": "./",
+    "ignore": [
+      "firebase.json",
+      "**/.git/**",
+      "**/node_modules/**"
+    ],
+    "appAssociation": "AUTO",
+    "rewrites": [{
+      "source": "**",
+      "destination": "/index.html"
+    }],
+    "headers": [{
+      "source": "**/*.@(eot|otf|ttf|ttc|woff)",
+      "headers": [{
+        "key": "Access-Control-Allow-Origin",
+        "value": "*"
+      }]
+    }]
+  }]
+}

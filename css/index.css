@@ -1,50 +1,61 @@
-/**
+/* 
 * @Author: Vixson
 * @Description: Unique and Very Responsive Admin Dashboard UI
 */
-@import 'fontawesome.css';
 @import 'bootstrap.css';
+@import 'fontawesome.css';
 @import 'animations.css';
 @import 'colors.css';
-@import 'sizes.css';
 @import 'app.css';
 @import 'pages.css';
 @import 'sidebar.css';
-/* primefaces.org */
+/* HSL Darken = level - n; Lighten = level + n */
 body {
-  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "AppContent", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #FFFFFF;
   color: #5B5B5B;
   font-size: 0.85rem;
+  font-weight: 300;
 }
 
-@font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/Montserrat-Light.ttf");
-  font-weight: lighter;
+/* Mobile --> BELOW */
+@media (max-width: 575.98px) {
+  body {
+    font-size: 0.8rem;
+  }
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/Montserrat-Regular.ttf");
-  font-weight: normal;
+  font-family: "AppTitle";
+  src: url("fonts/AppTitle-Light.ttf");
+  font-weight: 100;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/Montserrat-Bold.ttf");
-  font-weight: bold;
+  font-family: "AppTitle";
+  src: url("fonts/AppTitle-Regular.ttf");
+  font-weight: 300;
 }
 @font-face {
-  font-family: "Lato";
-  src: url("/fonts/Lato-Light.ttf");
-  font-weight: lighter;
+  font-family: "AppTitle";
+  src: url("fonts/AppTitle-Medium.ttf");
+  font-weight: 500;
 }
 @font-face {
-  font-family: "Lato";
-  src: url("/fonts/Lato-Regular.ttf");
-  font-weight: normal;
+  font-family: "AppTitle";
+  src: url("fonts/AppTitle-Bold.ttf");
+  font-weight: 700;
 }
 @font-face {
-  font-family: "Lato";
-  src: url("/fonts/Lato-Bold.ttf");
-  font-weight: bold;
+  font-family: "AppContent";
+  src: url("fonts/AppContent-Light.ttf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "AppContent";
+  src: url("fonts/AppContent-Regular.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "AppContent";
+  src: url("fonts/AppContent-Bold.ttf");
+  font-weight: 500;
 }

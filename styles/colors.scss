@@ -1,51 +1,44 @@
 @import 'variables';
 
-/*.bg-night {
-  $default-background: #06155c !important;
-  $default: #FFFFFF;
-  $accent: #01DBDA !important;
-  $accent-dark: #03DBDB !important;
-  $primary: #01DBDA;
-  $secondary: #06155c;
+:root {
+
+  /* Color Variables */
+  @each $k,
+  $v in $app-colors-mapped {
+    /* ---COLOR-#{$k}--- */
+    --#{$k}: #{map-get($v, 'bg')};
+    /* ---HSL-#{$k}--- */
+    --#{$k}-hs: #{hue(map-get($v, 'bg')), saturation(map-get($v, 'bg'))};
+    --#{$k}-l: #{lightness(map-get($v, 'bg'))};
+    --#{$k}-c: #{map-get($v, 'fg')};
+    /* --- */
+  }
 }
 
-.bg-night .no-night{
-  $default-background: unset !important;
-  $default: unset;
-  $accent: unset !important;
-  $accent-dark: unset !important;
-  $primary: unset;
-  $secondary: unset;
-} */
-
-// Texts
 @each $k,
 $v in $app-colors-mapped {
-  @include mapped-color-variant(".text-#{$k}", $v);
-}
-
-// Background
-@each $k,
-$v in $app-colors-mapped {
-  @include mapped-bg-fg-variant(".bg-#{$k}", $v);
-  @include mapped-g-bg-fg-variant(".bg-g-#{$k}", $v);
+  // Texts
+  @include mapped-color-var-variant(".text-#{$k}", $k, $v);
+  // Background
+  @include mapped-color-var-variant(".bg-#{$k}", $k, $v);
+  @include mapped-g-color-variant(".bg-g-#{$k}", $v);
   @include mapped-tabs-variant(".tabs-#{$k}", $v);
-  @include mapped-alert-variant(".alert-#{$k}", $v);
-  @include mapped-outline-variant(".bg-outline-#{$k}", $v);
+  @include mapped-alert-var-variant(".alert-#{$k}", $k, $v);
+  @include mapped-outline-var-variant(".bg-outline-#{$k}", $k, $v);
+  // Buttons
+  @include mapped-color-var-variant(".btn-#{$k}", $k, $v);
+  @include mapped-g-color-variant(".btn-g-#{$k}", $v);
+  @include mapped-outline-var-variant(".btn-outline-#{$k}", $k, $v);
+  // Badges
+  @include mapped-color-var-variant(".badge-#{$k}", $k, $v);
+  @include mapped-outline-var-variant(".badge-outline-#{$k}", $k, $v);
 }
 
-// Buttons
+// Vars
 @each $k,
-$v in $app-colors-mapped {
-  @include mapped-bg-fg-variant(".btn-#{$k}", $v);
-  @include mapped-bg-fg-variant(".btn-g-#{$k}", $v);
-  @include mapped-outline-variant(".btn-outline-#{$k}", $v);
-}
-
-// Badges
-@each $k,
-$v in $app-colors-mapped {
-  @include mapped-bg-fg-variant(".badge-#{$k}", $v);
+$v in $app-hsl-mapped {
+  @include mapped-color-var-variant(".bg-#{$k}", $k, $v);
+  @include mapped-color-var-variant(".btn-#{$k}", $k, $v);
 }
 
 :disabled,
@@ -82,11 +75,14 @@ option[disabled]:first-of-type {
 
 body a,
 .link {
-  color: $accent;
+  color: $secondary;
   cursor: pointer;
-  text-decoration: none !important;
 
   &:hover {
-    color: darken($accent, 10%);
+    color: darken($secondary, 10%);
   }
+}
+
+a:not(.link) {
+  text-decoration: none !important;
 }

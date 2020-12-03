@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "vixcomx"
+  },
+  "targets": {
+    "vixcomx": {
+      "hosting": {
+        "dashboard": [
+          "vx-dashboard"
+        ]
+      }
+    }
+  }
+}
