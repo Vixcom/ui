@@ -1,8 +1,8 @@
 {
   "name": "onedisk-dashoard",
   "scripts": {
-    "generate-styles": "sass styles:css --no-source-map",
-    "watch-styles": "sass styles:css --no-source-map --watch",
-    "deploy-dashboard": "firebase deploy --only hosting:dashboard"
+    "serve:styles": "sass styles:css --no-source-map --watch",
+    "build:styles": "sass styles:css --no-source-map",
+    "deploy": "npm run build:styles && firebase deploy --only hosting:dashboard"
   }
 }

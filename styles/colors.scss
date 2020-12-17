@@ -1,6 +1,8 @@
 @import 'variables';
 
 :root {
+  --card-shadow: #{$card-shadow};
+  --app-font-size: #{$app-font-size};
 
   /* Color Variables */
   @each $k,
@@ -10,6 +12,7 @@
     /* ---HSL-#{$k}--- */
     --#{$k}-hs: #{hue(map-get($v, 'bg')), saturation(map-get($v, 'bg'))};
     --#{$k}-l: #{lightness(map-get($v, 'bg'))};
+    --#{$k}-a: #{alpha(map-get($v, 'bg'))};
     --#{$k}-c: #{map-get($v, 'fg')};
     /* --- */
   }
@@ -20,25 +23,18 @@ $v in $app-colors-mapped {
   // Texts
   @include mapped-color-var-variant(".text-#{$k}", $k, $v);
   // Background
-  @include mapped-color-var-variant(".bg-#{$k}", $k, $v);
+  @include mapped-bg-color-var-variant(".bg-#{$k}", $k, $v);
   @include mapped-g-color-variant(".bg-g-#{$k}", $v);
   @include mapped-tabs-variant(".tabs-#{$k}", $v);
   @include mapped-alert-var-variant(".alert-#{$k}", $k, $v);
   @include mapped-outline-var-variant(".bg-outline-#{$k}", $k, $v);
   // Buttons
-  @include mapped-color-var-variant(".btn-#{$k}", $k, $v);
+  @include mapped-bg-color-var-variant(".btn-#{$k}", $k, $v);
   @include mapped-g-color-variant(".btn-g-#{$k}", $v);
   @include mapped-outline-var-variant(".btn-outline-#{$k}", $k, $v);
   // Badges
-  @include mapped-color-var-variant(".badge-#{$k}", $k, $v);
+  @include mapped-bg-color-var-variant(".badge-#{$k}", $k, $v);
   @include mapped-outline-var-variant(".badge-outline-#{$k}", $k, $v);
-}
-
-// Vars
-@each $k,
-$v in $app-hsl-mapped {
-  @include mapped-color-var-variant(".bg-#{$k}", $k, $v);
-  @include mapped-color-var-variant(".btn-#{$k}", $k, $v);
 }
 
 :disabled,

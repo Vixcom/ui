@@ -73,6 +73,7 @@ h6,
 
   >* {
     margin-top: 0.5rem;
+    margin-left: 0.5rem;
     align-self: start;
   }
 
@@ -871,7 +872,8 @@ input {
 
 
     &:nth-child(even):not(.tabular-header) {
-      background-color: lighten($muted, 10%);
+      // background-color: lighten($muted, 10%);
+      background-color: hsl(var(--muted-hs), calc(var(--muted-l) + 60%));
     }
 
     [class*=col] {
@@ -1449,6 +1451,10 @@ section {
   .flex-buttons {
     /* flex-direction: column; */
     width: 100%;
+
+    >* {
+      margin-top: 0.5rem;
+    }
 
     .btn {
       width: 100%;

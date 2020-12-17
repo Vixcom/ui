@@ -2,7 +2,7 @@
 /* Scrollbar - Start */
 /* HSL Darken = level - n; Lighten = level + n */
 * {
-  scrollbar-color: #f4f4f4 transparent;
+  scrollbar-color: white transparent;
   scrollbar-width: thin;
   cursor: default;
   /* word-break: break-word; */
@@ -21,7 +21,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #f4f4f4;
+  background-color: white;
   border-radius: 0;
 }
 
@@ -72,6 +72,7 @@ h6,
 }
 .flex-buttons > * {
   margin-top: 0.5rem;
+  margin-left: 0.5rem;
   align-self: start;
 }
 .flex-buttons .btn {
@@ -285,7 +286,7 @@ input[type=checkbox] {
   padding: 0 !important;
   margin: 0;
   border-radius: 0.5rem;
-  background-color: #757575;
+  background-color: #979797;
   opacity: 1;
 }
 input[type=checkbox]::before {
@@ -298,7 +299,7 @@ input[type=checkbox]::before {
   transition: width 0.25s ease;
 }
 .bg-secondary input[type=checkbox]::before {
-  background-color: #757575;
+  background-color: #979797;
 }
 input[type=checkbox]::after {
   content: "";
@@ -518,11 +519,11 @@ input[type=file] {
 .input-container.has-warning::after,
 .input-container.has-warning .hint {
   /* font-weight: bold; */
-  color: #F98F00;
+  color: #FFC107;
 }
 .input-container.has-warning input,
 .input-container.has-warning .input {
-  border: 1px solid #F98F00;
+  border: 1px solid #FFC107;
 }
 .input-container.has-info::after,
 .input-container.has-info .hint {
@@ -733,7 +734,7 @@ input[type=file] {
 .tabular tr:nth-child(even):not(.tabular-header),
 .tabular > .row:nth-child(even):not(.tabular-header),
 .tabular .scrollable > .row:nth-child(even):not(.tabular-header) {
-  background-color: #757575;
+  background-color: hsl(var(--muted-hs), calc(var(--muted-l) + 60%));
 }
 .tabular tr [class*=col],
 .tabular > .row [class*=col],
@@ -1065,7 +1066,7 @@ input[type=file] {
   padding: 1rem;
 }
 .card .card-list .item > .label {
-  color: #5B5B5B;
+  color: #7D7D7D;
   width: 100%;
 }
 .card .card-list .item > .value {
@@ -1267,6 +1268,9 @@ section {
   .flex-buttons {
     /* flex-direction: column; */
     width: 100%;
+  }
+  .flex-buttons > * {
+    margin-top: 0.5rem;
   }
   .flex-buttons .btn {
     width: 100%;

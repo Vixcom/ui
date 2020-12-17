@@ -6,6 +6,7 @@
 @import 'fontawesome.css';
 @import 'animations.css';
 @import 'colors.css';
+@import 'sizes.css';
 @import 'app.css';
 @import 'pages.css';
 @import 'sidebar.css';
@@ -26,36 +27,36 @@ body {
 }
 @font-face {
   font-family: "AppTitle";
-  src: url("fonts/AppTitle-Light.ttf");
+  src: url("/fonts/AppTitle-Light.ttf");
   font-weight: 100;
 }
 @font-face {
   font-family: "AppTitle";
-  src: url("fonts/AppTitle-Regular.ttf");
+  src: url("/fonts/AppTitle-Regular.ttf");
   font-weight: 300;
 }
 @font-face {
   font-family: "AppTitle";
-  src: url("fonts/AppTitle-Medium.ttf");
+  src: url("/fonts/AppTitle-Medium.ttf");
   font-weight: 500;
 }
 @font-face {
   font-family: "AppTitle";
-  src: url("fonts/AppTitle-Bold.ttf");
+  src: url("/fonts/AppTitle-Bold.ttf");
   font-weight: 700;
 }
 @font-face {
   font-family: "AppContent";
-  src: url("fonts/AppContent-Light.ttf");
+  src: url("/fonts/AppContent-Light.ttf");
   font-weight: 100;
 }
 @font-face {
   font-family: "AppContent";
-  src: url("fonts/AppContent-Regular.ttf");
+  src: url("/fonts/AppContent-Regular.ttf");
   font-weight: 300;
 }
 @font-face {
   font-family: "AppContent";
-  src: url("fonts/AppContent-Bold.ttf");
+  src: url("/fonts/AppContent-Bold.ttf");
   font-weight: 500;
 }
