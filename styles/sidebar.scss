@@ -39,7 +39,7 @@
   height: 100%;
   flex: 1 1 30%;
   min-height: 100vh;
-  /* border-right: thin solid $secondary; */
+  /* border-right: thin solid var(--secondary); */
   transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
   overflow: hidden;
 
@@ -72,26 +72,26 @@
       font-weight: bold;
 
       &.active {
-        background-color: lighten($primary, 40%);
-        border-right: 2px solid $primary;
+        background-color: hsl(var(--primary-hs), calc(var(--primary-l) + 40));
+        border-right: 2px solid var(--primary);
       }
 
       &:hover {
         .icon {
-          color: darken($primary, 5%)
+          color: hsl(var(--primary-hs), calc(var(--primary-l) - 5))
         }
 
         .label {
-          color: darken($secondary, 20%)
+          color: hsl(var(--secondary-hs), calc(var(--secondary-l) - 20))
         }
       }
 
       .icon {
-        color: $primary;
+        color: var(--primary);
       }
 
       .label {
-        color: $secondary;
+        color: var(--secondary);
       }
     }
 
@@ -115,8 +115,8 @@
   overflow: hidden;
 
   footer {
-    background-color: $secondary;
-    color: $white;
+    background-color: var(--secondary);
+    color: var(--white);
   }
 
   #sidebar-trigger:checked~& {
@@ -124,8 +124,8 @@
     /* width: 100%; */
 
     >footer {
-      background-color: $primary;
-      color: $white;
+      background-color: var(--primary);
+      color: var(--white);
     }
 
   }
@@ -151,7 +151,7 @@
   position: relative;
   padding: 3em;
   width: 100%;
-  border: thin solid $white;
+  border: thin solid var(--white);
   transition: margin 0.2s
 }
 
@@ -171,7 +171,7 @@
 /* Above <--- Mobile */
 @media (min-width:576px) {
   #sidebar-trigger:not(:checked)~.page-container {
-    border-left: thin solid $border-color;
+    border-left: thin solid var(--border-color);
 
     &::before {
       content: '';

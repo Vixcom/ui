@@ -29,7 +29,7 @@
             size: 90%;
           }
 
-          color: lighten($secondary, 20%);
+          color: hsl(var(--secondary-hs), calc(var(--secondary-l) + 20));
           margin-bottom: auto;
         }
       }
@@ -39,8 +39,8 @@
 
 /* Wallet Page */
 #wallet-details-card {
-  background-color: $secondary;
-  color: $white;
+  background-color: var(--secondary);
+  color: var(--white);
   padding: 0;
 
   .card-body,
@@ -51,7 +51,7 @@
   .card-bandage {
     /* border-radius: inherit; */
     transform: scale(1.025);
-    background-color: $secondary;
+    background-color: var(--secondary);
   }
 }
 

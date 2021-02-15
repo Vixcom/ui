@@ -20,14 +20,14 @@
   align-items: flex-start;
   font-weight: normal;
   font-size: 90%;
-  color: #9a4bb3;
+  color: hsl(var(--secondary-hs), calc(var(--secondary-l) + 20));
   margin-bottom: auto;
 }
 
 /* Wallet Page */
 #wallet-details-card {
-  background-color: #5c2d6b;
-  color: #FFFFFF;
+  background-color: var(--secondary);
+  color: var(--white);
   padding: 0;
 }
 #wallet-details-card .card-body,
@@ -37,7 +37,7 @@
 #wallet-details-card .card-bandage {
   /* border-radius: inherit; */
   transform: scale(1.025);
-  background-color: #5c2d6b;
+  background-color: var(--secondary);
 }
 
 /* Payment-Links Page */

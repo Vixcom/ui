@@ -22,12 +22,14 @@
 }
 
 .loading::after {
-  content: '\f110';
+  content: '\f110' !important;
   /* font-size: 200%; */
   font-family: 'FontAwesome';
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1 !important;
+  background-color: unset !important;
   animation: rotate-clockwise 0.25s linear infinite;
 }
 

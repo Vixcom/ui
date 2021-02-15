@@ -8,9 +8,9 @@
 
 body {
   font-family: 'AppContent', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: $default-background;
-  color: $default;
-  font-size: $app-font-size;
+  background-color: var(--default-background);
+  color: var(--default);
+  font-size: var(--app-font-size);
   font-weight: 300;
 }
 

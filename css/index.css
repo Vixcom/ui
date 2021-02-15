@@ -13,9 +13,9 @@
 /* HSL Darken = level - n; Lighten = level + n */
 body {
   font-family: "AppContent", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #FFFFFF;
-  color: #5B5B5B;
-  font-size: 0.85rem;
+  background-color: var(--default-background);
+  color: var(--default);
+  font-size: var(--app-font-size);
   font-weight: 300;
 }
 
