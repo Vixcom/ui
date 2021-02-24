@@ -1043,6 +1043,9 @@ input[type=file] {
 .card + .card {
   margin-top: 1rem;
 }
+.card .card-title {
+  margin: 1rem 0 0.75rem;
+}
 .card .card-header,
 .card .card-footer {
   background-color: transparent;

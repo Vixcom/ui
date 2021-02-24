@@ -78,7 +78,7 @@ $app-colors-mapped: map-merge(('default': (bg: $default, fg: $white),
       background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.5) !important;
 
       &:hover {
-        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.25) !important;
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.75) !important;
       }
     }
   }
@@ -124,6 +124,36 @@ $app-colors-mapped: map-merge(('default': (bg: $default, fg: $white),
     }
   }
 
+}
+
+@mixin mapped-tabs-var-variant($selector, $k, $cm) {
+  #{$selector} {
+
+    &.fill {
+      .tab {
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
+        color: var(--#{$k}-c, map-get($cm, "fg"));
+
+        &.active {
+          background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a));
+        }
+      }
+    }
+
+    .tab {
+      border: none;
+
+      &:hover:not(.active) {
+        background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 40%), var(--#{$k}-a));
+        color: darken(map-get($cm, "fg"), 90%);
+      }
+
+      &.active {
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
+        color: var(--#{$k}-c, map-get($cm, "fg"));
+      }
+    }
+  }
 }
 
 @mixin mapped-tabs-variant($selector, $cm) {

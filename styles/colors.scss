@@ -25,7 +25,7 @@ $v in $app-colors-mapped {
   // Background
   @include mapped-bg-color-var-variant(".bg-#{$k}", $k, $v);
   @include mapped-g-color-variant(".bg-g-#{$k}", $v);
-  @include mapped-tabs-variant(".tabs-#{$k}", $v);
+  @include mapped-tabs-var-variant(".tabs-#{$k}", $k, $v);
   @include mapped-alert-var-variant(".alert-#{$k}", $k, $v);
   @include mapped-outline-var-variant(".bg-outline-#{$k}", $k, $v);
   // Buttons

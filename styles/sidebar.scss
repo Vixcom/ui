@@ -104,6 +104,22 @@
 }
 
 /* Page */
+.app-header {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .app-title {
+    margin-bottom: 0;
+    font-size: 125%;
+
+    @include unify-selector(img, &) {
+      max-width: 10rem;
+    }
+  }
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
@@ -130,21 +146,6 @@
 
   }
 
-  .app-header {
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    .app-title {
-      margin-bottom: 0;
-      font-size: 125%;
-
-      @include unify-selector(img, &) {
-        max-width: 10rem;
-      }
-    }
-  }
 }
 
 .page-content {
