@@ -8,9 +8,7 @@
 @import 'colors.css';
 @import 'sizes.css';
 @import 'app.css';
-@import 'pages.css';
 @import 'sidebar.css';
-/* HSL Darken = level - n; Lighten = level + n */
 body {
   font-family: "AppContent", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--default-background);

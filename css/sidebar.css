@@ -1,21 +1,34 @@
-/* HSL Darken = level - n; Lighten = level + n */
 /**
 * @Description:
 * The overall containing body holding both the sidebar and the rest of the page body
 */
-#sidebar-trigger {
-  position: absolute;
+.sidebar-trigger {
+  position: fixed;
   height: 100vh;
+  top: 0;
+  top: 0;
   border-radius: 0;
   z-index: -1;
 }
-#sidebar-trigger, #sidebar-trigger::after, #sidebar-trigger::before {
+.sidebar-trigger, .sidebar-trigger::after, .sidebar-trigger::before {
   background-color: transparent;
+}
+.sidebar-trigger:checked ~ .page-container,
+.sidebar-trigger:checked ~ * .page-container {
+  /* position: absolute; */
+  /* width: 100%; */
+}
+.sidebar-trigger:checked ~ .page-container > footer,
+.sidebar-trigger:checked ~ * .page-container > footer {
+  background-color: var(--primary);
+  color: var(--primary-c);
 }
 
 .sidebar-toggler {
+  position: relative;
   font-size: 120%;
   margin-bottom: 0;
+  z-index: 1;
 }
 
 .sidebar-container {
@@ -113,40 +126,34 @@
   background-color: var(--secondary);
   color: var(--white);
 }
-#sidebar-trigger:checked ~ .page-container {
-  /* position: absolute; */
-  /* width: 100%; */
-}
-#sidebar-trigger:checked ~ .page-container > footer {
-  background-color: var(--primary);
-  color: var(--white);
-}
 
 .page-content {
   position: relative;
   padding: 3em;
   width: 100%;
-  border: thin solid var(--white);
   transition: margin 0.2s;
 }
 
 /* Above <--- Tablets/Mini PC */
 @media (min-width: 768px) {
-  #sidebar-trigger:checked ~ .sidebar {
+  .sidebar-trigger:checked ~ .sidebar,
+.sidebar-trigger:checked ~ * .sidebar {
     width: 0;
     flex-basis: 0;
   }
-
-  #sidebar-trigger:not(:checked) ~ .page-container .app-header .sidebar-toggler {
+  .sidebar-trigger:not(:checked) ~ .page-container .app-header .sidebar-toggler,
+.sidebar-trigger:not(:checked) ~ * .page-container .app-header .sidebar-toggler {
     display: none;
   }
 }
 /* Above <--- Mobile */
 @media (min-width: 576px) {
-  #sidebar-trigger:not(:checked) ~ .page-container {
+  .sidebar-trigger:not(:checked) ~ .page-container,
+.sidebar-trigger:not(:checked) ~ * .page-container {
     border-left: thin solid var(--border-color);
   }
-  #sidebar-trigger:not(:checked) ~ .page-container::before {
+  .sidebar-trigger:not(:checked) ~ .page-container::before,
+.sidebar-trigger:not(:checked) ~ * .page-container::before {
     content: "";
     display: block;
     height: 100%;
@@ -161,30 +168,40 @@
 }
 /* Mobile <---> Tablets/Mini PC */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  #sidebar-trigger:not(:checked) ~ .sidebar .label {
+  .sidebar-trigger:not(:checked) ~ .sidebar * > .label,
+.sidebar-trigger:not(:checked) ~ * .sidebar * > .label {
     transition: position 0.25s linear 0.125s, transform 0.25s linear 0.125s, opacity 0.5s linear 0.125s;
   }
-  #sidebar-trigger:checked ~ .sidebar {
+  .sidebar-trigger:checked ~ .sidebar,
+.sidebar-trigger:checked ~ * .sidebar {
     width: 15%;
     flex-basis: 15%;
   }
-  #sidebar-trigger:checked ~ .sidebar .sidebar-header .title {
+  .sidebar-trigger:checked ~ .sidebar .sidebar-header .title,
+.sidebar-trigger:checked ~ * .sidebar .sidebar-header .title {
     opacity: 0;
     height: 0;
     margin-bottom: 0;
   }
-  #sidebar-trigger:checked ~ .sidebar .sidebar-nav .nav-item {
+  .sidebar-trigger:checked ~ .sidebar .sidebar-nav .nav-item,
+.sidebar-trigger:checked ~ * .sidebar .sidebar-nav .nav-item {
     justify-content: center;
   }
-  #sidebar-trigger:checked ~ .sidebar .icon {
+  .sidebar-trigger:checked ~ .sidebar .icon,
+.sidebar-trigger:checked ~ * .sidebar .icon {
     margin-right: 0;
   }
-  #sidebar-trigger:checked ~ .sidebar .sidebar-header .label,
-#sidebar-trigger:checked ~ .sidebar .sidebar-nav .nav-item .label {
+  .sidebar-trigger:checked ~ .sidebar .sidebar-header .label,
+.sidebar-trigger:checked ~ .sidebar .sidebar-footer .label,
+.sidebar-trigger:checked ~ .sidebar .sidebar-nav .nav-item .label,
+.sidebar-trigger:checked ~ * .sidebar .sidebar-header .label,
+.sidebar-trigger:checked ~ * .sidebar .sidebar-footer .label,
+.sidebar-trigger:checked ~ * .sidebar .sidebar-nav .nav-item .label {
     opacity: 0;
     transform: translateX(100%);
     position: absolute;
   }
+
   .sidebar .btn,
 .sidebar .sidebar-nav .nav-item {
     padding-left: 1rem;
@@ -205,19 +222,21 @@
 }
 /* Mobile --> BELOW */
 @media (max-width: 575.98px) {
-  #sidebar-trigger {
+  .sidebar-trigger {
     transition: background-color 0.5s ease-in;
   }
-  #sidebar-trigger:checked {
+  .sidebar-trigger:checked {
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 2;
   }
-  #sidebar-trigger:checked ~ .sidebar {
+  .sidebar-trigger:checked ~ .sidebar,
+.sidebar-trigger:checked ~ * .sidebar {
     transform: translateX(0);
     opacity: 1;
   }
-  #sidebar-trigger:checked ~ .sidebar-toggler {
+  .sidebar-trigger:checked ~ .sidebar-toggler,
+.sidebar-trigger:checked ~ * .sidebar-toggler {
     transform: translateX(-50%);
   }
 

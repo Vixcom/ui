@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* Scrollbar - Start */
-/* HSL Darken = level - n; Lighten = level + n */
 * {
   scrollbar-color: hsl(var(--muted-hs), calc(var(--muted-l) + 60)) transparent;
   scrollbar-width: thin;
@@ -136,6 +135,100 @@ h6,
 }
 .row > [class*=col] .card {
   height: 100%;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-container:not(.h) {
+  flex-direction: column;
+}
+.icon-container .icon {
+  font-size: 120%;
+  margin: 0.5rem !important;
+}
+
+.sq-1 {
+  height: 1rem;
+  width: 1rem;
+  min-height: 1rem;
+  min-width: 1rem;
+}
+.sq-2 {
+  height: 2rem;
+  width: 2rem;
+  min-height: 2rem;
+  min-width: 2rem;
+}
+.sq-3 {
+  height: 3rem;
+  width: 3rem;
+  min-height: 3rem;
+  min-width: 3rem;
+}
+.sq-4 {
+  height: 4rem;
+  width: 4rem;
+  min-height: 4rem;
+  min-width: 4rem;
+}
+.sq-5 {
+  height: 5rem;
+  width: 5rem;
+  min-height: 5rem;
+  min-width: 5rem;
+}
+.sq-6 {
+  height: 6rem;
+  width: 6rem;
+  min-height: 6rem;
+  min-width: 6rem;
+}
+.sq-7 {
+  height: 7rem;
+  width: 7rem;
+  min-height: 7rem;
+  min-width: 7rem;
+}
+.sq-8 {
+  height: 8rem;
+  width: 8rem;
+  min-height: 8rem;
+  min-width: 8rem;
+}
+.sq-9 {
+  height: 9rem;
+  width: 9rem;
+  min-height: 9rem;
+  min-width: 9rem;
+}
+.sq-10 {
+  height: 10rem;
+  width: 10rem;
+  min-height: 10rem;
+  min-width: 10rem;
+}
+
+[class*=sq-] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+[class*=sq-]:not(.h) {
+  flex-direction: column;
+}
+[class*=sq-] img {
+  object-fit: contain;
+  width: 100%;
 }
 
 hr[class*=s-] {
@@ -381,6 +474,9 @@ input[type=file] {
   padding: 0.5rem 1.5rem;
 }
 .input .addon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: inherit !important;
   font-weight: bold;
   align-self: stretch;
@@ -415,6 +511,10 @@ input[type=file] {
   border: none;
   width: 100%;
   background-color: transparent;
+}
+
+option[disabled]:first-of-type {
+  display: none;
 }
 
 .h-group {
@@ -649,7 +749,7 @@ input[type=file] {
 .btn.btn-block + .btn {
   margin-top: 0.5rem;
 }
-.btn .fa {
+.btn .icon {
   font-size: 80%;
 }
 
@@ -659,16 +759,6 @@ input[type=file] {
 .btn-group .btn {
   align-self: stretch;
   margin: 0;
-}
-
-.full-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: 0;
 }
 
 .tabular {
@@ -1056,6 +1146,9 @@ input[type=file] {
   padding: 1.5rem;
   z-index: 1;
 }
+.card .card-body {
+  padding: 0 1.5rem;
+}
 .card .card-img {
   max-height: 15rem;
   object-fit: cover;
@@ -1224,6 +1317,17 @@ input[type=file] {
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
+}
+
+.img-bg, .img-bg:not(img)::before {
+  content: attr(data-src);
+  display: block;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .rounded-all {

@@ -1,5 +1,5 @@
-/* Scrollbar - Start */
 @import 'variables';
+/* Scrollbar - Start */
 
 * {
   scrollbar-color: hsl(var(--muted-hs), calc(var(--muted-l) + 60)) transparent;
@@ -154,6 +154,59 @@ h6,
 
   .card {
     height: 100%;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:not(.h) {
+    flex-direction: column;
+  }
+
+  &.h .icon {
+    // margin-right: 1rem;
+  }
+
+  .icon {
+    font-size: 120%;
+    margin: 0.5rem !important;
+  }
+
+}
+
+.sq- {
+  @each $numb in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
+    &#{$numb} {
+      height: #{$numb}rem;
+      width: #{$numb}rem;
+      min-height: #{$numb}rem;
+      min-width: #{$numb}rem;
+    }
+  }
+}
+
+[class*=sq-] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  &:not(.h) {
+    flex-direction: column;
+  }
+
+  img {
+    object-fit: contain;
+    width: 100%;
   }
 }
 
@@ -442,6 +495,9 @@ input {
   }
 
   .addon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: inherit !important;
     font-weight: bold;
     align-self: stretch;
@@ -484,6 +540,10 @@ input {
     width: 100%;
     background-color: transparent;
   }
+}
+
+option[disabled]:first-of-type {
+  display: none;
 }
 
 .h-group {
@@ -773,7 +833,7 @@ input {
     margin-top: 0.5rem;
   }
 
-  .fa {
+  .icon {
     font-size: 80%;
   }
 }
@@ -785,16 +845,6 @@ input {
     align-self: stretch;
     margin: 0;
   }
-}
-
-.full-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: 0;
 }
 
 .tabular {
@@ -1070,7 +1120,6 @@ input {
 .flex-item,
 .flex-card {
   position: relative;
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1194,7 +1243,10 @@ input {
   &.card-body {
     padding: 1.5rem;
     z-index: 1;
+  }
 
+  .card-body {
+    padding: 0 1.5rem;
   }
 
   .card-img {
@@ -1396,6 +1448,21 @@ input {
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
+  }
+}
+
+.img-bg {
+
+  &,
+  &:not(img)::before {
+    content: attr(data-src);
+    display: block;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 }
 
