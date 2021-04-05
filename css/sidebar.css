@@ -3,7 +3,7 @@
 * The overall containing body holding both the sidebar and the rest of the page body
 */
 .sidebar-trigger {
-  position: fixed;
+  position: fixed !important;
   height: 100vh;
   top: 0;
   top: 0;
@@ -11,7 +11,7 @@
   z-index: -1;
 }
 .sidebar-trigger, .sidebar-trigger::after, .sidebar-trigger::before {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .sidebar-trigger:checked ~ .page-container,
 .sidebar-trigger:checked ~ * .page-container {
@@ -95,6 +95,10 @@
 .sidebar .icon {
   margin: 0.125rem 1em;
   margin-left: 0;
+}
+.sidebar footer,
+.sidebar .sidebar-footer {
+  margin-top: auto;
 }
 
 /* Page */
@@ -235,6 +239,10 @@
     transform: translateX(0);
     opacity: 1;
   }
+  .sidebar-trigger:checked ~ .sidebar .sidebar-toggler,
+.sidebar-trigger:checked ~ * .sidebar .sidebar-toggler {
+    transform: translateX(0);
+  }
   .sidebar-trigger:checked ~ .sidebar-toggler,
 .sidebar-trigger:checked ~ * .sidebar-toggler {
     transform: translateX(-50%);
@@ -257,3 +265,5 @@
     padding: 3em 1em;
   }
 }
+
+/*# sourceMappingURL=sidebar.css.map */

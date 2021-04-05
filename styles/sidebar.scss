@@ -5,7 +5,7 @@
 * The overall containing body holding both the sidebar and the rest of the page body
 */
 .sidebar-trigger {
-  position: fixed;
+  position: fixed !important;
   height: 100vh;
   top: 0;
   top: 0;
@@ -15,7 +15,7 @@
   &,
   &::after,
   &::before {
-    background-color: transparent;
+    background-color: transparent !important;
   }
 
   &:checked {
@@ -120,6 +120,11 @@
   .icon {
     margin: 0.125rem 1em;
     margin-left: 0;
+  }
+
+  footer,
+  .sidebar-footer {
+    margin-top: auto;
   }
 }
 
@@ -315,6 +320,10 @@
         .sidebar {
           transform: translateX(0);
           opacity: 1;
+
+          .sidebar-toggler {
+            transform: translateX(0)
+          }
         }
 
         .sidebar-toggler {

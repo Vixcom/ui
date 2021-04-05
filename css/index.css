@@ -25,36 +25,13 @@ body {
 }
 @font-face {
   font-family: "AppTitle";
-  src: url("/fonts/AppTitle-Light.ttf");
-  font-weight: 100;
-}
-@font-face {
-  font-family: "AppTitle";
-  src: url("/fonts/AppTitle-Regular.ttf");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "AppTitle";
-  src: url("/fonts/AppTitle-Medium.ttf");
+  src: url("/fonts/AppTitle.ttf");
   font-weight: 500;
 }
 @font-face {
-  font-family: "AppTitle";
-  src: url("/fonts/AppTitle-Bold.ttf");
-  font-weight: 700;
-}
-@font-face {
   font-family: "AppContent";
-  src: url("/fonts/AppContent-Light.ttf");
-  font-weight: 100;
-}
-@font-face {
-  font-family: "AppContent";
-  src: url("/fonts/AppContent-Regular.ttf");
+  src: url("/fonts/AppContent.ttf");
   font-weight: 300;
 }
-@font-face {
-  font-family: "AppContent";
-  src: url("/fonts/AppContent-Bold.ttf");
-  font-weight: 500;
-}
+
+/*# sourceMappingURL=index.css.map */

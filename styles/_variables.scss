@@ -24,7 +24,9 @@ $default-background: #FFFFFF !default;
 $primary: #34A853 !default;
 $secondary: #5c2d6b !default;
 $white: #FFFFFF !default;
+$light: #F8F9FA !default;
 $black: #000000 !default;
+$dark: #343A40 !default;
 $green: #1D5C2E !default;
 $orange: #F58220 !default;
 $purple: #561843 !default;
@@ -47,7 +49,9 @@ $app-colors-mapped: map-merge(('default': (bg: $default, c: $white),
     'primary': (bg: $primary, c: $white),
     'secondary': (bg: $secondary, c: $white),
     'white': (bg: $white, c: $default),
+    'light': (bg: $light, c: $dark),
     'black': (bg: $black, c: $white),
+    'dark': (bg: $dark, c: $light),
     'gold': (bg: $gold, c: $white),
     'info': (bg: $info, c: $white),
     'error': (bg: $danger, c: $white),
@@ -70,7 +74,7 @@ $app-colors-mapped: map-merge(('default': (bg: $default, c: $white),
   #{$selector} {
     background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a)) !important;
     color: var(--#{$k}-c, map-get($cm, "c")) !important;
-    border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a)) !important;
+    border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
 
     &.is-blur {
       backdrop-filter: blur(10px);
@@ -221,9 +225,29 @@ $app-colors-mapped: map-merge(('default': (bg: $default, c: $white),
 
 }
 
+@mixin mapped-g-color-var-variant($selector, $k, $cm) {
+  #{$selector} {
+    background: linear-gradient(var(--#{$k}, map-get($cm, "bg")), hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a))) !important;
+    color: var(--#{$k}-c, map-get($cm, "c"));
+    border: none;
+  }
+
+  a#{$selector},
+  button#{$selector} {
+    &:hover {
+      background: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 20%), var(--#{$k}-a)), var(--#{$k}, map-get($cm, "bg"))) !important;
+      color: var(--#{$k}-c, map-get($cm, "c"));
+    }
+
+    &:active {
+      background: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)), var(--#{$k}, map-get($cm, "bg"))) !important;
+    }
+  }
+}
+
 @mixin mapped-g-color-variant($selector, $cm) {
   #{$selector} {
-    background: linear-gradient(map-get($cm, "bg"), darken(map-get($cm, "bg"), 10%)) !important;
+    background: linear-gradient(map-get($cm, "bg"), darken(map-get($cm, "bg"), 20%)) !important;
     color: map-get($cm, "c");
     border: none;
   }
@@ -231,12 +255,12 @@ $app-colors-mapped: map-merge(('default': (bg: $default, c: $white),
   a#{$selector},
   button#{$selector} {
     &:hover {
-      background: linear-gradient(lighten(map-get($cm, "bg"), 10%), map-get($cm, "bg")) !important;
+      background: linear-gradient(lighten(map-get($cm, "bg"), 20%), map-get($cm, "bg")) !important;
       color: map-get($cm, "c");
     }
 
     &:active {
-      background: linear-gradient(darken(map-get($cm, "bg"), 10%), map-get($cm, "bg"));
+      background: linear-gradient(darken(map-get($cm, "bg"), 20%), map-get($cm, "bg"));
     }
   }
 }
@@ -275,7 +299,9 @@ $app-colors-mapped: map-merge(('default': (bg: $default, c: $white),
   }
 
   a#{$selector},
-  button#{$selector} {
+  button#{$selector},
+  #{$selector}:focus,
+  #{$selector}:focus-within {
     &:hover {
       background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a)) !important;
       color: var(--#{$k}-c, map-get($cm, "c")) !important;

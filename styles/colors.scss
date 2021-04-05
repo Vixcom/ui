@@ -32,13 +32,13 @@ $v in $app-colors-mapped {
   @include mapped-color-var-variant(".text-#{$k}", $k, $v);
   // Background
   @include mapped-bg-color-var-variant(".bg-#{$k}", $k, $v);
-  @include mapped-g-color-variant(".bg-g-#{$k}", $v);
+  @include mapped-g-color-var-variant(".bg-g-#{$k}", $k, $v);
   @include mapped-tabs-var-variant(".tabs-#{$k}", $k, $v);
   @include mapped-alert-var-variant(".alert-#{$k}", $k, $v);
   @include mapped-outline-var-variant(".bg-outline-#{$k}", $k, $v);
   // Buttons
   @include mapped-bg-color-var-variant(".btn-#{$k}", $k, $v);
-  @include mapped-g-color-variant(".btn-g-#{$k}", $v);
+  @include mapped-g-color-var-variant(".btn-g-#{$k}", $k, $v);
   @include mapped-outline-var-variant(".btn-outline-#{$k}", $k, $v);
   // Badges
   @include mapped-bg-color-var-variant(".badge-#{$k}", $k, $v);

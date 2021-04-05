@@ -1,4 +1,9 @@
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+/**
+*  Author Vixson
+*  Description Layout sizing and breakpoints
+*  Created On October 27th, 2020 4:22pm
+*/
+$grid-breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1200px);
 $sizes: (0, 25, 50, 75, 100);
 $n-sizes: (unset, auto);
 $limits: ('', 'min-', 'max-');
@@ -18,27 +23,33 @@ $types: ('', 'v');
   }
 }
 
-@mixin layoutSizeLooper($size, $dimension, $useDimension: false) {
+@mixin layoutSizeLooper($size, $dimension, $useDimension: false, $breakPoint: '') {
   @each $limit in $limits {
     @each $type in $types {
-      @include layoutSizer($size, $limit, $type, '', $dimension, $useDimension);
-
-      @each $k,
-      $breakpoint in $grid-breakpoints {
-        @media (min-width:$breakpoint) {
-          @include layoutSizer($size, $limit, $type, #{$k}#{'-'}, $dimension, $useDimension);
-        }
-      }
+      @include layoutSizer($size, $limit, $type, $breakPoint, $dimension, $useDimension);
     }
   }
 }
 
 @each $size in $sizes {
-  @include layoutSizeLooper($size, '%', true)
+  @include layoutSizeLooper($size, '%', true);
 }
 
 @each $size in $n-sizes {
-  @include layoutSizeLooper($size, '')
+  @include layoutSizeLooper($size, '');
+}
+
+@each $k,
+$breakpoint in $grid-breakpoints {
+  @media (min-width:$breakpoint) {
+    @each $size in $sizes {
+      @include layoutSizeLooper($size, '%', true, #{$k}#{'-'});
+    }
+
+    @each $size in $n-sizes {
+      @include layoutSizeLooper($size, '', false, #{$k}#{'-'});
+    }
+  }
 }
 
 .h1,
@@ -87,4 +98,15 @@ h6,
 
 .font-lg {
   font-size: 250%
+}
+
+.sq- {
+  @each $numb in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
+    &#{$numb} {
+      height: #{$numb}rem;
+      width: #{$numb}rem;
+      min-height: #{$numb}rem;
+      min-width: #{$numb}rem;
+    }
+  }
 }
