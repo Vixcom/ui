@@ -217,7 +217,7 @@
 }
 /* Tablets/Mini PC --> BELOW */
 @media (max-width: 767.98px) {
-  .btn {
+  .sidebar .btn {
     min-width: auto;
     /* display: flex;
     justify-content: center;

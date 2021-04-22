@@ -25,12 +25,12 @@ body {
 }
 @font-face {
   font-family: "AppTitle";
-  src: url("/fonts/AppTitle.ttf");
+  src: url("/fonts/NotoSans-Bold.ttf");
   font-weight: 500;
 }
 @font-face {
   font-family: "AppContent";
-  src: url("/fonts/AppContent.ttf");
+  src: url("/fonts/Roboto-Regular.ttf");
   font-weight: 300;
 }
 
