@@ -5,6 +5,9 @@
   "targets": {
     "vixcomx": {
       "hosting": {
+        "prod": [
+          "vixcomx"
+        ],
         "dashboard": [
           "vx-dashboard"
         ]

@@ -1,0 +1,176 @@
+.p-component {
+  font-size: unset !important;
+}
+
+.p-steps .p-steps-item.p-highlight .p-steps-number {
+  background-color: var(--secondary) !important;
+}
+.p-steps .p-steps-item .p-steps-number {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+.p-tabview.no-header .p-tabview-nav {
+  display: none;
+}
+
+.p-dialog-mask,
+.p-component-overlay,
+.p-dialog-mask.p-component-overlay {
+  z-index: 4 !important;
+}
+
+.p-dialog {
+  min-width: 50%;
+  max-width: 95%;
+  max-height: 95%;
+  z-index: 1 !important;
+}
+.p-dialog .p-dialog-content {
+  padding: 0.25rem 1.5rem;
+}
+.p-dialog .p-dialog-footer {
+  padding: 1.5rem;
+}
+.p-dialog .p-dialog-footer button {
+  border: none;
+  padding: 0.5rem 1.25rem;
+}
+.p-dialog .p-dialog-footer p-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.p-dialog .p-dialog-footer p-footer .btn {
+  margin: 0;
+}
+.p-dialog .p-dialog-footer p-footer .btn + .btn {
+  margin-left: 0.5rem;
+}
+.p-dialog .p-dialog-footer p-footer > * {
+  margin-top: 1rem;
+}
+
+.p-toast {
+  z-index: 4 !important;
+}
+
+.input > .p-inputtext {
+  padding: 0;
+  color: unset;
+}
+
+.p-inputtext:enabled {
+  margin-bottom: 0;
+}
+.p-inputtext:enabled :hover {
+  border-color: unset;
+}
+
+p-chart {
+  width: 100% !important;
+}
+p-chart canvas {
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+.p-datepicker:not(.p-datepicker-inline) {
+  box-shadow: unset;
+}
+.p-datepicker:not(.p-datepicker-inline) > * {
+  position: relative;
+}
+.p-datepicker:not(.p-datepicker-inline)::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  box-shadow: var(--card-shadow);
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.p-datepicker table td > span {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.p-datepicker .p-datepicker-buttonbar {
+  padding: 0;
+}
+
+.p-accordion:not(.default) .p-accordion-header-link {
+  padding: 0.75rem;
+}
+.p-accordion:not(.default) .p-accordion-content {
+  padding: 0;
+}
+
+.p-carousel .p-carousel-items-content {
+  padding: 1rem;
+}
+.p-carousel .p-carousel-items-content .p-carousel-item {
+  display: flex;
+  justify-content: center;
+  padding: 0 0.5rem;
+  border: thin solid transparent;
+}
+.p-carousel .p-carousel-items-content .p-carousel-item:hover {
+  border-color: var(--primary);
+}
+.p-carousel .p-carousel-items-content .p-carousel-item-active:nth-of-type(2) {
+  padding: 0 0.125rem;
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  border: none;
+  height: 0.25rem !important;
+  border-radius: 0.125rem !important;
+}
+
+@media (max-width: 575.98px) {
+  .p-dialog {
+    min-width: 95%;
+  }
+  .p-dialog .p-dialog-footer p-footer {
+    /* justify-content: center; */
+    /* flex-direction: column; */
+  }
+
+  .p-toast {
+    width: auto !important;
+    left: 0.5rem !important;
+    right: 0.5rem !important;
+  }
+}
+.p-toast .p-toast-message .p-toast-icon-close {
+  min-width: 2rem;
+  border: none !important;
+}
+.p-toast .p-toast-message.p-toast-message-primary {
+  background-color: var(--primary) !important;
+  color: var(--primary-c) !important;
+}
+.p-toast .p-toast-message.p-toast-message-secondary {
+  background-color: var(--secondary) !important;
+  color: var(--secondary-c) !important;
+}
+.p-toast .p-toast-message.p-toast-message-info {
+  background-color: var(--info) !important;
+  color: var(--info-c) !important;
+}
+.p-toast .p-toast-message.p-toast-message-success {
+  background-color: var(--success) !important;
+  color: var(--success-c) !important;
+}
+.p-toast .p-toast-message.p-toast-message-warn {
+  background-color: var(--warn) !important;
+  color: var(--warn-c) !important;
+}
+.p-toast .p-toast-message.p-toast-message-error {
+  background-color: var(--error) !important;
+  color: var(--error-c) !important;
+}
+
+/*# sourceMappingURL=primefaces.css.map */

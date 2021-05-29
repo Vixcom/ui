@@ -1,8 +1,9 @@
 {
-  "name": "onedisk-dashoard",
+  "name": "vx-dashoard",
   "scripts": {
     "serve": "sass styles:css --watch",
     "build": "sass styles:css",
+    "preview": "npm run build && firebase serve --only hosting:dashboard --port=9000",
     "deploy": "npm run build && firebase deploy --only hosting:dashboard"
   }
 }

@@ -4,16 +4,20 @@
 */
 @import 'bootstrap.css';
 @import 'fontawesome.css';
+@import 'sidebar.css';
+@import 'app.css';
 @import 'animations.css';
 @import 'colors.css';
 @import 'sizes.css';
-@import 'app.css';
-@import 'sidebar.css';
+:root {
+  --font-size: 0.85rem;
+}
+
 body {
   font-family: "AppContent", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--default-background);
+  background-color: var(--background-color);
   color: var(--default);
-  font-size: var(--app-font-size);
+  font-size: var(--font-size);
   font-weight: 300;
 }
 

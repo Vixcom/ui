@@ -20,7 +20,6 @@
 // }
 
 $default: #5B5B5B !default;
-$default-background: #FFFFFF !default;
 $primary: #34A853 !default;
 $secondary: #5c2d6b !default;
 $white: #FFFFFF !default;
@@ -39,9 +38,10 @@ $warning: #FFC107 !default;
 $danger: #DC3545 !default;
 $info: #17A2b8 !default;
 $muted: #7D7D7D !default;
+$background-color: #FFFFFF !default;
 $border-color: #E4E4E4 !default;
 $card-shadow: 0 1px 30px -10px transparentize($black, 0.5) !default;
-$app-font-size: 0.85rem;
+$font-size: 0.85rem;
 
 $app-colors-mapped: () !default;
 
@@ -90,6 +90,7 @@ $app-colors-mapped: map-merge(('default': (bg: $default, c: $white),
   button#{$selector} {
     &:hover {
       background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a)) !important;
+      border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
       color: var(--#{$k}-c, map-get($cm, "c"));
     }
 
@@ -134,20 +135,18 @@ $app-colors-mapped: map-merge(('default': (bg: $default, c: $white),
 
     &.fill {
       .tab {
-        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), calc(var(--#{$k}-a) - 0.2));
         color: var(--#{$k}-c, map-get($cm, "c"));
 
         &.active {
-          background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a));
+          background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
         }
       }
     }
 
     .tab {
-      border: none;
-
       &:hover:not(.active) {
-        background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 40%), var(--#{$k}-a));
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), calc(var(--#{$k}-a) - 0.5));
         color: darken(map-get($cm, "c"), 90%);
       }
 

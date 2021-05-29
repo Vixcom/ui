@@ -2,7 +2,7 @@
 
 :root {
   --card-shadow: #{$card-shadow};
-  --app-font-size: #{$app-font-size};
+  --background-color: #{$background-color};
 
   /* Color Variables */
   @each $k,
@@ -20,6 +20,8 @@
 
 /**
 * HSL Darken = level - n; Lighten = level + n.
+** Darken Color = hsl(var(--{color}-hs), calc(var(--{color}-l) - n%))
+** Lighten Color = hsl(var(--{color}-hs), calc(var(--{color}-l) + n%))
 * {color}-hs = The Hue and Saturation level of the color.
 * {color}-l = Lightness level of the color.
 * {color}-a = Alpha level of the color.
@@ -52,11 +54,15 @@ $v in $app-colors-mapped {
   filter: grayscale(.8)
 }
 
-.btn.focus,
-:focus-within,
-:focus {
-  outline: none;
-  box-shadow: none !important
+button,
+input {
+
+  &.focus,
+  &:focus-within,
+  &:focus {
+    outline: none;
+    box-shadow: none !important
+  }
 }
 
 .inactive {
@@ -76,6 +82,10 @@ $v in $app-colors-mapped {
 [class*=shadow-] {
   position: relative;
 
+  &>* {
+    position: relative;
+  }
+
   &::before {
     content: "";
     display: block;
@@ -89,19 +99,23 @@ $v in $app-colors-mapped {
   }
 }
 
-/* select, .ng-select */
+/* select */
 // input::placeholder,
 // input::-webkit-input-placeholder {
 //   color: #aaaaaa !important
 // }
 
+.text-current {
+  color: currentColor
+}
+
 body a,
 .link {
-  color: $secondary;
+  color: var(--secondary);
   cursor: pointer;
 
   &:hover {
-    color: darken($secondary, 10%);
+    color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 10%));
   }
 }
 

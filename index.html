@@ -7,9 +7,12 @@
   <title>VX Dashboard</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="shortcut icon" href="assets/img/icon.png" type="image/png">
+  <script>
+    window.postMessage('Hello from VX Dashboard', '*')
+  </script>
 </head>
 
-<body class="d-flex flex-center section scroll-container">
+<body class="d-flex flex-center section">
   <h1 class="font-lg">Welcome</h1>
   <div class="p-3 flex-container">
     <a href="tier-1" class="btn btn-primary">Tier 1</a>
@@ -17,11 +20,12 @@
   </div>
   <hr>
   <div class="p-3 flex-container">
-    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-primary" onclick="window.postMessage('Hello from VX Dashboard', '*')">Primary</button>
     <button class="btn btn-outline-primary">Primary Outline</button>
     <button class="btn btn-g-primary">Primary Gradient</button>
     <button class="btn btn-transparent">Transparent</button>
   </div>
+  <div class="grid"></div>
   <div class="card flat min-w-50">
     <div class="card-header">
       <i class="fa fa-images font-5"></i>
@@ -34,14 +38,24 @@
         <h5>Title</h5>
         <p>Content Again</p>
         <input type="checkbox" class="text-secondary">
-        <object data="./assets/svg/params.svg" type="image/svg+xml">
+        <hr>
+        <label class="input-container" data-label="Message">
+          <textarea class="input feed-create-post__textarea" rows="10" placeholder="Say sometheing nice"></textarea>
+        </label>
+        <!-- <object data="./assets/svg/params.svg" type="image/svg+xml">
           <param name="color" value="purple" />
           <param name="label" value="override" />
         </object>
-        <object data="./assets/svg/params.svg?color=cornflowerblue&label=fnord" type="image/svg+xml"></object>
+        <object data="./assets/svg/params.svg?color=cornflowerblue&label=fnord" type="image/svg+xml"></object> -->
       </div>
     </div>
   </div>
+  <script>
+    document.getElementsByTagName('textarea')[0].value = 'Hello';
+    const grid = document.querySelector('.grid');
+    const gridItem = document.querySelector('#grid-item');
+    grid.appendChild(gridItem)
+  </script>
   <style>
     /* Set variable using HSL
     * :root {
