@@ -170,14 +170,6 @@
   --muted-a: 1;
   --muted-c: #FFFFFF;
   /* ---COLOR-muted-END--- */
-  /* ---COLOR-transparent-START--- */
-  --transparent: transparent;
-  /* ---HSL-transparent--- */
-  --transparent-hs: 0deg, 0%;
-  --transparent-l: 0%;
-  --transparent-a: 0;
-  --transparent-c: #5B5B5B;
-  /* ---COLOR-transparent-END--- */
 }
 
 /**
@@ -208,7 +200,6 @@ button.text-default:active {
   border-color: hsla(var(--default-hs), var(--default-l), var(--default-a));
 }
 .bg-default.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--default-hs), var(--default-l), 0.5) !important;
 }
 .bg-default.is-blur:hover {
@@ -264,17 +255,15 @@ button.bg-g-default:active {
   border-color: hsla(var(--default-hs), var(--default-l), var(--default-a)) !important;
 }
 .alert-default.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--default-hs), calc(var(--default-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-default {
   background-color: transparent !important;
   color: hsla(var(--default-hs), var(--default-l), var(--default-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-default.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--default-hs), calc(var(--default-l) - 45%), 0.5) !important;
 }
 
@@ -298,7 +287,6 @@ button.bg-outline-default:active,
   border-color: hsla(var(--default-hs), var(--default-l), var(--default-a));
 }
 .btn-default.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--default-hs), var(--default-l), 0.5) !important;
 }
 .btn-default.is-blur:hover {
@@ -335,10 +323,9 @@ button.btn-g-default:active {
 .btn-outline-default {
   background-color: transparent !important;
   color: hsla(var(--default-hs), var(--default-l), var(--default-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-default.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--default-hs), calc(var(--default-l) - 45%), 0.5) !important;
 }
 
@@ -362,7 +349,6 @@ button.btn-outline-default:active,
   border-color: hsla(var(--default-hs), var(--default-l), var(--default-a));
 }
 .badge-default.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--default-hs), var(--default-l), 0.5) !important;
 }
 .badge-default.is-blur:hover {
@@ -383,10 +369,9 @@ button.badge-default:active {
 .badge-outline-default {
   background-color: transparent !important;
   color: hsla(var(--default-hs), var(--default-l), var(--default-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-default.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--default-hs), calc(var(--default-l) - 45%), 0.5) !important;
 }
 
@@ -423,7 +408,6 @@ button.text-primary:active {
   border-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a));
 }
 .bg-primary.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--primary-hs), var(--primary-l), 0.5) !important;
 }
 .bg-primary.is-blur:hover {
@@ -479,17 +463,15 @@ button.bg-g-primary:active {
   border-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a)) !important;
 }
 .alert-primary.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--primary-hs), calc(var(--primary-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-primary {
   background-color: transparent !important;
   color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-primary.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--primary-hs), calc(var(--primary-l) - 45%), 0.5) !important;
 }
 
@@ -513,7 +495,6 @@ button.bg-outline-primary:active,
   border-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a));
 }
 .btn-primary.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--primary-hs), var(--primary-l), 0.5) !important;
 }
 .btn-primary.is-blur:hover {
@@ -550,10 +531,9 @@ button.btn-g-primary:active {
 .btn-outline-primary {
   background-color: transparent !important;
   color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-primary.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--primary-hs), calc(var(--primary-l) - 45%), 0.5) !important;
 }
 
@@ -577,7 +557,6 @@ button.btn-outline-primary:active,
   border-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a));
 }
 .badge-primary.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--primary-hs), var(--primary-l), 0.5) !important;
 }
 .badge-primary.is-blur:hover {
@@ -598,10 +577,9 @@ button.badge-primary:active {
 .badge-outline-primary {
   background-color: transparent !important;
   color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-primary.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--primary-hs), calc(var(--primary-l) - 45%), 0.5) !important;
 }
 
@@ -638,7 +616,6 @@ button.text-secondary:active {
   border-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a));
 }
 .bg-secondary.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.5) !important;
 }
 .bg-secondary.is-blur:hover {
@@ -694,17 +671,15 @@ button.bg-g-secondary:active {
   border-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a)) !important;
 }
 .alert-secondary.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--secondary-hs), calc(var(--secondary-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-secondary {
   background-color: transparent !important;
   color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-secondary.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 45%), 0.5) !important;
 }
 
@@ -728,7 +703,6 @@ button.bg-outline-secondary:active,
   border-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a));
 }
 .btn-secondary.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.5) !important;
 }
 .btn-secondary.is-blur:hover {
@@ -765,10 +739,9 @@ button.btn-g-secondary:active {
 .btn-outline-secondary {
   background-color: transparent !important;
   color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-secondary.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 45%), 0.5) !important;
 }
 
@@ -792,7 +765,6 @@ button.btn-outline-secondary:active,
   border-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a));
 }
 .badge-secondary.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.5) !important;
 }
 .badge-secondary.is-blur:hover {
@@ -813,10 +785,9 @@ button.badge-secondary:active {
 .badge-outline-secondary {
   background-color: transparent !important;
   color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-secondary.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 45%), 0.5) !important;
 }
 
@@ -853,7 +824,6 @@ button.text-white:active {
   border-color: hsla(var(--white-hs), var(--white-l), var(--white-a));
 }
 .bg-white.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--white-hs), var(--white-l), 0.5) !important;
 }
 .bg-white.is-blur:hover {
@@ -909,17 +879,15 @@ button.bg-g-white:active {
   border-color: hsla(var(--white-hs), var(--white-l), var(--white-a)) !important;
 }
 .alert-white.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--white-hs), calc(var(--white-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-white {
   background-color: transparent !important;
   color: hsla(var(--white-hs), var(--white-l), var(--white-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-white.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--white-hs), calc(var(--white-l) - 45%), 0.5) !important;
 }
 
@@ -943,7 +911,6 @@ button.bg-outline-white:active,
   border-color: hsla(var(--white-hs), var(--white-l), var(--white-a));
 }
 .btn-white.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--white-hs), var(--white-l), 0.5) !important;
 }
 .btn-white.is-blur:hover {
@@ -980,10 +947,9 @@ button.btn-g-white:active {
 .btn-outline-white {
   background-color: transparent !important;
   color: hsla(var(--white-hs), var(--white-l), var(--white-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-white.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--white-hs), calc(var(--white-l) - 45%), 0.5) !important;
 }
 
@@ -1007,7 +973,6 @@ button.btn-outline-white:active,
   border-color: hsla(var(--white-hs), var(--white-l), var(--white-a));
 }
 .badge-white.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--white-hs), var(--white-l), 0.5) !important;
 }
 .badge-white.is-blur:hover {
@@ -1028,10 +993,9 @@ button.badge-white:active {
 .badge-outline-white {
   background-color: transparent !important;
   color: hsla(var(--white-hs), var(--white-l), var(--white-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-white.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--white-hs), calc(var(--white-l) - 45%), 0.5) !important;
 }
 
@@ -1068,7 +1032,6 @@ button.text-light:active {
   border-color: hsla(var(--light-hs), var(--light-l), var(--light-a));
 }
 .bg-light.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--light-hs), var(--light-l), 0.5) !important;
 }
 .bg-light.is-blur:hover {
@@ -1124,17 +1087,15 @@ button.bg-g-light:active {
   border-color: hsla(var(--light-hs), var(--light-l), var(--light-a)) !important;
 }
 .alert-light.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--light-hs), calc(var(--light-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-light {
   background-color: transparent !important;
   color: hsla(var(--light-hs), var(--light-l), var(--light-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-light.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--light-hs), calc(var(--light-l) - 45%), 0.5) !important;
 }
 
@@ -1158,7 +1119,6 @@ button.bg-outline-light:active,
   border-color: hsla(var(--light-hs), var(--light-l), var(--light-a));
 }
 .btn-light.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--light-hs), var(--light-l), 0.5) !important;
 }
 .btn-light.is-blur:hover {
@@ -1195,10 +1155,9 @@ button.btn-g-light:active {
 .btn-outline-light {
   background-color: transparent !important;
   color: hsla(var(--light-hs), var(--light-l), var(--light-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-light.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--light-hs), calc(var(--light-l) - 45%), 0.5) !important;
 }
 
@@ -1222,7 +1181,6 @@ button.btn-outline-light:active,
   border-color: hsla(var(--light-hs), var(--light-l), var(--light-a));
 }
 .badge-light.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--light-hs), var(--light-l), 0.5) !important;
 }
 .badge-light.is-blur:hover {
@@ -1243,10 +1201,9 @@ button.badge-light:active {
 .badge-outline-light {
   background-color: transparent !important;
   color: hsla(var(--light-hs), var(--light-l), var(--light-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-light.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--light-hs), calc(var(--light-l) - 45%), 0.5) !important;
 }
 
@@ -1283,7 +1240,6 @@ button.text-black:active {
   border-color: hsla(var(--black-hs), var(--black-l), var(--black-a));
 }
 .bg-black.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--black-hs), var(--black-l), 0.5) !important;
 }
 .bg-black.is-blur:hover {
@@ -1339,17 +1295,15 @@ button.bg-g-black:active {
   border-color: hsla(var(--black-hs), var(--black-l), var(--black-a)) !important;
 }
 .alert-black.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--black-hs), calc(var(--black-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-black {
   background-color: transparent !important;
   color: hsla(var(--black-hs), var(--black-l), var(--black-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-black.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--black-hs), calc(var(--black-l) - 45%), 0.5) !important;
 }
 
@@ -1373,7 +1327,6 @@ button.bg-outline-black:active,
   border-color: hsla(var(--black-hs), var(--black-l), var(--black-a));
 }
 .btn-black.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--black-hs), var(--black-l), 0.5) !important;
 }
 .btn-black.is-blur:hover {
@@ -1410,10 +1363,9 @@ button.btn-g-black:active {
 .btn-outline-black {
   background-color: transparent !important;
   color: hsla(var(--black-hs), var(--black-l), var(--black-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-black.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--black-hs), calc(var(--black-l) - 45%), 0.5) !important;
 }
 
@@ -1437,7 +1389,6 @@ button.btn-outline-black:active,
   border-color: hsla(var(--black-hs), var(--black-l), var(--black-a));
 }
 .badge-black.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--black-hs), var(--black-l), 0.5) !important;
 }
 .badge-black.is-blur:hover {
@@ -1458,10 +1409,9 @@ button.badge-black:active {
 .badge-outline-black {
   background-color: transparent !important;
   color: hsla(var(--black-hs), var(--black-l), var(--black-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-black.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--black-hs), calc(var(--black-l) - 45%), 0.5) !important;
 }
 
@@ -1498,7 +1448,6 @@ button.text-dark:active {
   border-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a));
 }
 .bg-dark.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--dark-hs), var(--dark-l), 0.5) !important;
 }
 .bg-dark.is-blur:hover {
@@ -1554,17 +1503,15 @@ button.bg-g-dark:active {
   border-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a)) !important;
 }
 .alert-dark.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--dark-hs), calc(var(--dark-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-dark {
   background-color: transparent !important;
   color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-dark.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--dark-hs), calc(var(--dark-l) - 45%), 0.5) !important;
 }
 
@@ -1588,7 +1535,6 @@ button.bg-outline-dark:active,
   border-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a));
 }
 .btn-dark.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--dark-hs), var(--dark-l), 0.5) !important;
 }
 .btn-dark.is-blur:hover {
@@ -1625,10 +1571,9 @@ button.btn-g-dark:active {
 .btn-outline-dark {
   background-color: transparent !important;
   color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-dark.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--dark-hs), calc(var(--dark-l) - 45%), 0.5) !important;
 }
 
@@ -1652,7 +1597,6 @@ button.btn-outline-dark:active,
   border-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a));
 }
 .badge-dark.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--dark-hs), var(--dark-l), 0.5) !important;
 }
 .badge-dark.is-blur:hover {
@@ -1673,10 +1617,9 @@ button.badge-dark:active {
 .badge-outline-dark {
   background-color: transparent !important;
   color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-dark.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--dark-hs), calc(var(--dark-l) - 45%), 0.5) !important;
 }
 
@@ -1713,7 +1656,6 @@ button.text-gold:active {
   border-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a));
 }
 .bg-gold.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--gold-hs), var(--gold-l), 0.5) !important;
 }
 .bg-gold.is-blur:hover {
@@ -1769,17 +1711,15 @@ button.bg-g-gold:active {
   border-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a)) !important;
 }
 .alert-gold.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--gold-hs), calc(var(--gold-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-gold {
   background-color: transparent !important;
   color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-gold.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--gold-hs), calc(var(--gold-l) - 45%), 0.5) !important;
 }
 
@@ -1803,7 +1743,6 @@ button.bg-outline-gold:active,
   border-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a));
 }
 .btn-gold.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--gold-hs), var(--gold-l), 0.5) !important;
 }
 .btn-gold.is-blur:hover {
@@ -1840,10 +1779,9 @@ button.btn-g-gold:active {
 .btn-outline-gold {
   background-color: transparent !important;
   color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-gold.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--gold-hs), calc(var(--gold-l) - 45%), 0.5) !important;
 }
 
@@ -1867,7 +1805,6 @@ button.btn-outline-gold:active,
   border-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a));
 }
 .badge-gold.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--gold-hs), var(--gold-l), 0.5) !important;
 }
 .badge-gold.is-blur:hover {
@@ -1888,10 +1825,9 @@ button.badge-gold:active {
 .badge-outline-gold {
   background-color: transparent !important;
   color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-gold.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--gold-hs), calc(var(--gold-l) - 45%), 0.5) !important;
 }
 
@@ -1928,7 +1864,6 @@ button.text-info:active {
   border-color: hsla(var(--info-hs), var(--info-l), var(--info-a));
 }
 .bg-info.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--info-hs), var(--info-l), 0.5) !important;
 }
 .bg-info.is-blur:hover {
@@ -1984,17 +1919,15 @@ button.bg-g-info:active {
   border-color: hsla(var(--info-hs), var(--info-l), var(--info-a)) !important;
 }
 .alert-info.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--info-hs), calc(var(--info-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-info {
   background-color: transparent !important;
   color: hsla(var(--info-hs), var(--info-l), var(--info-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-info.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--info-hs), calc(var(--info-l) - 45%), 0.5) !important;
 }
 
@@ -2018,7 +1951,6 @@ button.bg-outline-info:active,
   border-color: hsla(var(--info-hs), var(--info-l), var(--info-a));
 }
 .btn-info.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--info-hs), var(--info-l), 0.5) !important;
 }
 .btn-info.is-blur:hover {
@@ -2055,10 +1987,9 @@ button.btn-g-info:active {
 .btn-outline-info {
   background-color: transparent !important;
   color: hsla(var(--info-hs), var(--info-l), var(--info-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-info.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--info-hs), calc(var(--info-l) - 45%), 0.5) !important;
 }
 
@@ -2082,7 +2013,6 @@ button.btn-outline-info:active,
   border-color: hsla(var(--info-hs), var(--info-l), var(--info-a));
 }
 .badge-info.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--info-hs), var(--info-l), 0.5) !important;
 }
 .badge-info.is-blur:hover {
@@ -2103,10 +2033,9 @@ button.badge-info:active {
 .badge-outline-info {
   background-color: transparent !important;
   color: hsla(var(--info-hs), var(--info-l), var(--info-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-info.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--info-hs), calc(var(--info-l) - 45%), 0.5) !important;
 }
 
@@ -2143,7 +2072,6 @@ button.text-error:active {
   border-color: hsla(var(--error-hs), var(--error-l), var(--error-a));
 }
 .bg-error.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--error-hs), var(--error-l), 0.5) !important;
 }
 .bg-error.is-blur:hover {
@@ -2199,17 +2127,15 @@ button.bg-g-error:active {
   border-color: hsla(var(--error-hs), var(--error-l), var(--error-a)) !important;
 }
 .alert-error.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--error-hs), calc(var(--error-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-error {
   background-color: transparent !important;
   color: hsla(var(--error-hs), var(--error-l), var(--error-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-error.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--error-hs), calc(var(--error-l) - 45%), 0.5) !important;
 }
 
@@ -2233,7 +2159,6 @@ button.bg-outline-error:active,
   border-color: hsla(var(--error-hs), var(--error-l), var(--error-a));
 }
 .btn-error.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--error-hs), var(--error-l), 0.5) !important;
 }
 .btn-error.is-blur:hover {
@@ -2270,10 +2195,9 @@ button.btn-g-error:active {
 .btn-outline-error {
   background-color: transparent !important;
   color: hsla(var(--error-hs), var(--error-l), var(--error-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-error.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--error-hs), calc(var(--error-l) - 45%), 0.5) !important;
 }
 
@@ -2297,7 +2221,6 @@ button.btn-outline-error:active,
   border-color: hsla(var(--error-hs), var(--error-l), var(--error-a));
 }
 .badge-error.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--error-hs), var(--error-l), 0.5) !important;
 }
 .badge-error.is-blur:hover {
@@ -2318,10 +2241,9 @@ button.badge-error:active {
 .badge-outline-error {
   background-color: transparent !important;
   color: hsla(var(--error-hs), var(--error-l), var(--error-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-error.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--error-hs), calc(var(--error-l) - 45%), 0.5) !important;
 }
 
@@ -2358,7 +2280,6 @@ button.text-danger:active {
   border-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a));
 }
 .bg-danger.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--danger-hs), var(--danger-l), 0.5) !important;
 }
 .bg-danger.is-blur:hover {
@@ -2414,17 +2335,15 @@ button.bg-g-danger:active {
   border-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a)) !important;
 }
 .alert-danger.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--danger-hs), calc(var(--danger-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-danger {
   background-color: transparent !important;
   color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-danger.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--danger-hs), calc(var(--danger-l) - 45%), 0.5) !important;
 }
 
@@ -2448,7 +2367,6 @@ button.bg-outline-danger:active,
   border-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a));
 }
 .btn-danger.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--danger-hs), var(--danger-l), 0.5) !important;
 }
 .btn-danger.is-blur:hover {
@@ -2485,10 +2403,9 @@ button.btn-g-danger:active {
 .btn-outline-danger {
   background-color: transparent !important;
   color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-danger.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--danger-hs), calc(var(--danger-l) - 45%), 0.5) !important;
 }
 
@@ -2512,7 +2429,6 @@ button.btn-outline-danger:active,
   border-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a));
 }
 .badge-danger.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--danger-hs), var(--danger-l), 0.5) !important;
 }
 .badge-danger.is-blur:hover {
@@ -2533,10 +2449,9 @@ button.badge-danger:active {
 .badge-outline-danger {
   background-color: transparent !important;
   color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-danger.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--danger-hs), calc(var(--danger-l) - 45%), 0.5) !important;
 }
 
@@ -2573,7 +2488,6 @@ button.text-success:active {
   border-color: hsla(var(--success-hs), var(--success-l), var(--success-a));
 }
 .bg-success.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--success-hs), var(--success-l), 0.5) !important;
 }
 .bg-success.is-blur:hover {
@@ -2629,17 +2543,15 @@ button.bg-g-success:active {
   border-color: hsla(var(--success-hs), var(--success-l), var(--success-a)) !important;
 }
 .alert-success.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--success-hs), calc(var(--success-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-success {
   background-color: transparent !important;
   color: hsla(var(--success-hs), var(--success-l), var(--success-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-success.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--success-hs), calc(var(--success-l) - 45%), 0.5) !important;
 }
 
@@ -2663,7 +2575,6 @@ button.bg-outline-success:active,
   border-color: hsla(var(--success-hs), var(--success-l), var(--success-a));
 }
 .btn-success.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--success-hs), var(--success-l), 0.5) !important;
 }
 .btn-success.is-blur:hover {
@@ -2700,10 +2611,9 @@ button.btn-g-success:active {
 .btn-outline-success {
   background-color: transparent !important;
   color: hsla(var(--success-hs), var(--success-l), var(--success-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-success.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--success-hs), calc(var(--success-l) - 45%), 0.5) !important;
 }
 
@@ -2727,7 +2637,6 @@ button.btn-outline-success:active,
   border-color: hsla(var(--success-hs), var(--success-l), var(--success-a));
 }
 .badge-success.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--success-hs), var(--success-l), 0.5) !important;
 }
 .badge-success.is-blur:hover {
@@ -2748,10 +2657,9 @@ button.badge-success:active {
 .badge-outline-success {
   background-color: transparent !important;
   color: hsla(var(--success-hs), var(--success-l), var(--success-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-success.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--success-hs), calc(var(--success-l) - 45%), 0.5) !important;
 }
 
@@ -2788,7 +2696,6 @@ button.text-warn:active {
   border-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a));
 }
 .bg-warn.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--warn-hs), var(--warn-l), 0.5) !important;
 }
 .bg-warn.is-blur:hover {
@@ -2844,17 +2751,15 @@ button.bg-g-warn:active {
   border-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a)) !important;
 }
 .alert-warn.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--warn-hs), calc(var(--warn-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-warn {
   background-color: transparent !important;
   color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-warn.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--warn-hs), calc(var(--warn-l) - 45%), 0.5) !important;
 }
 
@@ -2878,7 +2783,6 @@ button.bg-outline-warn:active,
   border-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a));
 }
 .btn-warn.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--warn-hs), var(--warn-l), 0.5) !important;
 }
 .btn-warn.is-blur:hover {
@@ -2915,10 +2819,9 @@ button.btn-g-warn:active {
 .btn-outline-warn {
   background-color: transparent !important;
   color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-warn.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--warn-hs), calc(var(--warn-l) - 45%), 0.5) !important;
 }
 
@@ -2942,7 +2845,6 @@ button.btn-outline-warn:active,
   border-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a));
 }
 .badge-warn.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--warn-hs), var(--warn-l), 0.5) !important;
 }
 .badge-warn.is-blur:hover {
@@ -2963,10 +2865,9 @@ button.badge-warn:active {
 .badge-outline-warn {
   background-color: transparent !important;
   color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-warn.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--warn-hs), calc(var(--warn-l) - 45%), 0.5) !important;
 }
 
@@ -3003,7 +2904,6 @@ button.text-warning:active {
   border-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a));
 }
 .bg-warning.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--warning-hs), var(--warning-l), 0.5) !important;
 }
 .bg-warning.is-blur:hover {
@@ -3059,17 +2959,15 @@ button.bg-g-warning:active {
   border-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a)) !important;
 }
 .alert-warning.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--warning-hs), calc(var(--warning-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-warning {
   background-color: transparent !important;
   color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-warning.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--warning-hs), calc(var(--warning-l) - 45%), 0.5) !important;
 }
 
@@ -3093,7 +2991,6 @@ button.bg-outline-warning:active,
   border-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a));
 }
 .btn-warning.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--warning-hs), var(--warning-l), 0.5) !important;
 }
 .btn-warning.is-blur:hover {
@@ -3130,10 +3027,9 @@ button.btn-g-warning:active {
 .btn-outline-warning {
   background-color: transparent !important;
   color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-warning.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--warning-hs), calc(var(--warning-l) - 45%), 0.5) !important;
 }
 
@@ -3157,7 +3053,6 @@ button.btn-outline-warning:active,
   border-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a));
 }
 .badge-warning.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--warning-hs), var(--warning-l), 0.5) !important;
 }
 .badge-warning.is-blur:hover {
@@ -3178,10 +3073,9 @@ button.badge-warning:active {
 .badge-outline-warning {
   background-color: transparent !important;
   color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-warning.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--warning-hs), calc(var(--warning-l) - 45%), 0.5) !important;
 }
 
@@ -3218,7 +3112,6 @@ button.text-pink:active {
   border-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a));
 }
 .bg-pink.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--pink-hs), var(--pink-l), 0.5) !important;
 }
 .bg-pink.is-blur:hover {
@@ -3274,17 +3167,15 @@ button.bg-g-pink:active {
   border-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a)) !important;
 }
 .alert-pink.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--pink-hs), calc(var(--pink-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-pink {
   background-color: transparent !important;
   color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-pink.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--pink-hs), calc(var(--pink-l) - 45%), 0.5) !important;
 }
 
@@ -3308,7 +3199,6 @@ button.bg-outline-pink:active,
   border-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a));
 }
 .btn-pink.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--pink-hs), var(--pink-l), 0.5) !important;
 }
 .btn-pink.is-blur:hover {
@@ -3345,10 +3235,9 @@ button.btn-g-pink:active {
 .btn-outline-pink {
   background-color: transparent !important;
   color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-pink.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--pink-hs), calc(var(--pink-l) - 45%), 0.5) !important;
 }
 
@@ -3372,7 +3261,6 @@ button.btn-outline-pink:active,
   border-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a));
 }
 .badge-pink.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--pink-hs), var(--pink-l), 0.5) !important;
 }
 .badge-pink.is-blur:hover {
@@ -3393,10 +3281,9 @@ button.badge-pink:active {
 .badge-outline-pink {
   background-color: transparent !important;
   color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-pink.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--pink-hs), calc(var(--pink-l) - 45%), 0.5) !important;
 }
 
@@ -3433,7 +3320,6 @@ button.text-orange:active {
   border-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a));
 }
 .bg-orange.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--orange-hs), var(--orange-l), 0.5) !important;
 }
 .bg-orange.is-blur:hover {
@@ -3489,17 +3375,15 @@ button.bg-g-orange:active {
   border-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a)) !important;
 }
 .alert-orange.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--orange-hs), calc(var(--orange-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-orange {
   background-color: transparent !important;
   color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-orange.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--orange-hs), calc(var(--orange-l) - 45%), 0.5) !important;
 }
 
@@ -3523,7 +3407,6 @@ button.bg-outline-orange:active,
   border-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a));
 }
 .btn-orange.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--orange-hs), var(--orange-l), 0.5) !important;
 }
 .btn-orange.is-blur:hover {
@@ -3560,10 +3443,9 @@ button.btn-g-orange:active {
 .btn-outline-orange {
   background-color: transparent !important;
   color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-orange.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--orange-hs), calc(var(--orange-l) - 45%), 0.5) !important;
 }
 
@@ -3587,7 +3469,6 @@ button.btn-outline-orange:active,
   border-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a));
 }
 .badge-orange.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--orange-hs), var(--orange-l), 0.5) !important;
 }
 .badge-orange.is-blur:hover {
@@ -3608,10 +3489,9 @@ button.badge-orange:active {
 .badge-outline-orange {
   background-color: transparent !important;
   color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-orange.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--orange-hs), calc(var(--orange-l) - 45%), 0.5) !important;
 }
 
@@ -3648,7 +3528,6 @@ button.text-purple:active {
   border-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a));
 }
 .bg-purple.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--purple-hs), var(--purple-l), 0.5) !important;
 }
 .bg-purple.is-blur:hover {
@@ -3704,17 +3583,15 @@ button.bg-g-purple:active {
   border-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a)) !important;
 }
 .alert-purple.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--purple-hs), calc(var(--purple-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-purple {
   background-color: transparent !important;
   color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-purple.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--purple-hs), calc(var(--purple-l) - 45%), 0.5) !important;
 }
 
@@ -3738,7 +3615,6 @@ button.bg-outline-purple:active,
   border-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a));
 }
 .btn-purple.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--purple-hs), var(--purple-l), 0.5) !important;
 }
 .btn-purple.is-blur:hover {
@@ -3775,10 +3651,9 @@ button.btn-g-purple:active {
 .btn-outline-purple {
   background-color: transparent !important;
   color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-purple.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--purple-hs), calc(var(--purple-l) - 45%), 0.5) !important;
 }
 
@@ -3802,7 +3677,6 @@ button.btn-outline-purple:active,
   border-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a));
 }
 .badge-purple.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--purple-hs), var(--purple-l), 0.5) !important;
 }
 .badge-purple.is-blur:hover {
@@ -3823,10 +3697,9 @@ button.badge-purple:active {
 .badge-outline-purple {
   background-color: transparent !important;
   color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-purple.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--purple-hs), calc(var(--purple-l) - 45%), 0.5) !important;
 }
 
@@ -3863,7 +3736,6 @@ button.text-green:active {
   border-color: hsla(var(--green-hs), var(--green-l), var(--green-a));
 }
 .bg-green.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--green-hs), var(--green-l), 0.5) !important;
 }
 .bg-green.is-blur:hover {
@@ -3919,17 +3791,15 @@ button.bg-g-green:active {
   border-color: hsla(var(--green-hs), var(--green-l), var(--green-a)) !important;
 }
 .alert-green.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--green-hs), calc(var(--green-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-green {
   background-color: transparent !important;
   color: hsla(var(--green-hs), var(--green-l), var(--green-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-green.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--green-hs), calc(var(--green-l) - 45%), 0.5) !important;
 }
 
@@ -3953,7 +3823,6 @@ button.bg-outline-green:active,
   border-color: hsla(var(--green-hs), var(--green-l), var(--green-a));
 }
 .btn-green.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--green-hs), var(--green-l), 0.5) !important;
 }
 .btn-green.is-blur:hover {
@@ -3990,10 +3859,9 @@ button.btn-g-green:active {
 .btn-outline-green {
   background-color: transparent !important;
   color: hsla(var(--green-hs), var(--green-l), var(--green-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-green.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--green-hs), calc(var(--green-l) - 45%), 0.5) !important;
 }
 
@@ -4017,7 +3885,6 @@ button.btn-outline-green:active,
   border-color: hsla(var(--green-hs), var(--green-l), var(--green-a));
 }
 .badge-green.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--green-hs), var(--green-l), 0.5) !important;
 }
 .badge-green.is-blur:hover {
@@ -4038,10 +3905,9 @@ button.badge-green:active {
 .badge-outline-green {
   background-color: transparent !important;
   color: hsla(var(--green-hs), var(--green-l), var(--green-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-green.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--green-hs), calc(var(--green-l) - 45%), 0.5) !important;
 }
 
@@ -4078,7 +3944,6 @@ button.text-blue:active {
   border-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a));
 }
 .bg-blue.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--blue-hs), var(--blue-l), 0.5) !important;
 }
 .bg-blue.is-blur:hover {
@@ -4134,17 +3999,15 @@ button.bg-g-blue:active {
   border-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a)) !important;
 }
 .alert-blue.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--blue-hs), calc(var(--blue-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-blue {
   background-color: transparent !important;
   color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-blue.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--blue-hs), calc(var(--blue-l) - 45%), 0.5) !important;
 }
 
@@ -4168,7 +4031,6 @@ button.bg-outline-blue:active,
   border-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a));
 }
 .btn-blue.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--blue-hs), var(--blue-l), 0.5) !important;
 }
 .btn-blue.is-blur:hover {
@@ -4205,10 +4067,9 @@ button.btn-g-blue:active {
 .btn-outline-blue {
   background-color: transparent !important;
   color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-blue.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--blue-hs), calc(var(--blue-l) - 45%), 0.5) !important;
 }
 
@@ -4232,7 +4093,6 @@ button.btn-outline-blue:active,
   border-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a));
 }
 .badge-blue.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--blue-hs), var(--blue-l), 0.5) !important;
 }
 .badge-blue.is-blur:hover {
@@ -4253,10 +4113,9 @@ button.badge-blue:active {
 .badge-outline-blue {
   background-color: transparent !important;
   color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-blue.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--blue-hs), calc(var(--blue-l) - 45%), 0.5) !important;
 }
 
@@ -4293,7 +4152,6 @@ button.text-yellow:active {
   border-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a));
 }
 .bg-yellow.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.5) !important;
 }
 .bg-yellow.is-blur:hover {
@@ -4349,17 +4207,15 @@ button.bg-g-yellow:active {
   border-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a)) !important;
 }
 .alert-yellow.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--yellow-hs), calc(var(--yellow-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-yellow {
   background-color: transparent !important;
   color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-yellow.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--yellow-hs), calc(var(--yellow-l) - 45%), 0.5) !important;
 }
 
@@ -4383,7 +4239,6 @@ button.bg-outline-yellow:active,
   border-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a));
 }
 .btn-yellow.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.5) !important;
 }
 .btn-yellow.is-blur:hover {
@@ -4420,10 +4275,9 @@ button.btn-g-yellow:active {
 .btn-outline-yellow {
   background-color: transparent !important;
   color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-yellow.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--yellow-hs), calc(var(--yellow-l) - 45%), 0.5) !important;
 }
 
@@ -4447,7 +4301,6 @@ button.btn-outline-yellow:active,
   border-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a));
 }
 .badge-yellow.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.5) !important;
 }
 .badge-yellow.is-blur:hover {
@@ -4468,10 +4321,9 @@ button.badge-yellow:active {
 .badge-outline-yellow {
   background-color: transparent !important;
   color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-yellow.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--yellow-hs), calc(var(--yellow-l) - 45%), 0.5) !important;
 }
 
@@ -4508,7 +4360,6 @@ button.text-muted:active {
   border-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a));
 }
 .bg-muted.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--muted-hs), var(--muted-l), 0.5) !important;
 }
 .bg-muted.is-blur:hover {
@@ -4564,17 +4415,15 @@ button.bg-g-muted:active {
   border-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a)) !important;
 }
 .alert-muted.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--muted-hs), calc(var(--muted-l) + 45%), 0.5) !important;
 }
 
 .bg-outline-muted {
   background-color: transparent !important;
   color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .bg-outline-muted.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--muted-hs), calc(var(--muted-l) - 45%), 0.5) !important;
 }
 
@@ -4598,7 +4447,6 @@ button.bg-outline-muted:active,
   border-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a));
 }
 .btn-muted.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--muted-hs), var(--muted-l), 0.5) !important;
 }
 .btn-muted.is-blur:hover {
@@ -4635,10 +4483,9 @@ button.btn-g-muted:active {
 .btn-outline-muted {
   background-color: transparent !important;
   color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .btn-outline-muted.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--muted-hs), calc(var(--muted-l) - 45%), 0.5) !important;
 }
 
@@ -4662,7 +4509,6 @@ button.btn-outline-muted:active,
   border-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a));
 }
 .badge-muted.is-blur {
-  backdrop-filter: blur(10px);
   background-color: hsla(var(--muted-hs), var(--muted-l), 0.5) !important;
 }
 .badge-muted.is-blur:hover {
@@ -4683,10 +4529,9 @@ button.badge-muted:active {
 .badge-outline-muted {
   background-color: transparent !important;
   color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a)) !important;
-  border-color: currentColor !important;
+  border: thin solid;
 }
 .badge-outline-muted.is-blur {
-  backdrop-filter: blur(10px) !important;
   background-color: hsla(var(--muted-hs), calc(var(--muted-l) - 45%), 0.5) !important;
 }
 
@@ -4704,221 +4549,6 @@ button.badge-outline-muted:active,
   background-color: hsla(var(--muted-hs), calc(var(--muted-l) - 20%), var(--muted-a)) !important;
 }
 
-.text-transparent {
-  color: var(--transparent, transparent) !important;
-}
-
-a.text-transparent:hover,
-button.text-transparent:hover {
-  color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 10%), var(--transparent-a)) !important;
-}
-a.text-transparent:active,
-button.text-transparent:active {
-  color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a)) !important;
-}
-
-.bg-transparent {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a)) !important;
-  color: var(--transparent-c, #5B5B5B) !important;
-  border-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a));
-}
-.bg-transparent.is-blur {
-  backdrop-filter: blur(10px);
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), 0.5) !important;
-}
-.bg-transparent.is-blur:hover {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), 0.75) !important;
-}
-
-a.bg-transparent:hover,
-button.bg-transparent:hover {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 10%), var(--transparent-a)) !important;
-  border-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a));
-  color: var(--transparent-c, #5B5B5B);
-}
-a.bg-transparent:active,
-button.bg-transparent:active {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a)) !important;
-}
-
-.bg-g-transparent {
-  background: linear-gradient(var(--transparent, transparent), hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a))) !important;
-  color: var(--transparent-c, #5B5B5B);
-  border: none;
-}
-
-a.bg-g-transparent:hover,
-button.bg-g-transparent:hover {
-  background: linear-gradient(hsla(var(--transparent-hs), calc(var(--transparent-l) + 20%), var(--transparent-a)), var(--transparent, transparent)) !important;
-  color: var(--transparent-c, #5B5B5B);
-}
-a.bg-g-transparent:active,
-button.bg-g-transparent:active {
-  background: linear-gradient(hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a)), var(--transparent, transparent)) !important;
-}
-
-.tabs-transparent.fill .tab {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), calc(var(--transparent-a) - 0.2));
-  color: var(--transparent-c, #5B5B5B);
-}
-.tabs-transparent.fill .tab.active {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a));
-}
-.tabs-transparent .tab:hover:not(.active) {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), calc(var(--transparent-a) - 0.5));
-  color: black;
-}
-.tabs-transparent .tab.active {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a));
-  color: var(--transparent-c, #5B5B5B);
-}
-
-.alert-transparent {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) + 45%), var(--transparent-a)) !important;
-  color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 45%), var(--transparent-a)) !important;
-  border-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a)) !important;
-}
-.alert-transparent.is-blur:not(:hover) {
-  backdrop-filter: blur(10px) !important;
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) + 45%), 0.5) !important;
-}
-
-.bg-outline-transparent {
-  background-color: transparent !important;
-  color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a)) !important;
-  border-color: currentColor !important;
-}
-.bg-outline-transparent.is-blur {
-  backdrop-filter: blur(10px) !important;
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 45%), 0.5) !important;
-}
-
-a.bg-outline-transparent:hover,
-button.bg-outline-transparent:hover,
-.bg-outline-transparent:focus:hover,
-.bg-outline-transparent:focus-within:hover {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 10%), var(--transparent-a)) !important;
-  color: var(--transparent-c, #5B5B5B) !important;
-}
-a.bg-outline-transparent:active,
-button.bg-outline-transparent:active,
-.bg-outline-transparent:focus:active,
-.bg-outline-transparent:focus-within:active {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a)) !important;
-}
-
-.btn-transparent {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a)) !important;
-  color: var(--transparent-c, #5B5B5B) !important;
-  border-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a));
-}
-.btn-transparent.is-blur {
-  backdrop-filter: blur(10px);
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), 0.5) !important;
-}
-.btn-transparent.is-blur:hover {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), 0.75) !important;
-}
-
-a.btn-transparent:hover,
-button.btn-transparent:hover {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 10%), var(--transparent-a)) !important;
-  border-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a));
-  color: var(--transparent-c, #5B5B5B);
-}
-a.btn-transparent:active,
-button.btn-transparent:active {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a)) !important;
-}
-
-.btn-g-transparent {
-  background: linear-gradient(var(--transparent, transparent), hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a))) !important;
-  color: var(--transparent-c, #5B5B5B);
-  border: none;
-}
-
-a.btn-g-transparent:hover,
-button.btn-g-transparent:hover {
-  background: linear-gradient(hsla(var(--transparent-hs), calc(var(--transparent-l) + 20%), var(--transparent-a)), var(--transparent, transparent)) !important;
-  color: var(--transparent-c, #5B5B5B);
-}
-a.btn-g-transparent:active,
-button.btn-g-transparent:active {
-  background: linear-gradient(hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a)), var(--transparent, transparent)) !important;
-}
-
-.btn-outline-transparent {
-  background-color: transparent !important;
-  color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a)) !important;
-  border-color: currentColor !important;
-}
-.btn-outline-transparent.is-blur {
-  backdrop-filter: blur(10px) !important;
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 45%), 0.5) !important;
-}
-
-a.btn-outline-transparent:hover,
-button.btn-outline-transparent:hover,
-.btn-outline-transparent:focus:hover,
-.btn-outline-transparent:focus-within:hover {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 10%), var(--transparent-a)) !important;
-  color: var(--transparent-c, #5B5B5B) !important;
-}
-a.btn-outline-transparent:active,
-button.btn-outline-transparent:active,
-.btn-outline-transparent:focus:active,
-.btn-outline-transparent:focus-within:active {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a)) !important;
-}
-
-.badge-transparent {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a)) !important;
-  color: var(--transparent-c, #5B5B5B) !important;
-  border-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a));
-}
-.badge-transparent.is-blur {
-  backdrop-filter: blur(10px);
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), 0.5) !important;
-}
-.badge-transparent.is-blur:hover {
-  background-color: hsla(var(--transparent-hs), var(--transparent-l), 0.75) !important;
-}
-
-a.badge-transparent:hover,
-button.badge-transparent:hover {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 10%), var(--transparent-a)) !important;
-  border-color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a));
-  color: var(--transparent-c, #5B5B5B);
-}
-a.badge-transparent:active,
-button.badge-transparent:active {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a)) !important;
-}
-
-.badge-outline-transparent {
-  background-color: transparent !important;
-  color: hsla(var(--transparent-hs), var(--transparent-l), var(--transparent-a)) !important;
-  border-color: currentColor !important;
-}
-.badge-outline-transparent.is-blur {
-  backdrop-filter: blur(10px) !important;
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 45%), 0.5) !important;
-}
-
-a.badge-outline-transparent:hover,
-button.badge-outline-transparent:hover,
-.badge-outline-transparent:focus:hover,
-.badge-outline-transparent:focus-within:hover {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 10%), var(--transparent-a)) !important;
-  color: var(--transparent-c, #5B5B5B) !important;
-}
-a.badge-outline-transparent:active,
-button.badge-outline-transparent:active,
-.badge-outline-transparent:focus:active,
-.badge-outline-transparent:focus-within:active {
-  background-color: hsla(var(--transparent-hs), calc(var(--transparent-l) - 20%), var(--transparent-a)) !important;
-}
-
 :disabled,
 .disabled,
 [disable] {
@@ -4934,8 +4564,33 @@ input:focus {
   box-shadow: none !important;
 }
 
+.bg-transparent,
+.btn-transparent,
+.tabs-transparent,
+.alert-transparent {
+  background-color: transparent !important;
+  color: currentColor !important;
+}
+
 .inactive {
   color: #BCBCCB;
+}
+
+.is-blur {
+  position: relative;
+  transition: background-color 0.5s;
+}
+.is-blur::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+  backdrop-filter: blur(10px);
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .blur {
@@ -4948,6 +4603,7 @@ input:focus {
 
 [class*=shadow-] {
   position: relative;
+  z-index: 1;
 }
 [class*=shadow-] > * {
   position: relative;

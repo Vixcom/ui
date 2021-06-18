@@ -29,7 +29,7 @@
       "appAssociation": "AUTO",
       "rewrites": [
         {
-          "source": "/styles/**",
+          "source": "/styles{,/**}",
           "destination": "/error/index.html"
         },
         {

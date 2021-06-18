@@ -31,20 +31,20 @@
 @each $k,
 $v in $app-colors-mapped {
   // Texts
-  @include mapped-color-var-variant(".text-#{$k}", $k, $v);
+  @include mapped-color-var-variant('.text-#{$k}', $k, $v);
   // Background
-  @include mapped-bg-color-var-variant(".bg-#{$k}", $k, $v);
-  @include mapped-g-color-var-variant(".bg-g-#{$k}", $k, $v);
-  @include mapped-tabs-var-variant(".tabs-#{$k}", $k, $v);
-  @include mapped-alert-var-variant(".alert-#{$k}", $k, $v);
-  @include mapped-outline-var-variant(".bg-outline-#{$k}", $k, $v);
+  @include mapped-bg-color-var-variant('.bg-#{$k}', $k, $v);
+  @include mapped-g-color-var-variant('.bg-g-#{$k}', $k, $v);
+  @include mapped-tabs-var-variant('.tabs-#{$k}', $k, $v);
+  @include mapped-alert-var-variant('.alert-#{$k}', $k, $v);
+  @include mapped-outline-var-variant('.bg-outline-#{$k}', $k, $v);
   // Buttons
-  @include mapped-bg-color-var-variant(".btn-#{$k}", $k, $v);
-  @include mapped-g-color-var-variant(".btn-g-#{$k}", $k, $v);
-  @include mapped-outline-var-variant(".btn-outline-#{$k}", $k, $v);
+  @include mapped-bg-color-var-variant('.btn-#{$k}', $k, $v);
+  @include mapped-g-color-var-variant('.btn-g-#{$k}', $k, $v);
+  @include mapped-outline-var-variant('.btn-outline-#{$k}', $k, $v);
   // Badges
-  @include mapped-bg-color-var-variant(".badge-#{$k}", $k, $v);
-  @include mapped-outline-var-variant(".badge-outline-#{$k}", $k, $v);
+  @include mapped-bg-color-var-variant('.badge-#{$k}', $k, $v);
+  @include mapped-outline-var-variant('.badge-outline-#{$k}', $k, $v);
 }
 
 :disabled,
@@ -65,8 +65,27 @@ input {
   }
 }
 
+.bg-transparent,
+.btn-transparent,
+.tabs-transparent,
+.alert-transparent {
+  background-color: transparent !important;
+  color: currentColor !important;
+}
+
 .inactive {
   color: #BCBCCB
+}
+
+.is-blur {
+  position: relative;
+  transition: background-color 0.5s;
+
+  @include before-content;
+
+  &::before {
+    backdrop-filter: blur(10px);
+  }
 }
 
 .blur {
@@ -81,22 +100,13 @@ input {
 
 [class*=shadow-] {
   position: relative;
+  z-index: 1;
 
   &>* {
     position: relative;
   }
 
-  &::before {
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border-radius: inherit;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
+  @include before-content;
 }
 
 /* select */

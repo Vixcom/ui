@@ -5,7 +5,11 @@
 @import 'variables';
 @import 'bootstrap.css';
 @import 'fontawesome.css';
-@import 'sidebar.css', 'app.css', 'animations.css', 'colors.css', 'sizes.css';
+@import 'app.css';
+@import 'sidebar.css';
+@import 'animations.css';
+@import 'colors.css';
+@import 'sizes.css';
 
 :root {
   --font-size: #{$font-size};
