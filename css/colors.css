@@ -4568,6 +4568,7 @@ input:focus {
 .btn-transparent,
 .tabs-transparent,
 .alert-transparent {
+  border: none;
   background-color: transparent !important;
   color: currentColor !important;
 }
@@ -4580,6 +4581,9 @@ input:focus {
   position: relative;
   transition: background-color 0.5s;
 }
+.is-blur > * {
+  z-index: 1;
+}
 .is-blur::before {
   content: "";
   display: block;
@@ -4587,10 +4591,12 @@ input:focus {
   width: 100%;
   position: absolute;
   border-radius: inherit;
-  backdrop-filter: blur(10px);
   top: 0;
   left: 0;
   z-index: 0;
+}
+.is-blur::before {
+  backdrop-filter: blur(10px);
 }
 
 .blur {
@@ -4607,6 +4613,9 @@ input:focus {
 }
 [class*=shadow-] > * {
   position: relative;
+}
+[class*=shadow-] > * {
+  z-index: 1;
 }
 [class*=shadow-]::before {
   content: "";

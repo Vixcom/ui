@@ -69,6 +69,7 @@ input {
 .btn-transparent,
 .tabs-transparent,
 .alert-transparent {
+  border: none;
   background-color: transparent !important;
   color: currentColor !important;
 }

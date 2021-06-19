@@ -1115,6 +1115,7 @@ option[disabled]:first-of-type {
 .flex-card .img {
   flex: 1 1 40%;
   width: 40%;
+  border-radius: inherit;
 }
 .flex-item .icon,
 .flex-card .icon {

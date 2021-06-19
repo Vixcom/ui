@@ -1199,6 +1199,7 @@ option[disabled]:first-of-type {
   .img {
     flex: 1 1 40%;
     width: 40%;
+    border-radius: inherit;
   }
 
   .icon {
