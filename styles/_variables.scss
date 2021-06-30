@@ -13,21 +13,51 @@
   }
 }
 
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute-content {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 @mixin before-content {
+  & {
+    position: relative;
+  }
+
   &>* {
+    position: relative;
     z-index: 1;
   }
 
   &::before {
-    content: '';
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border-radius: inherit;
-    top: 0;
-    left: 0;
-    z-index: 0;
+    @include absolute-content()
+  }
+}
+
+@mixin after-content {
+  & {
+    position: relative;
+  }
+
+  &>* {
+    // position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    @include absolute-content()
   }
 }
 
@@ -38,8 +68,9 @@
 // }
 
 $default: #5B5B5B !default;
+$accent: #BFBFBF !default;
 $primary: #34A853 !default;
-$secondary: #5c2d6b !default;
+$secondary: #5C2B6D !default;
 $white: #FFFFFF !default;
 $light: #F8F9FA !default;
 $black: #000000 !default;
@@ -47,9 +78,11 @@ $dark: #343A40 !default;
 $green: #1D5C2E !default;
 $orange: #F58220 !default;
 $purple: #561843 !default;
+$red: #C54646 !default;
 $blue: #0365A3 !default;
 $yellow: #C4C400 !default;
 $gold: #FFDF00 !default;
+$silver: #BFBFBF !default;
 $pink: #ED028C !default;
 $success: #24B624 !default;
 $warning: #FFC107 !default;
@@ -65,12 +98,14 @@ $app-colors-mapped: () !default;
 
 $app-colors-mapped: map-merge(( // ===
     'default': (bg: $default, c: $white),
+    'accent': (bg: $accent, c: darken($accent, 45%)),
     'primary': (bg: $primary, c: $white),
     'secondary': (bg: $secondary, c: $white),
     'white': (bg: $white, c: $default),
     'light': (bg: $light, c: $dark),
     'black': (bg: $black, c: $white),
     'dark': (bg: $dark, c: $light),
+    'silver': (bg: $silver, c: $white),
     'gold': (bg: $gold, c: $white),
     'info': (bg: $info, c: $white),
     'error': (bg: $danger, c: $white),
@@ -82,20 +117,23 @@ $app-colors-mapped: map-merge(( // ===
     'orange': (bg: $orange, c: $white),
     'purple': (bg: $purple, c: $white),
     'green': (bg: $green, c: $white),
+    'red': (bg: $red, c: $white),
     'blue': (bg: $blue, c: $white),
     'yellow': (bg: $yellow, c: $white),
     'muted': (bg: $muted, c: $white),
+    'color-1': (bg: $primary, c: $white),
+    'color-2': (bg: $secondary, c: $white),
     // 'transparent': (bg: transparent, c: $default)
     // ===
   ), $app-colors-mapped);
 
 // /* Functions and Mixins */
 
-@mixin mapped-bg-color-var-variant($selector, $k, $cm) {
+@mixin mapped-bg-color-var-variant($selector, $k, $v) {
   #{$selector} {
     background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a)) !important;
-    color: var(--#{$k}-c, map-get($cm, "c")) !important;
-    border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
+    color: var(--#{$k}-c, map-get($v, "c")) !important;
+    border-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a));
 
     &.is-blur {
       background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.5) !important;
@@ -104,6 +142,10 @@ $app-colors-mapped: map-merge(( // ===
         background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.75) !important;
       }
     }
+
+    // [class*=-#{$k}] {
+    //   --#{$k}-hs: var(--#{$k}-c-hs);
+    // }
   }
 
   a#{$selector},
@@ -111,7 +153,7 @@ $app-colors-mapped: map-merge(( // ===
     &:hover {
       background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a)) !important;
       border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
-      color: var(--#{$k}-c, map-get($cm, "c"));
+      color: var(--#{$k}-c, map-get($v, "c"));
     }
 
     &:active {
@@ -120,17 +162,17 @@ $app-colors-mapped: map-merge(( // ===
   }
 }
 
-@mixin mapped-bg-color-variant($selector, $cm) {
+@mixin mapped-bg-color-variant($selector, $v) {
   #{$selector} {
-    background-color: map-get($cm, "bg") !important;
-    color: map-get($cm, "c") !important;
+    background-color: map-get($v, "bg") !important;
+    color: map-get($v, "c") !important;
     border: none;
 
     &.is-blur {
-      background-color: transparentize(map-get($cm, "bg"), 0.5) !important;
+      background-color: transparentize(map-get($v, "bg"), 0.5) !important;
 
       &:hover {
-        background-color: transparentize(map-get($cm, "bg"), 0.25) !important;
+        background-color: transparentize(map-get($v, "bg"), 0.25) !important;
       }
     }
   }
@@ -138,55 +180,68 @@ $app-colors-mapped: map-merge(( // ===
   a#{$selector},
   button#{$selector} {
     &:hover {
-      background-color: darken(map-get($cm, "bg"), 10%) !important;
-      color: map-get($cm, "c") !important;
+      background-color: darken(map-get($v, "bg"), 10%) !important;
+      color: map-get($v, "c") !important;
     }
 
     &:active {
-      background-color: darken(map-get($cm, "bg"), 20%) !important;
+      background-color: darken(map-get($v, "bg"), 20%) !important;
     }
   }
 
 }
 
-@mixin mapped-tabs-var-variant($selector, $k, $cm) {
+@mixin mapped-tabs-var-variant($selector, $k, $v) {
   #{$selector} {
+    &:hover .tab.active {
+      background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.275);
+    }
 
-    &.fill {
+    .tab {
+      color: currentColor;
+
+      &:not(.active) {
+        &:hover {
+          background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.25);
+        }
+      }
+
+      &.active {
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.25);
+        color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a));
+      }
+    }
+
+    &.fill,
+    &.prefill {
       .tab {
-        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), calc(var(--#{$k}-a) - 0.2));
-        color: var(--#{$k}-c, map-get($cm, "c"));
-
         &.active {
           background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
+          color: var(--#{$k}-c, map-get($v, "c"));
         }
       }
     }
 
-    .tab {
-      &:hover:not(.active) {
-        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), calc(var(--#{$k}-a) - 0.5));
-        color: darken(map-get($cm, "c"), 90%);
-      }
-
-      &.active {
-        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
-        color: var(--#{$k}-c, map-get($cm, "c"));
+    &.prefill {
+      .tab {
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.125);
       }
     }
+
+
   }
 }
 
-@mixin mapped-tabs-variant($selector, $cm) {
+@mixin mapped-tabs-variant($selector, $v) {
   #{$selector} {
 
     &.fill {
       .tab {
-        background-color: map-get($cm, "bg");
-        color: map-get($cm, "c");
+        background-color: map-get($v, "bg");
+        color: map-get($v, "c");
 
         &.active {
-          background-color: darken(map-get($cm, "bg"), 10%);
+          background-color: darken(map-get($v, "bg"), 10%);
         }
       }
     }
@@ -195,21 +250,21 @@ $app-colors-mapped: map-merge(( // ===
       border: none;
 
       &:hover:not(.active) {
-        background-color: lighten(map-get($cm, "bg"), 40%);
-        color: darken(map-get($cm, "c"), 90%);
+        background-color: lighten(map-get($v, "bg"), 40%);
+        color: darken(map-get($v, "c"), 90%);
       }
 
       &.active {
-        background-color: map-get($cm, "bg");
-        color: map-get($cm, "c");
+        background-color: map-get($v, "bg");
+        color: map-get($v, "c");
       }
     }
   }
 }
 
-@mixin mapped-color-var-variant($selector, $k, $cm) {
+@mixin mapped-color-var-variant($selector, $k, $v) {
   #{$selector} {
-    color: var(--#{$k}, map-get($cm, "bg")) !important;
+    color: var(--#{$k}, map-get($v, "bg")) !important;
   }
 
   a#{$selector},
@@ -225,65 +280,65 @@ $app-colors-mapped: map-merge(( // ===
 
 }
 
-@mixin mapped-color-variant($selector, $cm) {
+@mixin mapped-color-variant($selector, $v) {
   #{$selector} {
-    color: map-get($cm, "bg") !important;
+    color: map-get($v, "bg") !important;
   }
 
   a#{$selector},
   button#{$selector} {
     &:hover {
-      color: darken(map-get($cm, "bg"), 10%) !important;
+      color: darken(map-get($v, "bg"), 10%) !important;
     }
 
     &:active {
-      color: darken(map-get($cm, "bg"), 20%) !important;
+      color: darken(map-get($v, "bg"), 20%) !important;
     }
   }
 
 }
 
-@mixin mapped-g-color-var-variant($selector, $k, $cm) {
+@mixin mapped-g-color-var-variant($selector, $k, $v) {
   #{$selector} {
-    background: linear-gradient(var(--#{$k}, map-get($cm, "bg")), hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a))) !important;
-    color: var(--#{$k}-c, map-get($cm, "c"));
+    background: linear-gradient(var(--#{$k}, map-get($v, "bg")), hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a))) !important;
+    color: var(--#{$k}-c, map-get($v, "c"));
     border: none;
   }
 
   a#{$selector},
   button#{$selector} {
     &:hover {
-      background: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 20%), var(--#{$k}-a)), var(--#{$k}, map-get($cm, "bg"))) !important;
-      color: var(--#{$k}-c, map-get($cm, "c"));
+      background: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 20%), var(--#{$k}-a)), var(--#{$k}, map-get($v, "bg"))) !important;
+      color: var(--#{$k}-c, map-get($v, "c"));
     }
 
     &:active {
-      background: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)), var(--#{$k}, map-get($cm, "bg"))) !important;
+      background: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)), var(--#{$k}, map-get($v, "bg"))) !important;
     }
   }
 }
 
-@mixin mapped-g-color-variant($selector, $cm) {
+@mixin mapped-g-color-variant($selector, $v) {
   #{$selector} {
-    background: linear-gradient(map-get($cm, "bg"), darken(map-get($cm, "bg"), 20%)) !important;
-    color: map-get($cm, "c");
+    background: linear-gradient(map-get($v, "bg"), darken(map-get($v, "bg"), 20%)) !important;
+    color: map-get($v, "c");
     border: none;
   }
 
   a#{$selector},
   button#{$selector} {
     &:hover {
-      background: linear-gradient(lighten(map-get($cm, "bg"), 20%), map-get($cm, "bg")) !important;
-      color: map-get($cm, "c");
+      background: linear-gradient(lighten(map-get($v, "bg"), 20%), map-get($v, "bg")) !important;
+      color: map-get($v, "c");
     }
 
     &:active {
-      background: linear-gradient(darken(map-get($cm, "bg"), 20%), map-get($cm, "bg"));
+      background: linear-gradient(darken(map-get($v, "bg"), 20%), map-get($v, "bg"));
     }
   }
 }
 
-@mixin mapped-alert-var-variant($selector, $k, $cm) {
+@mixin mapped-alert-var-variant($selector, $k, $v) {
   #{$selector} {
     background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 45%), var(--#{$k}-a)) !important;
     color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 45%), var(--#{$k}-a)) !important;
@@ -295,15 +350,15 @@ $app-colors-mapped: map-merge(( // ===
   }
 }
 
-@mixin mapped-alert-variant($selector, $cm) {
+@mixin mapped-alert-variant($selector, $v) {
   #{$selector} {
-    background-color: lighten(map-get($cm, "bg"), 45%);
-    color: darken(map-get($cm, "bg"), 45%);
+    background-color: lighten(map-get($v, "bg"), 45%);
+    color: darken(map-get($v, "bg"), 45%);
     border: none;
   }
 }
 
-@mixin mapped-outline-var-variant($selector, $k, $cm) {
+@mixin mapped-outline-var-variant($selector, $k, $v) {
   #{$selector} {
     background-color: transparent !important;
     color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a)) !important;
@@ -321,7 +376,7 @@ $app-colors-mapped: map-merge(( // ===
   #{$selector}:focus-within {
     &:hover {
       background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a)) !important;
-      color: var(--#{$k}-c, map-get($cm, "c")) !important;
+      color: var(--#{$k}-c, map-get($v, "c")) !important;
     }
 
     &:active {
@@ -330,10 +385,10 @@ $app-colors-mapped: map-merge(( // ===
   }
 }
 
-@mixin mapped-outline-variant($selector, $cm) {
+@mixin mapped-outline-variant($selector, $v) {
   #{$selector} {
     background-color: transparent;
-    color: map-get($cm, "bg");
+    color: map-get($v, "bg");
     border-color: currentColor;
 
   }
@@ -341,12 +396,12 @@ $app-colors-mapped: map-merge(( // ===
   a#{$selector},
   button#{$selector} {
     &:hover {
-      background-color: darken(map-get($cm, "bg"), 10%);
-      color: map-get($cm, "c");
+      background-color: darken(map-get($v, "bg"), 10%);
+      color: map-get($v, "c");
     }
 
     &:active {
-      background-color: darken(map-get($cm, "bg"), 20%) !important;
+      background-color: darken(map-get($v, "bg"), 20%) !important;
     }
   }
 }

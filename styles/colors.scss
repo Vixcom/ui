@@ -14,6 +14,9 @@
     --#{$k}-l: #{lightness(map-get($v, 'bg'))};
     --#{$k}-a: #{alpha(map-get($v, 'bg'))};
     --#{$k}-c: #{map-get($v, 'c')};
+    --#{$k}-c-hs: #{hue(map-get($v, 'c')), saturation(map-get($v, 'c'))};
+    --#{$k}-c-l: #{lightness(map-get($v, 'c'))};
+    --#{$k}-c-a: #{alpha(map-get($v, 'c'))};
     /* ---COLOR-#{$k}-END--- */
   }
 }
@@ -72,6 +75,15 @@ input {
   border: none;
   background-color: transparent !important;
   color: currentColor !important;
+}
+
+.bg-current,
+.btn-current,
+.tabs-current,
+.alert-current {
+  border: none;
+  background-color: currentColor !important;
+  // color: currentColor !important;
 }
 
 .inactive {

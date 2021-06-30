@@ -120,6 +120,9 @@ p-chart canvas {
 .p-carousel .p-carousel-items-content .p-carousel-item:hover {
   border-color: var(--primary);
 }
+.p-carousel .p-carousel-items-content .p-carousel-item .p-carousel-items-container {
+  gap: 1rem;
+}
 .p-carousel .p-carousel-items-content .p-carousel-item-active:nth-of-type(2) {
   padding: 0 0.125rem;
 }

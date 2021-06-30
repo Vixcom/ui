@@ -6,50 +6,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VX Dashboard</title>
   <link rel="stylesheet" href="css/index.css">
-  <link rel="shortcut icon" href="assets/img/icon.png" type="image/png">
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
   <script>
     window.postMessage('Hello from VX Dashboard', '*')
   </script>
 </head>
 
-<body class="d-flex flex-center section">
-  <h1 class="font-lg">Welcome</h1>
-  <div class="p-3 flex-container">
-    <a href="tier-1" class="btn btn-primary">Tier 1</a>
-    <a href="tier-2" class="btn btn-secondary">Tier 2</a>
-  </div>
-  <hr>
-  <div class="p-3 flex-container">
-    <button class="btn btn-primary" onclick="window.postMessage('Hello from VX Dashboard', '*')">Primary</button>
-    <button class="btn btn-outline-primary">Primary Outline</button>
-    <button class="btn btn-g-primary">Primary Gradient</button>
-    <button class="btn btn-transparent">Transparent</button>
-  </div>
-  <div class="grid"></div>
-  <div class="card flat min-w-50">
-    <div class="card-header">
-      <i class="fa fa-images font-5"></i>
-      <h4 class="card-title">Card Title</h4>
+<body>
+  <section class="flex-center">
+    <h1 class="font-lg">Welcome</h1>
+    <div class="p-3 flex-container">
+      <a href="tier-1" class="btn btn-primary">Tier 1</a>
+      <a href="tier-2" class="btn btn-secondary">Tier 2</a>
     </div>
-    <div class="card-body">
-      <hr>
-      <p class="text-primary">Content Text</p>
-      <div class="alert alert-muted min-vh-50 scrollable">
-        <h5>Title</h5>
-        <p>Content Again</p>
-        <input type="checkbox" class="text-secondary">
-        <hr>
-        <label class="input-container" data-label="Message">
-          <textarea class="input feed-create-post__textarea" rows="10" placeholder="Say sometheing nice"></textarea>
-        </label>
-        <!-- <object data="./assets/svg/params.svg" type="image/svg+xml">
-          <param name="color" value="purple" />
-          <param name="label" value="override" />
-        </object>
-        <object data="./assets/svg/params.svg?color=cornflowerblue&label=fnord" type="image/svg+xml"></object> -->
+    <hr>
+    <div class="p-3 flex-container">
+      <button class="btn btn-primary" onclick="window.postMessage('Hello from VX Dashboard', '*')">Primary</button>
+      <button class="btn btn-outline-primary">Primary Outline</button>
+      <button class="btn btn-g-primary">Primary Gradient</button>
+      <button class="btn btn-transparent">Transparent</button>
+    </div>
+    <div class="p-3 flex-container">
+      <button class="btn btn-secondary" onclick="window.postMessage('Hello from VX Dashboard', '*')">Secondary</button>
+      <button class="btn btn-outline-secondary">Secondary Outline</button>
+      <button class="btn btn-g-secondary">Secondary Gradient</button>
+      <button class="btn btn-transparent">Transparent</button>
+    </div>
+    <div class="p-3 flex-container">
+      <button class="btn btn-accent" onclick="window.postMessage('Hello from VX Dashboard', '*')">Accent</button>
+      <button class="btn btn-outline-accent">Accent Outline</button>
+      <button class="btn btn-g-accent">Accent Gradient</button>
+      <button class="btn btn-transparent">Transparent</button>
+    </div>
+  </section>
+  <section class="grid"></section>
+  <section class="bg-primary">
+    <div class="tabs tabs-white">
+      <span class="tab active">Tab</span>
+      <span class="tab">Tab 1</span>
+      <span class="tab">Tab 2</span>
+      <span class="tab">Tab 3</span>
+    </div>
+    <div class="tabs tabs-white fill">
+      <span class="tab active">Tab fill</span>
+      <span class="tab">Tab 1</span>
+      <span class="tab">Tab 2</span>
+      <span class="tab">Tab 3</span>
+    </div>
+    <div class="tabs tabs-white prefill">
+      <span class="tab active">Tab prefill</span>
+      <span class="tab">Tab 1</span>
+      <span class="tab">Tab 2</span>
+      <span class="tab">Tab 3</span>
+    </div>
+    <div class="tabs tabs-white md">
+      <span class="tab active">Tab md</span>
+      <span class="tab">Tab 1</span>
+      <span class="tab">Tab 2</span>
+      <span class="tab">Tab 3</span>
+    </div>
+    <div class="tabs tabs-white overlap">
+      <span class="tab active">Tab overlap</span>
+      <span class="tab">Tab 1</span>
+      <span class="tab">Tab 2</span>
+      <span class="tab">Tab 3</span>
+    </div>
+  </section>
+  <section>
+    <div class="table-container compact">
+      <div class="row table-header">
+        <div class="col-4">Header 1</div>
+        <div class="col-3">Header 2</div>
+        <div class="col-3">Header 3</div>
+        <div class="col-3">Header 4</div>
+        <div class="col-3">Header 5</div>
+        <div class="col-3">Header 6</div>
+      </div>
+      <div class="row">
+        <div class="col-4">Row 1, Col 1</div>
+        <div class="col-3">Row 1, Col 2</div>
+        <div class="col-3">Row 1, Col 3</div>
+        <div class="col-3">Row 1, Col 4</div>
+        <div class="col-3">Row 1, Col 5</div>
+        <div class="col-3">Row 1, Col 6</div>
       </div>
     </div>
-  </div>
+    <hr>
+    <div class="table-container compact">
+      <table>
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+            <th>Header 4</th>
+            <th>Header 5</th>
+            <th>Header 6</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Row 1, Col 1</td>
+            <td>Row 1, Col 2</td>
+            <td>Row 1, Col 3</td>
+            <td>Row 1, Col 4</td>
+            <td>Row 1, Col 5</td>
+            <td>Row 1, Col 6</td>
+          </tr>
+          <tr>
+            <td>Row 2, Col 1</td>
+            <td>Row 2, Col 2</td>
+            <td>Row 2, Col 3</td>
+            <td>Row 2, Col 4</td>
+            <td>Row 2, Col 5</td>
+            <td>Row 2, Col 6</td>
+          </tr>
+          <tr>
+            <td>Row 3, Col 1</td>
+            <td>Row 3, Col 2</td>
+            <td>Row 3, Col 3</td>
+            <td>Row 3, Col 4</td>
+            <td>Row 3, Col 5</td>
+            <td>Row 3, Col 6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section>
+    <div class="card flat min-w-50">
+      <div class="card-header">
+        <i class="fa fa-images font-5"></i>
+        <h4 class="card-title">Card Title</h4>
+      </div>
+      <div class="card-body">
+        <hr>
+        <p class="text-primary">Content Text</p>
+        <div class="alert alert-muted min-vh-50 scrollable">
+          <h5>Title</h5>
+          <p>Content Again</p>
+          <input type="checkbox" class="text-secondary">
+          <hr>
+          <label class="input-container" data-label="Message">
+            <textarea class="input feed-create-post__textarea" rows="10" placeholder="Say sometheing nice"></textarea>
+          </label>
+          <!-- <object data="./assets/svg/params.svg" type="image/svg+xml">
+            <param name="color" value="purple" />
+            <param name="label" value="override" />
+          </object>
+          <object data="./assets/svg/params.svg?color=cornflowerblue&label=fnord" type="image/svg+xml"></object> -->
+        </div>
+      </div>
+    </div>
+  </section>
   <script>
     document.getElementsByTagName('textarea')[0].value = 'Hello';
     const grid = document.querySelector('.grid');
@@ -57,12 +166,18 @@
     grid.appendChild(gridItem)
   </script>
   <style>
-    /* Set variable using HSL
-    * :root {
-    *  --secondary-hs: 100deg, 20%;
-    *  --secondary-l: 90%;
-    *  --secondary-c: #333333;
+    /* Set variable using HSL */
+    /* :root {
+      --secondary: #FFFFFF;
+      --secondary-hs: 0deg, 0%;
+      --secondary-l: 75%;
+      --secondary-c: #333333;
+      --secondary-a: 1;
     } */
+
+    section {
+      min-height: 50vh;
+    }
   </style>
 </body>
 

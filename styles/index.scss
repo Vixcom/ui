@@ -4,9 +4,7 @@
 */
 @import 'variables';
 @import 'external/bootstrap.css';
-@import 'external/fontawesome.css';
 @import 'app.css';
-@import 'sidebar.css';
 @import 'animations.css';
 @import 'colors.css';
 @import 'sizes.css';
@@ -20,7 +18,7 @@ body {
   background-color: var(--background-color, --default-c, --white);
   color: var(--default, --white-c);
   font-size: var(--font-size);
-  font-weight: 300;
+  font-weight: normal;
 }
 
 /* Mobile --> BELOW */
@@ -33,11 +31,11 @@ body {
 @font-face {
   font-family: 'AppTitle';
   src: url('/fonts/NotoSans-Bold.ttf');
-  font-weight: 500;
+  font-weight: bold;
 }
 
 @font-face {
   font-family: 'AppContent';
   src: url('/fonts/Roboto-Regular.ttf');
-  font-weight: 300;
+  font-weight: normal;
 }

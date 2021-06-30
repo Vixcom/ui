@@ -148,6 +148,10 @@ p-chart {
       &:hover {
         border-color: var(--primary);
       }
+
+      .p-carousel-items-container {
+        gap: 1rem;
+      }
     }
 
     .p-carousel-item-active:nth-of-type(2) {

@@ -100,13 +100,24 @@ h6,
   font-size: 250%
 }
 
-.sq- {
-  @each $numb in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
-    &#{$numb} {
-      height: #{$numb}rem !important;
-      width: #{$numb}rem !important;
-      min-height: #{$numb}rem;
-      min-width: #{$numb}rem;
+@each $n in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
+  .sq-#{$n} {
+    height: #{$n}rem !important;
+    width: #{$n}rem !important;
+    min-height: #{$n}rem !important;
+    min-width: #{$n}rem !important;
+  }
+
+  .gap-#{$n} {
+    gap: #{$n}rem;
+  }
+}
+
+@each $k,
+$d in (t:(n:'Y', v:'-'), l:(n:'X', v:'-'), b:(n:'Y', v:''), r:(n:'X', v:'')) {
+  @each $n in (25, 50, 75, 100) {
+    .float-#{$k}-#{$n} {
+      transform: #{'translate'}#{map-get($d,'n')}(#{map-get($d,'v')}#{$n}#{'%'});
     }
   }
 }

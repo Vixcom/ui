@@ -1,0 +1,320 @@
+/**
+* @Author vixson https://vixson.github.io
+* @Description Menu styles which includes:
+*              1. sidemenu
+*              2. fullmenu (fullscreen floating)
+*/
+.appmenu-trigger {
+  /* @include absolute-content; */
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  z-index: -1;
+}
+.appmenu-trigger::after {
+  display: none !important;
+}
+.appmenu-trigger:checked ~ .content,
+.appmenu-trigger:checked ~ * .content {
+  /* position: absolute; */
+  /* width: 100%; */
+}
+.appmenu-trigger:checked ~ .content > footer,
+.appmenu-trigger:checked ~ * .content > footer {
+  background-color: var(--primary);
+  color: var(--primary-c);
+}
+.appmenu-trigger:not(:checked), .appmenu-trigger:not(:checked)::before, .appmenu-trigger:not(:checked)::after {
+  background-color: transparent !important;
+}
+
+.appmenu-toggle {
+  position: relative;
+  font-size: 120%;
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+.nav-menu {
+  /* border-top: 1px solid; */
+  display: flex !important;
+  font-size: 120%;
+  gap: 0.5rem;
+}
+.nav-menu:not(.h) {
+  flex-direction: column;
+}
+.nav-menu .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  text-decoration: none;
+  color: currentColor;
+}
+
+/* Sidemenu */
+.sidemenu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  flex: 1 1 30%;
+  min-height: 100vh;
+  /* border-right: thin solid var(--secondary); */
+  transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
+  overflow: hidden;
+  /* Sidemenu scrollbar */
+}
+.sidemenu ::-webkit-scrollbar {
+  width: 0;
+}
+.sidemenu ::-webkit-scrollbar-thumb {
+  background-color: currentColor;
+}
+.sidemenu .sidemenu-header {
+  padding: 1rem;
+}
+.sidemenu .sidemenu-header .sidemenu-logo {
+  display: none;
+}
+.sidemenu .sidemenu-header .title {
+  transition: height 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
+}
+.sidemenu .nav-menu .nav-item {
+  position: relative;
+}
+.sidemenu .nav-menu .nav-item > * {
+  position: relative;
+  z-index: 1;
+}
+.sidemenu .nav-menu .nav-item::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.sidemenu .nav-menu .nav-item::before {
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.sidemenu .nav-menu .nav-item.active {
+  border-right: 2px solid;
+}
+.sidemenu .nav-menu .nav-item.active::before {
+  opacity: 0.25;
+}
+.sidemenu .nav-menu .nav-item:hover::before {
+  opacity: 0.125;
+}
+.sidemenu .nav-menu .nav-item .label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sidemenu .icon {
+  margin: 0.125rem 1em;
+  margin-left: 0;
+}
+.sidemenu footer,
+.sidemenu .sidemenu-footer {
+  margin-top: auto;
+}
+
+/* Page */
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 100%;
+  transition: width 0.5s;
+  overflow: hidden;
+}
+.content footer {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.page-content {
+  position: relative;
+  padding: 3em;
+  width: 100%;
+  transition: margin 0.2s;
+}
+
+/* Above <---> Tablets/Mini PC */
+@media (min-width: 768px) {
+  .appmenu-trigger:checked ~ .sidemenu,
+.appmenu-trigger:checked ~ * .sidemenu {
+    width: 0;
+    flex-basis: 0;
+    opacity: 0;
+    padding: 0;
+  }
+  .appmenu-trigger:not(:checked) ~ .content .app-header .appmenu-toggle,
+.appmenu-trigger:not(:checked) ~ * .content .app-header .appmenu-toggle {
+    display: none;
+  }
+}
+/* Above <---> Mobile */
+@media (min-width: 576px) {
+  .appmenu-trigger:not(:checked) ~ .content,
+.appmenu-trigger:not(:checked) ~ * .content {
+    border-left: thin solid;
+  }
+  .appmenu-trigger:not(:checked) ~ .content,
+.appmenu-trigger:not(:checked) ~ * .content {
+    position: relative;
+  }
+  .appmenu-trigger:not(:checked) ~ .content > *,
+.appmenu-trigger:not(:checked) ~ * .content > * {
+    position: relative;
+    z-index: 1;
+  }
+  .appmenu-trigger:not(:checked) ~ .content::before,
+.appmenu-trigger:not(:checked) ~ * .content::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  .appmenu-trigger:not(:checked) ~ .content::before,
+.appmenu-trigger:not(:checked) ~ * .content::before {
+    box-shadow: 0 0 2.5rem -1.75rem hsla(var(--black-hs), var(--black-l), 0.125);
+  }
+}
+/* Mobile <---> Tablets/Mini PC */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .appmenu-trigger:not(:checked) ~ .sidemenu * > .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu * > .label {
+    transition: position 0.25s linear 0.125s, transform 0.25s linear 0.125s, opacity 0.5s linear 0.125s;
+  }
+  .appmenu-trigger:checked ~ .sidemenu,
+.appmenu-trigger:checked ~ * .sidemenu {
+    width: 15%;
+    flex-basis: 15%;
+  }
+  .appmenu-trigger:checked ~ .sidemenu .sidemenu-header .app-logo,
+.appmenu-trigger:checked ~ * .sidemenu .sidemenu-header .app-logo {
+    display: none;
+  }
+  .appmenu-trigger:checked ~ .sidemenu .sidemenu-header .sidemenu-logo,
+.appmenu-trigger:checked ~ * .sidemenu .sidemenu-header .sidemenu-logo {
+    display: inline-block;
+  }
+  .appmenu-trigger:checked ~ .sidemenu .sidemenu-header .title,
+.appmenu-trigger:checked ~ * .sidemenu .sidemenu-header .title {
+    opacity: 0;
+    height: 0;
+    margin-bottom: 0;
+  }
+  .appmenu-trigger:checked ~ .sidemenu .nav-menu .nav-item,
+.appmenu-trigger:checked ~ * .sidemenu .nav-menu .nav-item {
+    justify-content: center;
+  }
+  .appmenu-trigger:checked ~ .sidemenu .icon,
+.appmenu-trigger:checked ~ * .sidemenu .icon {
+    margin-right: 0;
+  }
+  .appmenu-trigger:checked ~ .sidemenu .sidemenu-header .label,
+.appmenu-trigger:checked ~ .sidemenu .sidemenu-footer .label,
+.appmenu-trigger:checked ~ .sidemenu .nav-menu .nav-item .label,
+.appmenu-trigger:checked ~ * .sidemenu .sidemenu-header .label,
+.appmenu-trigger:checked ~ * .sidemenu .sidemenu-footer .label,
+.appmenu-trigger:checked ~ * .sidemenu .nav-menu .nav-item .label {
+    opacity: 0;
+    transform: translateX(100%);
+    position: absolute;
+  }
+
+  .sidemenu .btn,
+.sidemenu .nav-menu .nav-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .sidemenu .appmenu-toggle {
+    display: none;
+  }
+}
+/* Tablets/Mini PC <---> BELOW */
+@media (max-width: 767.98px) {
+  .sidemenu .btn {
+    min-width: auto;
+  }
+}
+/* Mobile <--> BELOW */
+@media (max-width: 575.98px) {
+  .appmenu-trigger {
+    transition: background-color 0.5s ease-in;
+  }
+  .appmenu-trigger:checked {
+    width: 100vw;
+    background-color: hsla(var(--black-hs), var(--black-l), 0.2);
+    z-index: 3;
+  }
+  .appmenu-trigger:checked ~ .sidemenu,
+.appmenu-trigger:checked ~ * .sidemenu {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .appmenu-trigger:checked ~ .sidemenu .appmenu-toggle,
+.appmenu-trigger:checked ~ * .sidemenu .appmenu-toggle {
+    transform: translateX(0);
+  }
+  .appmenu-trigger:checked ~ .fullmenu,
+.appmenu-trigger:checked ~ * .fullmenu {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    position: fixed;
+    background-color: var(--primary);
+    color: var(--primary-c);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .appmenu-trigger:checked ~ .appmenu-toggle,
+.appmenu-trigger:checked ~ * .appmenu-toggle {
+    transform: translateX(-50%);
+  }
+
+  .sidemenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    flex-basis: 80%;
+    transform: translateX(-100%);
+    opacity: 0;
+    box-shadow: 0 0 50px hsla(var(--black-hs), var(--black-l), 0.25);
+    z-index: 3;
+  }
+
+  .content .page-content {
+    padding: 3em 1em;
+  }
+}
+
+/*# sourceMappingURL=menu.css.map */

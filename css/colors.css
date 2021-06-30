@@ -9,7 +9,21 @@
   --default-l: 35.6862745098%;
   --default-a: 1;
   --default-c: #FFFFFF;
+  --default-c-hs: 0deg, 0%;
+  --default-c-l: 100%;
+  --default-c-a: 1;
   /* ---COLOR-default-END--- */
+  /* ---COLOR-accent-START--- */
+  --accent: #BFBFBF;
+  /* ---HSL-accent--- */
+  --accent-hs: 0deg, 0%;
+  --accent-l: 74.9019607843%;
+  --accent-a: 1;
+  --accent-c: #4c4c4c;
+  --accent-c-hs: 0deg, 0%;
+  --accent-c-l: 29.9019607843%;
+  --accent-c-a: 1;
+  /* ---COLOR-accent-END--- */
   /* ---COLOR-primary-START--- */
   --primary: #34A853;
   /* ---HSL-primary--- */
@@ -17,14 +31,20 @@
   --primary-l: 43.137254902%;
   --primary-a: 1;
   --primary-c: #FFFFFF;
+  --primary-c-hs: 0deg, 0%;
+  --primary-c-l: 100%;
+  --primary-c-a: 1;
   /* ---COLOR-primary-END--- */
   /* ---COLOR-secondary-START--- */
-  --secondary: #5c2d6b;
+  --secondary: #5C2B6D;
   /* ---HSL-secondary--- */
-  --secondary-hs: 285.4838709677deg, 40.7894736842%;
+  --secondary-hs: 284.5454545455deg, 43.4210526316%;
   --secondary-l: 29.8039215686%;
   --secondary-a: 1;
   --secondary-c: #FFFFFF;
+  --secondary-c-hs: 0deg, 0%;
+  --secondary-c-l: 100%;
+  --secondary-c-a: 1;
   /* ---COLOR-secondary-END--- */
   /* ---COLOR-white-START--- */
   --white: #FFFFFF;
@@ -33,6 +53,9 @@
   --white-l: 100%;
   --white-a: 1;
   --white-c: #5B5B5B;
+  --white-c-hs: 0deg, 0%;
+  --white-c-l: 35.6862745098%;
+  --white-c-a: 1;
   /* ---COLOR-white-END--- */
   /* ---COLOR-light-START--- */
   --light: #F8F9FA;
@@ -41,6 +64,9 @@
   --light-l: 97.6470588235%;
   --light-a: 1;
   --light-c: #343A40;
+  --light-c-hs: 210deg, 10.3448275862%;
+  --light-c-l: 22.7450980392%;
+  --light-c-a: 1;
   /* ---COLOR-light-END--- */
   /* ---COLOR-black-START--- */
   --black: #000000;
@@ -49,6 +75,9 @@
   --black-l: 0%;
   --black-a: 1;
   --black-c: #FFFFFF;
+  --black-c-hs: 0deg, 0%;
+  --black-c-l: 100%;
+  --black-c-a: 1;
   /* ---COLOR-black-END--- */
   /* ---COLOR-dark-START--- */
   --dark: #343A40;
@@ -57,7 +86,21 @@
   --dark-l: 22.7450980392%;
   --dark-a: 1;
   --dark-c: #F8F9FA;
+  --dark-c-hs: 210deg, 16.6666666667%;
+  --dark-c-l: 97.6470588235%;
+  --dark-c-a: 1;
   /* ---COLOR-dark-END--- */
+  /* ---COLOR-silver-START--- */
+  --silver: #BFBFBF;
+  /* ---HSL-silver--- */
+  --silver-hs: 0deg, 0%;
+  --silver-l: 74.9019607843%;
+  --silver-a: 1;
+  --silver-c: #FFFFFF;
+  --silver-c-hs: 0deg, 0%;
+  --silver-c-l: 100%;
+  --silver-c-a: 1;
+  /* ---COLOR-silver-END--- */
   /* ---COLOR-gold-START--- */
   --gold: #FFDF00;
   /* ---HSL-gold--- */
@@ -65,6 +108,9 @@
   --gold-l: 50%;
   --gold-a: 1;
   --gold-c: #FFFFFF;
+  --gold-c-hs: 0deg, 0%;
+  --gold-c-l: 100%;
+  --gold-c-a: 1;
   /* ---COLOR-gold-END--- */
   /* ---COLOR-info-START--- */
   --info: #17A2b8;
@@ -73,6 +119,9 @@
   --info-l: 40.5882352941%;
   --info-a: 1;
   --info-c: #FFFFFF;
+  --info-c-hs: 0deg, 0%;
+  --info-c-l: 100%;
+  --info-c-a: 1;
   /* ---COLOR-info-END--- */
   /* ---COLOR-error-START--- */
   --error: #DC3545;
@@ -81,6 +130,9 @@
   --error-l: 53.5294117647%;
   --error-a: 1;
   --error-c: #FFFFFF;
+  --error-c-hs: 0deg, 0%;
+  --error-c-l: 100%;
+  --error-c-a: 1;
   /* ---COLOR-error-END--- */
   /* ---COLOR-danger-START--- */
   --danger: #DC3545;
@@ -89,6 +141,9 @@
   --danger-l: 53.5294117647%;
   --danger-a: 1;
   --danger-c: #FFFFFF;
+  --danger-c-hs: 0deg, 0%;
+  --danger-c-l: 100%;
+  --danger-c-a: 1;
   /* ---COLOR-danger-END--- */
   /* ---COLOR-success-START--- */
   --success: #24B624;
@@ -97,6 +152,9 @@
   --success-l: 42.7450980392%;
   --success-a: 1;
   --success-c: #FFFFFF;
+  --success-c-hs: 0deg, 0%;
+  --success-c-l: 100%;
+  --success-c-a: 1;
   /* ---COLOR-success-END--- */
   /* ---COLOR-warn-START--- */
   --warn: #FFC107;
@@ -105,6 +163,9 @@
   --warn-l: 51.3725490196%;
   --warn-a: 1;
   --warn-c: #000000;
+  --warn-c-hs: 0deg, 0%;
+  --warn-c-l: 0%;
+  --warn-c-a: 1;
   /* ---COLOR-warn-END--- */
   /* ---COLOR-warning-START--- */
   --warning: #FFC107;
@@ -113,6 +174,9 @@
   --warning-l: 51.3725490196%;
   --warning-a: 1;
   --warning-c: #000000;
+  --warning-c-hs: 0deg, 0%;
+  --warning-c-l: 0%;
+  --warning-c-a: 1;
   /* ---COLOR-warning-END--- */
   /* ---COLOR-pink-START--- */
   --pink: #ED028C;
@@ -121,6 +185,9 @@
   --pink-l: 46.862745098%;
   --pink-a: 1;
   --pink-c: #FFFFFF;
+  --pink-c-hs: 0deg, 0%;
+  --pink-c-l: 100%;
+  --pink-c-a: 1;
   /* ---COLOR-pink-END--- */
   /* ---COLOR-orange-START--- */
   --orange: #F58220;
@@ -129,6 +196,9 @@
   --orange-l: 54.3137254902%;
   --orange-a: 1;
   --orange-c: #FFFFFF;
+  --orange-c-hs: 0deg, 0%;
+  --orange-c-l: 100%;
+  --orange-c-a: 1;
   /* ---COLOR-orange-END--- */
   /* ---COLOR-purple-START--- */
   --purple: #561843;
@@ -137,6 +207,9 @@
   --purple-l: 21.568627451%;
   --purple-a: 1;
   --purple-c: #FFFFFF;
+  --purple-c-hs: 0deg, 0%;
+  --purple-c-l: 100%;
+  --purple-c-a: 1;
   /* ---COLOR-purple-END--- */
   /* ---COLOR-green-START--- */
   --green: #1D5C2E;
@@ -145,7 +218,21 @@
   --green-l: 23.7254901961%;
   --green-a: 1;
   --green-c: #FFFFFF;
+  --green-c-hs: 0deg, 0%;
+  --green-c-l: 100%;
+  --green-c-a: 1;
   /* ---COLOR-green-END--- */
+  /* ---COLOR-red-START--- */
+  --red: #C54646;
+  /* ---HSL-red--- */
+  --red-hs: 0deg, 52.2633744856%;
+  --red-l: 52.3529411765%;
+  --red-a: 1;
+  --red-c: #FFFFFF;
+  --red-c-hs: 0deg, 0%;
+  --red-c-l: 100%;
+  --red-c-a: 1;
+  /* ---COLOR-red-END--- */
   /* ---COLOR-blue-START--- */
   --blue: #0365A3;
   /* ---HSL-blue--- */
@@ -153,6 +240,9 @@
   --blue-l: 32.5490196078%;
   --blue-a: 1;
   --blue-c: #FFFFFF;
+  --blue-c-hs: 0deg, 0%;
+  --blue-c-l: 100%;
+  --blue-c-a: 1;
   /* ---COLOR-blue-END--- */
   /* ---COLOR-yellow-START--- */
   --yellow: #C4C400;
@@ -161,6 +251,9 @@
   --yellow-l: 38.431372549%;
   --yellow-a: 1;
   --yellow-c: #FFFFFF;
+  --yellow-c-hs: 0deg, 0%;
+  --yellow-c-l: 100%;
+  --yellow-c-a: 1;
   /* ---COLOR-yellow-END--- */
   /* ---COLOR-muted-START--- */
   --muted: #7D7D7D;
@@ -169,7 +262,32 @@
   --muted-l: 49.0196078431%;
   --muted-a: 1;
   --muted-c: #FFFFFF;
+  --muted-c-hs: 0deg, 0%;
+  --muted-c-l: 100%;
+  --muted-c-a: 1;
   /* ---COLOR-muted-END--- */
+  /* ---COLOR-color-1-START--- */
+  --color-1: #34A853;
+  /* ---HSL-color-1--- */
+  --color-1-hs: 136.0344827586deg, 52.7272727273%;
+  --color-1-l: 43.137254902%;
+  --color-1-a: 1;
+  --color-1-c: #FFFFFF;
+  --color-1-c-hs: 0deg, 0%;
+  --color-1-c-l: 100%;
+  --color-1-c-a: 1;
+  /* ---COLOR-color-1-END--- */
+  /* ---COLOR-color-2-START--- */
+  --color-2: #5C2B6D;
+  /* ---HSL-color-2--- */
+  --color-2-hs: 284.5454545455deg, 43.4210526316%;
+  --color-2-l: 29.8039215686%;
+  --color-2-a: 1;
+  --color-2-c: #FFFFFF;
+  --color-2-c-hs: 0deg, 0%;
+  --color-2-c-l: 100%;
+  --color-2-c-a: 1;
+  /* ---COLOR-color-2-END--- */
 }
 
 /**
@@ -197,7 +315,7 @@ button.text-default:active {
 .bg-default {
   background-color: hsla(var(--default-hs), var(--default-l), var(--default-a)) !important;
   color: var(--default-c, #FFFFFF) !important;
-  border-color: hsla(var(--default-hs), var(--default-l), var(--default-a));
+  border-color: hsla(var(--default-hs), calc(var(--default-l) - 20%), var(--default-a));
 }
 .bg-default.is-blur {
   background-color: hsla(var(--default-hs), var(--default-l), 0.5) !important;
@@ -233,20 +351,25 @@ button.bg-g-default:active {
   background: linear-gradient(hsla(var(--default-hs), calc(var(--default-l) - 20%), var(--default-a)), var(--default, #5B5B5B)) !important;
 }
 
-.tabs-default.fill .tab {
-  background-color: hsla(var(--default-hs), var(--default-l), calc(var(--default-a) - 0.2));
-  color: var(--default-c, #FFFFFF);
+.tabs-default:hover .tab.active {
+  background-color: hsla(var(--default-hs), var(--default-l), 0.275);
 }
-.tabs-default.fill .tab.active {
-  background-color: hsla(var(--default-hs), var(--default-l), var(--default-a));
+.tabs-default .tab {
+  color: currentColor;
 }
-.tabs-default .tab:hover:not(.active) {
-  background-color: hsla(var(--default-hs), var(--default-l), calc(var(--default-a) - 0.5));
-  color: #1a1a1a;
+.tabs-default .tab:not(.active):hover {
+  background-color: hsla(var(--default-hs), var(--default-l), 0.25);
 }
 .tabs-default .tab.active {
+  background-color: hsla(var(--default-hs), var(--default-l), 0.25);
+  color: hsla(var(--default-hs), calc(var(--default-l) - 10%), var(--default-a));
+}
+.tabs-default.fill .tab.active, .tabs-default.prefill .tab.active {
   background-color: hsla(var(--default-hs), var(--default-l), var(--default-a));
   color: var(--default-c, #FFFFFF);
+}
+.tabs-default.prefill .tab {
+  background-color: hsla(var(--default-hs), var(--default-l), 0.125);
 }
 
 .alert-default {
@@ -284,7 +407,7 @@ button.bg-outline-default:active,
 .btn-default {
   background-color: hsla(var(--default-hs), var(--default-l), var(--default-a)) !important;
   color: var(--default-c, #FFFFFF) !important;
-  border-color: hsla(var(--default-hs), var(--default-l), var(--default-a));
+  border-color: hsla(var(--default-hs), calc(var(--default-l) - 20%), var(--default-a));
 }
 .btn-default.is-blur {
   background-color: hsla(var(--default-hs), var(--default-l), 0.5) !important;
@@ -346,7 +469,7 @@ button.btn-outline-default:active,
 .badge-default {
   background-color: hsla(var(--default-hs), var(--default-l), var(--default-a)) !important;
   color: var(--default-c, #FFFFFF) !important;
-  border-color: hsla(var(--default-hs), var(--default-l), var(--default-a));
+  border-color: hsla(var(--default-hs), calc(var(--default-l) - 20%), var(--default-a));
 }
 .badge-default.is-blur {
   background-color: hsla(var(--default-hs), var(--default-l), 0.5) !important;
@@ -389,6 +512,219 @@ button.badge-outline-default:active,
   background-color: hsla(var(--default-hs), calc(var(--default-l) - 20%), var(--default-a)) !important;
 }
 
+.text-accent {
+  color: var(--accent, #BFBFBF) !important;
+}
+
+a.text-accent:hover,
+button.text-accent:hover {
+  color: hsla(var(--accent-hs), calc(var(--accent-l) - 10%), var(--accent-a)) !important;
+}
+a.text-accent:active,
+button.text-accent:active {
+  color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)) !important;
+}
+
+.bg-accent {
+  background-color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a)) !important;
+  color: var(--accent-c, #4c4c4c) !important;
+  border-color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a));
+}
+.bg-accent.is-blur {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.5) !important;
+}
+.bg-accent.is-blur:hover {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.75) !important;
+}
+
+a.bg-accent:hover,
+button.bg-accent:hover {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 10%), var(--accent-a)) !important;
+  border-color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a));
+  color: var(--accent-c, #4c4c4c);
+}
+a.bg-accent:active,
+button.bg-accent:active {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)) !important;
+}
+
+.bg-g-accent {
+  background: linear-gradient(var(--accent, #BFBFBF), hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a))) !important;
+  color: var(--accent-c, #4c4c4c);
+  border: none;
+}
+
+a.bg-g-accent:hover,
+button.bg-g-accent:hover {
+  background: linear-gradient(hsla(var(--accent-hs), calc(var(--accent-l) + 20%), var(--accent-a)), var(--accent, #BFBFBF)) !important;
+  color: var(--accent-c, #4c4c4c);
+}
+a.bg-g-accent:active,
+button.bg-g-accent:active {
+  background: linear-gradient(hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)), var(--accent, #BFBFBF)) !important;
+}
+
+.tabs-accent:hover .tab.active {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.275);
+}
+.tabs-accent .tab {
+  color: currentColor;
+}
+.tabs-accent .tab:not(.active):hover {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.25);
+}
+.tabs-accent .tab.active {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.25);
+  color: hsla(var(--accent-hs), calc(var(--accent-l) - 10%), var(--accent-a));
+}
+.tabs-accent.fill .tab.active, .tabs-accent.prefill .tab.active {
+  background-color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a));
+  color: var(--accent-c, #4c4c4c);
+}
+.tabs-accent.prefill .tab {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.125);
+}
+
+.alert-accent {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) + 45%), var(--accent-a)) !important;
+  color: hsla(var(--accent-hs), calc(var(--accent-l) - 45%), var(--accent-a)) !important;
+  border-color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a)) !important;
+}
+.alert-accent.is-blur:not(:hover) {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) + 45%), 0.5) !important;
+}
+
+.bg-outline-accent {
+  background-color: transparent !important;
+  color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a)) !important;
+  border: thin solid;
+}
+.bg-outline-accent.is-blur {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 45%), 0.5) !important;
+}
+
+a.bg-outline-accent:hover,
+button.bg-outline-accent:hover,
+.bg-outline-accent:focus:hover,
+.bg-outline-accent:focus-within:hover {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 10%), var(--accent-a)) !important;
+  color: var(--accent-c, #4c4c4c) !important;
+}
+a.bg-outline-accent:active,
+button.bg-outline-accent:active,
+.bg-outline-accent:focus:active,
+.bg-outline-accent:focus-within:active {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)) !important;
+}
+
+.btn-accent {
+  background-color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a)) !important;
+  color: var(--accent-c, #4c4c4c) !important;
+  border-color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a));
+}
+.btn-accent.is-blur {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.5) !important;
+}
+.btn-accent.is-blur:hover {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.75) !important;
+}
+
+a.btn-accent:hover,
+button.btn-accent:hover {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 10%), var(--accent-a)) !important;
+  border-color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a));
+  color: var(--accent-c, #4c4c4c);
+}
+a.btn-accent:active,
+button.btn-accent:active {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)) !important;
+}
+
+.btn-g-accent {
+  background: linear-gradient(var(--accent, #BFBFBF), hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a))) !important;
+  color: var(--accent-c, #4c4c4c);
+  border: none;
+}
+
+a.btn-g-accent:hover,
+button.btn-g-accent:hover {
+  background: linear-gradient(hsla(var(--accent-hs), calc(var(--accent-l) + 20%), var(--accent-a)), var(--accent, #BFBFBF)) !important;
+  color: var(--accent-c, #4c4c4c);
+}
+a.btn-g-accent:active,
+button.btn-g-accent:active {
+  background: linear-gradient(hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)), var(--accent, #BFBFBF)) !important;
+}
+
+.btn-outline-accent {
+  background-color: transparent !important;
+  color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a)) !important;
+  border: thin solid;
+}
+.btn-outline-accent.is-blur {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 45%), 0.5) !important;
+}
+
+a.btn-outline-accent:hover,
+button.btn-outline-accent:hover,
+.btn-outline-accent:focus:hover,
+.btn-outline-accent:focus-within:hover {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 10%), var(--accent-a)) !important;
+  color: var(--accent-c, #4c4c4c) !important;
+}
+a.btn-outline-accent:active,
+button.btn-outline-accent:active,
+.btn-outline-accent:focus:active,
+.btn-outline-accent:focus-within:active {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)) !important;
+}
+
+.badge-accent {
+  background-color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a)) !important;
+  color: var(--accent-c, #4c4c4c) !important;
+  border-color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a));
+}
+.badge-accent.is-blur {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.5) !important;
+}
+.badge-accent.is-blur:hover {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.75) !important;
+}
+
+a.badge-accent:hover,
+button.badge-accent:hover {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 10%), var(--accent-a)) !important;
+  border-color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a));
+  color: var(--accent-c, #4c4c4c);
+}
+a.badge-accent:active,
+button.badge-accent:active {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)) !important;
+}
+
+.badge-outline-accent {
+  background-color: transparent !important;
+  color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a)) !important;
+  border: thin solid;
+}
+.badge-outline-accent.is-blur {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 45%), 0.5) !important;
+}
+
+a.badge-outline-accent:hover,
+button.badge-outline-accent:hover,
+.badge-outline-accent:focus:hover,
+.badge-outline-accent:focus-within:hover {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 10%), var(--accent-a)) !important;
+  color: var(--accent-c, #4c4c4c) !important;
+}
+a.badge-outline-accent:active,
+button.badge-outline-accent:active,
+.badge-outline-accent:focus:active,
+.badge-outline-accent:focus-within:active {
+  background-color: hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)) !important;
+}
+
 .text-primary {
   color: var(--primary, #34A853) !important;
 }
@@ -405,7 +741,7 @@ button.text-primary:active {
 .bg-primary {
   background-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a)) !important;
   color: var(--primary-c, #FFFFFF) !important;
-  border-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a));
+  border-color: hsla(var(--primary-hs), calc(var(--primary-l) - 20%), var(--primary-a));
 }
 .bg-primary.is-blur {
   background-color: hsla(var(--primary-hs), var(--primary-l), 0.5) !important;
@@ -441,20 +777,25 @@ button.bg-g-primary:active {
   background: linear-gradient(hsla(var(--primary-hs), calc(var(--primary-l) - 20%), var(--primary-a)), var(--primary, #34A853)) !important;
 }
 
-.tabs-primary.fill .tab {
-  background-color: hsla(var(--primary-hs), var(--primary-l), calc(var(--primary-a) - 0.2));
-  color: var(--primary-c, #FFFFFF);
+.tabs-primary:hover .tab.active {
+  background-color: hsla(var(--primary-hs), var(--primary-l), 0.275);
 }
-.tabs-primary.fill .tab.active {
-  background-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a));
+.tabs-primary .tab {
+  color: currentColor;
 }
-.tabs-primary .tab:hover:not(.active) {
-  background-color: hsla(var(--primary-hs), var(--primary-l), calc(var(--primary-a) - 0.5));
-  color: #1a1a1a;
+.tabs-primary .tab:not(.active):hover {
+  background-color: hsla(var(--primary-hs), var(--primary-l), 0.25);
 }
 .tabs-primary .tab.active {
+  background-color: hsla(var(--primary-hs), var(--primary-l), 0.25);
+  color: hsla(var(--primary-hs), calc(var(--primary-l) - 10%), var(--primary-a));
+}
+.tabs-primary.fill .tab.active, .tabs-primary.prefill .tab.active {
   background-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a));
   color: var(--primary-c, #FFFFFF);
+}
+.tabs-primary.prefill .tab {
+  background-color: hsla(var(--primary-hs), var(--primary-l), 0.125);
 }
 
 .alert-primary {
@@ -492,7 +833,7 @@ button.bg-outline-primary:active,
 .btn-primary {
   background-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a)) !important;
   color: var(--primary-c, #FFFFFF) !important;
-  border-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a));
+  border-color: hsla(var(--primary-hs), calc(var(--primary-l) - 20%), var(--primary-a));
 }
 .btn-primary.is-blur {
   background-color: hsla(var(--primary-hs), var(--primary-l), 0.5) !important;
@@ -554,7 +895,7 @@ button.btn-outline-primary:active,
 .badge-primary {
   background-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a)) !important;
   color: var(--primary-c, #FFFFFF) !important;
-  border-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a));
+  border-color: hsla(var(--primary-hs), calc(var(--primary-l) - 20%), var(--primary-a));
 }
 .badge-primary.is-blur {
   background-color: hsla(var(--primary-hs), var(--primary-l), 0.5) !important;
@@ -598,7 +939,7 @@ button.badge-outline-primary:active,
 }
 
 .text-secondary {
-  color: var(--secondary, #5c2d6b) !important;
+  color: var(--secondary, #5C2B6D) !important;
 }
 
 a.text-secondary:hover,
@@ -613,7 +954,7 @@ button.text-secondary:active {
 .bg-secondary {
   background-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a)) !important;
   color: var(--secondary-c, #FFFFFF) !important;
-  border-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a));
+  border-color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a));
 }
 .bg-secondary.is-blur {
   background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.5) !important;
@@ -634,35 +975,40 @@ button.bg-secondary:active {
 }
 
 .bg-g-secondary {
-  background: linear-gradient(var(--secondary, #5c2d6b), hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a))) !important;
+  background: linear-gradient(var(--secondary, #5C2B6D), hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a))) !important;
   color: var(--secondary-c, #FFFFFF);
   border: none;
 }
 
 a.bg-g-secondary:hover,
 button.bg-g-secondary:hover {
-  background: linear-gradient(hsla(var(--secondary-hs), calc(var(--secondary-l) + 20%), var(--secondary-a)), var(--secondary, #5c2d6b)) !important;
+  background: linear-gradient(hsla(var(--secondary-hs), calc(var(--secondary-l) + 20%), var(--secondary-a)), var(--secondary, #5C2B6D)) !important;
   color: var(--secondary-c, #FFFFFF);
 }
 a.bg-g-secondary:active,
 button.bg-g-secondary:active {
-  background: linear-gradient(hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a)), var(--secondary, #5c2d6b)) !important;
+  background: linear-gradient(hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a)), var(--secondary, #5C2B6D)) !important;
 }
 
-.tabs-secondary.fill .tab {
-  background-color: hsla(var(--secondary-hs), var(--secondary-l), calc(var(--secondary-a) - 0.2));
-  color: var(--secondary-c, #FFFFFF);
+.tabs-secondary:hover .tab.active {
+  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.275);
 }
-.tabs-secondary.fill .tab.active {
-  background-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a));
+.tabs-secondary .tab {
+  color: currentColor;
 }
-.tabs-secondary .tab:hover:not(.active) {
-  background-color: hsla(var(--secondary-hs), var(--secondary-l), calc(var(--secondary-a) - 0.5));
-  color: #1a1a1a;
+.tabs-secondary .tab:not(.active):hover {
+  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.25);
 }
 .tabs-secondary .tab.active {
+  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.25);
+  color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 10%), var(--secondary-a));
+}
+.tabs-secondary.fill .tab.active, .tabs-secondary.prefill .tab.active {
   background-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a));
   color: var(--secondary-c, #FFFFFF);
+}
+.tabs-secondary.prefill .tab {
+  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.125);
 }
 
 .alert-secondary {
@@ -700,7 +1046,7 @@ button.bg-outline-secondary:active,
 .btn-secondary {
   background-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a)) !important;
   color: var(--secondary-c, #FFFFFF) !important;
-  border-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a));
+  border-color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a));
 }
 .btn-secondary.is-blur {
   background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.5) !important;
@@ -721,19 +1067,19 @@ button.btn-secondary:active {
 }
 
 .btn-g-secondary {
-  background: linear-gradient(var(--secondary, #5c2d6b), hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a))) !important;
+  background: linear-gradient(var(--secondary, #5C2B6D), hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a))) !important;
   color: var(--secondary-c, #FFFFFF);
   border: none;
 }
 
 a.btn-g-secondary:hover,
 button.btn-g-secondary:hover {
-  background: linear-gradient(hsla(var(--secondary-hs), calc(var(--secondary-l) + 20%), var(--secondary-a)), var(--secondary, #5c2d6b)) !important;
+  background: linear-gradient(hsla(var(--secondary-hs), calc(var(--secondary-l) + 20%), var(--secondary-a)), var(--secondary, #5C2B6D)) !important;
   color: var(--secondary-c, #FFFFFF);
 }
 a.btn-g-secondary:active,
 button.btn-g-secondary:active {
-  background: linear-gradient(hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a)), var(--secondary, #5c2d6b)) !important;
+  background: linear-gradient(hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a)), var(--secondary, #5C2B6D)) !important;
 }
 
 .btn-outline-secondary {
@@ -762,7 +1108,7 @@ button.btn-outline-secondary:active,
 .badge-secondary {
   background-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a)) !important;
   color: var(--secondary-c, #FFFFFF) !important;
-  border-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a));
+  border-color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a));
 }
 .badge-secondary.is-blur {
   background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.5) !important;
@@ -821,7 +1167,7 @@ button.text-white:active {
 .bg-white {
   background-color: hsla(var(--white-hs), var(--white-l), var(--white-a)) !important;
   color: var(--white-c, #5B5B5B) !important;
-  border-color: hsla(var(--white-hs), var(--white-l), var(--white-a));
+  border-color: hsla(var(--white-hs), calc(var(--white-l) - 20%), var(--white-a));
 }
 .bg-white.is-blur {
   background-color: hsla(var(--white-hs), var(--white-l), 0.5) !important;
@@ -857,20 +1203,25 @@ button.bg-g-white:active {
   background: linear-gradient(hsla(var(--white-hs), calc(var(--white-l) - 20%), var(--white-a)), var(--white, #FFFFFF)) !important;
 }
 
-.tabs-white.fill .tab {
-  background-color: hsla(var(--white-hs), var(--white-l), calc(var(--white-a) - 0.2));
-  color: var(--white-c, #5B5B5B);
+.tabs-white:hover .tab.active {
+  background-color: hsla(var(--white-hs), var(--white-l), 0.275);
 }
-.tabs-white.fill .tab.active {
-  background-color: hsla(var(--white-hs), var(--white-l), var(--white-a));
+.tabs-white .tab {
+  color: currentColor;
 }
-.tabs-white .tab:hover:not(.active) {
-  background-color: hsla(var(--white-hs), var(--white-l), calc(var(--white-a) - 0.5));
-  color: black;
+.tabs-white .tab:not(.active):hover {
+  background-color: hsla(var(--white-hs), var(--white-l), 0.25);
 }
 .tabs-white .tab.active {
+  background-color: hsla(var(--white-hs), var(--white-l), 0.25);
+  color: hsla(var(--white-hs), calc(var(--white-l) - 10%), var(--white-a));
+}
+.tabs-white.fill .tab.active, .tabs-white.prefill .tab.active {
   background-color: hsla(var(--white-hs), var(--white-l), var(--white-a));
   color: var(--white-c, #5B5B5B);
+}
+.tabs-white.prefill .tab {
+  background-color: hsla(var(--white-hs), var(--white-l), 0.125);
 }
 
 .alert-white {
@@ -908,7 +1259,7 @@ button.bg-outline-white:active,
 .btn-white {
   background-color: hsla(var(--white-hs), var(--white-l), var(--white-a)) !important;
   color: var(--white-c, #5B5B5B) !important;
-  border-color: hsla(var(--white-hs), var(--white-l), var(--white-a));
+  border-color: hsla(var(--white-hs), calc(var(--white-l) - 20%), var(--white-a));
 }
 .btn-white.is-blur {
   background-color: hsla(var(--white-hs), var(--white-l), 0.5) !important;
@@ -970,7 +1321,7 @@ button.btn-outline-white:active,
 .badge-white {
   background-color: hsla(var(--white-hs), var(--white-l), var(--white-a)) !important;
   color: var(--white-c, #5B5B5B) !important;
-  border-color: hsla(var(--white-hs), var(--white-l), var(--white-a));
+  border-color: hsla(var(--white-hs), calc(var(--white-l) - 20%), var(--white-a));
 }
 .badge-white.is-blur {
   background-color: hsla(var(--white-hs), var(--white-l), 0.5) !important;
@@ -1029,7 +1380,7 @@ button.text-light:active {
 .bg-light {
   background-color: hsla(var(--light-hs), var(--light-l), var(--light-a)) !important;
   color: var(--light-c, #343A40) !important;
-  border-color: hsla(var(--light-hs), var(--light-l), var(--light-a));
+  border-color: hsla(var(--light-hs), calc(var(--light-l) - 20%), var(--light-a));
 }
 .bg-light.is-blur {
   background-color: hsla(var(--light-hs), var(--light-l), 0.5) !important;
@@ -1065,20 +1416,25 @@ button.bg-g-light:active {
   background: linear-gradient(hsla(var(--light-hs), calc(var(--light-l) - 20%), var(--light-a)), var(--light, #F8F9FA)) !important;
 }
 
-.tabs-light.fill .tab {
-  background-color: hsla(var(--light-hs), var(--light-l), calc(var(--light-a) - 0.2));
-  color: var(--light-c, #343A40);
+.tabs-light:hover .tab.active {
+  background-color: hsla(var(--light-hs), var(--light-l), 0.275);
 }
-.tabs-light.fill .tab.active {
-  background-color: hsla(var(--light-hs), var(--light-l), var(--light-a));
+.tabs-light .tab {
+  color: currentColor;
 }
-.tabs-light .tab:hover:not(.active) {
-  background-color: hsla(var(--light-hs), var(--light-l), calc(var(--light-a) - 0.5));
-  color: black;
+.tabs-light .tab:not(.active):hover {
+  background-color: hsla(var(--light-hs), var(--light-l), 0.25);
 }
 .tabs-light .tab.active {
+  background-color: hsla(var(--light-hs), var(--light-l), 0.25);
+  color: hsla(var(--light-hs), calc(var(--light-l) - 10%), var(--light-a));
+}
+.tabs-light.fill .tab.active, .tabs-light.prefill .tab.active {
   background-color: hsla(var(--light-hs), var(--light-l), var(--light-a));
   color: var(--light-c, #343A40);
+}
+.tabs-light.prefill .tab {
+  background-color: hsla(var(--light-hs), var(--light-l), 0.125);
 }
 
 .alert-light {
@@ -1116,7 +1472,7 @@ button.bg-outline-light:active,
 .btn-light {
   background-color: hsla(var(--light-hs), var(--light-l), var(--light-a)) !important;
   color: var(--light-c, #343A40) !important;
-  border-color: hsla(var(--light-hs), var(--light-l), var(--light-a));
+  border-color: hsla(var(--light-hs), calc(var(--light-l) - 20%), var(--light-a));
 }
 .btn-light.is-blur {
   background-color: hsla(var(--light-hs), var(--light-l), 0.5) !important;
@@ -1178,7 +1534,7 @@ button.btn-outline-light:active,
 .badge-light {
   background-color: hsla(var(--light-hs), var(--light-l), var(--light-a)) !important;
   color: var(--light-c, #343A40) !important;
-  border-color: hsla(var(--light-hs), var(--light-l), var(--light-a));
+  border-color: hsla(var(--light-hs), calc(var(--light-l) - 20%), var(--light-a));
 }
 .badge-light.is-blur {
   background-color: hsla(var(--light-hs), var(--light-l), 0.5) !important;
@@ -1237,7 +1593,7 @@ button.text-black:active {
 .bg-black {
   background-color: hsla(var(--black-hs), var(--black-l), var(--black-a)) !important;
   color: var(--black-c, #FFFFFF) !important;
-  border-color: hsla(var(--black-hs), var(--black-l), var(--black-a));
+  border-color: hsla(var(--black-hs), calc(var(--black-l) - 20%), var(--black-a));
 }
 .bg-black.is-blur {
   background-color: hsla(var(--black-hs), var(--black-l), 0.5) !important;
@@ -1273,20 +1629,25 @@ button.bg-g-black:active {
   background: linear-gradient(hsla(var(--black-hs), calc(var(--black-l) - 20%), var(--black-a)), var(--black, #000000)) !important;
 }
 
-.tabs-black.fill .tab {
-  background-color: hsla(var(--black-hs), var(--black-l), calc(var(--black-a) - 0.2));
-  color: var(--black-c, #FFFFFF);
+.tabs-black:hover .tab.active {
+  background-color: hsla(var(--black-hs), var(--black-l), 0.275);
 }
-.tabs-black.fill .tab.active {
-  background-color: hsla(var(--black-hs), var(--black-l), var(--black-a));
+.tabs-black .tab {
+  color: currentColor;
 }
-.tabs-black .tab:hover:not(.active) {
-  background-color: hsla(var(--black-hs), var(--black-l), calc(var(--black-a) - 0.5));
-  color: #1a1a1a;
+.tabs-black .tab:not(.active):hover {
+  background-color: hsla(var(--black-hs), var(--black-l), 0.25);
 }
 .tabs-black .tab.active {
+  background-color: hsla(var(--black-hs), var(--black-l), 0.25);
+  color: hsla(var(--black-hs), calc(var(--black-l) - 10%), var(--black-a));
+}
+.tabs-black.fill .tab.active, .tabs-black.prefill .tab.active {
   background-color: hsla(var(--black-hs), var(--black-l), var(--black-a));
   color: var(--black-c, #FFFFFF);
+}
+.tabs-black.prefill .tab {
+  background-color: hsla(var(--black-hs), var(--black-l), 0.125);
 }
 
 .alert-black {
@@ -1324,7 +1685,7 @@ button.bg-outline-black:active,
 .btn-black {
   background-color: hsla(var(--black-hs), var(--black-l), var(--black-a)) !important;
   color: var(--black-c, #FFFFFF) !important;
-  border-color: hsla(var(--black-hs), var(--black-l), var(--black-a));
+  border-color: hsla(var(--black-hs), calc(var(--black-l) - 20%), var(--black-a));
 }
 .btn-black.is-blur {
   background-color: hsla(var(--black-hs), var(--black-l), 0.5) !important;
@@ -1386,7 +1747,7 @@ button.btn-outline-black:active,
 .badge-black {
   background-color: hsla(var(--black-hs), var(--black-l), var(--black-a)) !important;
   color: var(--black-c, #FFFFFF) !important;
-  border-color: hsla(var(--black-hs), var(--black-l), var(--black-a));
+  border-color: hsla(var(--black-hs), calc(var(--black-l) - 20%), var(--black-a));
 }
 .badge-black.is-blur {
   background-color: hsla(var(--black-hs), var(--black-l), 0.5) !important;
@@ -1445,7 +1806,7 @@ button.text-dark:active {
 .bg-dark {
   background-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a)) !important;
   color: var(--dark-c, #F8F9FA) !important;
-  border-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a));
+  border-color: hsla(var(--dark-hs), calc(var(--dark-l) - 20%), var(--dark-a));
 }
 .bg-dark.is-blur {
   background-color: hsla(var(--dark-hs), var(--dark-l), 0.5) !important;
@@ -1481,20 +1842,25 @@ button.bg-g-dark:active {
   background: linear-gradient(hsla(var(--dark-hs), calc(var(--dark-l) - 20%), var(--dark-a)), var(--dark, #343A40)) !important;
 }
 
-.tabs-dark.fill .tab {
-  background-color: hsla(var(--dark-hs), var(--dark-l), calc(var(--dark-a) - 0.2));
-  color: var(--dark-c, #F8F9FA);
+.tabs-dark:hover .tab.active {
+  background-color: hsla(var(--dark-hs), var(--dark-l), 0.275);
 }
-.tabs-dark.fill .tab.active {
-  background-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a));
+.tabs-dark .tab {
+  color: currentColor;
 }
-.tabs-dark .tab:hover:not(.active) {
-  background-color: hsla(var(--dark-hs), var(--dark-l), calc(var(--dark-a) - 0.5));
-  color: #101417;
+.tabs-dark .tab:not(.active):hover {
+  background-color: hsla(var(--dark-hs), var(--dark-l), 0.25);
 }
 .tabs-dark .tab.active {
+  background-color: hsla(var(--dark-hs), var(--dark-l), 0.25);
+  color: hsla(var(--dark-hs), calc(var(--dark-l) - 10%), var(--dark-a));
+}
+.tabs-dark.fill .tab.active, .tabs-dark.prefill .tab.active {
   background-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a));
   color: var(--dark-c, #F8F9FA);
+}
+.tabs-dark.prefill .tab {
+  background-color: hsla(var(--dark-hs), var(--dark-l), 0.125);
 }
 
 .alert-dark {
@@ -1532,7 +1898,7 @@ button.bg-outline-dark:active,
 .btn-dark {
   background-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a)) !important;
   color: var(--dark-c, #F8F9FA) !important;
-  border-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a));
+  border-color: hsla(var(--dark-hs), calc(var(--dark-l) - 20%), var(--dark-a));
 }
 .btn-dark.is-blur {
   background-color: hsla(var(--dark-hs), var(--dark-l), 0.5) !important;
@@ -1594,7 +1960,7 @@ button.btn-outline-dark:active,
 .badge-dark {
   background-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a)) !important;
   color: var(--dark-c, #F8F9FA) !important;
-  border-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a));
+  border-color: hsla(var(--dark-hs), calc(var(--dark-l) - 20%), var(--dark-a));
 }
 .badge-dark.is-blur {
   background-color: hsla(var(--dark-hs), var(--dark-l), 0.5) !important;
@@ -1637,6 +2003,219 @@ button.badge-outline-dark:active,
   background-color: hsla(var(--dark-hs), calc(var(--dark-l) - 20%), var(--dark-a)) !important;
 }
 
+.text-silver {
+  color: var(--silver, #BFBFBF) !important;
+}
+
+a.text-silver:hover,
+button.text-silver:hover {
+  color: hsla(var(--silver-hs), calc(var(--silver-l) - 10%), var(--silver-a)) !important;
+}
+a.text-silver:active,
+button.text-silver:active {
+  color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)) !important;
+}
+
+.bg-silver {
+  background-color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a)) !important;
+  color: var(--silver-c, #FFFFFF) !important;
+  border-color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a));
+}
+.bg-silver.is-blur {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.5) !important;
+}
+.bg-silver.is-blur:hover {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.75) !important;
+}
+
+a.bg-silver:hover,
+button.bg-silver:hover {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 10%), var(--silver-a)) !important;
+  border-color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a));
+  color: var(--silver-c, #FFFFFF);
+}
+a.bg-silver:active,
+button.bg-silver:active {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)) !important;
+}
+
+.bg-g-silver {
+  background: linear-gradient(var(--silver, #BFBFBF), hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a))) !important;
+  color: var(--silver-c, #FFFFFF);
+  border: none;
+}
+
+a.bg-g-silver:hover,
+button.bg-g-silver:hover {
+  background: linear-gradient(hsla(var(--silver-hs), calc(var(--silver-l) + 20%), var(--silver-a)), var(--silver, #BFBFBF)) !important;
+  color: var(--silver-c, #FFFFFF);
+}
+a.bg-g-silver:active,
+button.bg-g-silver:active {
+  background: linear-gradient(hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)), var(--silver, #BFBFBF)) !important;
+}
+
+.tabs-silver:hover .tab.active {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.275);
+}
+.tabs-silver .tab {
+  color: currentColor;
+}
+.tabs-silver .tab:not(.active):hover {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.25);
+}
+.tabs-silver .tab.active {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.25);
+  color: hsla(var(--silver-hs), calc(var(--silver-l) - 10%), var(--silver-a));
+}
+.tabs-silver.fill .tab.active, .tabs-silver.prefill .tab.active {
+  background-color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a));
+  color: var(--silver-c, #FFFFFF);
+}
+.tabs-silver.prefill .tab {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.125);
+}
+
+.alert-silver {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) + 45%), var(--silver-a)) !important;
+  color: hsla(var(--silver-hs), calc(var(--silver-l) - 45%), var(--silver-a)) !important;
+  border-color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a)) !important;
+}
+.alert-silver.is-blur:not(:hover) {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) + 45%), 0.5) !important;
+}
+
+.bg-outline-silver {
+  background-color: transparent !important;
+  color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a)) !important;
+  border: thin solid;
+}
+.bg-outline-silver.is-blur {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 45%), 0.5) !important;
+}
+
+a.bg-outline-silver:hover,
+button.bg-outline-silver:hover,
+.bg-outline-silver:focus:hover,
+.bg-outline-silver:focus-within:hover {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 10%), var(--silver-a)) !important;
+  color: var(--silver-c, #FFFFFF) !important;
+}
+a.bg-outline-silver:active,
+button.bg-outline-silver:active,
+.bg-outline-silver:focus:active,
+.bg-outline-silver:focus-within:active {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)) !important;
+}
+
+.btn-silver {
+  background-color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a)) !important;
+  color: var(--silver-c, #FFFFFF) !important;
+  border-color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a));
+}
+.btn-silver.is-blur {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.5) !important;
+}
+.btn-silver.is-blur:hover {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.75) !important;
+}
+
+a.btn-silver:hover,
+button.btn-silver:hover {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 10%), var(--silver-a)) !important;
+  border-color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a));
+  color: var(--silver-c, #FFFFFF);
+}
+a.btn-silver:active,
+button.btn-silver:active {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)) !important;
+}
+
+.btn-g-silver {
+  background: linear-gradient(var(--silver, #BFBFBF), hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a))) !important;
+  color: var(--silver-c, #FFFFFF);
+  border: none;
+}
+
+a.btn-g-silver:hover,
+button.btn-g-silver:hover {
+  background: linear-gradient(hsla(var(--silver-hs), calc(var(--silver-l) + 20%), var(--silver-a)), var(--silver, #BFBFBF)) !important;
+  color: var(--silver-c, #FFFFFF);
+}
+a.btn-g-silver:active,
+button.btn-g-silver:active {
+  background: linear-gradient(hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)), var(--silver, #BFBFBF)) !important;
+}
+
+.btn-outline-silver {
+  background-color: transparent !important;
+  color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a)) !important;
+  border: thin solid;
+}
+.btn-outline-silver.is-blur {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 45%), 0.5) !important;
+}
+
+a.btn-outline-silver:hover,
+button.btn-outline-silver:hover,
+.btn-outline-silver:focus:hover,
+.btn-outline-silver:focus-within:hover {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 10%), var(--silver-a)) !important;
+  color: var(--silver-c, #FFFFFF) !important;
+}
+a.btn-outline-silver:active,
+button.btn-outline-silver:active,
+.btn-outline-silver:focus:active,
+.btn-outline-silver:focus-within:active {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)) !important;
+}
+
+.badge-silver {
+  background-color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a)) !important;
+  color: var(--silver-c, #FFFFFF) !important;
+  border-color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a));
+}
+.badge-silver.is-blur {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.5) !important;
+}
+.badge-silver.is-blur:hover {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.75) !important;
+}
+
+a.badge-silver:hover,
+button.badge-silver:hover {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 10%), var(--silver-a)) !important;
+  border-color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a));
+  color: var(--silver-c, #FFFFFF);
+}
+a.badge-silver:active,
+button.badge-silver:active {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)) !important;
+}
+
+.badge-outline-silver {
+  background-color: transparent !important;
+  color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a)) !important;
+  border: thin solid;
+}
+.badge-outline-silver.is-blur {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 45%), 0.5) !important;
+}
+
+a.badge-outline-silver:hover,
+button.badge-outline-silver:hover,
+.badge-outline-silver:focus:hover,
+.badge-outline-silver:focus-within:hover {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 10%), var(--silver-a)) !important;
+  color: var(--silver-c, #FFFFFF) !important;
+}
+a.badge-outline-silver:active,
+button.badge-outline-silver:active,
+.badge-outline-silver:focus:active,
+.badge-outline-silver:focus-within:active {
+  background-color: hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)) !important;
+}
+
 .text-gold {
   color: var(--gold, #FFDF00) !important;
 }
@@ -1653,7 +2232,7 @@ button.text-gold:active {
 .bg-gold {
   background-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a)) !important;
   color: var(--gold-c, #FFFFFF) !important;
-  border-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a));
+  border-color: hsla(var(--gold-hs), calc(var(--gold-l) - 20%), var(--gold-a));
 }
 .bg-gold.is-blur {
   background-color: hsla(var(--gold-hs), var(--gold-l), 0.5) !important;
@@ -1689,20 +2268,25 @@ button.bg-g-gold:active {
   background: linear-gradient(hsla(var(--gold-hs), calc(var(--gold-l) - 20%), var(--gold-a)), var(--gold, #FFDF00)) !important;
 }
 
-.tabs-gold.fill .tab {
-  background-color: hsla(var(--gold-hs), var(--gold-l), calc(var(--gold-a) - 0.2));
-  color: var(--gold-c, #FFFFFF);
+.tabs-gold:hover .tab.active {
+  background-color: hsla(var(--gold-hs), var(--gold-l), 0.275);
 }
-.tabs-gold.fill .tab.active {
-  background-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a));
+.tabs-gold .tab {
+  color: currentColor;
 }
-.tabs-gold .tab:hover:not(.active) {
-  background-color: hsla(var(--gold-hs), var(--gold-l), calc(var(--gold-a) - 0.5));
-  color: #1a1a1a;
+.tabs-gold .tab:not(.active):hover {
+  background-color: hsla(var(--gold-hs), var(--gold-l), 0.25);
 }
 .tabs-gold .tab.active {
+  background-color: hsla(var(--gold-hs), var(--gold-l), 0.25);
+  color: hsla(var(--gold-hs), calc(var(--gold-l) - 10%), var(--gold-a));
+}
+.tabs-gold.fill .tab.active, .tabs-gold.prefill .tab.active {
   background-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a));
   color: var(--gold-c, #FFFFFF);
+}
+.tabs-gold.prefill .tab {
+  background-color: hsla(var(--gold-hs), var(--gold-l), 0.125);
 }
 
 .alert-gold {
@@ -1740,7 +2324,7 @@ button.bg-outline-gold:active,
 .btn-gold {
   background-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a)) !important;
   color: var(--gold-c, #FFFFFF) !important;
-  border-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a));
+  border-color: hsla(var(--gold-hs), calc(var(--gold-l) - 20%), var(--gold-a));
 }
 .btn-gold.is-blur {
   background-color: hsla(var(--gold-hs), var(--gold-l), 0.5) !important;
@@ -1802,7 +2386,7 @@ button.btn-outline-gold:active,
 .badge-gold {
   background-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a)) !important;
   color: var(--gold-c, #FFFFFF) !important;
-  border-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a));
+  border-color: hsla(var(--gold-hs), calc(var(--gold-l) - 20%), var(--gold-a));
 }
 .badge-gold.is-blur {
   background-color: hsla(var(--gold-hs), var(--gold-l), 0.5) !important;
@@ -1861,7 +2445,7 @@ button.text-info:active {
 .bg-info {
   background-color: hsla(var(--info-hs), var(--info-l), var(--info-a)) !important;
   color: var(--info-c, #FFFFFF) !important;
-  border-color: hsla(var(--info-hs), var(--info-l), var(--info-a));
+  border-color: hsla(var(--info-hs), calc(var(--info-l) - 20%), var(--info-a));
 }
 .bg-info.is-blur {
   background-color: hsla(var(--info-hs), var(--info-l), 0.5) !important;
@@ -1897,20 +2481,25 @@ button.bg-g-info:active {
   background: linear-gradient(hsla(var(--info-hs), calc(var(--info-l) - 20%), var(--info-a)), var(--info, #17A2b8)) !important;
 }
 
-.tabs-info.fill .tab {
-  background-color: hsla(var(--info-hs), var(--info-l), calc(var(--info-a) - 0.2));
-  color: var(--info-c, #FFFFFF);
+.tabs-info:hover .tab.active {
+  background-color: hsla(var(--info-hs), var(--info-l), 0.275);
 }
-.tabs-info.fill .tab.active {
-  background-color: hsla(var(--info-hs), var(--info-l), var(--info-a));
+.tabs-info .tab {
+  color: currentColor;
 }
-.tabs-info .tab:hover:not(.active) {
-  background-color: hsla(var(--info-hs), var(--info-l), calc(var(--info-a) - 0.5));
-  color: #1a1a1a;
+.tabs-info .tab:not(.active):hover {
+  background-color: hsla(var(--info-hs), var(--info-l), 0.25);
 }
 .tabs-info .tab.active {
+  background-color: hsla(var(--info-hs), var(--info-l), 0.25);
+  color: hsla(var(--info-hs), calc(var(--info-l) - 10%), var(--info-a));
+}
+.tabs-info.fill .tab.active, .tabs-info.prefill .tab.active {
   background-color: hsla(var(--info-hs), var(--info-l), var(--info-a));
   color: var(--info-c, #FFFFFF);
+}
+.tabs-info.prefill .tab {
+  background-color: hsla(var(--info-hs), var(--info-l), 0.125);
 }
 
 .alert-info {
@@ -1948,7 +2537,7 @@ button.bg-outline-info:active,
 .btn-info {
   background-color: hsla(var(--info-hs), var(--info-l), var(--info-a)) !important;
   color: var(--info-c, #FFFFFF) !important;
-  border-color: hsla(var(--info-hs), var(--info-l), var(--info-a));
+  border-color: hsla(var(--info-hs), calc(var(--info-l) - 20%), var(--info-a));
 }
 .btn-info.is-blur {
   background-color: hsla(var(--info-hs), var(--info-l), 0.5) !important;
@@ -2010,7 +2599,7 @@ button.btn-outline-info:active,
 .badge-info {
   background-color: hsla(var(--info-hs), var(--info-l), var(--info-a)) !important;
   color: var(--info-c, #FFFFFF) !important;
-  border-color: hsla(var(--info-hs), var(--info-l), var(--info-a));
+  border-color: hsla(var(--info-hs), calc(var(--info-l) - 20%), var(--info-a));
 }
 .badge-info.is-blur {
   background-color: hsla(var(--info-hs), var(--info-l), 0.5) !important;
@@ -2069,7 +2658,7 @@ button.text-error:active {
 .bg-error {
   background-color: hsla(var(--error-hs), var(--error-l), var(--error-a)) !important;
   color: var(--error-c, #FFFFFF) !important;
-  border-color: hsla(var(--error-hs), var(--error-l), var(--error-a));
+  border-color: hsla(var(--error-hs), calc(var(--error-l) - 20%), var(--error-a));
 }
 .bg-error.is-blur {
   background-color: hsla(var(--error-hs), var(--error-l), 0.5) !important;
@@ -2105,20 +2694,25 @@ button.bg-g-error:active {
   background: linear-gradient(hsla(var(--error-hs), calc(var(--error-l) - 20%), var(--error-a)), var(--error, #DC3545)) !important;
 }
 
-.tabs-error.fill .tab {
-  background-color: hsla(var(--error-hs), var(--error-l), calc(var(--error-a) - 0.2));
-  color: var(--error-c, #FFFFFF);
+.tabs-error:hover .tab.active {
+  background-color: hsla(var(--error-hs), var(--error-l), 0.275);
 }
-.tabs-error.fill .tab.active {
-  background-color: hsla(var(--error-hs), var(--error-l), var(--error-a));
+.tabs-error .tab {
+  color: currentColor;
 }
-.tabs-error .tab:hover:not(.active) {
-  background-color: hsla(var(--error-hs), var(--error-l), calc(var(--error-a) - 0.5));
-  color: #1a1a1a;
+.tabs-error .tab:not(.active):hover {
+  background-color: hsla(var(--error-hs), var(--error-l), 0.25);
 }
 .tabs-error .tab.active {
+  background-color: hsla(var(--error-hs), var(--error-l), 0.25);
+  color: hsla(var(--error-hs), calc(var(--error-l) - 10%), var(--error-a));
+}
+.tabs-error.fill .tab.active, .tabs-error.prefill .tab.active {
   background-color: hsla(var(--error-hs), var(--error-l), var(--error-a));
   color: var(--error-c, #FFFFFF);
+}
+.tabs-error.prefill .tab {
+  background-color: hsla(var(--error-hs), var(--error-l), 0.125);
 }
 
 .alert-error {
@@ -2156,7 +2750,7 @@ button.bg-outline-error:active,
 .btn-error {
   background-color: hsla(var(--error-hs), var(--error-l), var(--error-a)) !important;
   color: var(--error-c, #FFFFFF) !important;
-  border-color: hsla(var(--error-hs), var(--error-l), var(--error-a));
+  border-color: hsla(var(--error-hs), calc(var(--error-l) - 20%), var(--error-a));
 }
 .btn-error.is-blur {
   background-color: hsla(var(--error-hs), var(--error-l), 0.5) !important;
@@ -2218,7 +2812,7 @@ button.btn-outline-error:active,
 .badge-error {
   background-color: hsla(var(--error-hs), var(--error-l), var(--error-a)) !important;
   color: var(--error-c, #FFFFFF) !important;
-  border-color: hsla(var(--error-hs), var(--error-l), var(--error-a));
+  border-color: hsla(var(--error-hs), calc(var(--error-l) - 20%), var(--error-a));
 }
 .badge-error.is-blur {
   background-color: hsla(var(--error-hs), var(--error-l), 0.5) !important;
@@ -2277,7 +2871,7 @@ button.text-danger:active {
 .bg-danger {
   background-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a)) !important;
   color: var(--danger-c, #FFFFFF) !important;
-  border-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a));
+  border-color: hsla(var(--danger-hs), calc(var(--danger-l) - 20%), var(--danger-a));
 }
 .bg-danger.is-blur {
   background-color: hsla(var(--danger-hs), var(--danger-l), 0.5) !important;
@@ -2313,20 +2907,25 @@ button.bg-g-danger:active {
   background: linear-gradient(hsla(var(--danger-hs), calc(var(--danger-l) - 20%), var(--danger-a)), var(--danger, #DC3545)) !important;
 }
 
-.tabs-danger.fill .tab {
-  background-color: hsla(var(--danger-hs), var(--danger-l), calc(var(--danger-a) - 0.2));
-  color: var(--danger-c, #FFFFFF);
+.tabs-danger:hover .tab.active {
+  background-color: hsla(var(--danger-hs), var(--danger-l), 0.275);
 }
-.tabs-danger.fill .tab.active {
-  background-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a));
+.tabs-danger .tab {
+  color: currentColor;
 }
-.tabs-danger .tab:hover:not(.active) {
-  background-color: hsla(var(--danger-hs), var(--danger-l), calc(var(--danger-a) - 0.5));
-  color: #1a1a1a;
+.tabs-danger .tab:not(.active):hover {
+  background-color: hsla(var(--danger-hs), var(--danger-l), 0.25);
 }
 .tabs-danger .tab.active {
+  background-color: hsla(var(--danger-hs), var(--danger-l), 0.25);
+  color: hsla(var(--danger-hs), calc(var(--danger-l) - 10%), var(--danger-a));
+}
+.tabs-danger.fill .tab.active, .tabs-danger.prefill .tab.active {
   background-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a));
   color: var(--danger-c, #FFFFFF);
+}
+.tabs-danger.prefill .tab {
+  background-color: hsla(var(--danger-hs), var(--danger-l), 0.125);
 }
 
 .alert-danger {
@@ -2364,7 +2963,7 @@ button.bg-outline-danger:active,
 .btn-danger {
   background-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a)) !important;
   color: var(--danger-c, #FFFFFF) !important;
-  border-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a));
+  border-color: hsla(var(--danger-hs), calc(var(--danger-l) - 20%), var(--danger-a));
 }
 .btn-danger.is-blur {
   background-color: hsla(var(--danger-hs), var(--danger-l), 0.5) !important;
@@ -2426,7 +3025,7 @@ button.btn-outline-danger:active,
 .badge-danger {
   background-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a)) !important;
   color: var(--danger-c, #FFFFFF) !important;
-  border-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a));
+  border-color: hsla(var(--danger-hs), calc(var(--danger-l) - 20%), var(--danger-a));
 }
 .badge-danger.is-blur {
   background-color: hsla(var(--danger-hs), var(--danger-l), 0.5) !important;
@@ -2485,7 +3084,7 @@ button.text-success:active {
 .bg-success {
   background-color: hsla(var(--success-hs), var(--success-l), var(--success-a)) !important;
   color: var(--success-c, #FFFFFF) !important;
-  border-color: hsla(var(--success-hs), var(--success-l), var(--success-a));
+  border-color: hsla(var(--success-hs), calc(var(--success-l) - 20%), var(--success-a));
 }
 .bg-success.is-blur {
   background-color: hsla(var(--success-hs), var(--success-l), 0.5) !important;
@@ -2521,20 +3120,25 @@ button.bg-g-success:active {
   background: linear-gradient(hsla(var(--success-hs), calc(var(--success-l) - 20%), var(--success-a)), var(--success, #24B624)) !important;
 }
 
-.tabs-success.fill .tab {
-  background-color: hsla(var(--success-hs), var(--success-l), calc(var(--success-a) - 0.2));
-  color: var(--success-c, #FFFFFF);
+.tabs-success:hover .tab.active {
+  background-color: hsla(var(--success-hs), var(--success-l), 0.275);
 }
-.tabs-success.fill .tab.active {
-  background-color: hsla(var(--success-hs), var(--success-l), var(--success-a));
+.tabs-success .tab {
+  color: currentColor;
 }
-.tabs-success .tab:hover:not(.active) {
-  background-color: hsla(var(--success-hs), var(--success-l), calc(var(--success-a) - 0.5));
-  color: #1a1a1a;
+.tabs-success .tab:not(.active):hover {
+  background-color: hsla(var(--success-hs), var(--success-l), 0.25);
 }
 .tabs-success .tab.active {
+  background-color: hsla(var(--success-hs), var(--success-l), 0.25);
+  color: hsla(var(--success-hs), calc(var(--success-l) - 10%), var(--success-a));
+}
+.tabs-success.fill .tab.active, .tabs-success.prefill .tab.active {
   background-color: hsla(var(--success-hs), var(--success-l), var(--success-a));
   color: var(--success-c, #FFFFFF);
+}
+.tabs-success.prefill .tab {
+  background-color: hsla(var(--success-hs), var(--success-l), 0.125);
 }
 
 .alert-success {
@@ -2572,7 +3176,7 @@ button.bg-outline-success:active,
 .btn-success {
   background-color: hsla(var(--success-hs), var(--success-l), var(--success-a)) !important;
   color: var(--success-c, #FFFFFF) !important;
-  border-color: hsla(var(--success-hs), var(--success-l), var(--success-a));
+  border-color: hsla(var(--success-hs), calc(var(--success-l) - 20%), var(--success-a));
 }
 .btn-success.is-blur {
   background-color: hsla(var(--success-hs), var(--success-l), 0.5) !important;
@@ -2634,7 +3238,7 @@ button.btn-outline-success:active,
 .badge-success {
   background-color: hsla(var(--success-hs), var(--success-l), var(--success-a)) !important;
   color: var(--success-c, #FFFFFF) !important;
-  border-color: hsla(var(--success-hs), var(--success-l), var(--success-a));
+  border-color: hsla(var(--success-hs), calc(var(--success-l) - 20%), var(--success-a));
 }
 .badge-success.is-blur {
   background-color: hsla(var(--success-hs), var(--success-l), 0.5) !important;
@@ -2693,7 +3297,7 @@ button.text-warn:active {
 .bg-warn {
   background-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a)) !important;
   color: var(--warn-c, #000000) !important;
-  border-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a));
+  border-color: hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a));
 }
 .bg-warn.is-blur {
   background-color: hsla(var(--warn-hs), var(--warn-l), 0.5) !important;
@@ -2729,20 +3333,25 @@ button.bg-g-warn:active {
   background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a)), var(--warn, #FFC107)) !important;
 }
 
-.tabs-warn.fill .tab {
-  background-color: hsla(var(--warn-hs), var(--warn-l), calc(var(--warn-a) - 0.2));
-  color: var(--warn-c, #000000);
+.tabs-warn:hover .tab.active {
+  background-color: hsla(var(--warn-hs), var(--warn-l), 0.275);
 }
-.tabs-warn.fill .tab.active {
-  background-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a));
+.tabs-warn .tab {
+  color: currentColor;
 }
-.tabs-warn .tab:hover:not(.active) {
-  background-color: hsla(var(--warn-hs), var(--warn-l), calc(var(--warn-a) - 0.5));
-  color: black;
+.tabs-warn .tab:not(.active):hover {
+  background-color: hsla(var(--warn-hs), var(--warn-l), 0.25);
 }
 .tabs-warn .tab.active {
+  background-color: hsla(var(--warn-hs), var(--warn-l), 0.25);
+  color: hsla(var(--warn-hs), calc(var(--warn-l) - 10%), var(--warn-a));
+}
+.tabs-warn.fill .tab.active, .tabs-warn.prefill .tab.active {
   background-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a));
   color: var(--warn-c, #000000);
+}
+.tabs-warn.prefill .tab {
+  background-color: hsla(var(--warn-hs), var(--warn-l), 0.125);
 }
 
 .alert-warn {
@@ -2780,7 +3389,7 @@ button.bg-outline-warn:active,
 .btn-warn {
   background-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a)) !important;
   color: var(--warn-c, #000000) !important;
-  border-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a));
+  border-color: hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a));
 }
 .btn-warn.is-blur {
   background-color: hsla(var(--warn-hs), var(--warn-l), 0.5) !important;
@@ -2842,7 +3451,7 @@ button.btn-outline-warn:active,
 .badge-warn {
   background-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a)) !important;
   color: var(--warn-c, #000000) !important;
-  border-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a));
+  border-color: hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a));
 }
 .badge-warn.is-blur {
   background-color: hsla(var(--warn-hs), var(--warn-l), 0.5) !important;
@@ -2901,7 +3510,7 @@ button.text-warning:active {
 .bg-warning {
   background-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a)) !important;
   color: var(--warning-c, #000000) !important;
-  border-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a));
+  border-color: hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a));
 }
 .bg-warning.is-blur {
   background-color: hsla(var(--warning-hs), var(--warning-l), 0.5) !important;
@@ -2937,20 +3546,25 @@ button.bg-g-warning:active {
   background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a)), var(--warning, #FFC107)) !important;
 }
 
-.tabs-warning.fill .tab {
-  background-color: hsla(var(--warning-hs), var(--warning-l), calc(var(--warning-a) - 0.2));
-  color: var(--warning-c, #000000);
+.tabs-warning:hover .tab.active {
+  background-color: hsla(var(--warning-hs), var(--warning-l), 0.275);
 }
-.tabs-warning.fill .tab.active {
-  background-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a));
+.tabs-warning .tab {
+  color: currentColor;
 }
-.tabs-warning .tab:hover:not(.active) {
-  background-color: hsla(var(--warning-hs), var(--warning-l), calc(var(--warning-a) - 0.5));
-  color: black;
+.tabs-warning .tab:not(.active):hover {
+  background-color: hsla(var(--warning-hs), var(--warning-l), 0.25);
 }
 .tabs-warning .tab.active {
+  background-color: hsla(var(--warning-hs), var(--warning-l), 0.25);
+  color: hsla(var(--warning-hs), calc(var(--warning-l) - 10%), var(--warning-a));
+}
+.tabs-warning.fill .tab.active, .tabs-warning.prefill .tab.active {
   background-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a));
   color: var(--warning-c, #000000);
+}
+.tabs-warning.prefill .tab {
+  background-color: hsla(var(--warning-hs), var(--warning-l), 0.125);
 }
 
 .alert-warning {
@@ -2988,7 +3602,7 @@ button.bg-outline-warning:active,
 .btn-warning {
   background-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a)) !important;
   color: var(--warning-c, #000000) !important;
-  border-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a));
+  border-color: hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a));
 }
 .btn-warning.is-blur {
   background-color: hsla(var(--warning-hs), var(--warning-l), 0.5) !important;
@@ -3050,7 +3664,7 @@ button.btn-outline-warning:active,
 .badge-warning {
   background-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a)) !important;
   color: var(--warning-c, #000000) !important;
-  border-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a));
+  border-color: hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a));
 }
 .badge-warning.is-blur {
   background-color: hsla(var(--warning-hs), var(--warning-l), 0.5) !important;
@@ -3109,7 +3723,7 @@ button.text-pink:active {
 .bg-pink {
   background-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a)) !important;
   color: var(--pink-c, #FFFFFF) !important;
-  border-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a));
+  border-color: hsla(var(--pink-hs), calc(var(--pink-l) - 20%), var(--pink-a));
 }
 .bg-pink.is-blur {
   background-color: hsla(var(--pink-hs), var(--pink-l), 0.5) !important;
@@ -3145,20 +3759,25 @@ button.bg-g-pink:active {
   background: linear-gradient(hsla(var(--pink-hs), calc(var(--pink-l) - 20%), var(--pink-a)), var(--pink, #ED028C)) !important;
 }
 
-.tabs-pink.fill .tab {
-  background-color: hsla(var(--pink-hs), var(--pink-l), calc(var(--pink-a) - 0.2));
-  color: var(--pink-c, #FFFFFF);
+.tabs-pink:hover .tab.active {
+  background-color: hsla(var(--pink-hs), var(--pink-l), 0.275);
 }
-.tabs-pink.fill .tab.active {
-  background-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a));
+.tabs-pink .tab {
+  color: currentColor;
 }
-.tabs-pink .tab:hover:not(.active) {
-  background-color: hsla(var(--pink-hs), var(--pink-l), calc(var(--pink-a) - 0.5));
-  color: #1a1a1a;
+.tabs-pink .tab:not(.active):hover {
+  background-color: hsla(var(--pink-hs), var(--pink-l), 0.25);
 }
 .tabs-pink .tab.active {
+  background-color: hsla(var(--pink-hs), var(--pink-l), 0.25);
+  color: hsla(var(--pink-hs), calc(var(--pink-l) - 10%), var(--pink-a));
+}
+.tabs-pink.fill .tab.active, .tabs-pink.prefill .tab.active {
   background-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a));
   color: var(--pink-c, #FFFFFF);
+}
+.tabs-pink.prefill .tab {
+  background-color: hsla(var(--pink-hs), var(--pink-l), 0.125);
 }
 
 .alert-pink {
@@ -3196,7 +3815,7 @@ button.bg-outline-pink:active,
 .btn-pink {
   background-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a)) !important;
   color: var(--pink-c, #FFFFFF) !important;
-  border-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a));
+  border-color: hsla(var(--pink-hs), calc(var(--pink-l) - 20%), var(--pink-a));
 }
 .btn-pink.is-blur {
   background-color: hsla(var(--pink-hs), var(--pink-l), 0.5) !important;
@@ -3258,7 +3877,7 @@ button.btn-outline-pink:active,
 .badge-pink {
   background-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a)) !important;
   color: var(--pink-c, #FFFFFF) !important;
-  border-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a));
+  border-color: hsla(var(--pink-hs), calc(var(--pink-l) - 20%), var(--pink-a));
 }
 .badge-pink.is-blur {
   background-color: hsla(var(--pink-hs), var(--pink-l), 0.5) !important;
@@ -3317,7 +3936,7 @@ button.text-orange:active {
 .bg-orange {
   background-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a)) !important;
   color: var(--orange-c, #FFFFFF) !important;
-  border-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a));
+  border-color: hsla(var(--orange-hs), calc(var(--orange-l) - 20%), var(--orange-a));
 }
 .bg-orange.is-blur {
   background-color: hsla(var(--orange-hs), var(--orange-l), 0.5) !important;
@@ -3353,20 +3972,25 @@ button.bg-g-orange:active {
   background: linear-gradient(hsla(var(--orange-hs), calc(var(--orange-l) - 20%), var(--orange-a)), var(--orange, #F58220)) !important;
 }
 
-.tabs-orange.fill .tab {
-  background-color: hsla(var(--orange-hs), var(--orange-l), calc(var(--orange-a) - 0.2));
-  color: var(--orange-c, #FFFFFF);
+.tabs-orange:hover .tab.active {
+  background-color: hsla(var(--orange-hs), var(--orange-l), 0.275);
 }
-.tabs-orange.fill .tab.active {
-  background-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a));
+.tabs-orange .tab {
+  color: currentColor;
 }
-.tabs-orange .tab:hover:not(.active) {
-  background-color: hsla(var(--orange-hs), var(--orange-l), calc(var(--orange-a) - 0.5));
-  color: #1a1a1a;
+.tabs-orange .tab:not(.active):hover {
+  background-color: hsla(var(--orange-hs), var(--orange-l), 0.25);
 }
 .tabs-orange .tab.active {
+  background-color: hsla(var(--orange-hs), var(--orange-l), 0.25);
+  color: hsla(var(--orange-hs), calc(var(--orange-l) - 10%), var(--orange-a));
+}
+.tabs-orange.fill .tab.active, .tabs-orange.prefill .tab.active {
   background-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a));
   color: var(--orange-c, #FFFFFF);
+}
+.tabs-orange.prefill .tab {
+  background-color: hsla(var(--orange-hs), var(--orange-l), 0.125);
 }
 
 .alert-orange {
@@ -3404,7 +4028,7 @@ button.bg-outline-orange:active,
 .btn-orange {
   background-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a)) !important;
   color: var(--orange-c, #FFFFFF) !important;
-  border-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a));
+  border-color: hsla(var(--orange-hs), calc(var(--orange-l) - 20%), var(--orange-a));
 }
 .btn-orange.is-blur {
   background-color: hsla(var(--orange-hs), var(--orange-l), 0.5) !important;
@@ -3466,7 +4090,7 @@ button.btn-outline-orange:active,
 .badge-orange {
   background-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a)) !important;
   color: var(--orange-c, #FFFFFF) !important;
-  border-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a));
+  border-color: hsla(var(--orange-hs), calc(var(--orange-l) - 20%), var(--orange-a));
 }
 .badge-orange.is-blur {
   background-color: hsla(var(--orange-hs), var(--orange-l), 0.5) !important;
@@ -3525,7 +4149,7 @@ button.text-purple:active {
 .bg-purple {
   background-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a)) !important;
   color: var(--purple-c, #FFFFFF) !important;
-  border-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a));
+  border-color: hsla(var(--purple-hs), calc(var(--purple-l) - 20%), var(--purple-a));
 }
 .bg-purple.is-blur {
   background-color: hsla(var(--purple-hs), var(--purple-l), 0.5) !important;
@@ -3561,20 +4185,25 @@ button.bg-g-purple:active {
   background: linear-gradient(hsla(var(--purple-hs), calc(var(--purple-l) - 20%), var(--purple-a)), var(--purple, #561843)) !important;
 }
 
-.tabs-purple.fill .tab {
-  background-color: hsla(var(--purple-hs), var(--purple-l), calc(var(--purple-a) - 0.2));
-  color: var(--purple-c, #FFFFFF);
+.tabs-purple:hover .tab.active {
+  background-color: hsla(var(--purple-hs), var(--purple-l), 0.275);
 }
-.tabs-purple.fill .tab.active {
-  background-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a));
+.tabs-purple .tab {
+  color: currentColor;
 }
-.tabs-purple .tab:hover:not(.active) {
-  background-color: hsla(var(--purple-hs), var(--purple-l), calc(var(--purple-a) - 0.5));
-  color: #1a1a1a;
+.tabs-purple .tab:not(.active):hover {
+  background-color: hsla(var(--purple-hs), var(--purple-l), 0.25);
 }
 .tabs-purple .tab.active {
+  background-color: hsla(var(--purple-hs), var(--purple-l), 0.25);
+  color: hsla(var(--purple-hs), calc(var(--purple-l) - 10%), var(--purple-a));
+}
+.tabs-purple.fill .tab.active, .tabs-purple.prefill .tab.active {
   background-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a));
   color: var(--purple-c, #FFFFFF);
+}
+.tabs-purple.prefill .tab {
+  background-color: hsla(var(--purple-hs), var(--purple-l), 0.125);
 }
 
 .alert-purple {
@@ -3612,7 +4241,7 @@ button.bg-outline-purple:active,
 .btn-purple {
   background-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a)) !important;
   color: var(--purple-c, #FFFFFF) !important;
-  border-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a));
+  border-color: hsla(var(--purple-hs), calc(var(--purple-l) - 20%), var(--purple-a));
 }
 .btn-purple.is-blur {
   background-color: hsla(var(--purple-hs), var(--purple-l), 0.5) !important;
@@ -3674,7 +4303,7 @@ button.btn-outline-purple:active,
 .badge-purple {
   background-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a)) !important;
   color: var(--purple-c, #FFFFFF) !important;
-  border-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a));
+  border-color: hsla(var(--purple-hs), calc(var(--purple-l) - 20%), var(--purple-a));
 }
 .badge-purple.is-blur {
   background-color: hsla(var(--purple-hs), var(--purple-l), 0.5) !important;
@@ -3733,7 +4362,7 @@ button.text-green:active {
 .bg-green {
   background-color: hsla(var(--green-hs), var(--green-l), var(--green-a)) !important;
   color: var(--green-c, #FFFFFF) !important;
-  border-color: hsla(var(--green-hs), var(--green-l), var(--green-a));
+  border-color: hsla(var(--green-hs), calc(var(--green-l) - 20%), var(--green-a));
 }
 .bg-green.is-blur {
   background-color: hsla(var(--green-hs), var(--green-l), 0.5) !important;
@@ -3769,20 +4398,25 @@ button.bg-g-green:active {
   background: linear-gradient(hsla(var(--green-hs), calc(var(--green-l) - 20%), var(--green-a)), var(--green, #1D5C2E)) !important;
 }
 
-.tabs-green.fill .tab {
-  background-color: hsla(var(--green-hs), var(--green-l), calc(var(--green-a) - 0.2));
-  color: var(--green-c, #FFFFFF);
+.tabs-green:hover .tab.active {
+  background-color: hsla(var(--green-hs), var(--green-l), 0.275);
 }
-.tabs-green.fill .tab.active {
-  background-color: hsla(var(--green-hs), var(--green-l), var(--green-a));
+.tabs-green .tab {
+  color: currentColor;
 }
-.tabs-green .tab:hover:not(.active) {
-  background-color: hsla(var(--green-hs), var(--green-l), calc(var(--green-a) - 0.5));
-  color: #1a1a1a;
+.tabs-green .tab:not(.active):hover {
+  background-color: hsla(var(--green-hs), var(--green-l), 0.25);
 }
 .tabs-green .tab.active {
+  background-color: hsla(var(--green-hs), var(--green-l), 0.25);
+  color: hsla(var(--green-hs), calc(var(--green-l) - 10%), var(--green-a));
+}
+.tabs-green.fill .tab.active, .tabs-green.prefill .tab.active {
   background-color: hsla(var(--green-hs), var(--green-l), var(--green-a));
   color: var(--green-c, #FFFFFF);
+}
+.tabs-green.prefill .tab {
+  background-color: hsla(var(--green-hs), var(--green-l), 0.125);
 }
 
 .alert-green {
@@ -3820,7 +4454,7 @@ button.bg-outline-green:active,
 .btn-green {
   background-color: hsla(var(--green-hs), var(--green-l), var(--green-a)) !important;
   color: var(--green-c, #FFFFFF) !important;
-  border-color: hsla(var(--green-hs), var(--green-l), var(--green-a));
+  border-color: hsla(var(--green-hs), calc(var(--green-l) - 20%), var(--green-a));
 }
 .btn-green.is-blur {
   background-color: hsla(var(--green-hs), var(--green-l), 0.5) !important;
@@ -3882,7 +4516,7 @@ button.btn-outline-green:active,
 .badge-green {
   background-color: hsla(var(--green-hs), var(--green-l), var(--green-a)) !important;
   color: var(--green-c, #FFFFFF) !important;
-  border-color: hsla(var(--green-hs), var(--green-l), var(--green-a));
+  border-color: hsla(var(--green-hs), calc(var(--green-l) - 20%), var(--green-a));
 }
 .badge-green.is-blur {
   background-color: hsla(var(--green-hs), var(--green-l), 0.5) !important;
@@ -3925,6 +4559,219 @@ button.badge-outline-green:active,
   background-color: hsla(var(--green-hs), calc(var(--green-l) - 20%), var(--green-a)) !important;
 }
 
+.text-red {
+  color: var(--red, #C54646) !important;
+}
+
+a.text-red:hover,
+button.text-red:hover {
+  color: hsla(var(--red-hs), calc(var(--red-l) - 10%), var(--red-a)) !important;
+}
+a.text-red:active,
+button.text-red:active {
+  color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)) !important;
+}
+
+.bg-red {
+  background-color: hsla(var(--red-hs), var(--red-l), var(--red-a)) !important;
+  color: var(--red-c, #FFFFFF) !important;
+  border-color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a));
+}
+.bg-red.is-blur {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.5) !important;
+}
+.bg-red.is-blur:hover {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.75) !important;
+}
+
+a.bg-red:hover,
+button.bg-red:hover {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 10%), var(--red-a)) !important;
+  border-color: hsla(var(--red-hs), var(--red-l), var(--red-a));
+  color: var(--red-c, #FFFFFF);
+}
+a.bg-red:active,
+button.bg-red:active {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)) !important;
+}
+
+.bg-g-red {
+  background: linear-gradient(var(--red, #C54646), hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a))) !important;
+  color: var(--red-c, #FFFFFF);
+  border: none;
+}
+
+a.bg-g-red:hover,
+button.bg-g-red:hover {
+  background: linear-gradient(hsla(var(--red-hs), calc(var(--red-l) + 20%), var(--red-a)), var(--red, #C54646)) !important;
+  color: var(--red-c, #FFFFFF);
+}
+a.bg-g-red:active,
+button.bg-g-red:active {
+  background: linear-gradient(hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)), var(--red, #C54646)) !important;
+}
+
+.tabs-red:hover .tab.active {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.275);
+}
+.tabs-red .tab {
+  color: currentColor;
+}
+.tabs-red .tab:not(.active):hover {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.25);
+}
+.tabs-red .tab.active {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.25);
+  color: hsla(var(--red-hs), calc(var(--red-l) - 10%), var(--red-a));
+}
+.tabs-red.fill .tab.active, .tabs-red.prefill .tab.active {
+  background-color: hsla(var(--red-hs), var(--red-l), var(--red-a));
+  color: var(--red-c, #FFFFFF);
+}
+.tabs-red.prefill .tab {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.125);
+}
+
+.alert-red {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) + 45%), var(--red-a)) !important;
+  color: hsla(var(--red-hs), calc(var(--red-l) - 45%), var(--red-a)) !important;
+  border-color: hsla(var(--red-hs), var(--red-l), var(--red-a)) !important;
+}
+.alert-red.is-blur:not(:hover) {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) + 45%), 0.5) !important;
+}
+
+.bg-outline-red {
+  background-color: transparent !important;
+  color: hsla(var(--red-hs), var(--red-l), var(--red-a)) !important;
+  border: thin solid;
+}
+.bg-outline-red.is-blur {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 45%), 0.5) !important;
+}
+
+a.bg-outline-red:hover,
+button.bg-outline-red:hover,
+.bg-outline-red:focus:hover,
+.bg-outline-red:focus-within:hover {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 10%), var(--red-a)) !important;
+  color: var(--red-c, #FFFFFF) !important;
+}
+a.bg-outline-red:active,
+button.bg-outline-red:active,
+.bg-outline-red:focus:active,
+.bg-outline-red:focus-within:active {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)) !important;
+}
+
+.btn-red {
+  background-color: hsla(var(--red-hs), var(--red-l), var(--red-a)) !important;
+  color: var(--red-c, #FFFFFF) !important;
+  border-color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a));
+}
+.btn-red.is-blur {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.5) !important;
+}
+.btn-red.is-blur:hover {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.75) !important;
+}
+
+a.btn-red:hover,
+button.btn-red:hover {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 10%), var(--red-a)) !important;
+  border-color: hsla(var(--red-hs), var(--red-l), var(--red-a));
+  color: var(--red-c, #FFFFFF);
+}
+a.btn-red:active,
+button.btn-red:active {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)) !important;
+}
+
+.btn-g-red {
+  background: linear-gradient(var(--red, #C54646), hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a))) !important;
+  color: var(--red-c, #FFFFFF);
+  border: none;
+}
+
+a.btn-g-red:hover,
+button.btn-g-red:hover {
+  background: linear-gradient(hsla(var(--red-hs), calc(var(--red-l) + 20%), var(--red-a)), var(--red, #C54646)) !important;
+  color: var(--red-c, #FFFFFF);
+}
+a.btn-g-red:active,
+button.btn-g-red:active {
+  background: linear-gradient(hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)), var(--red, #C54646)) !important;
+}
+
+.btn-outline-red {
+  background-color: transparent !important;
+  color: hsla(var(--red-hs), var(--red-l), var(--red-a)) !important;
+  border: thin solid;
+}
+.btn-outline-red.is-blur {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 45%), 0.5) !important;
+}
+
+a.btn-outline-red:hover,
+button.btn-outline-red:hover,
+.btn-outline-red:focus:hover,
+.btn-outline-red:focus-within:hover {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 10%), var(--red-a)) !important;
+  color: var(--red-c, #FFFFFF) !important;
+}
+a.btn-outline-red:active,
+button.btn-outline-red:active,
+.btn-outline-red:focus:active,
+.btn-outline-red:focus-within:active {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)) !important;
+}
+
+.badge-red {
+  background-color: hsla(var(--red-hs), var(--red-l), var(--red-a)) !important;
+  color: var(--red-c, #FFFFFF) !important;
+  border-color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a));
+}
+.badge-red.is-blur {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.5) !important;
+}
+.badge-red.is-blur:hover {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.75) !important;
+}
+
+a.badge-red:hover,
+button.badge-red:hover {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 10%), var(--red-a)) !important;
+  border-color: hsla(var(--red-hs), var(--red-l), var(--red-a));
+  color: var(--red-c, #FFFFFF);
+}
+a.badge-red:active,
+button.badge-red:active {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)) !important;
+}
+
+.badge-outline-red {
+  background-color: transparent !important;
+  color: hsla(var(--red-hs), var(--red-l), var(--red-a)) !important;
+  border: thin solid;
+}
+.badge-outline-red.is-blur {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 45%), 0.5) !important;
+}
+
+a.badge-outline-red:hover,
+button.badge-outline-red:hover,
+.badge-outline-red:focus:hover,
+.badge-outline-red:focus-within:hover {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 10%), var(--red-a)) !important;
+  color: var(--red-c, #FFFFFF) !important;
+}
+a.badge-outline-red:active,
+button.badge-outline-red:active,
+.badge-outline-red:focus:active,
+.badge-outline-red:focus-within:active {
+  background-color: hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)) !important;
+}
+
 .text-blue {
   color: var(--blue, #0365A3) !important;
 }
@@ -3941,7 +4788,7 @@ button.text-blue:active {
 .bg-blue {
   background-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a)) !important;
   color: var(--blue-c, #FFFFFF) !important;
-  border-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a));
+  border-color: hsla(var(--blue-hs), calc(var(--blue-l) - 20%), var(--blue-a));
 }
 .bg-blue.is-blur {
   background-color: hsla(var(--blue-hs), var(--blue-l), 0.5) !important;
@@ -3977,20 +4824,25 @@ button.bg-g-blue:active {
   background: linear-gradient(hsla(var(--blue-hs), calc(var(--blue-l) - 20%), var(--blue-a)), var(--blue, #0365A3)) !important;
 }
 
-.tabs-blue.fill .tab {
-  background-color: hsla(var(--blue-hs), var(--blue-l), calc(var(--blue-a) - 0.2));
-  color: var(--blue-c, #FFFFFF);
+.tabs-blue:hover .tab.active {
+  background-color: hsla(var(--blue-hs), var(--blue-l), 0.275);
 }
-.tabs-blue.fill .tab.active {
-  background-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a));
+.tabs-blue .tab {
+  color: currentColor;
 }
-.tabs-blue .tab:hover:not(.active) {
-  background-color: hsla(var(--blue-hs), var(--blue-l), calc(var(--blue-a) - 0.5));
-  color: #1a1a1a;
+.tabs-blue .tab:not(.active):hover {
+  background-color: hsla(var(--blue-hs), var(--blue-l), 0.25);
 }
 .tabs-blue .tab.active {
+  background-color: hsla(var(--blue-hs), var(--blue-l), 0.25);
+  color: hsla(var(--blue-hs), calc(var(--blue-l) - 10%), var(--blue-a));
+}
+.tabs-blue.fill .tab.active, .tabs-blue.prefill .tab.active {
   background-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a));
   color: var(--blue-c, #FFFFFF);
+}
+.tabs-blue.prefill .tab {
+  background-color: hsla(var(--blue-hs), var(--blue-l), 0.125);
 }
 
 .alert-blue {
@@ -4028,7 +4880,7 @@ button.bg-outline-blue:active,
 .btn-blue {
   background-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a)) !important;
   color: var(--blue-c, #FFFFFF) !important;
-  border-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a));
+  border-color: hsla(var(--blue-hs), calc(var(--blue-l) - 20%), var(--blue-a));
 }
 .btn-blue.is-blur {
   background-color: hsla(var(--blue-hs), var(--blue-l), 0.5) !important;
@@ -4090,7 +4942,7 @@ button.btn-outline-blue:active,
 .badge-blue {
   background-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a)) !important;
   color: var(--blue-c, #FFFFFF) !important;
-  border-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a));
+  border-color: hsla(var(--blue-hs), calc(var(--blue-l) - 20%), var(--blue-a));
 }
 .badge-blue.is-blur {
   background-color: hsla(var(--blue-hs), var(--blue-l), 0.5) !important;
@@ -4149,7 +5001,7 @@ button.text-yellow:active {
 .bg-yellow {
   background-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a)) !important;
   color: var(--yellow-c, #FFFFFF) !important;
-  border-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a));
+  border-color: hsla(var(--yellow-hs), calc(var(--yellow-l) - 20%), var(--yellow-a));
 }
 .bg-yellow.is-blur {
   background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.5) !important;
@@ -4185,20 +5037,25 @@ button.bg-g-yellow:active {
   background: linear-gradient(hsla(var(--yellow-hs), calc(var(--yellow-l) - 20%), var(--yellow-a)), var(--yellow, #C4C400)) !important;
 }
 
-.tabs-yellow.fill .tab {
-  background-color: hsla(var(--yellow-hs), var(--yellow-l), calc(var(--yellow-a) - 0.2));
-  color: var(--yellow-c, #FFFFFF);
+.tabs-yellow:hover .tab.active {
+  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.275);
 }
-.tabs-yellow.fill .tab.active {
-  background-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a));
+.tabs-yellow .tab {
+  color: currentColor;
 }
-.tabs-yellow .tab:hover:not(.active) {
-  background-color: hsla(var(--yellow-hs), var(--yellow-l), calc(var(--yellow-a) - 0.5));
-  color: #1a1a1a;
+.tabs-yellow .tab:not(.active):hover {
+  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.25);
 }
 .tabs-yellow .tab.active {
+  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.25);
+  color: hsla(var(--yellow-hs), calc(var(--yellow-l) - 10%), var(--yellow-a));
+}
+.tabs-yellow.fill .tab.active, .tabs-yellow.prefill .tab.active {
   background-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a));
   color: var(--yellow-c, #FFFFFF);
+}
+.tabs-yellow.prefill .tab {
+  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.125);
 }
 
 .alert-yellow {
@@ -4236,7 +5093,7 @@ button.bg-outline-yellow:active,
 .btn-yellow {
   background-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a)) !important;
   color: var(--yellow-c, #FFFFFF) !important;
-  border-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a));
+  border-color: hsla(var(--yellow-hs), calc(var(--yellow-l) - 20%), var(--yellow-a));
 }
 .btn-yellow.is-blur {
   background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.5) !important;
@@ -4298,7 +5155,7 @@ button.btn-outline-yellow:active,
 .badge-yellow {
   background-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a)) !important;
   color: var(--yellow-c, #FFFFFF) !important;
-  border-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a));
+  border-color: hsla(var(--yellow-hs), calc(var(--yellow-l) - 20%), var(--yellow-a));
 }
 .badge-yellow.is-blur {
   background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.5) !important;
@@ -4357,7 +5214,7 @@ button.text-muted:active {
 .bg-muted {
   background-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a)) !important;
   color: var(--muted-c, #FFFFFF) !important;
-  border-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a));
+  border-color: hsla(var(--muted-hs), calc(var(--muted-l) - 20%), var(--muted-a));
 }
 .bg-muted.is-blur {
   background-color: hsla(var(--muted-hs), var(--muted-l), 0.5) !important;
@@ -4393,20 +5250,25 @@ button.bg-g-muted:active {
   background: linear-gradient(hsla(var(--muted-hs), calc(var(--muted-l) - 20%), var(--muted-a)), var(--muted, #7D7D7D)) !important;
 }
 
-.tabs-muted.fill .tab {
-  background-color: hsla(var(--muted-hs), var(--muted-l), calc(var(--muted-a) - 0.2));
-  color: var(--muted-c, #FFFFFF);
+.tabs-muted:hover .tab.active {
+  background-color: hsla(var(--muted-hs), var(--muted-l), 0.275);
 }
-.tabs-muted.fill .tab.active {
-  background-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a));
+.tabs-muted .tab {
+  color: currentColor;
 }
-.tabs-muted .tab:hover:not(.active) {
-  background-color: hsla(var(--muted-hs), var(--muted-l), calc(var(--muted-a) - 0.5));
-  color: #1a1a1a;
+.tabs-muted .tab:not(.active):hover {
+  background-color: hsla(var(--muted-hs), var(--muted-l), 0.25);
 }
 .tabs-muted .tab.active {
+  background-color: hsla(var(--muted-hs), var(--muted-l), 0.25);
+  color: hsla(var(--muted-hs), calc(var(--muted-l) - 10%), var(--muted-a));
+}
+.tabs-muted.fill .tab.active, .tabs-muted.prefill .tab.active {
   background-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a));
   color: var(--muted-c, #FFFFFF);
+}
+.tabs-muted.prefill .tab {
+  background-color: hsla(var(--muted-hs), var(--muted-l), 0.125);
 }
 
 .alert-muted {
@@ -4444,7 +5306,7 @@ button.bg-outline-muted:active,
 .btn-muted {
   background-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a)) !important;
   color: var(--muted-c, #FFFFFF) !important;
-  border-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a));
+  border-color: hsla(var(--muted-hs), calc(var(--muted-l) - 20%), var(--muted-a));
 }
 .btn-muted.is-blur {
   background-color: hsla(var(--muted-hs), var(--muted-l), 0.5) !important;
@@ -4506,7 +5368,7 @@ button.btn-outline-muted:active,
 .badge-muted {
   background-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a)) !important;
   color: var(--muted-c, #FFFFFF) !important;
-  border-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a));
+  border-color: hsla(var(--muted-hs), calc(var(--muted-l) - 20%), var(--muted-a));
 }
 .badge-muted.is-blur {
   background-color: hsla(var(--muted-hs), var(--muted-l), 0.5) !important;
@@ -4549,6 +5411,432 @@ button.badge-outline-muted:active,
   background-color: hsla(var(--muted-hs), calc(var(--muted-l) - 20%), var(--muted-a)) !important;
 }
 
+.text-color-1 {
+  color: var(--color-1, #34A853) !important;
+}
+
+a.text-color-1:hover,
+button.text-color-1:hover {
+  color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 10%), var(--color-1-a)) !important;
+}
+a.text-color-1:active,
+button.text-color-1:active {
+  color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)) !important;
+}
+
+.bg-color-1 {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a)) !important;
+  color: var(--color-1-c, #FFFFFF) !important;
+  border-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a));
+}
+.bg-color-1.is-blur {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.5) !important;
+}
+.bg-color-1.is-blur:hover {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.75) !important;
+}
+
+a.bg-color-1:hover,
+button.bg-color-1:hover {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 10%), var(--color-1-a)) !important;
+  border-color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a));
+  color: var(--color-1-c, #FFFFFF);
+}
+a.bg-color-1:active,
+button.bg-color-1:active {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)) !important;
+}
+
+.bg-g-color-1 {
+  background: linear-gradient(var(--color-1, #34A853), hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a))) !important;
+  color: var(--color-1-c, #FFFFFF);
+  border: none;
+}
+
+a.bg-g-color-1:hover,
+button.bg-g-color-1:hover {
+  background: linear-gradient(hsla(var(--color-1-hs), calc(var(--color-1-l) + 20%), var(--color-1-a)), var(--color-1, #34A853)) !important;
+  color: var(--color-1-c, #FFFFFF);
+}
+a.bg-g-color-1:active,
+button.bg-g-color-1:active {
+  background: linear-gradient(hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)), var(--color-1, #34A853)) !important;
+}
+
+.tabs-color-1:hover .tab.active {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.275);
+}
+.tabs-color-1 .tab {
+  color: currentColor;
+}
+.tabs-color-1 .tab:not(.active):hover {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.25);
+}
+.tabs-color-1 .tab.active {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.25);
+  color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 10%), var(--color-1-a));
+}
+.tabs-color-1.fill .tab.active, .tabs-color-1.prefill .tab.active {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a));
+  color: var(--color-1-c, #FFFFFF);
+}
+.tabs-color-1.prefill .tab {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.125);
+}
+
+.alert-color-1 {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) + 45%), var(--color-1-a)) !important;
+  color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 45%), var(--color-1-a)) !important;
+  border-color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a)) !important;
+}
+.alert-color-1.is-blur:not(:hover) {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) + 45%), 0.5) !important;
+}
+
+.bg-outline-color-1 {
+  background-color: transparent !important;
+  color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a)) !important;
+  border: thin solid;
+}
+.bg-outline-color-1.is-blur {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 45%), 0.5) !important;
+}
+
+a.bg-outline-color-1:hover,
+button.bg-outline-color-1:hover,
+.bg-outline-color-1:focus:hover,
+.bg-outline-color-1:focus-within:hover {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 10%), var(--color-1-a)) !important;
+  color: var(--color-1-c, #FFFFFF) !important;
+}
+a.bg-outline-color-1:active,
+button.bg-outline-color-1:active,
+.bg-outline-color-1:focus:active,
+.bg-outline-color-1:focus-within:active {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)) !important;
+}
+
+.btn-color-1 {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a)) !important;
+  color: var(--color-1-c, #FFFFFF) !important;
+  border-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a));
+}
+.btn-color-1.is-blur {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.5) !important;
+}
+.btn-color-1.is-blur:hover {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.75) !important;
+}
+
+a.btn-color-1:hover,
+button.btn-color-1:hover {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 10%), var(--color-1-a)) !important;
+  border-color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a));
+  color: var(--color-1-c, #FFFFFF);
+}
+a.btn-color-1:active,
+button.btn-color-1:active {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)) !important;
+}
+
+.btn-g-color-1 {
+  background: linear-gradient(var(--color-1, #34A853), hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a))) !important;
+  color: var(--color-1-c, #FFFFFF);
+  border: none;
+}
+
+a.btn-g-color-1:hover,
+button.btn-g-color-1:hover {
+  background: linear-gradient(hsla(var(--color-1-hs), calc(var(--color-1-l) + 20%), var(--color-1-a)), var(--color-1, #34A853)) !important;
+  color: var(--color-1-c, #FFFFFF);
+}
+a.btn-g-color-1:active,
+button.btn-g-color-1:active {
+  background: linear-gradient(hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)), var(--color-1, #34A853)) !important;
+}
+
+.btn-outline-color-1 {
+  background-color: transparent !important;
+  color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a)) !important;
+  border: thin solid;
+}
+.btn-outline-color-1.is-blur {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 45%), 0.5) !important;
+}
+
+a.btn-outline-color-1:hover,
+button.btn-outline-color-1:hover,
+.btn-outline-color-1:focus:hover,
+.btn-outline-color-1:focus-within:hover {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 10%), var(--color-1-a)) !important;
+  color: var(--color-1-c, #FFFFFF) !important;
+}
+a.btn-outline-color-1:active,
+button.btn-outline-color-1:active,
+.btn-outline-color-1:focus:active,
+.btn-outline-color-1:focus-within:active {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)) !important;
+}
+
+.badge-color-1 {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a)) !important;
+  color: var(--color-1-c, #FFFFFF) !important;
+  border-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a));
+}
+.badge-color-1.is-blur {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.5) !important;
+}
+.badge-color-1.is-blur:hover {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.75) !important;
+}
+
+a.badge-color-1:hover,
+button.badge-color-1:hover {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 10%), var(--color-1-a)) !important;
+  border-color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a));
+  color: var(--color-1-c, #FFFFFF);
+}
+a.badge-color-1:active,
+button.badge-color-1:active {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)) !important;
+}
+
+.badge-outline-color-1 {
+  background-color: transparent !important;
+  color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a)) !important;
+  border: thin solid;
+}
+.badge-outline-color-1.is-blur {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 45%), 0.5) !important;
+}
+
+a.badge-outline-color-1:hover,
+button.badge-outline-color-1:hover,
+.badge-outline-color-1:focus:hover,
+.badge-outline-color-1:focus-within:hover {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 10%), var(--color-1-a)) !important;
+  color: var(--color-1-c, #FFFFFF) !important;
+}
+a.badge-outline-color-1:active,
+button.badge-outline-color-1:active,
+.badge-outline-color-1:focus:active,
+.badge-outline-color-1:focus-within:active {
+  background-color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)) !important;
+}
+
+.text-color-2 {
+  color: var(--color-2, #5C2B6D) !important;
+}
+
+a.text-color-2:hover,
+button.text-color-2:hover {
+  color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 10%), var(--color-2-a)) !important;
+}
+a.text-color-2:active,
+button.text-color-2:active {
+  color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)) !important;
+}
+
+.bg-color-2 {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a)) !important;
+  color: var(--color-2-c, #FFFFFF) !important;
+  border-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a));
+}
+.bg-color-2.is-blur {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.5) !important;
+}
+.bg-color-2.is-blur:hover {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.75) !important;
+}
+
+a.bg-color-2:hover,
+button.bg-color-2:hover {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 10%), var(--color-2-a)) !important;
+  border-color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a));
+  color: var(--color-2-c, #FFFFFF);
+}
+a.bg-color-2:active,
+button.bg-color-2:active {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)) !important;
+}
+
+.bg-g-color-2 {
+  background: linear-gradient(var(--color-2, #5C2B6D), hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a))) !important;
+  color: var(--color-2-c, #FFFFFF);
+  border: none;
+}
+
+a.bg-g-color-2:hover,
+button.bg-g-color-2:hover {
+  background: linear-gradient(hsla(var(--color-2-hs), calc(var(--color-2-l) + 20%), var(--color-2-a)), var(--color-2, #5C2B6D)) !important;
+  color: var(--color-2-c, #FFFFFF);
+}
+a.bg-g-color-2:active,
+button.bg-g-color-2:active {
+  background: linear-gradient(hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)), var(--color-2, #5C2B6D)) !important;
+}
+
+.tabs-color-2:hover .tab.active {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.275);
+}
+.tabs-color-2 .tab {
+  color: currentColor;
+}
+.tabs-color-2 .tab:not(.active):hover {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.25);
+}
+.tabs-color-2 .tab.active {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.25);
+  color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 10%), var(--color-2-a));
+}
+.tabs-color-2.fill .tab.active, .tabs-color-2.prefill .tab.active {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a));
+  color: var(--color-2-c, #FFFFFF);
+}
+.tabs-color-2.prefill .tab {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.125);
+}
+
+.alert-color-2 {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) + 45%), var(--color-2-a)) !important;
+  color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 45%), var(--color-2-a)) !important;
+  border-color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a)) !important;
+}
+.alert-color-2.is-blur:not(:hover) {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) + 45%), 0.5) !important;
+}
+
+.bg-outline-color-2 {
+  background-color: transparent !important;
+  color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a)) !important;
+  border: thin solid;
+}
+.bg-outline-color-2.is-blur {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 45%), 0.5) !important;
+}
+
+a.bg-outline-color-2:hover,
+button.bg-outline-color-2:hover,
+.bg-outline-color-2:focus:hover,
+.bg-outline-color-2:focus-within:hover {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 10%), var(--color-2-a)) !important;
+  color: var(--color-2-c, #FFFFFF) !important;
+}
+a.bg-outline-color-2:active,
+button.bg-outline-color-2:active,
+.bg-outline-color-2:focus:active,
+.bg-outline-color-2:focus-within:active {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)) !important;
+}
+
+.btn-color-2 {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a)) !important;
+  color: var(--color-2-c, #FFFFFF) !important;
+  border-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a));
+}
+.btn-color-2.is-blur {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.5) !important;
+}
+.btn-color-2.is-blur:hover {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.75) !important;
+}
+
+a.btn-color-2:hover,
+button.btn-color-2:hover {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 10%), var(--color-2-a)) !important;
+  border-color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a));
+  color: var(--color-2-c, #FFFFFF);
+}
+a.btn-color-2:active,
+button.btn-color-2:active {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)) !important;
+}
+
+.btn-g-color-2 {
+  background: linear-gradient(var(--color-2, #5C2B6D), hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a))) !important;
+  color: var(--color-2-c, #FFFFFF);
+  border: none;
+}
+
+a.btn-g-color-2:hover,
+button.btn-g-color-2:hover {
+  background: linear-gradient(hsla(var(--color-2-hs), calc(var(--color-2-l) + 20%), var(--color-2-a)), var(--color-2, #5C2B6D)) !important;
+  color: var(--color-2-c, #FFFFFF);
+}
+a.btn-g-color-2:active,
+button.btn-g-color-2:active {
+  background: linear-gradient(hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)), var(--color-2, #5C2B6D)) !important;
+}
+
+.btn-outline-color-2 {
+  background-color: transparent !important;
+  color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a)) !important;
+  border: thin solid;
+}
+.btn-outline-color-2.is-blur {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 45%), 0.5) !important;
+}
+
+a.btn-outline-color-2:hover,
+button.btn-outline-color-2:hover,
+.btn-outline-color-2:focus:hover,
+.btn-outline-color-2:focus-within:hover {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 10%), var(--color-2-a)) !important;
+  color: var(--color-2-c, #FFFFFF) !important;
+}
+a.btn-outline-color-2:active,
+button.btn-outline-color-2:active,
+.btn-outline-color-2:focus:active,
+.btn-outline-color-2:focus-within:active {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)) !important;
+}
+
+.badge-color-2 {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a)) !important;
+  color: var(--color-2-c, #FFFFFF) !important;
+  border-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a));
+}
+.badge-color-2.is-blur {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.5) !important;
+}
+.badge-color-2.is-blur:hover {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.75) !important;
+}
+
+a.badge-color-2:hover,
+button.badge-color-2:hover {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 10%), var(--color-2-a)) !important;
+  border-color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a));
+  color: var(--color-2-c, #FFFFFF);
+}
+a.badge-color-2:active,
+button.badge-color-2:active {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)) !important;
+}
+
+.badge-outline-color-2 {
+  background-color: transparent !important;
+  color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a)) !important;
+  border: thin solid;
+}
+.badge-outline-color-2.is-blur {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 45%), 0.5) !important;
+}
+
+a.badge-outline-color-2:hover,
+button.badge-outline-color-2:hover,
+.badge-outline-color-2:focus:hover,
+.badge-outline-color-2:focus-within:hover {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 10%), var(--color-2-a)) !important;
+  color: var(--color-2-c, #FFFFFF) !important;
+}
+a.badge-outline-color-2:active,
+button.badge-outline-color-2:active,
+.badge-outline-color-2:focus:active,
+.badge-outline-color-2:focus-within:active {
+  background-color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)) !important;
+}
+
 :disabled,
 .disabled,
 [disable] {
@@ -4573,6 +5861,14 @@ input:focus {
   color: currentColor !important;
 }
 
+.bg-current,
+.btn-current,
+.tabs-current,
+.alert-current {
+  border: none;
+  background-color: currentColor !important;
+}
+
 .inactive {
   color: #BCBCCB;
 }
@@ -4581,7 +5877,11 @@ input:focus {
   position: relative;
   transition: background-color 0.5s;
 }
+.is-blur {
+  position: relative;
+}
 .is-blur > * {
+  position: relative;
   z-index: 1;
 }
 .is-blur::before {
@@ -4614,7 +5914,11 @@ input:focus {
 [class*=shadow-] > * {
   position: relative;
 }
+[class*=shadow-] {
+  position: relative;
+}
 [class*=shadow-] > * {
+  position: relative;
   z-index: 1;
 }
 [class*=shadow-]::before {

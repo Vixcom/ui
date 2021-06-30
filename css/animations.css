@@ -87,7 +87,7 @@
 }
 
 .ind-x {
-  animation: x-ind-move 1.2s ease-out infinite;
+  animation: x-ind-move 1.2s ease-out backwards infinite;
 }
 
 .spin {

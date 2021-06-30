@@ -6094,7 +6094,7 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: 'Font Awesome';
+  font-family: "Font Awesome";
   font-style: normal;
   font-weight: 900;
   font-display: block;
@@ -6102,7 +6102,7 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: 'Font Awesome';
+  font-family: "Font Awesome";
   font-style: normal;
   font-weight: 400;
   font-display: block;
@@ -6110,7 +6110,7 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: 'Font Awesome';
+  font-family: "Font Awesome";
   font-style: normal;
   font-weight: 900;
   font-display: block;
