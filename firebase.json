@@ -6,6 +6,7 @@
       "ignore": [
         "firebase.json",
         "**/.git/**",
+        "**/.github/**",
         "**/node_modules/**"
       ],
       "appAssociation": "AUTO",
@@ -24,6 +25,7 @@
         "firebase.json",
         ".firebaserc",
         "**/.git/**",
+        "**/.github/**",
         "**/node_modules/**"
       ],
       "appAssociation": "AUTO",

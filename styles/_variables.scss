@@ -193,21 +193,21 @@ $app-colors-mapped: map-merge(( // ===
 
 @mixin mapped-tabs-var-variant($selector, $k, $v) {
   #{$selector} {
-    &:hover .tab.active {
-      background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.275);
-    }
+    // &:hover .tab.active {
+    //   background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.275);
+    // }
 
     .tab {
       color: currentColor;
 
       &:not(.active) {
         &:hover {
-          background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.25);
+          background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.075);
         }
       }
 
       &.active {
-        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.25);
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.125);
         color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a));
       }
     }
@@ -215,6 +215,10 @@ $app-colors-mapped: map-merge(( // ===
     &.fill,
     &.prefill {
       .tab {
+        &:hover {
+          background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.25);
+        }
+
         &.active {
           background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
           color: var(--#{$k}-c, map-get($v, "c"));

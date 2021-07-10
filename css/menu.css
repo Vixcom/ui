@@ -17,13 +17,8 @@
 .appmenu-trigger::after {
   display: none !important;
 }
-.appmenu-trigger:checked ~ .content,
-.appmenu-trigger:checked ~ * .content {
-  /* position: absolute; */
-  /* width: 100%; */
-}
-.appmenu-trigger:checked ~ .content > footer,
-.appmenu-trigger:checked ~ * .content > footer {
+.appmenu-trigger:checked ~ .page > footer,
+.appmenu-trigger:checked ~ * .page > footer {
   background-color: var(--primary);
   color: var(--primary-c);
 }
@@ -33,7 +28,7 @@
 
 .appmenu-toggle {
   position: relative;
-  font-size: 120%;
+  /* font-size: 120%; */
   margin-bottom: 0;
   z-index: 1;
 }
@@ -56,6 +51,14 @@
 }
 
 /* Sidemenu */
+.sidemenu-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+
 .sidemenu {
   display: flex;
   flex-direction: column;
@@ -130,7 +133,7 @@
 }
 
 /* Page */
-.content {
+.page {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -140,7 +143,7 @@
   transition: width 0.5s;
   overflow: hidden;
 }
-.content footer {
+.page footer {
   background-color: var(--secondary);
   color: var(--white);
 }
@@ -149,6 +152,7 @@
   position: relative;
   padding: 3em;
   width: 100%;
+  flex: 1 1 100%;
   transition: margin 0.2s;
 }
 
@@ -161,28 +165,28 @@
     opacity: 0;
     padding: 0;
   }
-  .appmenu-trigger:not(:checked) ~ .content .app-header .appmenu-toggle,
-.appmenu-trigger:not(:checked) ~ * .content .app-header .appmenu-toggle {
+  .appmenu-trigger:not(:checked) ~ .page .app-header .appmenu-toggle,
+.appmenu-trigger:not(:checked) ~ * .page .app-header .appmenu-toggle {
     display: none;
   }
 }
 /* Above <---> Mobile */
 @media (min-width: 576px) {
-  .appmenu-trigger:not(:checked) ~ .content,
-.appmenu-trigger:not(:checked) ~ * .content {
+  .appmenu-trigger:not(:checked) ~ .page,
+.appmenu-trigger:not(:checked) ~ * .page {
     border-left: thin solid;
   }
-  .appmenu-trigger:not(:checked) ~ .content,
-.appmenu-trigger:not(:checked) ~ * .content {
+  .appmenu-trigger:not(:checked) ~ .page,
+.appmenu-trigger:not(:checked) ~ * .page {
     position: relative;
   }
-  .appmenu-trigger:not(:checked) ~ .content > *,
-.appmenu-trigger:not(:checked) ~ * .content > * {
+  .appmenu-trigger:not(:checked) ~ .page > *,
+.appmenu-trigger:not(:checked) ~ * .page > * {
     position: relative;
     z-index: 1;
   }
-  .appmenu-trigger:not(:checked) ~ .content::before,
-.appmenu-trigger:not(:checked) ~ * .content::before {
+  .appmenu-trigger:not(:checked) ~ .page::before,
+.appmenu-trigger:not(:checked) ~ * .page::before {
     content: "";
     display: block;
     height: 100%;
@@ -193,8 +197,8 @@
     left: 0;
     z-index: 0;
   }
-  .appmenu-trigger:not(:checked) ~ .content::before,
-.appmenu-trigger:not(:checked) ~ * .content::before {
+  .appmenu-trigger:not(:checked) ~ .page::before,
+.appmenu-trigger:not(:checked) ~ * .page::before {
     box-shadow: 0 0 2.5rem -1.75rem hsla(var(--black-hs), var(--black-l), 0.125);
   }
 }
@@ -312,7 +316,7 @@
     z-index: 3;
   }
 
-  .content .page-content {
+  .page .page-content {
     padding: 3em 1em;
   }
 }

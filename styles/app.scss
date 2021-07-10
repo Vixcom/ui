@@ -350,18 +350,25 @@ label {
 
   &.radio,
   &.checkbox {
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
 
-    &+ {
+    &,
+    &-container {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
 
-      .radio,
-      .checkbox {
-        margin-top: 1rem;
+      .label>* {
+        margin-bottom: 0;
+      }
+
+      &+ {
+
+        .radio,
+        .checkbox {
+          margin-top: 1rem;
+        }
       }
     }
-
   }
 
   .active,
@@ -728,44 +735,59 @@ option[disabled]:first-of-type {
   }
 }
 
-.progress.dotted {
-  display: flex;
-  min-width: 25%;
-  list-style: none;
+.progress {
   position: relative;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  /* border-radius: 5rem; */
+  background-color: transparent;
+  @include before-content;
 
   &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.125;
-    height: 100%;
-    width: 100%;
-    border-radius: inherit;
-    background-color: currentColor;
+    opacity: 0.75;
   }
 
-  .dot {
-    background-color: currentColor;
-    border-radius: 50%;
-    width: 0.5rem;
-    height: 0.5rem;
-    z-index: 1;
+  &.bar {
+    @include after-content;
+
+    &::after {
+      background-color: currentColor;
+      // width: attr(data-progress '%');
+      transition: width 0.5s;
+    }
+  }
+
+  &.dotted {
+    display: flex;
+    min-width: 25%;
+    list-style: none;
     position: relative;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    gap: 0.125rem;
+    /* border-radius: 5rem; */
+    @include before-content;
 
-    &+.dot {
-      margin-left: 0.5rem;
+    &::before {
+      opacity: 0.125;
+      background-color: currentColor;
     }
 
-    &.active~.dot {
-      opacity: 0.5;
-    }
+    .dot {
+      background-color: currentColor;
+      border-radius: 50%;
+      width: 0.5rem;
+      height: 0.5rem;
+      z-index: 1;
+      position: relative;
 
+      &+.dot {
+        margin-left: 0.5rem;
+      }
+
+      &.active~.dot {
+        opacity: 0.5;
+      }
+
+    }
   }
 }
 
@@ -1008,18 +1030,21 @@ option[disabled]:first-of-type {
   border-radius: inherit;
 }
 
-.tabular,
-.table-container {
-  /* color: var(--black); */
+table {
   border-collapse: separate;
   border-spacing: 0;
+  width: 100%;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  overflow: scroll;
+  /* color: var(--black); */
   /* background-color: var(--white); */
   $table-parent: &;
-
-  &,
-  table {
-    width: 100%; // WARNING: Discontinued 6TH OCT 2020 Highly unstable with flex container
-  }
 
   &.is-table-sticky {
     display: flex;
@@ -1445,8 +1470,9 @@ option[disabled]:first-of-type {
 
   .item {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    gap: 0.5rem;
     padding: 0 1rem;
     cursor: pointer;
 

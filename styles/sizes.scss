@@ -5,11 +5,12 @@
 */
 $grid-breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1200px);
 $sizes: (0, 25, 50, 75, 100);
+$s-sizes: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 $n-sizes: (unset, auto);
 $limits: ('', 'min-', 'max-');
 $types: ('', 'v');
 
-@mixin layoutSizer($_size, $_limit, $_type, $_breakpoint, $_dimension: '%', $_useDimension: false) {
+@mixin boxSizer($_size, $_limit, $_type, $_breakpoint, $_dimension: '%', $_useDimension: false) {
   #{'.'}#{$_limit}#{$_type}#{'h-'}#{$_breakpoint}#{$_size} {
     $__dimension: if($_type=='v', 'vh', $_dimension);
     $__dimension: if($_useDimension, $__dimension, '');
@@ -23,31 +24,52 @@ $types: ('', 'v');
   }
 }
 
-@mixin layoutSizeLooper($size, $dimension, $useDimension: false, $breakPoint: '') {
+@mixin layoutLooper($size, $dimension, $useDimension: false, $breakPoint: '') {
   @each $limit in $limits {
     @each $type in $types {
-      @include layoutSizer($size, $limit, $type, $breakPoint, $dimension, $useDimension);
+      @include boxSizer($size, $limit, $type, $breakPoint, $dimension, $useDimension);
+    }
+  }
+
+  @each $direction-key,
+  $direction in (t:(n:'Y', v:'-'), l:(n:'X', v:'-'), b:(n:'Y', v:''), r:(n:'X', v:'')) {
+    .float-#{$direction-key}-#{$breakPoint}#{$size} {
+      $__value: if($useDimension, #{'translate'}#{map-get($direction,'n')}(#{map-get($direction,'v')}#{$size}#{'%'}), unset);
+      transform: $__value;
     }
   }
 }
 
 @each $size in $sizes {
-  @include layoutSizeLooper($size, '%', true);
+  @include layoutLooper($size, '%', true);
 }
 
 @each $size in $n-sizes {
-  @include layoutSizeLooper($size, '');
+  @include layoutLooper($size, '');
 }
 
-@each $k,
+@each $s-size in $s-sizes {
+  .sq-#{$s-size} {
+    height: #{$s-size}rem !important;
+    width: #{$s-size}rem !important;
+    min-height: #{$s-size}rem !important;
+    min-width: #{$s-size}rem !important;
+  }
+
+  .gap-#{$s-size} {
+    gap: #{$s-size}rem;
+  }
+}
+
+@each $breakpoint-key,
 $breakpoint in $grid-breakpoints {
   @media (min-width:$breakpoint) {
     @each $size in $sizes {
-      @include layoutSizeLooper($size, '%', true, #{$k}#{'-'});
+      @include layoutLooper($size, '%', true, #{$breakpoint-key}#{'-'});
     }
 
     @each $size in $n-sizes {
-      @include layoutSizeLooper($size, '', false, #{$k}#{'-'});
+      @include layoutLooper($size, '', false, #{$breakpoint-key}#{'-'});
     }
   }
 }
@@ -98,26 +120,4 @@ h6,
 
 .font-lg {
   font-size: 250%
-}
-
-@each $n in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
-  .sq-#{$n} {
-    height: #{$n}rem !important;
-    width: #{$n}rem !important;
-    min-height: #{$n}rem !important;
-    min-width: #{$n}rem !important;
-  }
-
-  .gap-#{$n} {
-    gap: #{$n}rem;
-  }
-}
-
-@each $k,
-$d in (t:(n:'Y', v:'-'), l:(n:'X', v:'-'), b:(n:'Y', v:''), r:(n:'X', v:'')) {
-  @each $n in (25, 50, 75, 100) {
-    .float-#{$k}-#{$n} {
-      transform: #{'translate'}#{map-get($d,'n')}(#{map-get($d,'v')}#{$n}#{'%'});
-    }
-  }
 }

@@ -351,18 +351,18 @@ button.bg-g-default:active {
   background: linear-gradient(hsla(var(--default-hs), calc(var(--default-l) - 20%), var(--default-a)), var(--default, #5B5B5B)) !important;
 }
 
-.tabs-default:hover .tab.active {
-  background-color: hsla(var(--default-hs), var(--default-l), 0.275);
-}
 .tabs-default .tab {
   color: currentColor;
 }
 .tabs-default .tab:not(.active):hover {
-  background-color: hsla(var(--default-hs), var(--default-l), 0.25);
+  background-color: hsla(var(--default-hs), var(--default-l), 0.075);
 }
 .tabs-default .tab.active {
-  background-color: hsla(var(--default-hs), var(--default-l), 0.25);
+  background-color: hsla(var(--default-hs), var(--default-l), 0.125);
   color: hsla(var(--default-hs), calc(var(--default-l) - 10%), var(--default-a));
+}
+.tabs-default.fill .tab:hover, .tabs-default.prefill .tab:hover {
+  background-color: hsla(var(--default-hs), var(--default-l), 0.25);
 }
 .tabs-default.fill .tab.active, .tabs-default.prefill .tab.active {
   background-color: hsla(var(--default-hs), var(--default-l), var(--default-a));
@@ -564,18 +564,18 @@ button.bg-g-accent:active {
   background: linear-gradient(hsla(var(--accent-hs), calc(var(--accent-l) - 20%), var(--accent-a)), var(--accent, #BFBFBF)) !important;
 }
 
-.tabs-accent:hover .tab.active {
-  background-color: hsla(var(--accent-hs), var(--accent-l), 0.275);
-}
 .tabs-accent .tab {
   color: currentColor;
 }
 .tabs-accent .tab:not(.active):hover {
-  background-color: hsla(var(--accent-hs), var(--accent-l), 0.25);
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.075);
 }
 .tabs-accent .tab.active {
-  background-color: hsla(var(--accent-hs), var(--accent-l), 0.25);
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.125);
   color: hsla(var(--accent-hs), calc(var(--accent-l) - 10%), var(--accent-a));
+}
+.tabs-accent.fill .tab:hover, .tabs-accent.prefill .tab:hover {
+  background-color: hsla(var(--accent-hs), var(--accent-l), 0.25);
 }
 .tabs-accent.fill .tab.active, .tabs-accent.prefill .tab.active {
   background-color: hsla(var(--accent-hs), var(--accent-l), var(--accent-a));
@@ -777,18 +777,18 @@ button.bg-g-primary:active {
   background: linear-gradient(hsla(var(--primary-hs), calc(var(--primary-l) - 20%), var(--primary-a)), var(--primary, #34A853)) !important;
 }
 
-.tabs-primary:hover .tab.active {
-  background-color: hsla(var(--primary-hs), var(--primary-l), 0.275);
-}
 .tabs-primary .tab {
   color: currentColor;
 }
 .tabs-primary .tab:not(.active):hover {
-  background-color: hsla(var(--primary-hs), var(--primary-l), 0.25);
+  background-color: hsla(var(--primary-hs), var(--primary-l), 0.075);
 }
 .tabs-primary .tab.active {
-  background-color: hsla(var(--primary-hs), var(--primary-l), 0.25);
+  background-color: hsla(var(--primary-hs), var(--primary-l), 0.125);
   color: hsla(var(--primary-hs), calc(var(--primary-l) - 10%), var(--primary-a));
+}
+.tabs-primary.fill .tab:hover, .tabs-primary.prefill .tab:hover {
+  background-color: hsla(var(--primary-hs), var(--primary-l), 0.25);
 }
 .tabs-primary.fill .tab.active, .tabs-primary.prefill .tab.active {
   background-color: hsla(var(--primary-hs), var(--primary-l), var(--primary-a));
@@ -990,18 +990,18 @@ button.bg-g-secondary:active {
   background: linear-gradient(hsla(var(--secondary-hs), calc(var(--secondary-l) - 20%), var(--secondary-a)), var(--secondary, #5C2B6D)) !important;
 }
 
-.tabs-secondary:hover .tab.active {
-  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.275);
-}
 .tabs-secondary .tab {
   color: currentColor;
 }
 .tabs-secondary .tab:not(.active):hover {
-  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.25);
+  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.075);
 }
 .tabs-secondary .tab.active {
-  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.25);
+  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.125);
   color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 10%), var(--secondary-a));
+}
+.tabs-secondary.fill .tab:hover, .tabs-secondary.prefill .tab:hover {
+  background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.25);
 }
 .tabs-secondary.fill .tab.active, .tabs-secondary.prefill .tab.active {
   background-color: hsla(var(--secondary-hs), var(--secondary-l), var(--secondary-a));
@@ -1203,18 +1203,18 @@ button.bg-g-white:active {
   background: linear-gradient(hsla(var(--white-hs), calc(var(--white-l) - 20%), var(--white-a)), var(--white, #FFFFFF)) !important;
 }
 
-.tabs-white:hover .tab.active {
-  background-color: hsla(var(--white-hs), var(--white-l), 0.275);
-}
 .tabs-white .tab {
   color: currentColor;
 }
 .tabs-white .tab:not(.active):hover {
-  background-color: hsla(var(--white-hs), var(--white-l), 0.25);
+  background-color: hsla(var(--white-hs), var(--white-l), 0.075);
 }
 .tabs-white .tab.active {
-  background-color: hsla(var(--white-hs), var(--white-l), 0.25);
+  background-color: hsla(var(--white-hs), var(--white-l), 0.125);
   color: hsla(var(--white-hs), calc(var(--white-l) - 10%), var(--white-a));
+}
+.tabs-white.fill .tab:hover, .tabs-white.prefill .tab:hover {
+  background-color: hsla(var(--white-hs), var(--white-l), 0.25);
 }
 .tabs-white.fill .tab.active, .tabs-white.prefill .tab.active {
   background-color: hsla(var(--white-hs), var(--white-l), var(--white-a));
@@ -1416,18 +1416,18 @@ button.bg-g-light:active {
   background: linear-gradient(hsla(var(--light-hs), calc(var(--light-l) - 20%), var(--light-a)), var(--light, #F8F9FA)) !important;
 }
 
-.tabs-light:hover .tab.active {
-  background-color: hsla(var(--light-hs), var(--light-l), 0.275);
-}
 .tabs-light .tab {
   color: currentColor;
 }
 .tabs-light .tab:not(.active):hover {
-  background-color: hsla(var(--light-hs), var(--light-l), 0.25);
+  background-color: hsla(var(--light-hs), var(--light-l), 0.075);
 }
 .tabs-light .tab.active {
-  background-color: hsla(var(--light-hs), var(--light-l), 0.25);
+  background-color: hsla(var(--light-hs), var(--light-l), 0.125);
   color: hsla(var(--light-hs), calc(var(--light-l) - 10%), var(--light-a));
+}
+.tabs-light.fill .tab:hover, .tabs-light.prefill .tab:hover {
+  background-color: hsla(var(--light-hs), var(--light-l), 0.25);
 }
 .tabs-light.fill .tab.active, .tabs-light.prefill .tab.active {
   background-color: hsla(var(--light-hs), var(--light-l), var(--light-a));
@@ -1629,18 +1629,18 @@ button.bg-g-black:active {
   background: linear-gradient(hsla(var(--black-hs), calc(var(--black-l) - 20%), var(--black-a)), var(--black, #000000)) !important;
 }
 
-.tabs-black:hover .tab.active {
-  background-color: hsla(var(--black-hs), var(--black-l), 0.275);
-}
 .tabs-black .tab {
   color: currentColor;
 }
 .tabs-black .tab:not(.active):hover {
-  background-color: hsla(var(--black-hs), var(--black-l), 0.25);
+  background-color: hsla(var(--black-hs), var(--black-l), 0.075);
 }
 .tabs-black .tab.active {
-  background-color: hsla(var(--black-hs), var(--black-l), 0.25);
+  background-color: hsla(var(--black-hs), var(--black-l), 0.125);
   color: hsla(var(--black-hs), calc(var(--black-l) - 10%), var(--black-a));
+}
+.tabs-black.fill .tab:hover, .tabs-black.prefill .tab:hover {
+  background-color: hsla(var(--black-hs), var(--black-l), 0.25);
 }
 .tabs-black.fill .tab.active, .tabs-black.prefill .tab.active {
   background-color: hsla(var(--black-hs), var(--black-l), var(--black-a));
@@ -1842,18 +1842,18 @@ button.bg-g-dark:active {
   background: linear-gradient(hsla(var(--dark-hs), calc(var(--dark-l) - 20%), var(--dark-a)), var(--dark, #343A40)) !important;
 }
 
-.tabs-dark:hover .tab.active {
-  background-color: hsla(var(--dark-hs), var(--dark-l), 0.275);
-}
 .tabs-dark .tab {
   color: currentColor;
 }
 .tabs-dark .tab:not(.active):hover {
-  background-color: hsla(var(--dark-hs), var(--dark-l), 0.25);
+  background-color: hsla(var(--dark-hs), var(--dark-l), 0.075);
 }
 .tabs-dark .tab.active {
-  background-color: hsla(var(--dark-hs), var(--dark-l), 0.25);
+  background-color: hsla(var(--dark-hs), var(--dark-l), 0.125);
   color: hsla(var(--dark-hs), calc(var(--dark-l) - 10%), var(--dark-a));
+}
+.tabs-dark.fill .tab:hover, .tabs-dark.prefill .tab:hover {
+  background-color: hsla(var(--dark-hs), var(--dark-l), 0.25);
 }
 .tabs-dark.fill .tab.active, .tabs-dark.prefill .tab.active {
   background-color: hsla(var(--dark-hs), var(--dark-l), var(--dark-a));
@@ -2055,18 +2055,18 @@ button.bg-g-silver:active {
   background: linear-gradient(hsla(var(--silver-hs), calc(var(--silver-l) - 20%), var(--silver-a)), var(--silver, #BFBFBF)) !important;
 }
 
-.tabs-silver:hover .tab.active {
-  background-color: hsla(var(--silver-hs), var(--silver-l), 0.275);
-}
 .tabs-silver .tab {
   color: currentColor;
 }
 .tabs-silver .tab:not(.active):hover {
-  background-color: hsla(var(--silver-hs), var(--silver-l), 0.25);
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.075);
 }
 .tabs-silver .tab.active {
-  background-color: hsla(var(--silver-hs), var(--silver-l), 0.25);
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.125);
   color: hsla(var(--silver-hs), calc(var(--silver-l) - 10%), var(--silver-a));
+}
+.tabs-silver.fill .tab:hover, .tabs-silver.prefill .tab:hover {
+  background-color: hsla(var(--silver-hs), var(--silver-l), 0.25);
 }
 .tabs-silver.fill .tab.active, .tabs-silver.prefill .tab.active {
   background-color: hsla(var(--silver-hs), var(--silver-l), var(--silver-a));
@@ -2268,18 +2268,18 @@ button.bg-g-gold:active {
   background: linear-gradient(hsla(var(--gold-hs), calc(var(--gold-l) - 20%), var(--gold-a)), var(--gold, #FFDF00)) !important;
 }
 
-.tabs-gold:hover .tab.active {
-  background-color: hsla(var(--gold-hs), var(--gold-l), 0.275);
-}
 .tabs-gold .tab {
   color: currentColor;
 }
 .tabs-gold .tab:not(.active):hover {
-  background-color: hsla(var(--gold-hs), var(--gold-l), 0.25);
+  background-color: hsla(var(--gold-hs), var(--gold-l), 0.075);
 }
 .tabs-gold .tab.active {
-  background-color: hsla(var(--gold-hs), var(--gold-l), 0.25);
+  background-color: hsla(var(--gold-hs), var(--gold-l), 0.125);
   color: hsla(var(--gold-hs), calc(var(--gold-l) - 10%), var(--gold-a));
+}
+.tabs-gold.fill .tab:hover, .tabs-gold.prefill .tab:hover {
+  background-color: hsla(var(--gold-hs), var(--gold-l), 0.25);
 }
 .tabs-gold.fill .tab.active, .tabs-gold.prefill .tab.active {
   background-color: hsla(var(--gold-hs), var(--gold-l), var(--gold-a));
@@ -2481,18 +2481,18 @@ button.bg-g-info:active {
   background: linear-gradient(hsla(var(--info-hs), calc(var(--info-l) - 20%), var(--info-a)), var(--info, #17A2b8)) !important;
 }
 
-.tabs-info:hover .tab.active {
-  background-color: hsla(var(--info-hs), var(--info-l), 0.275);
-}
 .tabs-info .tab {
   color: currentColor;
 }
 .tabs-info .tab:not(.active):hover {
-  background-color: hsla(var(--info-hs), var(--info-l), 0.25);
+  background-color: hsla(var(--info-hs), var(--info-l), 0.075);
 }
 .tabs-info .tab.active {
-  background-color: hsla(var(--info-hs), var(--info-l), 0.25);
+  background-color: hsla(var(--info-hs), var(--info-l), 0.125);
   color: hsla(var(--info-hs), calc(var(--info-l) - 10%), var(--info-a));
+}
+.tabs-info.fill .tab:hover, .tabs-info.prefill .tab:hover {
+  background-color: hsla(var(--info-hs), var(--info-l), 0.25);
 }
 .tabs-info.fill .tab.active, .tabs-info.prefill .tab.active {
   background-color: hsla(var(--info-hs), var(--info-l), var(--info-a));
@@ -2694,18 +2694,18 @@ button.bg-g-error:active {
   background: linear-gradient(hsla(var(--error-hs), calc(var(--error-l) - 20%), var(--error-a)), var(--error, #DC3545)) !important;
 }
 
-.tabs-error:hover .tab.active {
-  background-color: hsla(var(--error-hs), var(--error-l), 0.275);
-}
 .tabs-error .tab {
   color: currentColor;
 }
 .tabs-error .tab:not(.active):hover {
-  background-color: hsla(var(--error-hs), var(--error-l), 0.25);
+  background-color: hsla(var(--error-hs), var(--error-l), 0.075);
 }
 .tabs-error .tab.active {
-  background-color: hsla(var(--error-hs), var(--error-l), 0.25);
+  background-color: hsla(var(--error-hs), var(--error-l), 0.125);
   color: hsla(var(--error-hs), calc(var(--error-l) - 10%), var(--error-a));
+}
+.tabs-error.fill .tab:hover, .tabs-error.prefill .tab:hover {
+  background-color: hsla(var(--error-hs), var(--error-l), 0.25);
 }
 .tabs-error.fill .tab.active, .tabs-error.prefill .tab.active {
   background-color: hsla(var(--error-hs), var(--error-l), var(--error-a));
@@ -2907,18 +2907,18 @@ button.bg-g-danger:active {
   background: linear-gradient(hsla(var(--danger-hs), calc(var(--danger-l) - 20%), var(--danger-a)), var(--danger, #DC3545)) !important;
 }
 
-.tabs-danger:hover .tab.active {
-  background-color: hsla(var(--danger-hs), var(--danger-l), 0.275);
-}
 .tabs-danger .tab {
   color: currentColor;
 }
 .tabs-danger .tab:not(.active):hover {
-  background-color: hsla(var(--danger-hs), var(--danger-l), 0.25);
+  background-color: hsla(var(--danger-hs), var(--danger-l), 0.075);
 }
 .tabs-danger .tab.active {
-  background-color: hsla(var(--danger-hs), var(--danger-l), 0.25);
+  background-color: hsla(var(--danger-hs), var(--danger-l), 0.125);
   color: hsla(var(--danger-hs), calc(var(--danger-l) - 10%), var(--danger-a));
+}
+.tabs-danger.fill .tab:hover, .tabs-danger.prefill .tab:hover {
+  background-color: hsla(var(--danger-hs), var(--danger-l), 0.25);
 }
 .tabs-danger.fill .tab.active, .tabs-danger.prefill .tab.active {
   background-color: hsla(var(--danger-hs), var(--danger-l), var(--danger-a));
@@ -3120,18 +3120,18 @@ button.bg-g-success:active {
   background: linear-gradient(hsla(var(--success-hs), calc(var(--success-l) - 20%), var(--success-a)), var(--success, #24B624)) !important;
 }
 
-.tabs-success:hover .tab.active {
-  background-color: hsla(var(--success-hs), var(--success-l), 0.275);
-}
 .tabs-success .tab {
   color: currentColor;
 }
 .tabs-success .tab:not(.active):hover {
-  background-color: hsla(var(--success-hs), var(--success-l), 0.25);
+  background-color: hsla(var(--success-hs), var(--success-l), 0.075);
 }
 .tabs-success .tab.active {
-  background-color: hsla(var(--success-hs), var(--success-l), 0.25);
+  background-color: hsla(var(--success-hs), var(--success-l), 0.125);
   color: hsla(var(--success-hs), calc(var(--success-l) - 10%), var(--success-a));
+}
+.tabs-success.fill .tab:hover, .tabs-success.prefill .tab:hover {
+  background-color: hsla(var(--success-hs), var(--success-l), 0.25);
 }
 .tabs-success.fill .tab.active, .tabs-success.prefill .tab.active {
   background-color: hsla(var(--success-hs), var(--success-l), var(--success-a));
@@ -3333,18 +3333,18 @@ button.bg-g-warn:active {
   background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a)), var(--warn, #FFC107)) !important;
 }
 
-.tabs-warn:hover .tab.active {
-  background-color: hsla(var(--warn-hs), var(--warn-l), 0.275);
-}
 .tabs-warn .tab {
   color: currentColor;
 }
 .tabs-warn .tab:not(.active):hover {
-  background-color: hsla(var(--warn-hs), var(--warn-l), 0.25);
+  background-color: hsla(var(--warn-hs), var(--warn-l), 0.075);
 }
 .tabs-warn .tab.active {
-  background-color: hsla(var(--warn-hs), var(--warn-l), 0.25);
+  background-color: hsla(var(--warn-hs), var(--warn-l), 0.125);
   color: hsla(var(--warn-hs), calc(var(--warn-l) - 10%), var(--warn-a));
+}
+.tabs-warn.fill .tab:hover, .tabs-warn.prefill .tab:hover {
+  background-color: hsla(var(--warn-hs), var(--warn-l), 0.25);
 }
 .tabs-warn.fill .tab.active, .tabs-warn.prefill .tab.active {
   background-color: hsla(var(--warn-hs), var(--warn-l), var(--warn-a));
@@ -3546,18 +3546,18 @@ button.bg-g-warning:active {
   background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a)), var(--warning, #FFC107)) !important;
 }
 
-.tabs-warning:hover .tab.active {
-  background-color: hsla(var(--warning-hs), var(--warning-l), 0.275);
-}
 .tabs-warning .tab {
   color: currentColor;
 }
 .tabs-warning .tab:not(.active):hover {
-  background-color: hsla(var(--warning-hs), var(--warning-l), 0.25);
+  background-color: hsla(var(--warning-hs), var(--warning-l), 0.075);
 }
 .tabs-warning .tab.active {
-  background-color: hsla(var(--warning-hs), var(--warning-l), 0.25);
+  background-color: hsla(var(--warning-hs), var(--warning-l), 0.125);
   color: hsla(var(--warning-hs), calc(var(--warning-l) - 10%), var(--warning-a));
+}
+.tabs-warning.fill .tab:hover, .tabs-warning.prefill .tab:hover {
+  background-color: hsla(var(--warning-hs), var(--warning-l), 0.25);
 }
 .tabs-warning.fill .tab.active, .tabs-warning.prefill .tab.active {
   background-color: hsla(var(--warning-hs), var(--warning-l), var(--warning-a));
@@ -3759,18 +3759,18 @@ button.bg-g-pink:active {
   background: linear-gradient(hsla(var(--pink-hs), calc(var(--pink-l) - 20%), var(--pink-a)), var(--pink, #ED028C)) !important;
 }
 
-.tabs-pink:hover .tab.active {
-  background-color: hsla(var(--pink-hs), var(--pink-l), 0.275);
-}
 .tabs-pink .tab {
   color: currentColor;
 }
 .tabs-pink .tab:not(.active):hover {
-  background-color: hsla(var(--pink-hs), var(--pink-l), 0.25);
+  background-color: hsla(var(--pink-hs), var(--pink-l), 0.075);
 }
 .tabs-pink .tab.active {
-  background-color: hsla(var(--pink-hs), var(--pink-l), 0.25);
+  background-color: hsla(var(--pink-hs), var(--pink-l), 0.125);
   color: hsla(var(--pink-hs), calc(var(--pink-l) - 10%), var(--pink-a));
+}
+.tabs-pink.fill .tab:hover, .tabs-pink.prefill .tab:hover {
+  background-color: hsla(var(--pink-hs), var(--pink-l), 0.25);
 }
 .tabs-pink.fill .tab.active, .tabs-pink.prefill .tab.active {
   background-color: hsla(var(--pink-hs), var(--pink-l), var(--pink-a));
@@ -3972,18 +3972,18 @@ button.bg-g-orange:active {
   background: linear-gradient(hsla(var(--orange-hs), calc(var(--orange-l) - 20%), var(--orange-a)), var(--orange, #F58220)) !important;
 }
 
-.tabs-orange:hover .tab.active {
-  background-color: hsla(var(--orange-hs), var(--orange-l), 0.275);
-}
 .tabs-orange .tab {
   color: currentColor;
 }
 .tabs-orange .tab:not(.active):hover {
-  background-color: hsla(var(--orange-hs), var(--orange-l), 0.25);
+  background-color: hsla(var(--orange-hs), var(--orange-l), 0.075);
 }
 .tabs-orange .tab.active {
-  background-color: hsla(var(--orange-hs), var(--orange-l), 0.25);
+  background-color: hsla(var(--orange-hs), var(--orange-l), 0.125);
   color: hsla(var(--orange-hs), calc(var(--orange-l) - 10%), var(--orange-a));
+}
+.tabs-orange.fill .tab:hover, .tabs-orange.prefill .tab:hover {
+  background-color: hsla(var(--orange-hs), var(--orange-l), 0.25);
 }
 .tabs-orange.fill .tab.active, .tabs-orange.prefill .tab.active {
   background-color: hsla(var(--orange-hs), var(--orange-l), var(--orange-a));
@@ -4185,18 +4185,18 @@ button.bg-g-purple:active {
   background: linear-gradient(hsla(var(--purple-hs), calc(var(--purple-l) - 20%), var(--purple-a)), var(--purple, #561843)) !important;
 }
 
-.tabs-purple:hover .tab.active {
-  background-color: hsla(var(--purple-hs), var(--purple-l), 0.275);
-}
 .tabs-purple .tab {
   color: currentColor;
 }
 .tabs-purple .tab:not(.active):hover {
-  background-color: hsla(var(--purple-hs), var(--purple-l), 0.25);
+  background-color: hsla(var(--purple-hs), var(--purple-l), 0.075);
 }
 .tabs-purple .tab.active {
-  background-color: hsla(var(--purple-hs), var(--purple-l), 0.25);
+  background-color: hsla(var(--purple-hs), var(--purple-l), 0.125);
   color: hsla(var(--purple-hs), calc(var(--purple-l) - 10%), var(--purple-a));
+}
+.tabs-purple.fill .tab:hover, .tabs-purple.prefill .tab:hover {
+  background-color: hsla(var(--purple-hs), var(--purple-l), 0.25);
 }
 .tabs-purple.fill .tab.active, .tabs-purple.prefill .tab.active {
   background-color: hsla(var(--purple-hs), var(--purple-l), var(--purple-a));
@@ -4398,18 +4398,18 @@ button.bg-g-green:active {
   background: linear-gradient(hsla(var(--green-hs), calc(var(--green-l) - 20%), var(--green-a)), var(--green, #1D5C2E)) !important;
 }
 
-.tabs-green:hover .tab.active {
-  background-color: hsla(var(--green-hs), var(--green-l), 0.275);
-}
 .tabs-green .tab {
   color: currentColor;
 }
 .tabs-green .tab:not(.active):hover {
-  background-color: hsla(var(--green-hs), var(--green-l), 0.25);
+  background-color: hsla(var(--green-hs), var(--green-l), 0.075);
 }
 .tabs-green .tab.active {
-  background-color: hsla(var(--green-hs), var(--green-l), 0.25);
+  background-color: hsla(var(--green-hs), var(--green-l), 0.125);
   color: hsla(var(--green-hs), calc(var(--green-l) - 10%), var(--green-a));
+}
+.tabs-green.fill .tab:hover, .tabs-green.prefill .tab:hover {
+  background-color: hsla(var(--green-hs), var(--green-l), 0.25);
 }
 .tabs-green.fill .tab.active, .tabs-green.prefill .tab.active {
   background-color: hsla(var(--green-hs), var(--green-l), var(--green-a));
@@ -4611,18 +4611,18 @@ button.bg-g-red:active {
   background: linear-gradient(hsla(var(--red-hs), calc(var(--red-l) - 20%), var(--red-a)), var(--red, #C54646)) !important;
 }
 
-.tabs-red:hover .tab.active {
-  background-color: hsla(var(--red-hs), var(--red-l), 0.275);
-}
 .tabs-red .tab {
   color: currentColor;
 }
 .tabs-red .tab:not(.active):hover {
-  background-color: hsla(var(--red-hs), var(--red-l), 0.25);
+  background-color: hsla(var(--red-hs), var(--red-l), 0.075);
 }
 .tabs-red .tab.active {
-  background-color: hsla(var(--red-hs), var(--red-l), 0.25);
+  background-color: hsla(var(--red-hs), var(--red-l), 0.125);
   color: hsla(var(--red-hs), calc(var(--red-l) - 10%), var(--red-a));
+}
+.tabs-red.fill .tab:hover, .tabs-red.prefill .tab:hover {
+  background-color: hsla(var(--red-hs), var(--red-l), 0.25);
 }
 .tabs-red.fill .tab.active, .tabs-red.prefill .tab.active {
   background-color: hsla(var(--red-hs), var(--red-l), var(--red-a));
@@ -4824,18 +4824,18 @@ button.bg-g-blue:active {
   background: linear-gradient(hsla(var(--blue-hs), calc(var(--blue-l) - 20%), var(--blue-a)), var(--blue, #0365A3)) !important;
 }
 
-.tabs-blue:hover .tab.active {
-  background-color: hsla(var(--blue-hs), var(--blue-l), 0.275);
-}
 .tabs-blue .tab {
   color: currentColor;
 }
 .tabs-blue .tab:not(.active):hover {
-  background-color: hsla(var(--blue-hs), var(--blue-l), 0.25);
+  background-color: hsla(var(--blue-hs), var(--blue-l), 0.075);
 }
 .tabs-blue .tab.active {
-  background-color: hsla(var(--blue-hs), var(--blue-l), 0.25);
+  background-color: hsla(var(--blue-hs), var(--blue-l), 0.125);
   color: hsla(var(--blue-hs), calc(var(--blue-l) - 10%), var(--blue-a));
+}
+.tabs-blue.fill .tab:hover, .tabs-blue.prefill .tab:hover {
+  background-color: hsla(var(--blue-hs), var(--blue-l), 0.25);
 }
 .tabs-blue.fill .tab.active, .tabs-blue.prefill .tab.active {
   background-color: hsla(var(--blue-hs), var(--blue-l), var(--blue-a));
@@ -5037,18 +5037,18 @@ button.bg-g-yellow:active {
   background: linear-gradient(hsla(var(--yellow-hs), calc(var(--yellow-l) - 20%), var(--yellow-a)), var(--yellow, #C4C400)) !important;
 }
 
-.tabs-yellow:hover .tab.active {
-  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.275);
-}
 .tabs-yellow .tab {
   color: currentColor;
 }
 .tabs-yellow .tab:not(.active):hover {
-  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.25);
+  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.075);
 }
 .tabs-yellow .tab.active {
-  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.25);
+  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.125);
   color: hsla(var(--yellow-hs), calc(var(--yellow-l) - 10%), var(--yellow-a));
+}
+.tabs-yellow.fill .tab:hover, .tabs-yellow.prefill .tab:hover {
+  background-color: hsla(var(--yellow-hs), var(--yellow-l), 0.25);
 }
 .tabs-yellow.fill .tab.active, .tabs-yellow.prefill .tab.active {
   background-color: hsla(var(--yellow-hs), var(--yellow-l), var(--yellow-a));
@@ -5250,18 +5250,18 @@ button.bg-g-muted:active {
   background: linear-gradient(hsla(var(--muted-hs), calc(var(--muted-l) - 20%), var(--muted-a)), var(--muted, #7D7D7D)) !important;
 }
 
-.tabs-muted:hover .tab.active {
-  background-color: hsla(var(--muted-hs), var(--muted-l), 0.275);
-}
 .tabs-muted .tab {
   color: currentColor;
 }
 .tabs-muted .tab:not(.active):hover {
-  background-color: hsla(var(--muted-hs), var(--muted-l), 0.25);
+  background-color: hsla(var(--muted-hs), var(--muted-l), 0.075);
 }
 .tabs-muted .tab.active {
-  background-color: hsla(var(--muted-hs), var(--muted-l), 0.25);
+  background-color: hsla(var(--muted-hs), var(--muted-l), 0.125);
   color: hsla(var(--muted-hs), calc(var(--muted-l) - 10%), var(--muted-a));
+}
+.tabs-muted.fill .tab:hover, .tabs-muted.prefill .tab:hover {
+  background-color: hsla(var(--muted-hs), var(--muted-l), 0.25);
 }
 .tabs-muted.fill .tab.active, .tabs-muted.prefill .tab.active {
   background-color: hsla(var(--muted-hs), var(--muted-l), var(--muted-a));
@@ -5463,18 +5463,18 @@ button.bg-g-color-1:active {
   background: linear-gradient(hsla(var(--color-1-hs), calc(var(--color-1-l) - 20%), var(--color-1-a)), var(--color-1, #34A853)) !important;
 }
 
-.tabs-color-1:hover .tab.active {
-  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.275);
-}
 .tabs-color-1 .tab {
   color: currentColor;
 }
 .tabs-color-1 .tab:not(.active):hover {
-  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.25);
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.075);
 }
 .tabs-color-1 .tab.active {
-  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.25);
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.125);
   color: hsla(var(--color-1-hs), calc(var(--color-1-l) - 10%), var(--color-1-a));
+}
+.tabs-color-1.fill .tab:hover, .tabs-color-1.prefill .tab:hover {
+  background-color: hsla(var(--color-1-hs), var(--color-1-l), 0.25);
 }
 .tabs-color-1.fill .tab.active, .tabs-color-1.prefill .tab.active {
   background-color: hsla(var(--color-1-hs), var(--color-1-l), var(--color-1-a));
@@ -5676,18 +5676,18 @@ button.bg-g-color-2:active {
   background: linear-gradient(hsla(var(--color-2-hs), calc(var(--color-2-l) - 20%), var(--color-2-a)), var(--color-2, #5C2B6D)) !important;
 }
 
-.tabs-color-2:hover .tab.active {
-  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.275);
-}
 .tabs-color-2 .tab {
   color: currentColor;
 }
 .tabs-color-2 .tab:not(.active):hover {
-  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.25);
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.075);
 }
 .tabs-color-2 .tab.active {
-  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.25);
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.125);
   color: hsla(var(--color-2-hs), calc(var(--color-2-l) - 10%), var(--color-2-a));
+}
+.tabs-color-2.fill .tab:hover, .tabs-color-2.prefill .tab:hover {
+  background-color: hsla(var(--color-2-hs), var(--color-2-l), 0.25);
 }
 .tabs-color-2.fill .tab.active, .tabs-color-2.prefill .tab.active {
   background-color: hsla(var(--color-2-hs), var(--color-2-l), var(--color-2-a));
@@ -5903,7 +5903,7 @@ input:focus {
   filter: blur(5px);
 }
 
-.shadow-1 {
+.shadow-1::before {
   box-shadow: var(--black) 0 3px 9px -3px;
 }
 

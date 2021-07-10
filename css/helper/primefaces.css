@@ -30,24 +30,22 @@
   padding: 0.25rem 1.5rem;
 }
 .p-dialog .p-dialog-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   padding: 1.5rem;
 }
 .p-dialog .p-dialog-footer button {
   border: none;
   padding: 0.5rem 1.25rem;
 }
-.p-dialog .p-dialog-footer p-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-.p-dialog .p-dialog-footer p-footer .btn {
+.p-dialog .p-dialog-footer .btn {
   margin: 0;
 }
-.p-dialog .p-dialog-footer p-footer .btn + .btn {
+.p-dialog .p-dialog-footer .btn + .btn {
   margin-left: 0.5rem;
 }
-.p-dialog .p-dialog-footer p-footer > * {
+.p-dialog .p-dialog-footer > * {
   margin-top: 1rem;
 }
 
@@ -67,6 +65,10 @@
   border-color: unset;
 }
 
+.p-dropdown {
+  width: 100%;
+}
+
 p-chart {
   width: 100% !important;
 }
@@ -75,13 +77,22 @@ p-chart canvas {
   min-width: 100% !important;
 }
 
-.p-datepicker:not(.p-datepicker-inline) {
+.p-calendar {
+  width: 100%;
+}
+.p-calendar .p-datepicker {
+  min-width: unset;
+}
+.p-calendar .p-datepicker .p-datepicker-header .p-datepicker-month {
+  border: none;
+}
+.p-calendar .p-datepicker:not(.p-datepicker-inline) {
   box-shadow: unset;
 }
-.p-datepicker:not(.p-datepicker-inline) > * {
+.p-calendar .p-datepicker:not(.p-datepicker-inline) > * {
   position: relative;
 }
-.p-datepicker:not(.p-datepicker-inline)::before {
+.p-calendar .p-datepicker:not(.p-datepicker-inline)::before {
   content: "";
   display: block;
   height: 100%;
@@ -93,11 +104,11 @@ p-chart canvas {
   left: 0;
   z-index: 0;
 }
-.p-datepicker table td > span {
+.p-calendar .p-datepicker table td > span {
   width: 2.25rem;
   height: 2.25rem;
 }
-.p-datepicker .p-datepicker-buttonbar {
+.p-calendar .p-datepicker .p-datepicker-buttonbar {
   padding: 0;
 }
 
@@ -109,22 +120,22 @@ p-chart canvas {
 }
 
 .p-carousel .p-carousel-items-content {
-  padding: 1rem;
+  /* padding: 1rem; */
 }
-.p-carousel .p-carousel-items-content .p-carousel-item {
+.p-carousel .p-carousel-items-content .p-carousel-items-container {
+  gap: 0.5rem;
+}
+.p-carousel .p-carousel-items-content .p-carousel-items-container .p-carousel-item {
   display: flex;
   justify-content: center;
-  padding: 0 0.5rem;
-  border: thin solid transparent;
+  /* padding: 0 0.5rem; */
+  /* border: thin solid transparent; */
 }
-.p-carousel .p-carousel-items-content .p-carousel-item:hover {
+.p-carousel .p-carousel-items-content .p-carousel-items-container .p-carousel-item:hover {
   border-color: var(--primary);
 }
-.p-carousel .p-carousel-items-content .p-carousel-item .p-carousel-items-container {
-  gap: 1rem;
-}
 .p-carousel .p-carousel-items-content .p-carousel-item-active:nth-of-type(2) {
-  padding: 0 0.125rem;
+  /* padding: 0 0.125rem; */
 }
 .p-carousel .p-carousel-indicators .p-carousel-indicator button {
   border: none;
@@ -151,27 +162,44 @@ p-chart canvas {
   min-width: 2rem;
   border: none !important;
 }
-.p-toast .p-toast-message.p-toast-message-primary {
+
+.p-button {
+  background-color: var(--primary);
+}
+.p-button:hover {
+  background-color: hsl(var(--primary-hs), calc(var(--primary-l) - 20%));
+}
+
+.p-hidden-accessible {
+  display: none;
+}
+
+.p-toast-message-primary {
   background-color: var(--primary) !important;
   color: var(--primary-c) !important;
 }
-.p-toast .p-toast-message.p-toast-message-secondary {
+
+.p-toast-message-secondary {
   background-color: var(--secondary) !important;
   color: var(--secondary-c) !important;
 }
-.p-toast .p-toast-message.p-toast-message-info {
+
+.p-toast-message-info {
   background-color: var(--info) !important;
   color: var(--info-c) !important;
 }
-.p-toast .p-toast-message.p-toast-message-success {
+
+.p-toast-message-success {
   background-color: var(--success) !important;
   color: var(--success-c) !important;
 }
-.p-toast .p-toast-message.p-toast-message-warn {
+
+.p-toast-message-warn {
   background-color: var(--warn) !important;
   color: var(--warn-c) !important;
 }
-.p-toast .p-toast-message.p-toast-message-error {
+
+.p-toast-message-error {
   background-color: var(--error) !important;
   color: var(--error-c) !important;
 }

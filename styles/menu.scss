@@ -24,9 +24,7 @@
 
     ~,
     ~* {
-      .content {
-        /* position: absolute; */
-        /* width: 100%; */
+      .page {
 
         >footer {
           background-color: var(--primary);
@@ -48,18 +46,10 @@
 
 .appmenu-toggle {
   position: relative;
-  font-size: 120%;
+  /* font-size: 120%; */
   margin-bottom: 0;
   z-index: 1;
 }
-
-// .page-container {
-//   position: relative;
-//   display: flex;
-//   flex-direction: row;
-//   width: 100vw;
-//   height: 100vh;
-// }
 
 
 .nav-menu {
@@ -82,6 +72,14 @@
 }
 
 /* Sidemenu */
+.sidemenu-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+
 .sidemenu {
   display: flex;
   flex-direction: column;
@@ -159,7 +157,7 @@
 
 /* Page */
 
-.content {
+.page {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -179,6 +177,7 @@
   position: relative;
   padding: 3em;
   width: 100%;
+  flex: 1 1 100%;
   // border: thin solid var(--white);
   transition: margin 0.2s
 }
@@ -206,7 +205,7 @@
 
       ~,
       ~* {
-        .content .app-header .appmenu-toggle {
+        .page .app-header .appmenu-toggle {
           display: none;
         }
       }
@@ -223,7 +222,7 @@
 
     ~,
     ~* {
-      .content {
+      .page {
         border-left: thin solid;
         @include before-content;
 
@@ -375,7 +374,7 @@
   }
 
 
-  .content {
+  .page {
 
     .page-content {
       padding: 3em 1em;

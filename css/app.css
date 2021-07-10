@@ -310,14 +310,19 @@ ul {
 label {
   cursor: pointer;
 }
-label.radio, label.checkbox {
+label.radio, label.radio-container, label.checkbox, label.checkbox-container {
   display: flex;
   align-items: center;
   margin: 1rem 0;
 }
+label.radio .label > *, label.radio-container .label > *, label.checkbox .label > *, label.checkbox-container .label > * {
+  margin-bottom: 0;
+}
 label.radio + .radio,
-label.radio + .checkbox, label.checkbox + .radio,
-label.checkbox + .checkbox {
+label.radio + .checkbox, label.radio-container + .radio,
+label.radio-container + .checkbox, label.checkbox + .radio,
+label.checkbox + .checkbox, label.checkbox-container + .radio,
+label.checkbox-container + .checkbox {
   margin-top: 1rem;
 }
 label .active,
@@ -614,6 +619,52 @@ option[disabled]:first-of-type {
   /* margin-bottom: 0; */
 }
 
+.progress {
+  position: relative;
+  background-color: transparent;
+}
+.progress {
+  position: relative;
+}
+.progress > * {
+  position: relative;
+  z-index: 1;
+}
+.progress::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.progress::before {
+  opacity: 0.75;
+}
+.progress.bar {
+  position: relative;
+}
+.progress.bar > * {
+  z-index: 1;
+}
+.progress.bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.progress.bar::after {
+  background-color: currentColor;
+  transition: width 0.5s;
+}
 .progress.dotted {
   display: flex;
   min-width: 25%;
@@ -622,17 +673,29 @@ option[disabled]:first-of-type {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  gap: 0.125rem;
   /* border-radius: 5rem; */
+}
+.progress.dotted {
+  position: relative;
+}
+.progress.dotted > * {
+  position: relative;
+  z-index: 1;
 }
 .progress.dotted::before {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.125;
+  display: block;
   height: 100%;
   width: 100%;
+  position: absolute;
   border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.progress.dotted::before {
+  opacity: 0.125;
   background-color: currentColor;
 }
 .progress.dotted .dot {
@@ -831,29 +894,28 @@ option[disabled]:first-of-type {
   border-radius: inherit;
 }
 
-.tabular,
-.table-container {
-  /* color: var(--black); */
+table {
   border-collapse: separate;
   border-spacing: 0;
-  /* background-color: var(--white); */
-}
-.tabular,
-.tabular table,
-.table-container,
-.table-container table {
   width: 100%;
 }
-.tabular.is-table-sticky,
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  overflow: scroll;
+  /* color: var(--black); */
+  /* background-color: var(--white); */
+}
 .table-container.is-table-sticky {
   display: flex;
 }
-.tabular.is-sticky,
 .table-container.is-sticky {
   overflow-x: scroll;
   padding: 0 0 1rem;
 }
-.tabular.is-sticky .sticky,
 .table-container.is-sticky .sticky {
   /* &::after {
     content: '';
@@ -867,45 +929,28 @@ option[disabled]:first-of-type {
     border-right: thin solid var(--border-color)
   } */
 }
-.tabular.is-sticky .row,
 .table-container.is-sticky .row {
   flex-wrap: nowrap;
 }
-.tabular.is-sticky thead th,
 .table-container.is-sticky thead th {
   min-width: 15vw;
 }
-.tabular.compact,
 .table-container.compact {
   font-size: 90%;
 }
-.tabular.compact thead,
-.tabular.compact .table-header,
 .table-container.compact thead,
 .table-container.compact .table-header {
   font-weight: normal;
 }
-.tabular.compact tr,
-.tabular.compact > .row,
 .table-container.compact tr,
 .table-container.compact > .row {
   background-color: inherit !important;
 }
-.tabular.compact tr + tr, .tabular.compact tr + .row,
-.tabular.compact > .row + tr,
-.tabular.compact > .row + .row,
-.table-container.compact tr + tr,
-.table-container.compact tr + .row,
+.table-container.compact tr + tr, .table-container.compact tr + .row,
 .table-container.compact > .row + tr,
 .table-container.compact > .row + .row {
   border-top: 0.5px solid;
 }
-.tabular.compact tr td,
-.tabular.compact tr th,
-.tabular.compact tr [class*=col],
-.tabular.compact > .row td,
-.tabular.compact > .row th,
-.tabular.compact > .row [class*=col],
 .table-container.compact tr td,
 .table-container.compact tr th,
 .table-container.compact tr [class*=col],
@@ -914,15 +959,11 @@ option[disabled]:first-of-type {
 .table-container.compact > .row [class*=col] {
   padding: 0.25rem;
 }
-.tabular thead,
-.tabular .table-header,
 .table-container thead,
 .table-container .table-header {
   /* color: hsl(var(--secondary-hs), calc(var(--secondary-l) + 10%)); */
   font-weight: bold;
 }
-.tabular thead.sticky-header th,
-.tabular .table-header.sticky-header th,
 .table-container thead.sticky-header th,
 .table-container .table-header.sticky-header th {
   position: sticky;
@@ -931,15 +972,10 @@ option[disabled]:first-of-type {
   bottom: 0;
   z-index: 2;
 }
-.tabular thead.sticky-header th.sticky,
-.tabular .table-header.sticky-header th.sticky,
 .table-container thead.sticky-header th.sticky,
 .table-container .table-header.sticky-header th.sticky {
   z-index: 3;
 }
-.tabular tr,
-.tabular > .row,
-.tabular .scrollable > .row,
 .table-container tr,
 .table-container > .row,
 .table-container .scrollable > .row {
@@ -949,17 +985,11 @@ option[disabled]:first-of-type {
   width: 100%;
   background-color: inherit;
 }
-.tabular tr:nth-child(even):not(.table-header),
-.tabular > .row:nth-child(even):not(.table-header),
-.tabular .scrollable > .row:nth-child(even):not(.table-header),
 .table-container tr:nth-child(even):not(.table-header),
 .table-container > .row:nth-child(even):not(.table-header),
 .table-container .scrollable > .row:nth-child(even):not(.table-header) {
   background-color: hsl(var(--muted-hs), calc(var(--muted-l) + 40%));
 }
-.tabular tr [class*=col],
-.tabular > .row [class*=col],
-.tabular .scrollable > .row [class*=col],
 .table-container tr [class*=col],
 .table-container > .row [class*=col],
 .table-container .scrollable > .row [class*=col] {
@@ -968,15 +998,6 @@ option[disabled]:first-of-type {
   align-items: flex-start;
   justify-content: center;
 }
-.tabular tr td,
-.tabular tr th,
-.tabular tr [class*=col],
-.tabular > .row td,
-.tabular > .row th,
-.tabular > .row [class*=col],
-.tabular .scrollable > .row td,
-.tabular .scrollable > .row th,
-.tabular .scrollable > .row [class*=col],
 .table-container tr td,
 .table-container tr th,
 .table-container tr [class*=col],
@@ -990,15 +1011,6 @@ option[disabled]:first-of-type {
   padding: 1rem;
   background-color: inherit;
 }
-.tabular tr td.sticky,
-.tabular tr th.sticky,
-.tabular tr [class*=col].sticky,
-.tabular > .row td.sticky,
-.tabular > .row th.sticky,
-.tabular > .row [class*=col].sticky,
-.tabular .scrollable > .row td.sticky,
-.tabular .scrollable > .row th.sticky,
-.tabular .scrollable > .row [class*=col].sticky,
 .table-container tr td.sticky,
 .table-container tr th.sticky,
 .table-container tr [class*=col].sticky,
@@ -1023,15 +1035,6 @@ option[disabled]:first-of-type {
     border-right: thin solid var(--border-color);
   } */
 }
-.tabular tr td.text-truncate,
-.tabular tr th.text-truncate,
-.tabular tr [class*=col].text-truncate,
-.tabular > .row td.text-truncate,
-.tabular > .row th.text-truncate,
-.tabular > .row [class*=col].text-truncate,
-.tabular .scrollable > .row td.text-truncate,
-.tabular .scrollable > .row th.text-truncate,
-.tabular .scrollable > .row [class*=col].text-truncate,
 .table-container tr td.text-truncate,
 .table-container tr th.text-truncate,
 .table-container tr [class*=col].text-truncate,
@@ -1043,15 +1046,6 @@ option[disabled]:first-of-type {
 .table-container .scrollable > .row [class*=col].text-truncate {
   max-width: 15vw;
 }
-.tabular tr td p,
-.tabular tr th p,
-.tabular tr [class*=col] p,
-.tabular > .row td p,
-.tabular > .row th p,
-.tabular > .row [class*=col] p,
-.tabular .scrollable > .row td p,
-.tabular .scrollable > .row th p,
-.tabular .scrollable > .row [class*=col] p,
 .table-container tr td p,
 .table-container tr th p,
 .table-container tr [class*=col] p,
@@ -1063,9 +1057,6 @@ option[disabled]:first-of-type {
 .table-container .scrollable > .row [class*=col] p {
   margin-bottom: 0;
 }
-.tabular tr .table-badge,
-.tabular > .row .table-badge,
-.tabular .scrollable > .row .table-badge,
 .table-container tr .table-badge,
 .table-container > .row .table-badge,
 .table-container .scrollable > .row .table-badge {
@@ -1322,8 +1313,9 @@ option[disabled]:first-of-type {
 }
 .item-list .item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  gap: 0.5rem;
   padding: 0 1rem;
   cursor: pointer;
 }
