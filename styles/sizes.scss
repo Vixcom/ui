@@ -4,71 +4,77 @@
 *  Created On October 27th, 2020 4:22pm
 */
 $grid-breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1200px);
-$sizes: (0, 25, 50, 75, 100);
-$s-sizes: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-$n-sizes: (unset, auto);
-$limits: ('', 'min-', 'max-');
-$types: ('', 'v');
+$quarter-sizes: (0, 25, 50, 75, 100);
+$number-sizes: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+$non-sizes: (unset, auto);
 
-@mixin boxSizer($_size, $_limit, $_type, $_breakpoint, $_dimension: '%', $_useDimension: false) {
-  #{'.'}#{$_limit}#{$_type}#{'h-'}#{$_breakpoint}#{$_size} {
-    $__dimension: if($_type=='v', 'vh', $_dimension);
-    $__dimension: if($_useDimension, $__dimension, '');
-    #{$_limit}height: #{$_size}#{$__dimension} !important;
-  }
+@mixin layoutLooper($size, $dimension: '', $useDimension: false, $breakPoint: '') {
+  $useDimension: $size !=0 and $useDimension;
+  $_dimension: if($useDimension, $dimension, '');
+  $_value: if(useDimension, #{$size}#{$_dimension}, $size);
 
-  #{'.'}#{$_limit}#{$_type}#{'w-'}#{$_breakpoint}#{$_size} {
-    $__dimension: if($_type=='v', 'vw', $_dimension);
-    $__dimension: if($_useDimension, $__dimension, '');
-    #{$_limit}width: #{$_size}#{$__dimension} !important;
-  }
-}
+  /**
+* BoxSizing - Height & Width of a layout
+*/
+  @each $limit in ('', 'min-', 'max-') {
+    @each $dimensionType in ('', 'v') {
+      #{'.'}#{$limit}#{$dimensionType}#{'h-'}#{$breakPoint}#{$size} {
+        $_boxDimension: if($dimensionType=='v'and $useDimension, 'vh', $_dimension);
+        #{$limit}height: #{$size}#{$_boxDimension} !important;
+      }
 
-@mixin layoutLooper($size, $dimension, $useDimension: false, $breakPoint: '') {
-  @each $limit in $limits {
-    @each $type in $types {
-      @include boxSizer($size, $limit, $type, $breakPoint, $dimension, $useDimension);
+      #{'.'}#{$limit}#{$dimensionType}#{'w-'}#{$breakPoint}#{$size} {
+        $_boxDimension: if($dimensionType=='v'and $useDimension, 'vw', $_dimension);
+        #{$limit}width: #{$size}#{$_boxDimension} !important;
+      }
     }
   }
 
   @each $direction-key,
-  $direction in (t:(n:'Y', v:'-'), l:(n:'X', v:'-'), b:(n:'Y', v:''), r:(n:'X', v:'')) {
+  $direction in (t:(key:'Y', negation:'-'), l:(key:'X', negation:'-'), b:(key:'Y', negation:''), r:(key:'X', negation:'')) {
     .float-#{$direction-key}-#{$breakPoint}#{$size} {
-      $__value: if($useDimension, #{'translate'}#{map-get($direction,'n')}(#{map-get($direction,'v')}#{$size}#{'%'}), unset);
-      transform: $__value;
+      $_floatDimension: if($useDimension, '%', '');
+      $_floatValue: if($useDimension, #{'translate'}#{map-get($direction,'key')}(#{map-get($direction,'negation')}#{$size}#{$_floatDimension}), $size);
+      transform: $_floatValue;
     }
+  }
+
+  .sq-#{$breakPoint}#{$size} {
+    height: $_value;
+    width: $_value;
+    min-height: $_value;
+    min-width: $_value;
+  }
+
+  .gap-#{$breakPoint}#{$size} {
+    gap: $_value;
   }
 }
 
-@each $size in $sizes {
+@each $size in $number-sizes {
+  @include layoutLooper($size, 'rem', true);
+}
+
+@each $size in $quarter-sizes {
   @include layoutLooper($size, '%', true);
 }
 
-@each $size in $n-sizes {
-  @include layoutLooper($size, '');
-}
-
-@each $s-size in $s-sizes {
-  .sq-#{$s-size} {
-    height: #{$s-size}rem !important;
-    width: #{$s-size}rem !important;
-    min-height: #{$s-size}rem !important;
-    min-width: #{$s-size}rem !important;
-  }
-
-  .gap-#{$s-size} {
-    gap: #{$s-size}rem;
-  }
+@each $size in $non-sizes {
+  @include layoutLooper($size);
 }
 
 @each $breakpoint-key,
 $breakpoint in $grid-breakpoints {
   @media (min-width:$breakpoint) {
-    @each $size in $sizes {
+    @each $size in $number-sizes {
+      @include layoutLooper($size, 'rem', true, #{$breakpoint-key}#{'-'});
+    }
+
+    @each $size in $quarter-sizes {
       @include layoutLooper($size, '%', true, #{$breakpoint-key}#{'-'});
     }
 
-    @each $size in $n-sizes {
+    @each $size in $non-sizes {
       @include layoutLooper($size, '', false, #{$breakpoint-key}#{'-'});
     }
   }

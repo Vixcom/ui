@@ -34,20 +34,20 @@
 @each $k,
 $v in $app-colors-mapped {
   // Texts
-  @include mapped-color-var-variant('.text-#{$k}', $k, $v);
+  @include mapped-color-variant('.text-#{$k}', $k, $v);
   // Background
-  @include mapped-bg-color-var-variant('.bg-#{$k}', $k, $v);
-  @include mapped-g-color-var-variant('.bg-g-#{$k}', $k, $v);
-  @include mapped-tabs-var-variant('.tabs-#{$k}', $k, $v);
-  @include mapped-alert-var-variant('.alert-#{$k}', $k, $v);
-  @include mapped-outline-var-variant('.bg-outline-#{$k}', $k, $v);
+  @include mapped-bg-color-variant('.bg-#{$k}', $k, $v);
+  @include mapped-g-color-variant('.bg-g-#{$k}', $k, $v);
+  @include mapped-tabs-variant('.tabs-#{$k}', $k, $v);
+  @include mapped-alert-variant('.alert-#{$k}', $k, $v);
+  @include mapped-outline-variant('.bg-outline-#{$k}', $k, $v);
   // Buttons
-  @include mapped-bg-color-var-variant('.btn-#{$k}', $k, $v);
-  @include mapped-g-color-var-variant('.btn-g-#{$k}', $k, $v);
-  @include mapped-outline-var-variant('.btn-outline-#{$k}', $k, $v);
+  @include mapped-bg-color-variant('.btn-#{$k}', $k, $v);
+  @include mapped-g-color-variant('.btn-g-#{$k}', $k, $v);
+  @include mapped-outline-variant('.btn-outline-#{$k}', $k, $v);
   // Badges
-  @include mapped-bg-color-var-variant('.badge-#{$k}', $k, $v);
-  @include mapped-outline-var-variant('.badge-outline-#{$k}', $k, $v);
+  @include mapped-bg-color-variant('.badge-#{$k}', $k, $v);
+  @include mapped-outline-variant('.badge-outline-#{$k}', $k, $v);
 }
 
 :disabled,
@@ -124,11 +124,11 @@ input {
   @include before-content;
 }
 
-/* select */
-// input::placeholder,
-// input::-webkit-input-placeholder {
-//   color: #aaaaaa !important
-// }
+input,
+input::placeholder,
+input::-webkit-input-placeholder {
+  color: currentColor !important
+}
 
 .text-current {
   color: currentColor

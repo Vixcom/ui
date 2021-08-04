@@ -3,10 +3,10 @@
 * @Description: Unique and Very Responsive Admin Dashboard UI
 */
 @import 'external/bootstrap.css';
-@import 'app.css';
 @import 'animations.css';
 @import 'colors.css';
 @import 'sizes.css';
+@import 'app.css';
 :root {
   --font-size: 0.85rem;
 }
@@ -21,8 +21,8 @@ body {
 
 /* Mobile --> BELOW */
 @media (max-width: 575.98px) {
-  body {
-    font-size: 0.8rem;
+  :root {
+    --font-size: calc(var(--font-size)/1.25);
   }
 }
 @font-face {

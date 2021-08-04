@@ -1,4 +1,4 @@
-$p-colors: ('primary', 'secondary', 'info', 'success', 'warn', 'error');
+@import '../variables';
 
 .p-component {
   font-size: unset !important;
@@ -34,6 +34,12 @@ $p-colors: ('primary', 'secondary', 'info', 'success', 'warn', 'error');
   max-width: 95%;
   max-height: 95%;
   z-index: 1 !important;
+
+  .p-dialog-header {
+    .p-dialog-header-close:hover {
+      color: var(--danger) !important;
+    }
+  }
 
   .p-dialog-content {
     padding: 0.25rem 1.5rem;
@@ -83,6 +89,7 @@ $p-colors: ('primary', 'secondary', 'info', 'success', 'warn', 'error');
 
 .p-dropdown {
   width: 100%;
+  border-color: currentColor;
 }
 
 p-chart {
@@ -219,7 +226,8 @@ p-chart {
   display: none;
 }
 
-@each $color in $p-colors {
+@each $color,
+$colorValue in $app-colors-mapped {
   .p-toast-message-#{$color} {
     background-color: var(--#{$color}) !important;
     color: var(--#{$color}-c) !important;

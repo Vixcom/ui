@@ -16,8 +16,10 @@
   <section class="flex-center">
     <h1 class="font-lg">Welcome</h1>
     <div class="p-3 flex-container">
-      <a href="tier-1" class="btn btn-primary">Tier 1</a>
-      <a href="tier-2" class="btn btn-secondary">Tier 2</a>
+      <a href="pages/tier-1" class="btn btn-primary">Tier 1</a>
+      <a href="pages/tier-2" class="btn btn-secondary">Tier 2</a>
+      <a href="pages/sidemenu" class="btn btn-accent">Sidemenu</a>
+      <a href="pages/fulmenu" class="btn btn-color-1">Fullmenu</a>
     </div>
     <hr>
     <div class="p-3 flex-container">
@@ -39,7 +41,10 @@
       <button class="btn btn-transparent">Transparent</button>
     </div>
   </section>
-  <section class="grid"></section>
+  <section class="grid">
+    <div id="grid-item" class="grid-item"></div>
+    <button type="button" class="btn btn-primary" onclick="addItem">Add Item</button>
+  </section>
   <section class="bg-primary">
     <div class="tabs tabs-white">
       <span class="tab active">Tab</span>
@@ -147,6 +152,14 @@
           <p>Content Again</p>
           <input type="checkbox" class="text-secondary">
           <hr>
+          <label class="input-container" data-label="Title">
+            <input type="text" value="Hi" placeholder="Please enter a title">
+            <span class="label">short name of field</span>
+          </label>
+          <label class="input-container" data-label="Subtitle">
+            <input type="text" value="Hi">
+            <span class="label">sub short name of field</span>
+          </label>
           <label class="input-container" data-label="Message">
             <textarea class="input feed-create-post__textarea" rows="10" placeholder="Say sometheing nice"></textarea>
           </label>
@@ -159,11 +172,14 @@
       </div>
     </div>
   </section>
+
   <script>
     document.getElementsByTagName('textarea')[0].value = 'Hello';
     const grid = document.querySelector('.grid');
     const gridItem = document.querySelector('#grid-item');
-    grid.appendChild(gridItem)
+    function addItem() {
+      grid.append(gridItem.cloneNode())
+    }
   </script>
   <style>
     /* Set variable using HSL */

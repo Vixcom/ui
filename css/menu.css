@@ -9,8 +9,11 @@
   position: fixed !important;
   left: 0;
   top: 0;
+  padding: 0 !important;
+  margin: 0 !important;
   height: 100% !important;
   width: 100% !important;
+  transition: background-color 0.5s ease-in;
   border-radius: 0 !important;
   z-index: -1;
 }
@@ -22,25 +25,21 @@
   background-color: var(--primary);
   color: var(--primary-c);
 }
-.appmenu-trigger:not(:checked), .appmenu-trigger:not(:checked)::before, .appmenu-trigger:not(:checked)::after {
-  background-color: transparent !important;
-}
 
 .appmenu-toggle {
   position: relative;
   /* font-size: 120%; */
   margin-bottom: 0;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .nav-menu {
   /* border-top: 1px solid; */
-  display: flex !important;
+  width: 100%;
+  height: 100%;
+  display: flex;
   font-size: 120%;
   gap: 0.5rem;
-}
-.nav-menu:not(.h) {
-  flex-direction: column;
 }
 .nav-menu .nav-item {
   display: flex;
@@ -55,8 +54,8 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .sidemenu {
@@ -65,8 +64,8 @@
   position: relative;
   width: 30%;
   height: 100%;
+  margin: 0;
   flex: 1 1 30%;
-  min-height: 100vh;
   /* border-right: thin solid var(--secondary); */
   transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
   overflow: hidden;
@@ -78,14 +77,17 @@
 .sidemenu ::-webkit-scrollbar-thumb {
   background-color: currentColor;
 }
-.sidemenu .sidemenu-header {
+.sidemenu .menu-header {
   padding: 1rem;
 }
-.sidemenu .sidemenu-header .sidemenu-logo {
+.sidemenu .menu-header .menu-logo {
   display: none;
 }
-.sidemenu .sidemenu-header .title {
+.sidemenu .menu-header .title {
   transition: height 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
+}
+.sidemenu .nav-menu {
+  flex-direction: column;
 }
 .sidemenu .nav-menu .nav-item {
   position: relative;
@@ -128,8 +130,20 @@
   margin-left: 0;
 }
 .sidemenu footer,
-.sidemenu .sidemenu-footer {
+.sidemenu .menu-footer {
   margin-top: auto;
+}
+
+.fullmenu {
+  display: flex;
+  transition: transform 0.5s;
+}
+.fullmenu .menu-header {
+  display: flex;
+}
+.fullmenu .nav-menu {
+  align-items: center;
+  justify-content: center;
 }
 
 /* Page */
@@ -139,9 +153,11 @@
   position: relative;
   width: 100%;
   height: 100%;
+  margin: 0;
   flex: 1 1 100%;
   transition: width 0.5s;
   overflow: hidden;
+  z-index: 0;
 }
 .page footer {
   background-color: var(--secondary);
@@ -172,34 +188,27 @@
 }
 /* Above <---> Mobile */
 @media (min-width: 576px) {
+  .fullmenu {
+    align-items: center;
+  }
+  .fullmenu .menu-header .app-logo {
+    display: none;
+  }
+
+  .appmenu-trigger, .appmenu-trigger::before, .appmenu-trigger::after {
+    background-color: transparent !important;
+  }
   .appmenu-trigger:not(:checked) ~ .page,
 .appmenu-trigger:not(:checked) ~ * .page {
+    /* TODO: Use this on Sibemenu Type 2 - Page overlaps Sidemenu */
+    /* 
     border-left: thin solid;
-  }
-  .appmenu-trigger:not(:checked) ~ .page,
-.appmenu-trigger:not(:checked) ~ * .page {
-    position: relative;
-  }
-  .appmenu-trigger:not(:checked) ~ .page > *,
-.appmenu-trigger:not(:checked) ~ * .page > * {
-    position: relative;
-    z-index: 1;
-  }
-  .appmenu-trigger:not(:checked) ~ .page::before,
-.appmenu-trigger:not(:checked) ~ * .page::before {
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border-radius: inherit;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
-  .appmenu-trigger:not(:checked) ~ .page::before,
-.appmenu-trigger:not(:checked) ~ * .page::before {
-    box-shadow: 0 0 2.5rem -1.75rem hsla(var(--black-hs), var(--black-l), 0.125);
+    @include before-content;
+
+    &::before {
+      box-shadow: 0 0 2.5rem -1.75rem hsla(var(--black-hs), var(--black-l), 0.125);
+    } */
+    /* ---- */
   }
 }
 /* Mobile <---> Tablets/Mini PC */
@@ -213,16 +222,16 @@
     width: 15%;
     flex-basis: 15%;
   }
-  .appmenu-trigger:checked ~ .sidemenu .sidemenu-header .app-logo,
-.appmenu-trigger:checked ~ * .sidemenu .sidemenu-header .app-logo {
+  .appmenu-trigger:checked ~ .sidemenu .menu-header .app-logo,
+.appmenu-trigger:checked ~ * .sidemenu .menu-header .app-logo {
     display: none;
   }
-  .appmenu-trigger:checked ~ .sidemenu .sidemenu-header .sidemenu-logo,
-.appmenu-trigger:checked ~ * .sidemenu .sidemenu-header .sidemenu-logo {
+  .appmenu-trigger:checked ~ .sidemenu .menu-header .menu-logo,
+.appmenu-trigger:checked ~ * .sidemenu .menu-header .menu-logo {
     display: inline-block;
   }
-  .appmenu-trigger:checked ~ .sidemenu .sidemenu-header .title,
-.appmenu-trigger:checked ~ * .sidemenu .sidemenu-header .title {
+  .appmenu-trigger:checked ~ .sidemenu .menu-header .title,
+.appmenu-trigger:checked ~ * .sidemenu .menu-header .title {
     opacity: 0;
     height: 0;
     margin-bottom: 0;
@@ -235,17 +244,30 @@
 .appmenu-trigger:checked ~ * .sidemenu .icon {
     margin-right: 0;
   }
-  .appmenu-trigger:checked ~ .sidemenu .sidemenu-header .label,
-.appmenu-trigger:checked ~ .sidemenu .sidemenu-footer .label,
+  .appmenu-trigger:checked ~ .sidemenu .menu-header .nav-item .label,
+.appmenu-trigger:checked ~ .sidemenu .menu-header .nav-title .label,
+.appmenu-trigger:checked ~ .sidemenu .menu-footer .nav-item .label,
+.appmenu-trigger:checked ~ .sidemenu .menu-footer .nav-title .label,
 .appmenu-trigger:checked ~ .sidemenu .nav-menu .nav-item .label,
-.appmenu-trigger:checked ~ * .sidemenu .sidemenu-header .label,
-.appmenu-trigger:checked ~ * .sidemenu .sidemenu-footer .label,
-.appmenu-trigger:checked ~ * .sidemenu .nav-menu .nav-item .label {
+.appmenu-trigger:checked ~ .sidemenu .nav-menu .nav-title .label,
+.appmenu-trigger:checked ~ * .sidemenu .menu-header .nav-item .label,
+.appmenu-trigger:checked ~ * .sidemenu .menu-header .nav-title .label,
+.appmenu-trigger:checked ~ * .sidemenu .menu-footer .nav-item .label,
+.appmenu-trigger:checked ~ * .sidemenu .menu-footer .nav-title .label,
+.appmenu-trigger:checked ~ * .sidemenu .nav-menu .nav-item .label,
+.appmenu-trigger:checked ~ * .sidemenu .nav-menu .nav-title .label {
     opacity: 0;
     transform: translateX(100%);
     position: absolute;
   }
-
+  .appmenu-trigger:checked ~ .sidemenu .menu-header .nav-title,
+.appmenu-trigger:checked ~ .sidemenu .menu-footer .nav-title,
+.appmenu-trigger:checked ~ .sidemenu .nav-menu .nav-title,
+.appmenu-trigger:checked ~ * .sidemenu .menu-header .nav-title,
+.appmenu-trigger:checked ~ * .sidemenu .menu-footer .nav-title,
+.appmenu-trigger:checked ~ * .sidemenu .nav-menu .nav-title {
+    border-bottom: thin solid;
+  }
   .sidemenu .btn,
 .sidemenu .nav-menu .nav-item {
     padding-left: 1rem;
@@ -263,13 +285,19 @@
 }
 /* Mobile <--> BELOW */
 @media (max-width: 575.98px) {
-  .appmenu-trigger {
-    transition: background-color 0.5s ease-in;
+  .appmenu-trigger:not(:checked), .appmenu-trigger:not(:checked)::before, .appmenu-trigger:not(:checked)::after {
+    background-color: transparent !important;
+  }
+  .appmenu-trigger:not(:checked) ~ .app-header .fullmenu .nav-menu,
+.appmenu-trigger:not(:checked) ~ * .app-header .fullmenu .nav-menu {
+    display: none;
+    /* transform: translateY(-100%); */
+    /* opacity: 0; */
   }
   .appmenu-trigger:checked {
     width: 100vw;
     background-color: hsla(var(--black-hs), var(--black-l), 0.2);
-    z-index: 3;
+    z-index: 1;
   }
   .appmenu-trigger:checked ~ .sidemenu,
 .appmenu-trigger:checked ~ * .sidemenu {
@@ -282,24 +310,34 @@
   }
   .appmenu-trigger:checked ~ .fullmenu,
 .appmenu-trigger:checked ~ * .fullmenu {
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border-radius: inherit;
-    top: 0;
-    left: 0;
-    z-index: 0;
     position: fixed;
-    background-color: var(--primary);
-    color: var(--primary-c);
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    transform: translateY(0);
+    opacity: 1;
+    font-size: 125%;
+    background-color: var(--secondary);
+    color: var(--secondary-c);
+  }
+  .appmenu-trigger:checked ~ .fullmenu .btn,
+.appmenu-trigger:checked ~ * .fullmenu .btn {
+    color: var(--secondary-c) !important;
+  }
+  .appmenu-trigger:checked ~ .fullmenu .btn:hover,
+.appmenu-trigger:checked ~ * .fullmenu .btn:hover {
+    background-color: var(--secondary-c) !important;
+    color: var(--secondary) !important;
+  }
+  .appmenu-trigger:checked ~ .fullmenu .menu-header,
+.appmenu-trigger:checked ~ * .fullmenu .menu-header {
+    order: -1;
+    padding: 1rem;
+  }
+  .appmenu-trigger:checked ~ .fullmenu .nav-menu,
+.appmenu-trigger:checked ~ * .fullmenu .nav-menu {
     flex-direction: column;
   }
-  .appmenu-trigger:checked ~ .appmenu-toggle,
-.appmenu-trigger:checked ~ * .appmenu-toggle {
+  .appmenu-trigger:checked ~ .page .app-header .appmenu-toggle,
+.appmenu-trigger:checked ~ * .page .app-header .appmenu-toggle {
     transform: translateX(-50%);
   }
 
@@ -313,7 +351,17 @@
     transform: translateX(-100%);
     opacity: 0;
     box-shadow: 0 0 50px hsla(var(--black-hs), var(--black-l), 0.25);
-    z-index: 3;
+    z-index: 2;
+  }
+
+  .fullmenu {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* transform: translateY(-100%); */
+    /* opacity: 0; */
+    z-index: 2;
   }
 
   .page .page-content {

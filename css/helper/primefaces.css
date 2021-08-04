@@ -26,6 +26,9 @@
   max-height: 95%;
   z-index: 1 !important;
 }
+.p-dialog .p-dialog-header .p-dialog-header-close:hover {
+  color: var(--danger) !important;
+}
 .p-dialog .p-dialog-content {
   padding: 0.25rem 1.5rem;
 }
@@ -67,6 +70,7 @@
 
 .p-dropdown {
   width: 100%;
+  border-color: currentColor;
 }
 
 p-chart {
@@ -174,6 +178,16 @@ p-chart canvas {
   display: none;
 }
 
+.p-toast-message-default {
+  background-color: var(--default) !important;
+  color: var(--default-c) !important;
+}
+
+.p-toast-message-accent {
+  background-color: var(--accent) !important;
+  color: var(--accent-c) !important;
+}
+
 .p-toast-message-primary {
   background-color: var(--primary) !important;
   color: var(--primary-c) !important;
@@ -184,9 +198,54 @@ p-chart canvas {
   color: var(--secondary-c) !important;
 }
 
+.p-toast-message-white {
+  background-color: var(--white) !important;
+  color: var(--white-c) !important;
+}
+
+.p-toast-message-light {
+  background-color: var(--light) !important;
+  color: var(--light-c) !important;
+}
+
+.p-toast-message-black {
+  background-color: var(--black) !important;
+  color: var(--black-c) !important;
+}
+
+.p-toast-message-dark {
+  background-color: var(--dark) !important;
+  color: var(--dark-c) !important;
+}
+
+.p-toast-message-silver {
+  background-color: var(--silver) !important;
+  color: var(--silver-c) !important;
+}
+
+.p-toast-message-gold {
+  background-color: var(--gold) !important;
+  color: var(--gold-c) !important;
+}
+
 .p-toast-message-info {
   background-color: var(--info) !important;
   color: var(--info-c) !important;
+}
+
+.p-toast-message-error {
+  background-color: var(--error) !important;
+  color: var(--error-c) !important;
+}
+
+.p-toast-message-failed {
+  background-color: var(--failed) !important;
+  color: var(--failed-c) !important;
+}
+
+.p-toast-message-danger {
+  background-color: var(--danger) !important;
+  color: var(--danger-c) !important;
 }
 
 .p-toast-message-success {
@@ -199,9 +258,64 @@ p-chart canvas {
   color: var(--warn-c) !important;
 }
 
-.p-toast-message-error {
-  background-color: var(--error) !important;
-  color: var(--error-c) !important;
+.p-toast-message-warning {
+  background-color: var(--warning) !important;
+  color: var(--warning-c) !important;
+}
+
+.p-toast-message-pending {
+  background-color: var(--pending) !important;
+  color: var(--pending-c) !important;
+}
+
+.p-toast-message-pink {
+  background-color: var(--pink) !important;
+  color: var(--pink-c) !important;
+}
+
+.p-toast-message-orange {
+  background-color: var(--orange) !important;
+  color: var(--orange-c) !important;
+}
+
+.p-toast-message-purple {
+  background-color: var(--purple) !important;
+  color: var(--purple-c) !important;
+}
+
+.p-toast-message-green {
+  background-color: var(--green) !important;
+  color: var(--green-c) !important;
+}
+
+.p-toast-message-red {
+  background-color: var(--red) !important;
+  color: var(--red-c) !important;
+}
+
+.p-toast-message-blue {
+  background-color: var(--blue) !important;
+  color: var(--blue-c) !important;
+}
+
+.p-toast-message-yellow {
+  background-color: var(--yellow) !important;
+  color: var(--yellow-c) !important;
+}
+
+.p-toast-message-muted {
+  background-color: var(--muted) !important;
+  color: var(--muted-c) !important;
+}
+
+.p-toast-message-color-1 {
+  background-color: var(--color-1) !important;
+  color: var(--color-1-c) !important;
+}
+
+.p-toast-message-color-2 {
+  background-color: var(--color-2) !important;
+  color: var(--color-2-c) !important;
 }
 
 /*# sourceMappingURL=primefaces.css.map */

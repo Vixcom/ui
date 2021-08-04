@@ -32,11 +32,11 @@
       "rewrites": [
         {
           "source": "/styles{,/**}",
-          "destination": "/error/index.html"
+          "destination": "/pages/error/index.html"
         },
         {
           "source": "**",
-          "destination": "/error/index.html"
+          "destination": "/pages/error/index.html"
         }
       ],
       "headers": [
