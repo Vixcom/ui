@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'mixins';
 
 /* Scrollbar - Start */
 
@@ -302,21 +302,24 @@ hr[class*=s-]:not(.default) {
   }
 }
 
-.input,
-*:not(.input)>input {
-  background-color: transparent;
-  /* margin: 0.25rem 0 1rem; */
-  border-radius: 0.25rem;
-  border: 1px solid currentColor;
-  /* width: 100%; */
+*:not(.input)> {
 
-  &:not(.has-addon) {
-    /* align-self: stretch; */
-    padding: 0.5rem 1.5rem;
-  }
+  .input,
+  input {
+    background-color: transparent;
+    /* margin: 0.25rem 0 1rem; */
+    border-radius: 0.25rem;
+    border: 1px solid currentColor;
+    /* width: 100%; */
 
-  &.has-error {
-    border: 1px solid var(--danger);
+    &:not(.has-addon) {
+      /* align-self: stretch; */
+      padding: 0.5rem 1.5rem;
+    }
+
+    &.has-error {
+      border: 1px solid var(--danger);
+    }
   }
 }
 
@@ -372,8 +375,13 @@ label {
     }
   }
 
+  input~.label.off {
+    order: -1;
+  }
+
   .active,
-  input:checked+.label {
+  input:not(:checked)~.label.off,
+  input:checked~.label:not(.off) {
     color: var(--secondary);
     font-weight: bold;
   }
@@ -463,6 +471,16 @@ input {
         content: unset;
       }
     }
+
+    &.switch {
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height: 50%;
+        transform: translateY(-50%);
+      }
+    }
   }
 
   &[type=radio] {
@@ -526,6 +544,7 @@ input {
   &.has-addon {
 
     input,
+    .input,
     .addon {
       padding: 0.5rem 1.5rem;
       margin: 0;
@@ -1053,15 +1072,18 @@ table {
 }
 
 .table-container {
+  $table-container: &;
   display: flex;
   flex-direction: column;
   padding: 0 0 1rem;
   gap: 1rem;
   width: 100%;
   overflow: scroll;
-  /* color: var(--black); */
-  /* background-color: var(--white); */
-  $table-container: &;
+  scrollbar-width: medium;
+
+  &::-webkit-scrollbar {
+    height: 0.5rem;
+  }
 
   &.compact {
     font-size: 90%;
@@ -1114,9 +1136,13 @@ table {
 
   thead,
   .table-header {
+    position: sticky !important;
     /* color: hsl(var(--secondary-hs), calc(var(--secondary-l) + 10%)); */
     font-weight: bold;
     width: fit-content;
+    top: 0;
+    bottom: 0;
+    z-index: 1 !important;
 
     &.sticky-header {
       th {
@@ -1131,6 +1157,12 @@ table {
         }
       }
     }
+
+    // &.sticky {
+    //   top: 0;
+    //   bottom: 0;
+    //   z-index: 1;
+    // }
   }
 
   tr,
@@ -1142,6 +1174,7 @@ table {
     width: 100%;
     // font-size: 90%;
     background-color: inherit;
+    z-index: 0;
 
     &:nth-child(even):not(.table-header) {
       background-color: hsl(var(--muted-hs), calc(var(--muted-l) + 40%));
@@ -1162,7 +1195,7 @@ table {
       padding: 1rem;
       background-color: inherit;
       border-radius: 0;
-      min-width: 25%;
+      /* min-width: 12.5%; */
 
       &:first-of-type {
         border-top-left-radius: inherit;
@@ -1174,7 +1207,8 @@ table {
         border-bottom-right-radius: inherit;
       }
 
-      &.sticky {
+      &.sticky,
+      &.md-sticky {
         left: 0;
         right: 0;
         z-index: 1;
@@ -1441,6 +1475,7 @@ table {
   }
 }
 
+.flex-list,
 .item-list {
   margin: 1.5rem 0;
   list-style: none;
@@ -1460,8 +1495,14 @@ table {
         content: '';
       }
 
+      .connector {
+        display: flex;
+        flex-direction: column;
+      }
+
       .connector::before,
       .connector::after {
+        margin: 0 auto;
         width: 1px;
         height: 100%;
         background-color: currentColor;
@@ -1493,6 +1534,7 @@ table {
     display: flex;
     /* align-items: center; */
     /* justify-content: space-between; */
+    width: 100%;
     gap: 0.25rem;
     padding: 0 1rem;
     cursor: pointer;
@@ -1662,6 +1704,10 @@ table {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 .img-fullwidth {
   margin: 0 -1.25rem;
   width: 100vw;
@@ -1688,13 +1734,16 @@ table {
 
 .img-bg {
   @include absolute-content;
-  position: absolute !important;
   object-fit: cover;
-  z-index: 0 !important;
 }
 
 .has-bg {
   @include after-content;
+
+  &>.img-bg {
+    z-index: 0;
+    position: absolute !important;
+  }
 
   &::after {
     background-color: hsla(var(--black-hs), var(--black-l), 0.5);
@@ -1749,7 +1798,13 @@ section {
   padding: 1.25rem;
 }
 
-/* ABOVE <-- Tables/Mini PC */
+@media (min-width:576px) {
+  .md-sticky {
+    position: sticky;
+  }
+}
+
+/* ABOVE <-- Tablets/Mini PC */
 @media (min-width:768px) {
 
   .item-list {
@@ -1857,9 +1912,9 @@ section {
 
   .table-container {
 
-    td,
-    [class*=col] {
-      /* min-width: 25vw; */
+    td {
+      min-width: fit-content;
+      max-width: 75%;
     }
   }
 }

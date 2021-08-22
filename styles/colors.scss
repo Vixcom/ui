@@ -1,25 +1,4 @@
-@import 'variables';
-
-:root {
-  --card-shadow: #{$card-shadow};
-  --background-color: #{$background-color};
-
-  /* Color Variables */
-  @each $k,
-  $v in $app-colors-mapped {
-    /* ---COLOR-#{$k}-START--- */
-    --#{$k}: #{map-get($v, 'bg')};
-    /* ---HSL-#{$k}--- */
-    --#{$k}-hs: #{hue(map-get($v, 'bg')), saturation(map-get($v, 'bg'))};
-    --#{$k}-l: #{lightness(map-get($v, 'bg'))};
-    --#{$k}-a: #{alpha(map-get($v, 'bg'))};
-    --#{$k}-c: #{map-get($v, 'c')};
-    --#{$k}-c-hs: #{hue(map-get($v, 'c')), saturation(map-get($v, 'c'))};
-    --#{$k}-c-l: #{lightness(map-get($v, 'c'))};
-    --#{$k}-c-a: #{alpha(map-get($v, 'c'))};
-    /* ---COLOR-#{$k}-END--- */
-  }
-}
+@import 'mixins';
 
 /**
 * HSL Darken = level - n; Lighten = level + n.
@@ -128,6 +107,11 @@ input,
 input::placeholder,
 input::-webkit-input-placeholder {
   color: currentColor !important
+}
+
+.text-unset,
+.text-color-unset {
+  color: unset
 }
 
 .text-current {

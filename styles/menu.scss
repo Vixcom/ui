@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'mixins';
 
 /**
 * @Author vixson https://vixson.github.io
@@ -131,6 +131,7 @@
       }
 
       .label {
+        overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
@@ -175,7 +176,7 @@
   flex: 1 1 100%;
   transition: width 0.5s;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
 
   footer {
     background-color: var(--secondary);

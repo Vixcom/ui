@@ -2,16 +2,13 @@
 * @Author: Vixson
 * @Description: Unique and Very Responsive Admin Dashboard UI
 */
-@import 'variables';
+@import 'mixins';
 @import 'external/bootstrap.css';
+@import 'variables.css';
 @import 'animations.css';
 @import 'colors.css';
 @import 'sizes.css';
 @import 'app.css';
-
-:root {
-  --font-size: #{$font-size};
-}
 
 body {
   font-family: 'AppContent', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,11 +19,6 @@ body {
 }
 
 /* Mobile --> BELOW */
-@media (max-width:575.98px) {
-  :root {
-    --font-size: calc(var(--font-size)/1.25);
-  }
-}
 
 @font-face {
   font-family: 'AppTitle';

@@ -1,317 +1,3 @@
-:root {
-  --card-shadow: 0 1px 30px -10px rgba(0, 0, 0, 0.5);
-  --background-color: #FFFFFF;
-  /* Color Variables */
-  /* ---COLOR-default-START--- */
-  --default: #5B5B5B;
-  /* ---HSL-default--- */
-  --default-hs: 0deg, 0%;
-  --default-l: 35.6862745098%;
-  --default-a: 1;
-  --default-c: #FFFFFF;
-  --default-c-hs: 0deg, 0%;
-  --default-c-l: 100%;
-  --default-c-a: 1;
-  /* ---COLOR-default-END--- */
-  /* ---COLOR-accent-START--- */
-  --accent: #BFBFBF;
-  /* ---HSL-accent--- */
-  --accent-hs: 0deg, 0%;
-  --accent-l: 74.9019607843%;
-  --accent-a: 1;
-  --accent-c: #4c4c4c;
-  --accent-c-hs: 0deg, 0%;
-  --accent-c-l: 29.9019607843%;
-  --accent-c-a: 1;
-  /* ---COLOR-accent-END--- */
-  /* ---COLOR-primary-START--- */
-  --primary: #34A853;
-  /* ---HSL-primary--- */
-  --primary-hs: 136.0344827586deg, 52.7272727273%;
-  --primary-l: 43.137254902%;
-  --primary-a: 1;
-  --primary-c: #FFFFFF;
-  --primary-c-hs: 0deg, 0%;
-  --primary-c-l: 100%;
-  --primary-c-a: 1;
-  /* ---COLOR-primary-END--- */
-  /* ---COLOR-secondary-START--- */
-  --secondary: #5C2B6D;
-  /* ---HSL-secondary--- */
-  --secondary-hs: 284.5454545455deg, 43.4210526316%;
-  --secondary-l: 29.8039215686%;
-  --secondary-a: 1;
-  --secondary-c: #FFFFFF;
-  --secondary-c-hs: 0deg, 0%;
-  --secondary-c-l: 100%;
-  --secondary-c-a: 1;
-  /* ---COLOR-secondary-END--- */
-  /* ---COLOR-white-START--- */
-  --white: #FFFFFF;
-  /* ---HSL-white--- */
-  --white-hs: 0deg, 0%;
-  --white-l: 100%;
-  --white-a: 1;
-  --white-c: #5B5B5B;
-  --white-c-hs: 0deg, 0%;
-  --white-c-l: 35.6862745098%;
-  --white-c-a: 1;
-  /* ---COLOR-white-END--- */
-  /* ---COLOR-light-START--- */
-  --light: #F8F9FA;
-  /* ---HSL-light--- */
-  --light-hs: 210deg, 16.6666666667%;
-  --light-l: 97.6470588235%;
-  --light-a: 1;
-  --light-c: #343A40;
-  --light-c-hs: 210deg, 10.3448275862%;
-  --light-c-l: 22.7450980392%;
-  --light-c-a: 1;
-  /* ---COLOR-light-END--- */
-  /* ---COLOR-black-START--- */
-  --black: #000000;
-  /* ---HSL-black--- */
-  --black-hs: 0deg, 0%;
-  --black-l: 0%;
-  --black-a: 1;
-  --black-c: #FFFFFF;
-  --black-c-hs: 0deg, 0%;
-  --black-c-l: 100%;
-  --black-c-a: 1;
-  /* ---COLOR-black-END--- */
-  /* ---COLOR-dark-START--- */
-  --dark: #343A40;
-  /* ---HSL-dark--- */
-  --dark-hs: 210deg, 10.3448275862%;
-  --dark-l: 22.7450980392%;
-  --dark-a: 1;
-  --dark-c: #F8F9FA;
-  --dark-c-hs: 210deg, 16.6666666667%;
-  --dark-c-l: 97.6470588235%;
-  --dark-c-a: 1;
-  /* ---COLOR-dark-END--- */
-  /* ---COLOR-silver-START--- */
-  --silver: #BFBFBF;
-  /* ---HSL-silver--- */
-  --silver-hs: 0deg, 0%;
-  --silver-l: 74.9019607843%;
-  --silver-a: 1;
-  --silver-c: #FFFFFF;
-  --silver-c-hs: 0deg, 0%;
-  --silver-c-l: 100%;
-  --silver-c-a: 1;
-  /* ---COLOR-silver-END--- */
-  /* ---COLOR-gold-START--- */
-  --gold: #FFDF00;
-  /* ---HSL-gold--- */
-  --gold-hs: 52.4705882353deg, 100%;
-  --gold-l: 50%;
-  --gold-a: 1;
-  --gold-c: #FFFFFF;
-  --gold-c-hs: 0deg, 0%;
-  --gold-c-l: 100%;
-  --gold-c-a: 1;
-  /* ---COLOR-gold-END--- */
-  /* ---COLOR-info-START--- */
-  --info: #17A2b8;
-  /* ---HSL-info--- */
-  --info-hs: 188.198757764deg, 77.7777777778%;
-  --info-l: 40.5882352941%;
-  --info-a: 1;
-  --info-c: #FFFFFF;
-  --info-c-hs: 0deg, 0%;
-  --info-c-l: 100%;
-  --info-c-a: 1;
-  /* ---COLOR-info-END--- */
-  /* ---COLOR-error-START--- */
-  --error: #DC3545;
-  /* ---HSL-error--- */
-  --error-hs: 354.251497006deg, 70.4641350211%;
-  --error-l: 53.5294117647%;
-  --error-a: 1;
-  --error-c: #FFFFFF;
-  --error-c-hs: 0deg, 0%;
-  --error-c-l: 100%;
-  --error-c-a: 1;
-  /* ---COLOR-error-END--- */
-  /* ---COLOR-failed-START--- */
-  --failed: #DC3545;
-  /* ---HSL-failed--- */
-  --failed-hs: 354.251497006deg, 70.4641350211%;
-  --failed-l: 53.5294117647%;
-  --failed-a: 1;
-  --failed-c: #FFFFFF;
-  --failed-c-hs: 0deg, 0%;
-  --failed-c-l: 100%;
-  --failed-c-a: 1;
-  /* ---COLOR-failed-END--- */
-  /* ---COLOR-danger-START--- */
-  --danger: #DC3545;
-  /* ---HSL-danger--- */
-  --danger-hs: 354.251497006deg, 70.4641350211%;
-  --danger-l: 53.5294117647%;
-  --danger-a: 1;
-  --danger-c: #FFFFFF;
-  --danger-c-hs: 0deg, 0%;
-  --danger-c-l: 100%;
-  --danger-c-a: 1;
-  /* ---COLOR-danger-END--- */
-  /* ---COLOR-success-START--- */
-  --success: #24B624;
-  /* ---HSL-success--- */
-  --success-hs: 120deg, 66.9724770642%;
-  --success-l: 42.7450980392%;
-  --success-a: 1;
-  --success-c: #FFFFFF;
-  --success-c-hs: 0deg, 0%;
-  --success-c-l: 100%;
-  --success-c-a: 1;
-  /* ---COLOR-success-END--- */
-  /* ---COLOR-warn-START--- */
-  --warn: #FFC107;
-  /* ---HSL-warn--- */
-  --warn-hs: 45deg, 100%;
-  --warn-l: 51.3725490196%;
-  --warn-a: 1;
-  --warn-c: #000000;
-  --warn-c-hs: 0deg, 0%;
-  --warn-c-l: 0%;
-  --warn-c-a: 1;
-  /* ---COLOR-warn-END--- */
-  /* ---COLOR-warning-START--- */
-  --warning: #FFC107;
-  /* ---HSL-warning--- */
-  --warning-hs: 45deg, 100%;
-  --warning-l: 51.3725490196%;
-  --warning-a: 1;
-  --warning-c: #000000;
-  --warning-c-hs: 0deg, 0%;
-  --warning-c-l: 0%;
-  --warning-c-a: 1;
-  /* ---COLOR-warning-END--- */
-  /* ---COLOR-pending-START--- */
-  --pending: #FFC107;
-  /* ---HSL-pending--- */
-  --pending-hs: 45deg, 100%;
-  --pending-l: 51.3725490196%;
-  --pending-a: 1;
-  --pending-c: #000000;
-  --pending-c-hs: 0deg, 0%;
-  --pending-c-l: 0%;
-  --pending-c-a: 1;
-  /* ---COLOR-pending-END--- */
-  /* ---COLOR-pink-START--- */
-  --pink: #ED028C;
-  /* ---HSL-pink--- */
-  --pink-hs: 324.7659574468deg, 98.3263598326%;
-  --pink-l: 46.862745098%;
-  --pink-a: 1;
-  --pink-c: #FFFFFF;
-  --pink-c-hs: 0deg, 0%;
-  --pink-c-l: 100%;
-  --pink-c-a: 1;
-  /* ---COLOR-pink-END--- */
-  /* ---COLOR-orange-START--- */
-  --orange: #F58220;
-  /* ---HSL-orange--- */
-  --orange-hs: 27.6056338028deg, 91.4163090129%;
-  --orange-l: 54.3137254902%;
-  --orange-a: 1;
-  --orange-c: #FFFFFF;
-  --orange-c-hs: 0deg, 0%;
-  --orange-c-l: 100%;
-  --orange-c-a: 1;
-  /* ---COLOR-orange-END--- */
-  /* ---COLOR-purple-START--- */
-  --purple: #561843;
-  /* ---HSL-purple--- */
-  --purple-hs: 318.3870967742deg, 56.3636363636%;
-  --purple-l: 21.568627451%;
-  --purple-a: 1;
-  --purple-c: #FFFFFF;
-  --purple-c-hs: 0deg, 0%;
-  --purple-c-l: 100%;
-  --purple-c-a: 1;
-  /* ---COLOR-purple-END--- */
-  /* ---COLOR-green-START--- */
-  --green: #1D5C2E;
-  /* ---HSL-green--- */
-  --green-hs: 136.1904761905deg, 52.0661157025%;
-  --green-l: 23.7254901961%;
-  --green-a: 1;
-  --green-c: #FFFFFF;
-  --green-c-hs: 0deg, 0%;
-  --green-c-l: 100%;
-  --green-c-a: 1;
-  /* ---COLOR-green-END--- */
-  /* ---COLOR-red-START--- */
-  --red: #C54646;
-  /* ---HSL-red--- */
-  --red-hs: 0deg, 52.2633744856%;
-  --red-l: 52.3529411765%;
-  --red-a: 1;
-  --red-c: #FFFFFF;
-  --red-c-hs: 0deg, 0%;
-  --red-c-l: 100%;
-  --red-c-a: 1;
-  /* ---COLOR-red-END--- */
-  /* ---COLOR-blue-START--- */
-  --blue: #0365A3;
-  /* ---HSL-blue--- */
-  --blue-hs: 203.25deg, 96.3855421687%;
-  --blue-l: 32.5490196078%;
-  --blue-a: 1;
-  --blue-c: #FFFFFF;
-  --blue-c-hs: 0deg, 0%;
-  --blue-c-l: 100%;
-  --blue-c-a: 1;
-  /* ---COLOR-blue-END--- */
-  /* ---COLOR-yellow-START--- */
-  --yellow: #C4C400;
-  /* ---HSL-yellow--- */
-  --yellow-hs: 60deg, 100%;
-  --yellow-l: 38.431372549%;
-  --yellow-a: 1;
-  --yellow-c: #FFFFFF;
-  --yellow-c-hs: 0deg, 0%;
-  --yellow-c-l: 100%;
-  --yellow-c-a: 1;
-  /* ---COLOR-yellow-END--- */
-  /* ---COLOR-muted-START--- */
-  --muted: #7D7D7D;
-  /* ---HSL-muted--- */
-  --muted-hs: 0deg, 0%;
-  --muted-l: 49.0196078431%;
-  --muted-a: 1;
-  --muted-c: #FFFFFF;
-  --muted-c-hs: 0deg, 0%;
-  --muted-c-l: 100%;
-  --muted-c-a: 1;
-  /* ---COLOR-muted-END--- */
-  /* ---COLOR-color-1-START--- */
-  --color-1: #34A853;
-  /* ---HSL-color-1--- */
-  --color-1-hs: 136.0344827586deg, 52.7272727273%;
-  --color-1-l: 43.137254902%;
-  --color-1-a: 1;
-  --color-1-c: #FFFFFF;
-  --color-1-c-hs: 0deg, 0%;
-  --color-1-c-l: 100%;
-  --color-1-c-a: 1;
-  /* ---COLOR-color-1-END--- */
-  /* ---COLOR-color-2-START--- */
-  --color-2: #5C2B6D;
-  /* ---HSL-color-2--- */
-  --color-2-hs: 284.5454545455deg, 43.4210526316%;
-  --color-2-l: 29.8039215686%;
-  --color-2-a: 1;
-  --color-2-c: #FFFFFF;
-  --color-2-c-hs: 0deg, 0%;
-  --color-2-c-l: 100%;
-  --color-2-c-a: 1;
-  /* ---COLOR-color-2-END--- */
-}
-
 /**
 * HSL Darken = level - n; Lighten = level + n.
 ** Darken Color = hsl(var(--{color}-hs), calc(var(--{color}-l) - n%))
@@ -3922,7 +3608,7 @@ button.badge-outline-success:active,
 }
 
 .text-warn {
-  color: var(--warn, #FFC107) !important;
+  color: var(--warn, #FFA500) !important;
 }
 
 a.text-warn:hover,
@@ -3960,19 +3646,19 @@ button.bg-warn:active {
 }
 
 .bg-g-warn {
-  background: linear-gradient(var(--warn, #FFC107), hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a))) !important;
+  background: linear-gradient(var(--warn, #FFA500), hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a))) !important;
   color: var(--warn-c, #000000);
   border: none;
 }
 
 a.bg-g-warn:hover,
 button.bg-g-warn:hover {
-  background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) + 20%), var(--warn-a)), var(--warn, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) + 20%), var(--warn-a)), var(--warn, #FFA500)) !important;
   color: var(--warn-c, #000000);
 }
 a.bg-g-warn:active,
 button.bg-g-warn:active {
-  background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a)), var(--warn, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a)), var(--warn, #FFA500)) !important;
 }
 
 .tabs-warn .tab {
@@ -4061,19 +3747,19 @@ button.btn-warn:active {
 }
 
 .btn-g-warn {
-  background: linear-gradient(var(--warn, #FFC107), hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a))) !important;
+  background: linear-gradient(var(--warn, #FFA500), hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a))) !important;
   color: var(--warn-c, #000000);
   border: none;
 }
 
 a.btn-g-warn:hover,
 button.btn-g-warn:hover {
-  background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) + 20%), var(--warn-a)), var(--warn, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) + 20%), var(--warn-a)), var(--warn, #FFA500)) !important;
   color: var(--warn-c, #000000);
 }
 a.btn-g-warn:active,
 button.btn-g-warn:active {
-  background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a)), var(--warn, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--warn-hs), calc(var(--warn-l) - 20%), var(--warn-a)), var(--warn, #FFA500)) !important;
 }
 
 .btn-outline-warn {
@@ -4162,7 +3848,7 @@ button.badge-outline-warn:active,
 }
 
 .text-warning {
-  color: var(--warning, #FFC107) !important;
+  color: var(--warning, #FFA500) !important;
 }
 
 a.text-warning:hover,
@@ -4200,19 +3886,19 @@ button.bg-warning:active {
 }
 
 .bg-g-warning {
-  background: linear-gradient(var(--warning, #FFC107), hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a))) !important;
+  background: linear-gradient(var(--warning, #FFA500), hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a))) !important;
   color: var(--warning-c, #000000);
   border: none;
 }
 
 a.bg-g-warning:hover,
 button.bg-g-warning:hover {
-  background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) + 20%), var(--warning-a)), var(--warning, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) + 20%), var(--warning-a)), var(--warning, #FFA500)) !important;
   color: var(--warning-c, #000000);
 }
 a.bg-g-warning:active,
 button.bg-g-warning:active {
-  background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a)), var(--warning, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a)), var(--warning, #FFA500)) !important;
 }
 
 .tabs-warning .tab {
@@ -4301,19 +3987,19 @@ button.btn-warning:active {
 }
 
 .btn-g-warning {
-  background: linear-gradient(var(--warning, #FFC107), hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a))) !important;
+  background: linear-gradient(var(--warning, #FFA500), hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a))) !important;
   color: var(--warning-c, #000000);
   border: none;
 }
 
 a.btn-g-warning:hover,
 button.btn-g-warning:hover {
-  background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) + 20%), var(--warning-a)), var(--warning, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) + 20%), var(--warning-a)), var(--warning, #FFA500)) !important;
   color: var(--warning-c, #000000);
 }
 a.btn-g-warning:active,
 button.btn-g-warning:active {
-  background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a)), var(--warning, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--warning-hs), calc(var(--warning-l) - 20%), var(--warning-a)), var(--warning, #FFA500)) !important;
 }
 
 .btn-outline-warning {
@@ -4402,7 +4088,7 @@ button.badge-outline-warning:active,
 }
 
 .text-pending {
-  color: var(--pending, #FFC107) !important;
+  color: var(--pending, #FFA500) !important;
 }
 
 a.text-pending:hover,
@@ -4440,19 +4126,19 @@ button.bg-pending:active {
 }
 
 .bg-g-pending {
-  background: linear-gradient(var(--pending, #FFC107), hsla(var(--pending-hs), calc(var(--pending-l) - 20%), var(--pending-a))) !important;
+  background: linear-gradient(var(--pending, #FFA500), hsla(var(--pending-hs), calc(var(--pending-l) - 20%), var(--pending-a))) !important;
   color: var(--pending-c, #000000);
   border: none;
 }
 
 a.bg-g-pending:hover,
 button.bg-g-pending:hover {
-  background: linear-gradient(hsla(var(--pending-hs), calc(var(--pending-l) + 20%), var(--pending-a)), var(--pending, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--pending-hs), calc(var(--pending-l) + 20%), var(--pending-a)), var(--pending, #FFA500)) !important;
   color: var(--pending-c, #000000);
 }
 a.bg-g-pending:active,
 button.bg-g-pending:active {
-  background: linear-gradient(hsla(var(--pending-hs), calc(var(--pending-l) - 20%), var(--pending-a)), var(--pending, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--pending-hs), calc(var(--pending-l) - 20%), var(--pending-a)), var(--pending, #FFA500)) !important;
 }
 
 .tabs-pending .tab {
@@ -4541,19 +4227,19 @@ button.btn-pending:active {
 }
 
 .btn-g-pending {
-  background: linear-gradient(var(--pending, #FFC107), hsla(var(--pending-hs), calc(var(--pending-l) - 20%), var(--pending-a))) !important;
+  background: linear-gradient(var(--pending, #FFA500), hsla(var(--pending-hs), calc(var(--pending-l) - 20%), var(--pending-a))) !important;
   color: var(--pending-c, #000000);
   border: none;
 }
 
 a.btn-g-pending:hover,
 button.btn-g-pending:hover {
-  background: linear-gradient(hsla(var(--pending-hs), calc(var(--pending-l) + 20%), var(--pending-a)), var(--pending, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--pending-hs), calc(var(--pending-l) + 20%), var(--pending-a)), var(--pending, #FFA500)) !important;
   color: var(--pending-c, #000000);
 }
 a.btn-g-pending:active,
 button.btn-g-pending:active {
-  background: linear-gradient(hsla(var(--pending-hs), calc(var(--pending-l) - 20%), var(--pending-a)), var(--pending, #FFC107)) !important;
+  background: linear-gradient(hsla(var(--pending-hs), calc(var(--pending-l) - 20%), var(--pending-a)), var(--pending, #FFA500)) !important;
 }
 
 .btn-outline-pending {
@@ -7141,6 +6827,11 @@ input,
 input::placeholder,
 input::-webkit-input-placeholder {
   color: currentColor !important;
+}
+
+.text-unset,
+.text-color-unset {
+  color: unset;
 }
 
 .text-current {
