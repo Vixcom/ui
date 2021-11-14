@@ -1,4 +1,4 @@
-@import '../variables';
+@import '../mixins';
 
 .p-component {
   font-size: unset !important;
@@ -21,6 +21,25 @@
 .p-tabview {
   &.no-header .p-tabview-nav {
     display: none;
+  }
+
+  & &-nav {
+    align-items: stretch;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    border: none !important;
+
+    li {
+      min-width: 20%;
+
+      &.p-highlight {
+        min-width: 30%;
+      }
+
+      .p-tabview-nav-link {
+        height: 100%;
+      }
+    }
   }
 }
 
@@ -84,9 +103,14 @@
   z-index: 5 !important;
 }
 
+.p-badge {
+  font-size: 0.75rem !important;
+}
+
 .input>.p-inputtext {
   padding: 0;
   color: unset;
+  font-size: unset;
 }
 
 .p-inputtext:enabled {
@@ -98,8 +122,11 @@
 }
 
 .p-dropdown {
-  width: 100%;
   border-color: currentColor;
+}
+
+*:not(.p-paginator)>.p-dropdown {
+  width: 100%;
 }
 
 p-chart {
@@ -166,6 +193,8 @@ p-chart {
 }
 
 .p-carousel {
+  width: 100%;
+
   .p-carousel-items-content {
     /* padding: 1rem; */
 
@@ -242,6 +271,11 @@ p-chart {
 @each $color,
 $colorValue in $app-colors-mapped {
   .p-toast-message-#{$color} {
+    background-color: var(--#{$color}) !important;
+    color: var(--#{$color}-c) !important;
+  }
+
+  .p-badge-#{$color} {
     background-color: var(--#{$color}) !important;
     color: var(--#{$color}-c) !important;
   }

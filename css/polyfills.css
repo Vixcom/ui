@@ -1,0 +1,11 @@
+@supports not (gap: 1em) {
+  .nav-menu {
+    margin: -0.5em;
+  }
+
+  .nav-menu > * {
+    margin: 0.5em;
+  }
+}
+
+/*# sourceMappingURL=polyfills.css.map */

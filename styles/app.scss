@@ -832,7 +832,7 @@ option[disabled]:first-of-type {
   display: flex;
   overflow-x: scroll;
   flex-wrap: nowrap;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
   padding: 0.125rem 1.25rem;
   gap: 0.5rem;
@@ -1195,6 +1195,7 @@ table {
       padding: 1rem;
       background-color: inherit;
       border-radius: 0;
+      word-break: break-word;
       /* min-width: 12.5%; */
 
       &:first-of-type {
@@ -1227,7 +1228,7 @@ table {
       }
 
       &.text-truncate {
-        max-width: 15vw;
+        /* max-width: 15vw; */
       }
 
       p {
@@ -1267,20 +1268,21 @@ table {
 .scrollable {
   position: relative;
   height: 100%;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
   overflow-y: scroll;
   overflow-x: hidden;
+
+  &.h {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
 }
 
-.h-scrollable {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
 
 /* Scrollable Container - End */
 
@@ -1557,7 +1559,9 @@ table {
     }
 
     .content {
-      margin-right: auto;
+      &+.content {
+        margin-top: 0.5rem;
+      }
     }
 
     &:hover .icon {
@@ -1742,7 +1746,7 @@ img {
 
   &>.img-bg {
     z-index: 0;
-    position: absolute !important;
+    position: absolute;
   }
 
   &::after {

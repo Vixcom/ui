@@ -1,5 +1,5 @@
 {
-  "name": "vx-dashoard",
+  "name": "vx-dashboard",
   "scripts": {
     "serve": "sass styles:css --watch",
     "build": "sass styles:css",

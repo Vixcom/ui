@@ -57,6 +57,9 @@
   width: 100%;
   height: 100%;
 }
+.sidemenu-container.rtl .page {
+  order: -1;
+}
 
 .sidemenu {
   display: flex;
@@ -69,6 +72,7 @@
   /* border-right: thin solid var(--secondary); */
   transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
   overflow: hidden;
+  z-index: 1;
   /* Sidemenu scrollbar */
 }
 .sidemenu ::-webkit-scrollbar {
@@ -88,6 +92,8 @@
 }
 .sidemenu .nav-menu {
   flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .sidemenu .nav-menu .nav-item {
   position: relative;
@@ -106,6 +112,9 @@
   top: 0;
   left: 0;
   z-index: 0;
+}
+.sidemenu .nav-menu .nav-item::before:not(img) {
+  content: "";
 }
 .sidemenu .nav-menu .nav-item::before {
   background-color: currentColor;
@@ -138,6 +147,7 @@
 .fullmenu {
   display: flex;
   transition: transform 0.5s;
+  align-items: center;
 }
 .fullmenu .menu-header {
   display: flex;
@@ -145,6 +155,7 @@
 .fullmenu .nav-menu {
   align-items: center;
   justify-content: center;
+  overflow: scroll;
 }
 
 /* Page */
@@ -298,7 +309,7 @@
   .appmenu-trigger:checked {
     width: 100vw;
     background-color: hsla(var(--black-hs), var(--black-l), 0.2);
-    z-index: 1;
+    z-index: 2;
   }
   .appmenu-trigger:checked ~ .sidemenu,
 .appmenu-trigger:checked ~ * .sidemenu {
@@ -332,6 +343,10 @@
 .appmenu-trigger:checked ~ * .fullmenu .menu-header {
     order: -1;
     padding: 1rem;
+  }
+  .appmenu-trigger:checked ~ .fullmenu .menu-header .silhouette,
+.appmenu-trigger:checked ~ * .fullmenu .menu-header .silhouette {
+    filter: saturate(0%) brightness(250%);
   }
   .appmenu-trigger:checked ~ .fullmenu .nav-menu,
 .appmenu-trigger:checked ~ * .fullmenu .nav-menu {

@@ -8,6 +8,7 @@
 @import 'colors.css';
 @import 'sizes.css';
 @import 'app.css';
+@import 'polyfills.css';
 body {
   font-family: "AppContent", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color, --default-c, --white);

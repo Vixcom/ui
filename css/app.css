@@ -659,6 +659,9 @@ option[disabled]:first-of-type {
   left: 0;
   z-index: 0;
 }
+.progress::before:not(img) {
+  content: "";
+}
 .progress::before {
   opacity: 0.75;
 }
@@ -678,6 +681,9 @@ option[disabled]:first-of-type {
   top: 0;
   left: 0;
   z-index: 0;
+}
+.progress.bar::after:not(img) {
+  content: "";
 }
 .progress.bar::after {
   background-color: currentColor;
@@ -712,6 +718,9 @@ option[disabled]:first-of-type {
   left: 0;
   z-index: 0;
 }
+.progress.dotted::before:not(img) {
+  content: "";
+}
 .progress.dotted::before {
   opacity: 0.125;
   background-color: currentColor;
@@ -737,7 +746,7 @@ option[disabled]:first-of-type {
   display: flex;
   overflow-x: scroll;
   flex-wrap: nowrap;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
   padding: 0.125rem 1.25rem;
   gap: 0.5rem;
@@ -782,6 +791,9 @@ option[disabled]:first-of-type {
   top: 0;
   left: 0;
   z-index: 0;
+}
+.tabs.overlap::after:not(img) {
+  content: "";
 }
 .tabs.overlap::after {
   background-color: inherit;
@@ -1028,6 +1040,7 @@ table {
   padding: 1rem;
   background-color: inherit;
   border-radius: 0;
+  word-break: break-word;
   /* min-width: 12.5%; */
 }
 .table-container tr td:first-of-type,
@@ -1095,7 +1108,7 @@ table {
 .table-container .scrollable > .row td.text-truncate,
 .table-container .scrollable > .row th.text-truncate,
 .table-container .scrollable > .row [class*=col].text-truncate {
-  max-width: 15vw;
+  /* max-width: 15vw; */
 }
 .table-container tr td p,
 .table-container tr th p,
@@ -1135,12 +1148,11 @@ table {
 .scrollable {
   position: relative;
   height: 100%;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
-.h-scrollable {
+.scrollable.h {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -1303,6 +1315,9 @@ table {
   left: 0;
   z-index: 0;
 }
+.card::before:not(img) {
+  content: "";
+}
 .card:not(.flat) {
   overflow: unset;
   border: none;
@@ -1414,9 +1429,9 @@ table {
   /* margin-right: 1.25rem; */
   transition: margin-right 0.125s linear;
 }
-.flex-list .item .content,
-.item-list .item .content {
-  margin-right: auto;
+.flex-list .item .content + .content,
+.item-list .item .content + .content {
+  margin-top: 0.5rem;
 }
 .flex-list .item:hover .icon,
 .item-list .item:hover .icon {
@@ -1577,8 +1592,10 @@ img {
   top: 0;
   left: 0;
   z-index: 0;
-  /* position: absolute !important; */
   object-fit: cover;
+}
+.img-bg:not(img) {
+  content: "";
 }
 
 .has-bg {
@@ -1598,8 +1615,12 @@ img {
   left: 0;
   z-index: 0;
 }
+.has-bg::after:not(img) {
+  content: "";
+}
 .has-bg > .img-bg {
   z-index: 0;
+  position: absolute;
 }
 .has-bg::after {
   background-color: hsla(var(--black-hs), var(--black-l), 0.5);
