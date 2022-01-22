@@ -26,5 +26,6 @@
   :root {
     // --font-size: calc(#{$font-size} / 1.125);
     --font-size: calc(var(--font-size) - 100rem);
+    // --font-size: 0.725rem;
   }
 }

@@ -3607,6 +3607,246 @@ button.badge-outline-success:active,
   color: var(--success-c, #FFFFFF) !important;
 }
 
+.text-successful {
+  color: var(--successful, #24B624) !important;
+}
+
+a.text-successful:hover,
+button.text-successful:hover {
+  color: hsla(var(--successful-hs), calc(var(--successful-l) - 10%), var(--successful-a)) !important;
+}
+a.text-successful:active,
+button.text-successful:active {
+  color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a)) !important;
+}
+
+.bg-successful {
+  background-color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a)) !important;
+  color: var(--successful-c, #FFFFFF) !important;
+  border-color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a));
+}
+.bg-successful.is-blur {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.5) !important;
+}
+.bg-successful.is-blur:hover {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.75) !important;
+}
+
+a.bg-successful:hover,
+.bg-successful.link:hover,
+button.bg-successful:hover {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 10%), var(--successful-a)) !important;
+  border-color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a));
+  color: var(--successful-c, #FFFFFF);
+}
+a.bg-successful:active,
+.bg-successful.link:active,
+button.bg-successful:active {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a)) !important;
+}
+
+.bg-g-successful {
+  background: linear-gradient(var(--successful, #24B624), hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a))) !important;
+  color: var(--successful-c, #FFFFFF);
+  border: none;
+}
+
+a.bg-g-successful:hover,
+button.bg-g-successful:hover {
+  background: linear-gradient(hsla(var(--successful-hs), calc(var(--successful-l) + 20%), var(--successful-a)), var(--successful, #24B624)) !important;
+  color: var(--successful-c, #FFFFFF);
+}
+a.bg-g-successful:active,
+button.bg-g-successful:active {
+  background: linear-gradient(hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a)), var(--successful, #24B624)) !important;
+}
+
+.tabs-successful .tab {
+  color: currentColor;
+}
+.tabs-successful .tab:not(.active):hover {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.075);
+}
+.tabs-successful .tab.active {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.125);
+  color: hsla(var(--successful-hs), calc(var(--successful-l) - 10%), var(--successful-a));
+}
+.tabs-successful.fill .tab:hover, .tabs-successful.prefill .tab:hover {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.25);
+}
+.tabs-successful.fill .tab.active, .tabs-successful.prefill .tab.active {
+  background-color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a));
+  color: var(--successful-c, #FFFFFF);
+}
+.tabs-successful.prefill .tab {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.125);
+}
+
+.alert-successful {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) + 45%), var(--successful-a)) !important;
+  color: hsla(var(--successful-hs), calc(var(--successful-l) - 45%), var(--successful-a)) !important;
+  border-color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a)) !important;
+}
+.alert-successful.is-blur:not(:hover) {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) + 45%), 0.5) !important;
+}
+
+.bg-outline-successful {
+  background-color: transparent !important;
+  color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a)) !important;
+  border: thin solid;
+}
+.bg-outline-successful.is-blur {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 45%), 0.5) !important;
+}
+
+a.bg-outline-successful:hover,
+.bg-outline-successful.link:hover,
+button.bg-outline-successful:hover,
+.bg-outline-successful:focus:hover,
+.bg-outline-successful:focus-within:hover {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 10%), var(--successful-a)) !important;
+  color: var(--successful-c, #FFFFFF) !important;
+}
+a.bg-outline-successful.active, a.bg-outline-successful:active,
+.bg-outline-successful.link.active,
+.bg-outline-successful.link:active,
+button.bg-outline-successful.active,
+button.bg-outline-successful:active,
+.bg-outline-successful:focus.active,
+.bg-outline-successful:focus:active,
+.bg-outline-successful:focus-within.active,
+.bg-outline-successful:focus-within:active {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a)) !important;
+  color: var(--successful-c, #FFFFFF) !important;
+}
+
+.btn-successful {
+  background-color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a)) !important;
+  color: var(--successful-c, #FFFFFF) !important;
+  border-color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a));
+}
+.btn-successful.is-blur {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.5) !important;
+}
+.btn-successful.is-blur:hover {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.75) !important;
+}
+
+a.btn-successful:hover,
+.btn-successful.link:hover,
+button.btn-successful:hover {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 10%), var(--successful-a)) !important;
+  border-color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a));
+  color: var(--successful-c, #FFFFFF);
+}
+a.btn-successful:active,
+.btn-successful.link:active,
+button.btn-successful:active {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a)) !important;
+}
+
+.btn-g-successful {
+  background: linear-gradient(var(--successful, #24B624), hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a))) !important;
+  color: var(--successful-c, #FFFFFF);
+  border: none;
+}
+
+a.btn-g-successful:hover,
+button.btn-g-successful:hover {
+  background: linear-gradient(hsla(var(--successful-hs), calc(var(--successful-l) + 20%), var(--successful-a)), var(--successful, #24B624)) !important;
+  color: var(--successful-c, #FFFFFF);
+}
+a.btn-g-successful:active,
+button.btn-g-successful:active {
+  background: linear-gradient(hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a)), var(--successful, #24B624)) !important;
+}
+
+.btn-outline-successful {
+  background-color: transparent !important;
+  color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a)) !important;
+  border: thin solid;
+}
+.btn-outline-successful.is-blur {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 45%), 0.5) !important;
+}
+
+a.btn-outline-successful:hover,
+.btn-outline-successful.link:hover,
+button.btn-outline-successful:hover,
+.btn-outline-successful:focus:hover,
+.btn-outline-successful:focus-within:hover {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 10%), var(--successful-a)) !important;
+  color: var(--successful-c, #FFFFFF) !important;
+}
+a.btn-outline-successful.active, a.btn-outline-successful:active,
+.btn-outline-successful.link.active,
+.btn-outline-successful.link:active,
+button.btn-outline-successful.active,
+button.btn-outline-successful:active,
+.btn-outline-successful:focus.active,
+.btn-outline-successful:focus:active,
+.btn-outline-successful:focus-within.active,
+.btn-outline-successful:focus-within:active {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a)) !important;
+  color: var(--successful-c, #FFFFFF) !important;
+}
+
+.badge-successful {
+  background-color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a)) !important;
+  color: var(--successful-c, #FFFFFF) !important;
+  border-color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a));
+}
+.badge-successful.is-blur {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.5) !important;
+}
+.badge-successful.is-blur:hover {
+  background-color: hsla(var(--successful-hs), var(--successful-l), 0.75) !important;
+}
+
+a.badge-successful:hover,
+.badge-successful.link:hover,
+button.badge-successful:hover {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 10%), var(--successful-a)) !important;
+  border-color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a));
+  color: var(--successful-c, #FFFFFF);
+}
+a.badge-successful:active,
+.badge-successful.link:active,
+button.badge-successful:active {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a)) !important;
+}
+
+.badge-outline-successful {
+  background-color: transparent !important;
+  color: hsla(var(--successful-hs), var(--successful-l), var(--successful-a)) !important;
+  border: thin solid;
+}
+.badge-outline-successful.is-blur {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 45%), 0.5) !important;
+}
+
+a.badge-outline-successful:hover,
+.badge-outline-successful.link:hover,
+button.badge-outline-successful:hover,
+.badge-outline-successful:focus:hover,
+.badge-outline-successful:focus-within:hover {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 10%), var(--successful-a)) !important;
+  color: var(--successful-c, #FFFFFF) !important;
+}
+a.badge-outline-successful.active, a.badge-outline-successful:active,
+.badge-outline-successful.link.active,
+.badge-outline-successful.link:active,
+button.badge-outline-successful.active,
+button.badge-outline-successful:active,
+.badge-outline-successful:focus.active,
+.badge-outline-successful:focus:active,
+.badge-outline-successful:focus-within.active,
+.badge-outline-successful:focus-within:active {
+  background-color: hsla(var(--successful-hs), calc(var(--successful-l) - 20%), var(--successful-a)) !important;
+  color: var(--successful-c, #FFFFFF) !important;
+}
+
 .text-warn {
   color: var(--warn, #FFA500) !important;
 }
@@ -6757,6 +6997,30 @@ input:focus {
 .alert-current {
   border: none;
   background-color: currentColor !important;
+}
+
+.bg-text,
+.bg-text-color {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg-text:hover::after,
+.bg-text-color:hover::after {
+  opacity: 0.125;
+}
+.bg-text::after,
+.bg-text-color::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: currentColor;
+  opacity: 0.055;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
 }
 
 .inactive {

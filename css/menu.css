@@ -193,6 +193,58 @@
     opacity: 0;
     padding: 0;
   }
+  .appmenu-trigger:not(:checked) ~ .sidemenu.md,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md {
+    width: 15%;
+    flex-basis: 15%;
+  }
+  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .app-logo,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .app-logo {
+    display: none;
+  }
+  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .menu-logo,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .menu-logo {
+    display: inline-block;
+  }
+  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .title,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .title {
+    opacity: 0;
+    height: 0;
+    margin-bottom: 0;
+  }
+  .appmenu-trigger:not(:checked) ~ .sidemenu.md .nav-menu .nav-item,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .nav-menu .nav-item {
+    justify-content: center;
+  }
+  .appmenu-trigger:not(:checked) ~ .sidemenu.md .icon,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .icon {
+    margin-right: 0;
+  }
+  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .nav-item .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .nav-title .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-footer .nav-item .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-footer .nav-title .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.md .nav-menu .nav-item .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.md .nav-menu .nav-title .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .nav-item .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .nav-title .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-footer .nav-item .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-footer .nav-title .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .nav-menu .nav-item .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .nav-menu .nav-title .label {
+    opacity: 0;
+    transform: translateX(100%);
+    position: absolute;
+  }
+  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .nav-title,
+.appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-footer .nav-title,
+.appmenu-trigger:not(:checked) ~ .sidemenu.md .nav-menu .nav-title,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .nav-title,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-footer .nav-title,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.md .nav-menu .nav-title {
+    border-bottom: thin solid;
+    padding: 0;
+  }
   .appmenu-trigger:not(:checked) ~ .page .app-header .appmenu-toggle,
 .appmenu-trigger:not(:checked) ~ * .page .app-header .appmenu-toggle {
     display: none;
@@ -203,7 +255,8 @@
   .fullmenu {
     align-items: center;
   }
-  .fullmenu .menu-header .app-logo {
+  .fullmenu .menu-header .app-logo,
+.fullmenu .menu-header .appmenu-toggle {
     display: none;
   }
 
@@ -279,6 +332,7 @@
 .appmenu-trigger:checked ~ * .sidemenu .menu-footer .nav-title,
 .appmenu-trigger:checked ~ * .sidemenu .nav-menu .nav-title {
     border-bottom: thin solid;
+    padding: 0;
   }
   .sidemenu .btn,
 .sidemenu .nav-menu .nav-item {
@@ -300,7 +354,9 @@
   .appmenu-trigger:not(:checked), .appmenu-trigger:not(:checked)::before, .appmenu-trigger:not(:checked)::after {
     background-color: transparent !important;
   }
-  .appmenu-trigger:not(:checked) ~ .app-header .fullmenu .nav-menu,
+  .appmenu-trigger:not(:checked) ~ .fullmenu .nav-menu,
+.appmenu-trigger:not(:checked) ~ .app-header .fullmenu .nav-menu,
+.appmenu-trigger:not(:checked) ~ * .fullmenu .nav-menu,
 .appmenu-trigger:not(:checked) ~ * .app-header .fullmenu .nav-menu {
     display: none;
     /* transform: translateY(-100%); */
@@ -329,6 +385,7 @@
     font-size: 125%;
     background-color: var(--secondary);
     color: var(--secondary-c);
+    z-index: 2;
   }
   .appmenu-trigger:checked ~ .fullmenu .btn,
 .appmenu-trigger:checked ~ * .fullmenu .btn {
@@ -378,6 +435,9 @@
     /* transform: translateY(-100%); */
     /* opacity: 0; */
     z-index: 2;
+  }
+  .fullmenu .menu-header {
+    width: 100%;
   }
 
   .page .page-content {

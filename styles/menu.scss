@@ -79,6 +79,56 @@
   }
 }
 
+@mixin minimized-sidemenu {
+  width: 15%;
+  flex-basis: 15%;
+
+  .menu-header {
+    .app-logo {
+      display: none;
+    }
+
+    .menu-logo {
+      display: inline-block;
+    }
+
+    .title {
+      opacity: 0;
+      height: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .nav-menu .nav-item {
+    justify-content: center;
+  }
+
+  .icon {
+    margin-right: 0;
+  }
+
+  .menu-header,
+  .menu-footer,
+  .nav-menu {
+
+    .nav-item,
+    .nav-title {
+      .label {
+        opacity: 0;
+        transform: translateX(100%);
+        position: absolute;
+      }
+    }
+
+    .nav-title {
+      border-bottom: thin solid;
+      padding: 0;
+
+      &::before {}
+    }
+  }
+}
+
 .sidemenu {
   display: flex;
   flex-direction: column;
@@ -227,6 +277,11 @@
 
       ~,
       ~* {
+
+        .sidemenu.md {
+          @include minimized-sidemenu;
+        }
+
         .page .app-header .appmenu-toggle {
           display: none;
         }
@@ -243,7 +298,9 @@
     align-items: center;
 
     .menu-header {
-      .app-logo {
+
+      .app-logo,
+      .appmenu-toggle {
         display: none;
       }
     }
@@ -277,6 +334,7 @@
   }
 }
 
+
 /* Mobile <---> Tablets/Mini PC */
 @media (min-width:576px) and (max-width:767.98px) {
   .appmenu-trigger {
@@ -294,58 +352,13 @@
       }
     }
 
+
     &:checked {
 
       ~,
       ~* {
         .sidemenu {
-          width: 15%;
-          flex-basis: 15%;
-
-          .menu-header {
-            .app-logo {
-              display: none;
-            }
-
-            .menu-logo {
-              display: inline-block;
-            }
-
-            .title {
-              opacity: 0;
-              height: 0;
-              margin-bottom: 0;
-            }
-          }
-
-          .nav-menu .nav-item {
-            justify-content: center;
-          }
-
-          .icon {
-            margin-right: 0;
-          }
-
-          .menu-header,
-          .menu-footer,
-          .nav-menu {
-
-            .nav-item,
-            .nav-title {
-              .label {
-                opacity: 0;
-                transform: translateX(100%);
-                position: absolute;
-              }
-            }
-
-            .nav-title {
-              border-bottom: thin solid;
-
-              // padding: 0 !important;
-              &::before {}
-            }
-          }
+          @include minimized-sidemenu;
         }
       }
     }
@@ -388,6 +401,7 @@
       ~,
       ~* {
 
+        .fullmenu,
         .app-header .fullmenu {
           .nav-menu {
             display: none;
@@ -479,9 +493,11 @@
     /* opacity: 0; */
     z-index: 2;
 
-    .nav-menu {
-      display: none;
-    }
+    .appmenu-trigger:not(:checked) & {}
+
+    // .nav-menu {
+    //   display: none;
+    // }
 
     .menu-header {
       width: 100%

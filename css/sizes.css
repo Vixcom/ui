@@ -5,6 +5,7 @@
 */
 /**
 * BoxSizing - Height & Width of a layout
+* @dimensionType -  This is the unit of dimension used, Its either the default dimensions (em, rem, px, %) or Viewpoints
 */
 .h-1 {
   height: 1rem !important;
@@ -81,9 +82,6 @@
   gap: 1rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-2 {
   height: 2rem !important;
 }
@@ -159,9 +157,6 @@
   gap: 2rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-3 {
   height: 3rem !important;
 }
@@ -237,9 +232,6 @@
   gap: 3rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-4 {
   height: 4rem !important;
 }
@@ -315,9 +307,6 @@
   gap: 4rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-5 {
   height: 5rem !important;
 }
@@ -393,9 +382,6 @@
   gap: 5rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-6 {
   height: 6rem !important;
 }
@@ -471,9 +457,6 @@
   gap: 6rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-7 {
   height: 7rem !important;
 }
@@ -549,9 +532,6 @@
   gap: 7rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-8 {
   height: 8rem !important;
 }
@@ -627,9 +607,6 @@
   gap: 8rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-9 {
   height: 9rem !important;
 }
@@ -705,9 +682,6 @@
   gap: 9rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-10 {
   height: 10rem !important;
 }
@@ -783,9 +757,6 @@
   gap: 10rem;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-0 {
   height: 0 !important;
 }
@@ -861,9 +832,6 @@
   gap: 0;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-25 {
   height: 25% !important;
 }
@@ -939,9 +907,6 @@
   gap: 25%;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-50 {
   height: 50% !important;
 }
@@ -1017,9 +982,6 @@
   gap: 50%;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-75 {
   height: 75% !important;
 }
@@ -1095,9 +1057,6 @@
   gap: 75%;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-100 {
   height: 100% !important;
 }
@@ -1173,9 +1132,6 @@
   gap: 100%;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-unset {
   height: unset !important;
 }
@@ -1251,9 +1207,6 @@
   gap: unset;
 }
 
-/**
-* BoxSizing - Height & Width of a layout
-*/
 .h-auto {
   height: auto !important;
 }
@@ -1330,9 +1283,231 @@
 }
 
 @media (min-width: 576px) {
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
+  .h-sm-d25 {
+    height: 0.25rem !important;
+  }
+
+  .w-sm-d25 {
+    width: 0.25rem !important;
+  }
+
+  .vh-sm-d25 {
+    height: 0.25vh !important;
+  }
+
+  .vw-sm-d25 {
+    width: 0.25vw !important;
+  }
+
+  .min-h-sm-d25 {
+    min-height: 0.25rem !important;
+  }
+
+  .min-w-sm-d25 {
+    min-width: 0.25rem !important;
+  }
+
+  .min-vh-sm-d25 {
+    min-height: 0.25vh !important;
+  }
+
+  .min-vw-sm-d25 {
+    min-width: 0.25vw !important;
+  }
+
+  .max-h-sm-d25 {
+    max-height: 0.25rem !important;
+  }
+
+  .max-w-sm-d25 {
+    max-width: 0.25rem !important;
+  }
+
+  .max-vh-sm-d25 {
+    max-height: 0.25vh !important;
+  }
+
+  .max-vw-sm-d25 {
+    max-width: 0.25vw !important;
+  }
+
+  .float-t-sm-d25 {
+    transform: translateY(-0.25%);
+  }
+
+  .float-l-sm-d25 {
+    transform: translateX(-0.25%);
+  }
+
+  .float-b-sm-d25 {
+    transform: translateY(0.25%);
+  }
+
+  .float-r-sm-d25 {
+    transform: translateX(0.25%);
+  }
+
+  .sq-sm-d25 {
+    height: 0.25rem;
+    width: 0.25rem;
+    min-height: 0.25rem;
+    min-width: 0.25rem;
+  }
+
+  .gap-sm-d25 {
+    gap: 0.25rem;
+  }
+
+  .h-sm-d5 {
+    height: 0.5rem !important;
+  }
+
+  .w-sm-d5 {
+    width: 0.5rem !important;
+  }
+
+  .vh-sm-d5 {
+    height: 0.5vh !important;
+  }
+
+  .vw-sm-d5 {
+    width: 0.5vw !important;
+  }
+
+  .min-h-sm-d5 {
+    min-height: 0.5rem !important;
+  }
+
+  .min-w-sm-d5 {
+    min-width: 0.5rem !important;
+  }
+
+  .min-vh-sm-d5 {
+    min-height: 0.5vh !important;
+  }
+
+  .min-vw-sm-d5 {
+    min-width: 0.5vw !important;
+  }
+
+  .max-h-sm-d5 {
+    max-height: 0.5rem !important;
+  }
+
+  .max-w-sm-d5 {
+    max-width: 0.5rem !important;
+  }
+
+  .max-vh-sm-d5 {
+    max-height: 0.5vh !important;
+  }
+
+  .max-vw-sm-d5 {
+    max-width: 0.5vw !important;
+  }
+
+  .float-t-sm-d5 {
+    transform: translateY(-0.5%);
+  }
+
+  .float-l-sm-d5 {
+    transform: translateX(-0.5%);
+  }
+
+  .float-b-sm-d5 {
+    transform: translateY(0.5%);
+  }
+
+  .float-r-sm-d5 {
+    transform: translateX(0.5%);
+  }
+
+  .sq-sm-d5 {
+    height: 0.5rem;
+    width: 0.5rem;
+    min-height: 0.5rem;
+    min-width: 0.5rem;
+  }
+
+  .gap-sm-d5 {
+    gap: 0.5rem;
+  }
+
+  .h-sm-d75 {
+    height: 0.75rem !important;
+  }
+
+  .w-sm-d75 {
+    width: 0.75rem !important;
+  }
+
+  .vh-sm-d75 {
+    height: 0.75vh !important;
+  }
+
+  .vw-sm-d75 {
+    width: 0.75vw !important;
+  }
+
+  .min-h-sm-d75 {
+    min-height: 0.75rem !important;
+  }
+
+  .min-w-sm-d75 {
+    min-width: 0.75rem !important;
+  }
+
+  .min-vh-sm-d75 {
+    min-height: 0.75vh !important;
+  }
+
+  .min-vw-sm-d75 {
+    min-width: 0.75vw !important;
+  }
+
+  .max-h-sm-d75 {
+    max-height: 0.75rem !important;
+  }
+
+  .max-w-sm-d75 {
+    max-width: 0.75rem !important;
+  }
+
+  .max-vh-sm-d75 {
+    max-height: 0.75vh !important;
+  }
+
+  .max-vw-sm-d75 {
+    max-width: 0.75vw !important;
+  }
+
+  .float-t-sm-d75 {
+    transform: translateY(-0.75%);
+  }
+
+  .float-l-sm-d75 {
+    transform: translateX(-0.75%);
+  }
+
+  .float-b-sm-d75 {
+    transform: translateY(0.75%);
+  }
+
+  .float-r-sm-d75 {
+    transform: translateX(0.75%);
+  }
+
+  .sq-sm-d75 {
+    height: 0.75rem;
+    width: 0.75rem;
+    min-height: 0.75rem;
+    min-width: 0.75rem;
+  }
+
+  .gap-sm-d75 {
+    gap: 0.75rem;
+  }
+
   .h-sm-1 {
     height: 1rem !important;
   }
@@ -1408,9 +1583,6 @@
     gap: 1rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-2 {
     height: 2rem !important;
   }
@@ -1486,9 +1658,6 @@
     gap: 2rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-3 {
     height: 3rem !important;
   }
@@ -1564,9 +1733,6 @@
     gap: 3rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-4 {
     height: 4rem !important;
   }
@@ -1642,9 +1808,6 @@
     gap: 4rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-5 {
     height: 5rem !important;
   }
@@ -1720,9 +1883,6 @@
     gap: 5rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-6 {
     height: 6rem !important;
   }
@@ -1798,9 +1958,6 @@
     gap: 6rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-7 {
     height: 7rem !important;
   }
@@ -1876,9 +2033,6 @@
     gap: 7rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-8 {
     height: 8rem !important;
   }
@@ -1954,9 +2108,6 @@
     gap: 8rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-9 {
     height: 9rem !important;
   }
@@ -2032,9 +2183,6 @@
     gap: 9rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-10 {
     height: 10rem !important;
   }
@@ -2110,9 +2258,6 @@
     gap: 10rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-0 {
     height: 0 !important;
   }
@@ -2188,9 +2333,6 @@
     gap: 0;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-25 {
     height: 25% !important;
   }
@@ -2266,9 +2408,6 @@
     gap: 25%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-50 {
     height: 50% !important;
   }
@@ -2344,9 +2483,6 @@
     gap: 50%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-75 {
     height: 75% !important;
   }
@@ -2422,9 +2558,6 @@
     gap: 75%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-100 {
     height: 100% !important;
   }
@@ -2500,9 +2633,6 @@
     gap: 100%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-unset {
     height: unset !important;
   }
@@ -2578,9 +2708,6 @@
     gap: unset;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-sm-auto {
     height: auto !important;
   }
@@ -2657,9 +2784,231 @@
   }
 }
 @media (min-width: 768px) {
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
+  .h-md-d25 {
+    height: 0.25rem !important;
+  }
+
+  .w-md-d25 {
+    width: 0.25rem !important;
+  }
+
+  .vh-md-d25 {
+    height: 0.25vh !important;
+  }
+
+  .vw-md-d25 {
+    width: 0.25vw !important;
+  }
+
+  .min-h-md-d25 {
+    min-height: 0.25rem !important;
+  }
+
+  .min-w-md-d25 {
+    min-width: 0.25rem !important;
+  }
+
+  .min-vh-md-d25 {
+    min-height: 0.25vh !important;
+  }
+
+  .min-vw-md-d25 {
+    min-width: 0.25vw !important;
+  }
+
+  .max-h-md-d25 {
+    max-height: 0.25rem !important;
+  }
+
+  .max-w-md-d25 {
+    max-width: 0.25rem !important;
+  }
+
+  .max-vh-md-d25 {
+    max-height: 0.25vh !important;
+  }
+
+  .max-vw-md-d25 {
+    max-width: 0.25vw !important;
+  }
+
+  .float-t-md-d25 {
+    transform: translateY(-0.25%);
+  }
+
+  .float-l-md-d25 {
+    transform: translateX(-0.25%);
+  }
+
+  .float-b-md-d25 {
+    transform: translateY(0.25%);
+  }
+
+  .float-r-md-d25 {
+    transform: translateX(0.25%);
+  }
+
+  .sq-md-d25 {
+    height: 0.25rem;
+    width: 0.25rem;
+    min-height: 0.25rem;
+    min-width: 0.25rem;
+  }
+
+  .gap-md-d25 {
+    gap: 0.25rem;
+  }
+
+  .h-md-d5 {
+    height: 0.5rem !important;
+  }
+
+  .w-md-d5 {
+    width: 0.5rem !important;
+  }
+
+  .vh-md-d5 {
+    height: 0.5vh !important;
+  }
+
+  .vw-md-d5 {
+    width: 0.5vw !important;
+  }
+
+  .min-h-md-d5 {
+    min-height: 0.5rem !important;
+  }
+
+  .min-w-md-d5 {
+    min-width: 0.5rem !important;
+  }
+
+  .min-vh-md-d5 {
+    min-height: 0.5vh !important;
+  }
+
+  .min-vw-md-d5 {
+    min-width: 0.5vw !important;
+  }
+
+  .max-h-md-d5 {
+    max-height: 0.5rem !important;
+  }
+
+  .max-w-md-d5 {
+    max-width: 0.5rem !important;
+  }
+
+  .max-vh-md-d5 {
+    max-height: 0.5vh !important;
+  }
+
+  .max-vw-md-d5 {
+    max-width: 0.5vw !important;
+  }
+
+  .float-t-md-d5 {
+    transform: translateY(-0.5%);
+  }
+
+  .float-l-md-d5 {
+    transform: translateX(-0.5%);
+  }
+
+  .float-b-md-d5 {
+    transform: translateY(0.5%);
+  }
+
+  .float-r-md-d5 {
+    transform: translateX(0.5%);
+  }
+
+  .sq-md-d5 {
+    height: 0.5rem;
+    width: 0.5rem;
+    min-height: 0.5rem;
+    min-width: 0.5rem;
+  }
+
+  .gap-md-d5 {
+    gap: 0.5rem;
+  }
+
+  .h-md-d75 {
+    height: 0.75rem !important;
+  }
+
+  .w-md-d75 {
+    width: 0.75rem !important;
+  }
+
+  .vh-md-d75 {
+    height: 0.75vh !important;
+  }
+
+  .vw-md-d75 {
+    width: 0.75vw !important;
+  }
+
+  .min-h-md-d75 {
+    min-height: 0.75rem !important;
+  }
+
+  .min-w-md-d75 {
+    min-width: 0.75rem !important;
+  }
+
+  .min-vh-md-d75 {
+    min-height: 0.75vh !important;
+  }
+
+  .min-vw-md-d75 {
+    min-width: 0.75vw !important;
+  }
+
+  .max-h-md-d75 {
+    max-height: 0.75rem !important;
+  }
+
+  .max-w-md-d75 {
+    max-width: 0.75rem !important;
+  }
+
+  .max-vh-md-d75 {
+    max-height: 0.75vh !important;
+  }
+
+  .max-vw-md-d75 {
+    max-width: 0.75vw !important;
+  }
+
+  .float-t-md-d75 {
+    transform: translateY(-0.75%);
+  }
+
+  .float-l-md-d75 {
+    transform: translateX(-0.75%);
+  }
+
+  .float-b-md-d75 {
+    transform: translateY(0.75%);
+  }
+
+  .float-r-md-d75 {
+    transform: translateX(0.75%);
+  }
+
+  .sq-md-d75 {
+    height: 0.75rem;
+    width: 0.75rem;
+    min-height: 0.75rem;
+    min-width: 0.75rem;
+  }
+
+  .gap-md-d75 {
+    gap: 0.75rem;
+  }
+
   .h-md-1 {
     height: 1rem !important;
   }
@@ -2735,9 +3084,6 @@
     gap: 1rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-2 {
     height: 2rem !important;
   }
@@ -2813,9 +3159,6 @@
     gap: 2rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-3 {
     height: 3rem !important;
   }
@@ -2891,9 +3234,6 @@
     gap: 3rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-4 {
     height: 4rem !important;
   }
@@ -2969,9 +3309,6 @@
     gap: 4rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-5 {
     height: 5rem !important;
   }
@@ -3047,9 +3384,6 @@
     gap: 5rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-6 {
     height: 6rem !important;
   }
@@ -3125,9 +3459,6 @@
     gap: 6rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-7 {
     height: 7rem !important;
   }
@@ -3203,9 +3534,6 @@
     gap: 7rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-8 {
     height: 8rem !important;
   }
@@ -3281,9 +3609,6 @@
     gap: 8rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-9 {
     height: 9rem !important;
   }
@@ -3359,9 +3684,6 @@
     gap: 9rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-10 {
     height: 10rem !important;
   }
@@ -3437,9 +3759,6 @@
     gap: 10rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-0 {
     height: 0 !important;
   }
@@ -3515,9 +3834,6 @@
     gap: 0;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-25 {
     height: 25% !important;
   }
@@ -3593,9 +3909,6 @@
     gap: 25%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-50 {
     height: 50% !important;
   }
@@ -3671,9 +3984,6 @@
     gap: 50%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-75 {
     height: 75% !important;
   }
@@ -3749,9 +4059,6 @@
     gap: 75%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-100 {
     height: 100% !important;
   }
@@ -3827,9 +4134,6 @@
     gap: 100%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-unset {
     height: unset !important;
   }
@@ -3905,9 +4209,6 @@
     gap: unset;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-md-auto {
     height: auto !important;
   }
@@ -3984,9 +4285,231 @@
   }
 }
 @media (min-width: 992px) {
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
+  .h-lg-d25 {
+    height: 0.25rem !important;
+  }
+
+  .w-lg-d25 {
+    width: 0.25rem !important;
+  }
+
+  .vh-lg-d25 {
+    height: 0.25vh !important;
+  }
+
+  .vw-lg-d25 {
+    width: 0.25vw !important;
+  }
+
+  .min-h-lg-d25 {
+    min-height: 0.25rem !important;
+  }
+
+  .min-w-lg-d25 {
+    min-width: 0.25rem !important;
+  }
+
+  .min-vh-lg-d25 {
+    min-height: 0.25vh !important;
+  }
+
+  .min-vw-lg-d25 {
+    min-width: 0.25vw !important;
+  }
+
+  .max-h-lg-d25 {
+    max-height: 0.25rem !important;
+  }
+
+  .max-w-lg-d25 {
+    max-width: 0.25rem !important;
+  }
+
+  .max-vh-lg-d25 {
+    max-height: 0.25vh !important;
+  }
+
+  .max-vw-lg-d25 {
+    max-width: 0.25vw !important;
+  }
+
+  .float-t-lg-d25 {
+    transform: translateY(-0.25%);
+  }
+
+  .float-l-lg-d25 {
+    transform: translateX(-0.25%);
+  }
+
+  .float-b-lg-d25 {
+    transform: translateY(0.25%);
+  }
+
+  .float-r-lg-d25 {
+    transform: translateX(0.25%);
+  }
+
+  .sq-lg-d25 {
+    height: 0.25rem;
+    width: 0.25rem;
+    min-height: 0.25rem;
+    min-width: 0.25rem;
+  }
+
+  .gap-lg-d25 {
+    gap: 0.25rem;
+  }
+
+  .h-lg-d5 {
+    height: 0.5rem !important;
+  }
+
+  .w-lg-d5 {
+    width: 0.5rem !important;
+  }
+
+  .vh-lg-d5 {
+    height: 0.5vh !important;
+  }
+
+  .vw-lg-d5 {
+    width: 0.5vw !important;
+  }
+
+  .min-h-lg-d5 {
+    min-height: 0.5rem !important;
+  }
+
+  .min-w-lg-d5 {
+    min-width: 0.5rem !important;
+  }
+
+  .min-vh-lg-d5 {
+    min-height: 0.5vh !important;
+  }
+
+  .min-vw-lg-d5 {
+    min-width: 0.5vw !important;
+  }
+
+  .max-h-lg-d5 {
+    max-height: 0.5rem !important;
+  }
+
+  .max-w-lg-d5 {
+    max-width: 0.5rem !important;
+  }
+
+  .max-vh-lg-d5 {
+    max-height: 0.5vh !important;
+  }
+
+  .max-vw-lg-d5 {
+    max-width: 0.5vw !important;
+  }
+
+  .float-t-lg-d5 {
+    transform: translateY(-0.5%);
+  }
+
+  .float-l-lg-d5 {
+    transform: translateX(-0.5%);
+  }
+
+  .float-b-lg-d5 {
+    transform: translateY(0.5%);
+  }
+
+  .float-r-lg-d5 {
+    transform: translateX(0.5%);
+  }
+
+  .sq-lg-d5 {
+    height: 0.5rem;
+    width: 0.5rem;
+    min-height: 0.5rem;
+    min-width: 0.5rem;
+  }
+
+  .gap-lg-d5 {
+    gap: 0.5rem;
+  }
+
+  .h-lg-d75 {
+    height: 0.75rem !important;
+  }
+
+  .w-lg-d75 {
+    width: 0.75rem !important;
+  }
+
+  .vh-lg-d75 {
+    height: 0.75vh !important;
+  }
+
+  .vw-lg-d75 {
+    width: 0.75vw !important;
+  }
+
+  .min-h-lg-d75 {
+    min-height: 0.75rem !important;
+  }
+
+  .min-w-lg-d75 {
+    min-width: 0.75rem !important;
+  }
+
+  .min-vh-lg-d75 {
+    min-height: 0.75vh !important;
+  }
+
+  .min-vw-lg-d75 {
+    min-width: 0.75vw !important;
+  }
+
+  .max-h-lg-d75 {
+    max-height: 0.75rem !important;
+  }
+
+  .max-w-lg-d75 {
+    max-width: 0.75rem !important;
+  }
+
+  .max-vh-lg-d75 {
+    max-height: 0.75vh !important;
+  }
+
+  .max-vw-lg-d75 {
+    max-width: 0.75vw !important;
+  }
+
+  .float-t-lg-d75 {
+    transform: translateY(-0.75%);
+  }
+
+  .float-l-lg-d75 {
+    transform: translateX(-0.75%);
+  }
+
+  .float-b-lg-d75 {
+    transform: translateY(0.75%);
+  }
+
+  .float-r-lg-d75 {
+    transform: translateX(0.75%);
+  }
+
+  .sq-lg-d75 {
+    height: 0.75rem;
+    width: 0.75rem;
+    min-height: 0.75rem;
+    min-width: 0.75rem;
+  }
+
+  .gap-lg-d75 {
+    gap: 0.75rem;
+  }
+
   .h-lg-1 {
     height: 1rem !important;
   }
@@ -4062,9 +4585,6 @@
     gap: 1rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-2 {
     height: 2rem !important;
   }
@@ -4140,9 +4660,6 @@
     gap: 2rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-3 {
     height: 3rem !important;
   }
@@ -4218,9 +4735,6 @@
     gap: 3rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-4 {
     height: 4rem !important;
   }
@@ -4296,9 +4810,6 @@
     gap: 4rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-5 {
     height: 5rem !important;
   }
@@ -4374,9 +4885,6 @@
     gap: 5rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-6 {
     height: 6rem !important;
   }
@@ -4452,9 +4960,6 @@
     gap: 6rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-7 {
     height: 7rem !important;
   }
@@ -4530,9 +5035,6 @@
     gap: 7rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-8 {
     height: 8rem !important;
   }
@@ -4608,9 +5110,6 @@
     gap: 8rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-9 {
     height: 9rem !important;
   }
@@ -4686,9 +5185,6 @@
     gap: 9rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-10 {
     height: 10rem !important;
   }
@@ -4764,9 +5260,6 @@
     gap: 10rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-0 {
     height: 0 !important;
   }
@@ -4842,9 +5335,6 @@
     gap: 0;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-25 {
     height: 25% !important;
   }
@@ -4920,9 +5410,6 @@
     gap: 25%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-50 {
     height: 50% !important;
   }
@@ -4998,9 +5485,6 @@
     gap: 50%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-75 {
     height: 75% !important;
   }
@@ -5076,9 +5560,6 @@
     gap: 75%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-100 {
     height: 100% !important;
   }
@@ -5154,9 +5635,6 @@
     gap: 100%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-unset {
     height: unset !important;
   }
@@ -5232,9 +5710,6 @@
     gap: unset;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-lg-auto {
     height: auto !important;
   }
@@ -5311,9 +5786,231 @@
   }
 }
 @media (min-width: 1200px) {
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
+  .h-xl-d25 {
+    height: 0.25rem !important;
+  }
+
+  .w-xl-d25 {
+    width: 0.25rem !important;
+  }
+
+  .vh-xl-d25 {
+    height: 0.25vh !important;
+  }
+
+  .vw-xl-d25 {
+    width: 0.25vw !important;
+  }
+
+  .min-h-xl-d25 {
+    min-height: 0.25rem !important;
+  }
+
+  .min-w-xl-d25 {
+    min-width: 0.25rem !important;
+  }
+
+  .min-vh-xl-d25 {
+    min-height: 0.25vh !important;
+  }
+
+  .min-vw-xl-d25 {
+    min-width: 0.25vw !important;
+  }
+
+  .max-h-xl-d25 {
+    max-height: 0.25rem !important;
+  }
+
+  .max-w-xl-d25 {
+    max-width: 0.25rem !important;
+  }
+
+  .max-vh-xl-d25 {
+    max-height: 0.25vh !important;
+  }
+
+  .max-vw-xl-d25 {
+    max-width: 0.25vw !important;
+  }
+
+  .float-t-xl-d25 {
+    transform: translateY(-0.25%);
+  }
+
+  .float-l-xl-d25 {
+    transform: translateX(-0.25%);
+  }
+
+  .float-b-xl-d25 {
+    transform: translateY(0.25%);
+  }
+
+  .float-r-xl-d25 {
+    transform: translateX(0.25%);
+  }
+
+  .sq-xl-d25 {
+    height: 0.25rem;
+    width: 0.25rem;
+    min-height: 0.25rem;
+    min-width: 0.25rem;
+  }
+
+  .gap-xl-d25 {
+    gap: 0.25rem;
+  }
+
+  .h-xl-d5 {
+    height: 0.5rem !important;
+  }
+
+  .w-xl-d5 {
+    width: 0.5rem !important;
+  }
+
+  .vh-xl-d5 {
+    height: 0.5vh !important;
+  }
+
+  .vw-xl-d5 {
+    width: 0.5vw !important;
+  }
+
+  .min-h-xl-d5 {
+    min-height: 0.5rem !important;
+  }
+
+  .min-w-xl-d5 {
+    min-width: 0.5rem !important;
+  }
+
+  .min-vh-xl-d5 {
+    min-height: 0.5vh !important;
+  }
+
+  .min-vw-xl-d5 {
+    min-width: 0.5vw !important;
+  }
+
+  .max-h-xl-d5 {
+    max-height: 0.5rem !important;
+  }
+
+  .max-w-xl-d5 {
+    max-width: 0.5rem !important;
+  }
+
+  .max-vh-xl-d5 {
+    max-height: 0.5vh !important;
+  }
+
+  .max-vw-xl-d5 {
+    max-width: 0.5vw !important;
+  }
+
+  .float-t-xl-d5 {
+    transform: translateY(-0.5%);
+  }
+
+  .float-l-xl-d5 {
+    transform: translateX(-0.5%);
+  }
+
+  .float-b-xl-d5 {
+    transform: translateY(0.5%);
+  }
+
+  .float-r-xl-d5 {
+    transform: translateX(0.5%);
+  }
+
+  .sq-xl-d5 {
+    height: 0.5rem;
+    width: 0.5rem;
+    min-height: 0.5rem;
+    min-width: 0.5rem;
+  }
+
+  .gap-xl-d5 {
+    gap: 0.5rem;
+  }
+
+  .h-xl-d75 {
+    height: 0.75rem !important;
+  }
+
+  .w-xl-d75 {
+    width: 0.75rem !important;
+  }
+
+  .vh-xl-d75 {
+    height: 0.75vh !important;
+  }
+
+  .vw-xl-d75 {
+    width: 0.75vw !important;
+  }
+
+  .min-h-xl-d75 {
+    min-height: 0.75rem !important;
+  }
+
+  .min-w-xl-d75 {
+    min-width: 0.75rem !important;
+  }
+
+  .min-vh-xl-d75 {
+    min-height: 0.75vh !important;
+  }
+
+  .min-vw-xl-d75 {
+    min-width: 0.75vw !important;
+  }
+
+  .max-h-xl-d75 {
+    max-height: 0.75rem !important;
+  }
+
+  .max-w-xl-d75 {
+    max-width: 0.75rem !important;
+  }
+
+  .max-vh-xl-d75 {
+    max-height: 0.75vh !important;
+  }
+
+  .max-vw-xl-d75 {
+    max-width: 0.75vw !important;
+  }
+
+  .float-t-xl-d75 {
+    transform: translateY(-0.75%);
+  }
+
+  .float-l-xl-d75 {
+    transform: translateX(-0.75%);
+  }
+
+  .float-b-xl-d75 {
+    transform: translateY(0.75%);
+  }
+
+  .float-r-xl-d75 {
+    transform: translateX(0.75%);
+  }
+
+  .sq-xl-d75 {
+    height: 0.75rem;
+    width: 0.75rem;
+    min-height: 0.75rem;
+    min-width: 0.75rem;
+  }
+
+  .gap-xl-d75 {
+    gap: 0.75rem;
+  }
+
   .h-xl-1 {
     height: 1rem !important;
   }
@@ -5389,9 +6086,6 @@
     gap: 1rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-2 {
     height: 2rem !important;
   }
@@ -5467,9 +6161,6 @@
     gap: 2rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-3 {
     height: 3rem !important;
   }
@@ -5545,9 +6236,6 @@
     gap: 3rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-4 {
     height: 4rem !important;
   }
@@ -5623,9 +6311,6 @@
     gap: 4rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-5 {
     height: 5rem !important;
   }
@@ -5701,9 +6386,6 @@
     gap: 5rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-6 {
     height: 6rem !important;
   }
@@ -5779,9 +6461,6 @@
     gap: 6rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-7 {
     height: 7rem !important;
   }
@@ -5857,9 +6536,6 @@
     gap: 7rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-8 {
     height: 8rem !important;
   }
@@ -5935,9 +6611,6 @@
     gap: 8rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-9 {
     height: 9rem !important;
   }
@@ -6013,9 +6686,6 @@
     gap: 9rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-10 {
     height: 10rem !important;
   }
@@ -6091,9 +6761,6 @@
     gap: 10rem;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-0 {
     height: 0 !important;
   }
@@ -6169,9 +6836,6 @@
     gap: 0;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-25 {
     height: 25% !important;
   }
@@ -6247,9 +6911,6 @@
     gap: 25%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-50 {
     height: 50% !important;
   }
@@ -6325,9 +6986,6 @@
     gap: 50%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-75 {
     height: 75% !important;
   }
@@ -6403,9 +7061,6 @@
     gap: 75%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-100 {
     height: 100% !important;
   }
@@ -6481,9 +7136,6 @@
     gap: 100%;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-unset {
     height: unset !important;
   }
@@ -6559,9 +7211,6 @@
     gap: unset;
   }
 
-  /**
-  * BoxSizing - Height & Width of a layout
-  */
   .h-xl-auto {
     height: auto !important;
   }

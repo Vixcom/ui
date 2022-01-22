@@ -66,6 +66,30 @@ input {
   // color: currentColor !important;
 }
 
+.bg-text,
+.bg-text-color {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover::after {
+    opacity: 0.125;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: currentColor;
+    opacity: 0.055;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+  }
+}
+
 .inactive {
   color: #BCBCCB
 }

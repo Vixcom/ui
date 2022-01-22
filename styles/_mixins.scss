@@ -97,7 +97,7 @@ $muted: #7D7D7D !default;
 $background-color: #FFFFFF !default;
 $border-color: #E4E4E4 !default;
 $card-shadow: 0 1px 30px -10px transparentize($black, 0.5) !default;
-$font-size: 0.85rem;
+$font-size: 0.75rem;
 
 $app-colors-mapped: () !default;
 
@@ -117,6 +117,7 @@ $app-colors-mapped: map-merge(( // ===
     'failed': (bg: $danger, c: $white),
     'danger': (bg: $danger, c: $white),
     'success': (bg: $success, c: $white),
+    'successful': (bg: $success, c: $white),
     'warn': (bg: $warning, c: $black),
     'warning': (bg: $warning, c: $black),
     'pending': (bg: $warning, c: $black),

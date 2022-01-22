@@ -201,24 +201,26 @@ b {
 
   &:not(.h) {
     flex-direction: column;
+
+    .icon {
+      margin: 0.5rem 0;
+    }
   }
 
   &.h .icon {
-    // margin-right: 1rem;
+    margin: 0 0.5rem;
   }
 
   .icon {
     font-size: 150%;
-    margin: 0.5rem !important;
   }
 
 }
 
 [class*=sq-] {
   @include flex-center;
-  justify-content: center !important;
-  flex: unset !important;
-  padding: 0 !important;
+  flex: unset;
+  padding: 0;
   /* margin: auto; */
 
   &:not(.h) {
@@ -546,7 +548,7 @@ input {
     input,
     .input,
     .addon {
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1rem;
       margin: 0;
     }
   }
@@ -1177,7 +1179,13 @@ table {
     z-index: 0;
 
     &:nth-child(even):not(.table-header) {
-      background-color: hsl(var(--muted-hs), calc(var(--muted-l) + 40%));
+      @include before-content;
+
+      &::before {
+        background-color: var(--white);
+        opacity: 0.25;
+        z-index: 0;
+      }
     }
 
     [class*=col] {
@@ -1292,7 +1300,10 @@ table {
 
 .flex-center {
   @include flex-center;
-  flex-direction: column;
+
+  &:not(.h) {
+    flex-direction: column;
+  }
 }
 
 .flex-start {
@@ -1466,6 +1477,7 @@ table {
   .card-img {
     max-height: 15rem;
     object-fit: cover;
+    overflow: overlay;
     min-width: 100%;
   }
 

@@ -178,18 +178,22 @@ b {
 .icon-container:not(.h) {
   flex-direction: column;
 }
+.icon-container:not(.h) .icon {
+  margin: 0.5rem 0;
+}
+.icon-container.h .icon {
+  margin: 0 0.5rem;
+}
 .icon-container .icon {
   font-size: 150%;
-  margin: 0.5rem !important;
 }
 
 [class*=sq-] {
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: center !important;
-  flex: unset !important;
-  padding: 0 !important;
+  flex: unset;
+  padding: 0;
   /* margin: auto; */
 }
 [class*=sq-]:not(.h) {
@@ -464,7 +468,7 @@ input[type=file] {
 .input.has-addon input,
 .input.has-addon .input,
 .input.has-addon .addon {
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   margin: 0;
 }
 .input .addon {
@@ -1020,7 +1024,38 @@ table {
 .table-container tr:nth-child(even):not(.table-header),
 .table-container > .row:nth-child(even):not(.table-header),
 .table-container .scrollable > .row:nth-child(even):not(.table-header) {
-  background-color: hsl(var(--muted-hs), calc(var(--muted-l) + 40%));
+  position: relative;
+}
+.table-container tr:nth-child(even):not(.table-header) > *,
+.table-container > .row:nth-child(even):not(.table-header) > *,
+.table-container .scrollable > .row:nth-child(even):not(.table-header) > * {
+  position: relative;
+  z-index: 1;
+}
+.table-container tr:nth-child(even):not(.table-header)::before,
+.table-container > .row:nth-child(even):not(.table-header)::before,
+.table-container .scrollable > .row:nth-child(even):not(.table-header)::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.table-container tr:nth-child(even):not(.table-header)::before:not(img),
+.table-container > .row:nth-child(even):not(.table-header)::before:not(img),
+.table-container .scrollable > .row:nth-child(even):not(.table-header)::before:not(img) {
+  content: "";
+}
+.table-container tr:nth-child(even):not(.table-header)::before,
+.table-container > .row:nth-child(even):not(.table-header)::before,
+.table-container .scrollable > .row:nth-child(even):not(.table-header)::before {
+  background-color: var(--white);
+  opacity: 0.25;
+  z-index: 0;
 }
 .table-container tr [class*=col],
 .table-container > .row [class*=col],
@@ -1171,6 +1206,8 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.flex-center:not(.h) {
   flex-direction: column;
 }
 
@@ -1354,6 +1391,7 @@ table {
 .card .card-img {
   max-height: 15rem;
   object-fit: cover;
+  overflow: overlay;
   min-width: 100%;
 }
 .card .card-header,

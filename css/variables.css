@@ -1,5 +1,5 @@
 :root {
-  --font-size: 0.85rem;
+  --font-size: 0.75rem;
   --card-shadow: 0 1px 30px -10px rgba(0, 0, 0, 0.5);
   --background-color: #FFFFFF;
   /* Color Variables */
@@ -168,6 +168,17 @@
   --success-c-l: 100%;
   --success-c-a: 1;
   /* ---COLOR-success-END--- */
+  /* ---COLOR-successful-START--- */
+  --successful: #24B624;
+  /* ---HSL-successful--- */
+  --successful-hs: 120deg, 66.9724770642%;
+  --successful-l: 42.7450980392%;
+  --successful-a: 1;
+  --successful-c: #FFFFFF;
+  --successful-c-hs: 0deg, 0%;
+  --successful-c-l: 100%;
+  --successful-c-a: 1;
+  /* ---COLOR-successful-END--- */
   /* ---COLOR-warn-START--- */
   --warn: #FFA500;
   /* ---HSL-warn--- */
