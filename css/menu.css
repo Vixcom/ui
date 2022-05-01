@@ -3,6 +3,7 @@
 * @Description Menu styles which includes:
 *              1. sidemenu
 *              2. fullmenu (fullscreen floating)
+*              2. floatmenu (miniscreen corner floating)
 */
 .appmenu-trigger {
   /* @include absolute-content; */
@@ -20,10 +21,65 @@
 .appmenu-trigger::after {
   display: none !important;
 }
+.appmenu-trigger:checked ~ .sidemenu.md,
+.appmenu-trigger:checked ~ * .sidemenu.md {
+  opacity: 1;
+  width: 15%;
+  flex-basis: 15%;
+}
+.appmenu-trigger:checked ~ .sidemenu.md .menu-header .menu-logo,
+.appmenu-trigger:checked ~ .sidemenu.md .menu-header .appmenu-toggle,
+.appmenu-trigger:checked ~ * .sidemenu.md .menu-header .menu-logo,
+.appmenu-trigger:checked ~ * .sidemenu.md .menu-header .appmenu-toggle {
+  display: none;
+}
+.appmenu-trigger:checked ~ .sidemenu.md .menu-header .title,
+.appmenu-trigger:checked ~ * .sidemenu.md .menu-header .title {
+  opacity: 0;
+  height: 0;
+  margin-bottom: 0;
+}
+.appmenu-trigger:checked ~ .sidemenu.md .nav-menu .nav-item,
+.appmenu-trigger:checked ~ * .sidemenu.md .nav-menu .nav-item {
+  justify-content: center;
+}
+.appmenu-trigger:checked ~ .sidemenu.md .icon,
+.appmenu-trigger:checked ~ * .sidemenu.md .icon {
+  margin-right: 0;
+}
+.appmenu-trigger:checked ~ .sidemenu.md .menu-header .nav-item .label,
+.appmenu-trigger:checked ~ .sidemenu.md .menu-header .nav-title .label,
+.appmenu-trigger:checked ~ .sidemenu.md .menu-footer .nav-item .label,
+.appmenu-trigger:checked ~ .sidemenu.md .menu-footer .nav-title .label,
+.appmenu-trigger:checked ~ .sidemenu.md .nav-menu .nav-item .label,
+.appmenu-trigger:checked ~ .sidemenu.md .nav-menu .nav-title .label,
+.appmenu-trigger:checked ~ * .sidemenu.md .menu-header .nav-item .label,
+.appmenu-trigger:checked ~ * .sidemenu.md .menu-header .nav-title .label,
+.appmenu-trigger:checked ~ * .sidemenu.md .menu-footer .nav-item .label,
+.appmenu-trigger:checked ~ * .sidemenu.md .menu-footer .nav-title .label,
+.appmenu-trigger:checked ~ * .sidemenu.md .nav-menu .nav-item .label,
+.appmenu-trigger:checked ~ * .sidemenu.md .nav-menu .nav-title .label {
+  opacity: 0;
+  transform: translateX(100%);
+  position: absolute;
+}
+.appmenu-trigger:checked ~ .sidemenu.md .menu-header .nav-title,
+.appmenu-trigger:checked ~ .sidemenu.md .menu-footer .nav-title,
+.appmenu-trigger:checked ~ .sidemenu.md .nav-menu .nav-title,
+.appmenu-trigger:checked ~ * .sidemenu.md .menu-header .nav-title,
+.appmenu-trigger:checked ~ * .sidemenu.md .menu-footer .nav-title,
+.appmenu-trigger:checked ~ * .sidemenu.md .nav-menu .nav-title {
+  border-bottom: thin solid;
+  padding: 0;
+}
 .appmenu-trigger:checked ~ .page > footer,
 .appmenu-trigger:checked ~ * .page > footer {
   background-color: var(--primary);
   color: var(--primary-c);
+}
+.appmenu-trigger:not(:checked) ~ .menu-logo-alt,
+.appmenu-trigger:not(:checked) ~ * .menu-logo-alt {
+  display: none;
 }
 
 .appmenu-toggle {
@@ -31,6 +87,10 @@
   /* font-size: 120%; */
   margin-bottom: 0;
   /* z-index: 1; */
+}
+
+.menu-header {
+  display: flex;
 }
 
 .nav-menu {
@@ -84,9 +144,6 @@
 .sidemenu .menu-header {
   padding: 1rem;
 }
-.sidemenu .menu-header .menu-logo {
-  display: none;
-}
 .sidemenu .menu-header .title {
   transition: height 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
 }
@@ -104,7 +161,9 @@
 }
 .sidemenu .nav-menu .nav-item::before {
   content: "";
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -113,7 +172,7 @@
   left: 0;
   z-index: 0;
 }
-.sidemenu .nav-menu .nav-item::before:not(img) {
+.sidemenu .nav-menu .nav-item::before:not(img::before, img::after) {
   content: "";
 }
 .sidemenu .nav-menu .nav-item::before {
@@ -158,6 +217,13 @@
   overflow: scroll;
 }
 
+.floatmenu {
+  display: flex;
+}
+.floatmenu .nav-menu .nav-item {
+  gap: 1rem;
+}
+
 /* Page */
 .page {
   display: flex;
@@ -193,55 +259,53 @@
     opacity: 0;
     padding: 0;
   }
-  .appmenu-trigger:not(:checked) ~ .sidemenu.md,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md {
+  .appmenu-trigger:not(:checked) ~ .sidemenu.minimized,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized {
     width: 15%;
     flex-basis: 15%;
   }
-  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .app-logo,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .app-logo {
+  .appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-header .menu-logo,
+.appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-header .appmenu-toggle,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .menu-header .menu-logo,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .menu-header .appmenu-toggle {
     display: none;
   }
-  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .menu-logo,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .menu-logo {
-    display: inline-block;
-  }
-  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .title,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .title {
+  .appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-header .title,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .menu-header .title {
     opacity: 0;
     height: 0;
     margin-bottom: 0;
   }
-  .appmenu-trigger:not(:checked) ~ .sidemenu.md .nav-menu .nav-item,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .nav-menu .nav-item {
+  .appmenu-trigger:not(:checked) ~ .sidemenu.minimized .nav-menu .nav-item,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .nav-menu .nav-item {
     justify-content: center;
   }
-  .appmenu-trigger:not(:checked) ~ .sidemenu.md .icon,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .icon {
+  .appmenu-trigger:not(:checked) ~ .sidemenu.minimized .icon,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .icon {
     margin-right: 0;
   }
-  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .nav-item .label,
-.appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .nav-title .label,
-.appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-footer .nav-item .label,
-.appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-footer .nav-title .label,
-.appmenu-trigger:not(:checked) ~ .sidemenu.md .nav-menu .nav-item .label,
-.appmenu-trigger:not(:checked) ~ .sidemenu.md .nav-menu .nav-title .label,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .nav-item .label,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .nav-title .label,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-footer .nav-item .label,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-footer .nav-title .label,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .nav-menu .nav-item .label,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .nav-menu .nav-title .label {
+  .appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-header .nav-item .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-header .nav-title .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-footer .nav-item .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-footer .nav-title .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.minimized .nav-menu .nav-item .label,
+.appmenu-trigger:not(:checked) ~ .sidemenu.minimized .nav-menu .nav-title .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .menu-header .nav-item .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .menu-header .nav-title .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .menu-footer .nav-item .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .menu-footer .nav-title .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .nav-menu .nav-item .label,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .nav-menu .nav-title .label {
     opacity: 0;
     transform: translateX(100%);
     position: absolute;
   }
-  .appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-header .nav-title,
-.appmenu-trigger:not(:checked) ~ .sidemenu.md .menu-footer .nav-title,
-.appmenu-trigger:not(:checked) ~ .sidemenu.md .nav-menu .nav-title,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-header .nav-title,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .menu-footer .nav-title,
-.appmenu-trigger:not(:checked) ~ * .sidemenu.md .nav-menu .nav-title {
+  .appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-header .nav-title,
+.appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-footer .nav-title,
+.appmenu-trigger:not(:checked) ~ .sidemenu.minimized .nav-menu .nav-title,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .menu-header .nav-title,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .menu-footer .nav-title,
+.appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .nav-menu .nav-title {
     border-bottom: thin solid;
     padding: 0;
   }
@@ -252,12 +316,17 @@
 }
 /* Above <---> Mobile */
 @media (min-width: 576px) {
-  .fullmenu {
+  .floatmenu,
+.fullmenu {
     align-items: center;
   }
-  .fullmenu .menu-header .app-logo,
+  .floatmenu .menu-header .appmenu-toggle,
 .fullmenu .menu-header .appmenu-toggle {
     display: none;
+  }
+
+  .floatmenu {
+    /* width: 75%; */
   }
 
   .appmenu-trigger, .appmenu-trigger::before, .appmenu-trigger::after {
@@ -287,13 +356,11 @@
     width: 15%;
     flex-basis: 15%;
   }
-  .appmenu-trigger:checked ~ .sidemenu .menu-header .app-logo,
-.appmenu-trigger:checked ~ * .sidemenu .menu-header .app-logo {
-    display: none;
-  }
   .appmenu-trigger:checked ~ .sidemenu .menu-header .menu-logo,
-.appmenu-trigger:checked ~ * .sidemenu .menu-header .menu-logo {
-    display: inline-block;
+.appmenu-trigger:checked ~ .sidemenu .menu-header .appmenu-toggle,
+.appmenu-trigger:checked ~ * .sidemenu .menu-header .menu-logo,
+.appmenu-trigger:checked ~ * .sidemenu .menu-header .appmenu-toggle {
+    display: none;
   }
   .appmenu-trigger:checked ~ .sidemenu .menu-header .title,
 .appmenu-trigger:checked ~ * .sidemenu .menu-header .title {
@@ -342,6 +409,10 @@
   .sidemenu .appmenu-toggle {
     display: none;
   }
+
+  .floatmenu {
+    /* width: 50%; */
+  }
 }
 /* Tablets/Mini PC <---> BELOW */
 @media (max-width: 767.98px) {
@@ -355,12 +426,14 @@
     background-color: transparent !important;
   }
   .appmenu-trigger:not(:checked) ~ .fullmenu .nav-menu,
-.appmenu-trigger:not(:checked) ~ .app-header .fullmenu .nav-menu,
-.appmenu-trigger:not(:checked) ~ * .fullmenu .nav-menu,
-.appmenu-trigger:not(:checked) ~ * .app-header .fullmenu .nav-menu {
+.appmenu-trigger:not(:checked) ~ * .fullmenu .nav-menu {
     display: none;
     /* transform: translateY(-100%); */
     /* opacity: 0; */
+  }
+  .appmenu-trigger:not(:checked) ~ .floatmenu > *:not(.appmenu-toggle),
+.appmenu-trigger:not(:checked) ~ * .floatmenu > *:not(.appmenu-toggle) {
+    display: none;
   }
   .appmenu-trigger:checked {
     width: 100vw;
@@ -376,15 +449,21 @@
 .appmenu-trigger:checked ~ * .sidemenu .appmenu-toggle {
     transform: translateX(0);
   }
+  .appmenu-trigger:checked ~ .sidemenu .menu-logo-alt,
+.appmenu-trigger:checked ~ * .sidemenu .menu-logo-alt {
+    display: none;
+  }
   .appmenu-trigger:checked ~ .fullmenu,
 .appmenu-trigger:checked ~ * .fullmenu {
+    --background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.125);
     position: fixed;
     flex-direction: column;
     transform: translateY(0);
     opacity: 1;
     font-size: 125%;
-    background-color: var(--secondary);
+    background-color: var(--background-color);
     color: var(--secondary-c);
+    backdrop-filter: blur(10px);
     z-index: 2;
   }
   .appmenu-trigger:checked ~ .fullmenu .btn,
@@ -401,13 +480,25 @@
     order: -1;
     padding: 1rem;
   }
+  .appmenu-trigger:checked ~ .fullmenu .menu-header .menu-logo,
+.appmenu-trigger:checked ~ * .fullmenu .menu-header .menu-logo {
+    display: none;
+  }
+  .appmenu-trigger:checked ~ .fullmenu .menu-header .menu-logo-alt,
+.appmenu-trigger:checked ~ * .fullmenu .menu-header .menu-logo-alt {
+    fill: var(--white);
+  }
   .appmenu-trigger:checked ~ .fullmenu .menu-header .silhouette,
 .appmenu-trigger:checked ~ * .fullmenu .menu-header .silhouette {
-    filter: saturate(0%) brightness(250%);
+    filter: saturate(0%) brightness(500%);
   }
   .appmenu-trigger:checked ~ .fullmenu .nav-menu,
 .appmenu-trigger:checked ~ * .fullmenu .nav-menu {
     flex-direction: column;
+  }
+  .appmenu-trigger:checked ~ .floatmenu,
+.appmenu-trigger:checked ~ * .floatmenu {
+    width: 100%;
   }
   .appmenu-trigger:checked ~ .page .app-header .appmenu-toggle,
 .appmenu-trigger:checked ~ * .page .app-header .appmenu-toggle {
@@ -438,6 +529,23 @@
   }
   .fullmenu .menu-header {
     width: 100%;
+  }
+
+  .floatmenu {
+    position: fixed;
+    bottom: 0;
+    /* left: 0; */
+    right: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .floatmenu .nav-menu {
+    flex-direction: column;
+  }
+  .floatmenu .nav-menu,
+.floatmenu .menu-header,
+.floatmenu .menu-footer {
+    padding: 1rem;
   }
 
   .page .page-content {

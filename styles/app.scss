@@ -43,6 +43,14 @@
 
 /* Scrollbar - End */
 
+body {
+  font-family: 'AppContent', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color, --default-c, --white);
+  color: var(--default, --white-c);
+  font-size: var(--font-size);
+  font-weight: normal;
+}
+
 h1,
 h2,
 h3,
@@ -72,6 +80,7 @@ b {
 }
 
 .app-logo {
+  display: inline-flex;
   width: 10rem;
   max-width: 100%;
   object-fit: contain;
@@ -86,6 +95,7 @@ b {
 
   &.position-sticky,
   &.sticky {
+    position: sticky !important;
     top: 0;
     left: 0;
   }
@@ -316,7 +326,7 @@ hr[class*=s-]:not(.default) {
 
     &:not(.has-addon) {
       /* align-self: stretch; */
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1rem;
     }
 
     &.has-error {
@@ -690,6 +700,7 @@ option[disabled]:first-of-type {
     }
   }
 
+  // &>label,
   &::before,
   .label {
     content: attr(data-label);
@@ -1179,13 +1190,13 @@ table {
     z-index: 0;
 
     &:nth-child(even):not(.table-header) {
-      @include before-content;
+      // @include before-content;
 
-      &::before {
-        background-color: var(--white);
-        opacity: 0.25;
-        z-index: 0;
-      }
+      // &::before {
+      //   background-color: var(--white);
+      //   opacity: 0.25;
+      //   z-index: 0;
+      // }
     }
 
     [class*=col] {
@@ -1291,8 +1302,11 @@ table {
   }
 }
 
-
 /* Scrollable Container - End */
+.overflow-hidden {
+  overflow: hidden;
+}
+
 
 .flex-none {
   flex: unset;
@@ -1303,6 +1317,20 @@ table {
 
   &:not(.h) {
     flex-direction: column;
+  }
+}
+
+.flex-align-center {
+  display: flex;
+
+  &.h {
+    align-items: center;
+  }
+
+  &:not(.h) {
+    flex-direction: column;
+    justify-content: center;
+
   }
 }
 
@@ -1412,6 +1440,7 @@ table {
   align-items: center;
   justify-content: center;
 
+  & .label,
   &::content {
     width: 100%;
   }
@@ -1434,6 +1463,7 @@ table {
   &:not(.flat) {
     overflow: unset;
     border: none;
+    z-index: 0;
 
     &>* {
       position: relative;
@@ -1448,6 +1478,18 @@ table {
     margin-top: 1rem;
   }
 
+  &:not(.card-body)> {
+    :first-child[class*=card-] {
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    :last-child[class*=card-] {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  }
+
   .card-title {
     margin: 1rem 0 0.75rem;
   }
@@ -1456,7 +1498,7 @@ table {
   .card-footer {
     background-color: transparent;
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
   }
 
   .card-body,
@@ -1615,8 +1657,18 @@ table {
   position: relative;
   @include flex-center;
 
+  &.h {
+    .item+.item {
+      margin-left: -25%;
+    }
+  }
+
   &:not(.h) {
     flex-direction: column;
+
+    .item+.item {
+      margin-top: -25%;
+    }
   }
 
   &.backwards {
@@ -1631,9 +1683,6 @@ table {
     position: relative;
     z-index: 1;
 
-    &+.item {
-      margin-left: -25%;
-    }
   }
 }
 
@@ -1766,17 +1815,16 @@ img {
   }
 }
 
-.rounded-all {
-  border-radius: 1rem;
-}
-
-.rounded-full {
-  border-radius: 2.5rem;
+.rounded-inherit {
+  border-radius: inherit;
 }
 
 .sticky {
   position: sticky;
   position: -webkit-sticky;
+}
+
+[class*=position-] {
 
   &.left {
     left: 0
@@ -1794,7 +1842,8 @@ img {
     bottom: 0
   }
 
-  &.all {
+  &.all,
+  &.spread {
     left: 0;
     right: 0;
     top: 0;
@@ -1911,9 +1960,10 @@ section {
 /* Mobile <---> BELOW */
 @media (max-width:575.98px) {
 
-  /* .app-logo {
-    width: 7.5rem;
-  } */
+  .card {
+    width: 100%;
+  }
+
   .item-list {
 
     &:not(.has-connector) {

@@ -20,13 +20,13 @@
 }
 
 @mixin absolute-content {
-  &:not(img) {
+  &:not(img::before, img::after) {
     // Safari Fix.
     content: '';
   }
 
   content: '';
-  display: block;
+  @include flex-center;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -89,6 +89,8 @@ $yellow: #C4C400 !default;
 $gold: #FFDF00 !default;
 $silver: #BFBFBF !default;
 $pink: #ED028C !default;
+$cyan: #16F1D9 !default;
+$lemon: #62FFB1 !default;
 $success: #24B624 !default;
 $warning: #FFA500 !default;
 $danger: #DC3545 !default;
@@ -114,23 +116,25 @@ $app-colors-mapped: map-merge(( // ===
     'gold': (bg: $gold, c: $white),
     'info': (bg: $info, c: $white),
     'error': (bg: $danger, c: $white),
-    'failed': (bg: $danger, c: $white),
-    'danger': (bg: $danger, c: $white),
+    // 'failed': (bg: $danger, c: $white),
+    // 'danger': (bg: $danger, c: $white),
     'success': (bg: $success, c: $white),
-    'successful': (bg: $success, c: $white),
+    // 'successful': (bg: $success, c: $white),
     'warn': (bg: $warning, c: $black),
-    'warning': (bg: $warning, c: $black),
-    'pending': (bg: $warning, c: $black),
-    'pink': (bg: $pink, c: $white),
-    'orange': (bg: $orange, c: $white),
-    'purple': (bg: $purple, c: $white),
-    'green': (bg: $green, c: $white),
+    // 'warning': (bg: $warning, c: $black),
+    // 'pending': (bg: $warning, c: $black),
     'red': (bg: $red, c: $white),
+    'orange': (bg: $orange, c: $black),
+    'yellow': (bg: $yellow, c: $black),
+    'green': (bg: $green, c: $white),
     'blue': (bg: $blue, c: $white),
-    'yellow': (bg: $yellow, c: $white),
+    'cyan': (bg: $cyan, c: $white),
+    'purple': (bg: $purple, c: $white),
+    // 'pink': (bg: $pink, c: $white),
+    // 'lemon': (bg: $lemon, c: $white),
     'muted': (bg: $muted, c: $white),
-    'color-1': (bg: $primary, c: $white),
-    'color-2': (bg: $secondary, c: $white),
+    // 'color-1': (bg: $primary, c: $white),
+    // 'color-2': (bg: $secondary, c: $white),
     // 'transparent': (bg: transparent, c: $default)
     // ===
   ), $app-colors-mapped);
@@ -216,6 +220,14 @@ $app-colors-mapped: map-merge(( // ===
   }
 }
 
+@mixin mapped-neon-color-variant($selector, $k, $v) {
+  #{$selector} {
+    /* color: var(--white) !important; */
+    text-shadow: 0 0 20px var(--#{$k}, map-get($v, "bg")),
+    0 0 10px var(--white);
+  }
+}
+
 @mixin mapped-color-variant($selector, $k, $v) {
   #{$selector} {
     color: var(--#{$k}, map-get($v, "bg")) !important;
@@ -224,11 +236,11 @@ $app-colors-mapped: map-merge(( // ===
   a#{$selector},
   button#{$selector} {
     &:hover {
-      color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a)) !important;
+      color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a));
     }
 
     &:active {
-      color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)) !important;
+      color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a));
     }
   }
 
@@ -236,7 +248,7 @@ $app-colors-mapped: map-merge(( // ===
 
 @mixin mapped-g-color-variant($selector, $k, $v) {
   #{$selector} {
-    background: linear-gradient(var(--#{$k}, map-get($v, "bg")), hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a))) !important;
+    background-image: linear-gradient(var(--#{$k}, map-get($v, "bg")), hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a))) !important;
     color: var(--#{$k}-c, map-get($v, "c"));
     border: none;
   }
@@ -244,12 +256,12 @@ $app-colors-mapped: map-merge(( // ===
   a#{$selector},
   button#{$selector} {
     &:hover {
-      background: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 20%), var(--#{$k}-a)), var(--#{$k}, map-get($v, "bg"))) !important;
+      background-image: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 20%), var(--#{$k}-a)), var(--#{$k}, map-get($v, "bg"))) !important;
       color: var(--#{$k}-c, map-get($v, "c"));
     }
 
     &:active {
-      background: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)), var(--#{$k}, map-get($v, "bg"))) !important;
+      background-image: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)), var(--#{$k}, map-get($v, "bg"))) !important;
     }
   }
 }

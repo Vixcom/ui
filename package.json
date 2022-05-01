@@ -1,6 +1,7 @@
 {
   "name": "vx-dashboard",
   "scripts": {
+    "start": "http-server -P=http://127.0.0.1 -p=1400 -s --cors",
     "serve": "sass styles:css --watch",
     "build": "sass styles:css",
     "preview": "npm run build && firebase serve --only hosting:dashboard --port=9000",

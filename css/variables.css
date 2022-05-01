@@ -135,28 +135,6 @@
   --error-c-l: 100%;
   --error-c-a: 1;
   /* ---COLOR-error-END--- */
-  /* ---COLOR-failed-START--- */
-  --failed: #DC3545;
-  /* ---HSL-failed--- */
-  --failed-hs: 354.251497006deg, 70.4641350211%;
-  --failed-l: 53.5294117647%;
-  --failed-a: 1;
-  --failed-c: #FFFFFF;
-  --failed-c-hs: 0deg, 0%;
-  --failed-c-l: 100%;
-  --failed-c-a: 1;
-  /* ---COLOR-failed-END--- */
-  /* ---COLOR-danger-START--- */
-  --danger: #DC3545;
-  /* ---HSL-danger--- */
-  --danger-hs: 354.251497006deg, 70.4641350211%;
-  --danger-l: 53.5294117647%;
-  --danger-a: 1;
-  --danger-c: #FFFFFF;
-  --danger-c-hs: 0deg, 0%;
-  --danger-c-l: 100%;
-  --danger-c-a: 1;
-  /* ---COLOR-danger-END--- */
   /* ---COLOR-success-START--- */
   --success: #24B624;
   /* ---HSL-success--- */
@@ -168,17 +146,6 @@
   --success-c-l: 100%;
   --success-c-a: 1;
   /* ---COLOR-success-END--- */
-  /* ---COLOR-successful-START--- */
-  --successful: #24B624;
-  /* ---HSL-successful--- */
-  --successful-hs: 120deg, 66.9724770642%;
-  --successful-l: 42.7450980392%;
-  --successful-a: 1;
-  --successful-c: #FFFFFF;
-  --successful-c-hs: 0deg, 0%;
-  --successful-c-l: 100%;
-  --successful-c-a: 1;
-  /* ---COLOR-successful-END--- */
   /* ---COLOR-warn-START--- */
   --warn: #FFA500;
   /* ---HSL-warn--- */
@@ -190,72 +157,6 @@
   --warn-c-l: 0%;
   --warn-c-a: 1;
   /* ---COLOR-warn-END--- */
-  /* ---COLOR-warning-START--- */
-  --warning: #FFA500;
-  /* ---HSL-warning--- */
-  --warning-hs: 38.8235294118deg, 100%;
-  --warning-l: 50%;
-  --warning-a: 1;
-  --warning-c: #000000;
-  --warning-c-hs: 0deg, 0%;
-  --warning-c-l: 0%;
-  --warning-c-a: 1;
-  /* ---COLOR-warning-END--- */
-  /* ---COLOR-pending-START--- */
-  --pending: #FFA500;
-  /* ---HSL-pending--- */
-  --pending-hs: 38.8235294118deg, 100%;
-  --pending-l: 50%;
-  --pending-a: 1;
-  --pending-c: #000000;
-  --pending-c-hs: 0deg, 0%;
-  --pending-c-l: 0%;
-  --pending-c-a: 1;
-  /* ---COLOR-pending-END--- */
-  /* ---COLOR-pink-START--- */
-  --pink: #ED028C;
-  /* ---HSL-pink--- */
-  --pink-hs: 324.7659574468deg, 98.3263598326%;
-  --pink-l: 46.862745098%;
-  --pink-a: 1;
-  --pink-c: #FFFFFF;
-  --pink-c-hs: 0deg, 0%;
-  --pink-c-l: 100%;
-  --pink-c-a: 1;
-  /* ---COLOR-pink-END--- */
-  /* ---COLOR-orange-START--- */
-  --orange: #F58220;
-  /* ---HSL-orange--- */
-  --orange-hs: 27.6056338028deg, 91.4163090129%;
-  --orange-l: 54.3137254902%;
-  --orange-a: 1;
-  --orange-c: #FFFFFF;
-  --orange-c-hs: 0deg, 0%;
-  --orange-c-l: 100%;
-  --orange-c-a: 1;
-  /* ---COLOR-orange-END--- */
-  /* ---COLOR-purple-START--- */
-  --purple: #561843;
-  /* ---HSL-purple--- */
-  --purple-hs: 318.3870967742deg, 56.3636363636%;
-  --purple-l: 21.568627451%;
-  --purple-a: 1;
-  --purple-c: #FFFFFF;
-  --purple-c-hs: 0deg, 0%;
-  --purple-c-l: 100%;
-  --purple-c-a: 1;
-  /* ---COLOR-purple-END--- */
-  /* ---COLOR-green-START--- */
-  --green: #1D5C2E;
-  /* ---HSL-green--- */
-  --green-hs: 136.1904761905deg, 52.0661157025%;
-  --green-l: 23.7254901961%;
-  --green-a: 1;
-  --green-c: #FFFFFF;
-  --green-c-hs: 0deg, 0%;
-  --green-c-l: 100%;
-  --green-c-a: 1;
-  /* ---COLOR-green-END--- */
   /* ---COLOR-red-START--- */
   --red: #C54646;
   /* ---HSL-red--- */
@@ -267,6 +168,39 @@
   --red-c-l: 100%;
   --red-c-a: 1;
   /* ---COLOR-red-END--- */
+  /* ---COLOR-orange-START--- */
+  --orange: #F58220;
+  /* ---HSL-orange--- */
+  --orange-hs: 27.6056338028deg, 91.4163090129%;
+  --orange-l: 54.3137254902%;
+  --orange-a: 1;
+  --orange-c: #000000;
+  --orange-c-hs: 0deg, 0%;
+  --orange-c-l: 0%;
+  --orange-c-a: 1;
+  /* ---COLOR-orange-END--- */
+  /* ---COLOR-yellow-START--- */
+  --yellow: #C4C400;
+  /* ---HSL-yellow--- */
+  --yellow-hs: 60deg, 100%;
+  --yellow-l: 38.431372549%;
+  --yellow-a: 1;
+  --yellow-c: #000000;
+  --yellow-c-hs: 0deg, 0%;
+  --yellow-c-l: 0%;
+  --yellow-c-a: 1;
+  /* ---COLOR-yellow-END--- */
+  /* ---COLOR-green-START--- */
+  --green: #1D5C2E;
+  /* ---HSL-green--- */
+  --green-hs: 136.1904761905deg, 52.0661157025%;
+  --green-l: 23.7254901961%;
+  --green-a: 1;
+  --green-c: #FFFFFF;
+  --green-c-hs: 0deg, 0%;
+  --green-c-l: 100%;
+  --green-c-a: 1;
+  /* ---COLOR-green-END--- */
   /* ---COLOR-blue-START--- */
   --blue: #0365A3;
   /* ---HSL-blue--- */
@@ -278,17 +212,28 @@
   --blue-c-l: 100%;
   --blue-c-a: 1;
   /* ---COLOR-blue-END--- */
-  /* ---COLOR-yellow-START--- */
-  --yellow: #C4C400;
-  /* ---HSL-yellow--- */
-  --yellow-hs: 60deg, 100%;
-  --yellow-l: 38.431372549%;
-  --yellow-a: 1;
-  --yellow-c: #FFFFFF;
-  --yellow-c-hs: 0deg, 0%;
-  --yellow-c-l: 100%;
-  --yellow-c-a: 1;
-  /* ---COLOR-yellow-END--- */
+  /* ---COLOR-cyan-START--- */
+  --cyan: #16F1D9;
+  /* ---HSL-cyan--- */
+  --cyan-hs: 173.4246575342deg, 88.6639676113%;
+  --cyan-l: 51.568627451%;
+  --cyan-a: 1;
+  --cyan-c: #FFFFFF;
+  --cyan-c-hs: 0deg, 0%;
+  --cyan-c-l: 100%;
+  --cyan-c-a: 1;
+  /* ---COLOR-cyan-END--- */
+  /* ---COLOR-purple-START--- */
+  --purple: #561843;
+  /* ---HSL-purple--- */
+  --purple-hs: 318.3870967742deg, 56.3636363636%;
+  --purple-l: 21.568627451%;
+  --purple-a: 1;
+  --purple-c: #FFFFFF;
+  --purple-c-hs: 0deg, 0%;
+  --purple-c-l: 100%;
+  --purple-c-a: 1;
+  /* ---COLOR-purple-END--- */
   /* ---COLOR-muted-START--- */
   --muted: #7D7D7D;
   /* ---HSL-muted--- */
@@ -300,32 +245,10 @@
   --muted-c-l: 100%;
   --muted-c-a: 1;
   /* ---COLOR-muted-END--- */
-  /* ---COLOR-color-1-START--- */
-  --color-1: #34A853;
-  /* ---HSL-color-1--- */
-  --color-1-hs: 136.0344827586deg, 52.7272727273%;
-  --color-1-l: 43.137254902%;
-  --color-1-a: 1;
-  --color-1-c: #FFFFFF;
-  --color-1-c-hs: 0deg, 0%;
-  --color-1-c-l: 100%;
-  --color-1-c-a: 1;
-  /* ---COLOR-color-1-END--- */
-  /* ---COLOR-color-2-START--- */
-  --color-2: #5C2B6D;
-  /* ---HSL-color-2--- */
-  --color-2-hs: 284.5454545455deg, 43.4210526316%;
-  --color-2-l: 29.8039215686%;
-  --color-2-a: 1;
-  --color-2-c: #FFFFFF;
-  --color-2-c-hs: 0deg, 0%;
-  --color-2-c-l: 100%;
-  --color-2-c-a: 1;
-  /* ---COLOR-color-2-END--- */
 }
 
 @media (max-width: 575.98px) {
-  :root {
+  body {
     --font-size: calc(var(--font-size) - 100rem);
   }
 }

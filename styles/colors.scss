@@ -14,7 +14,7 @@
 $v in $app-colors-mapped {
   // Texts
   @include mapped-color-variant('.text-#{$k}', $k, $v);
-  // @include mapped-color-variant('.border-#{$k}', $k, $v);
+  @include mapped-neon-color-variant('.text-neon-#{$k}', $k, $v);
   // Background
   @include mapped-bg-color-variant('.bg-#{$k}', $k, $v);
   @include mapped-g-color-variant('.bg-g-#{$k}', $k, $v);
@@ -28,12 +28,22 @@ $v in $app-colors-mapped {
   // Badges
   @include mapped-bg-color-variant('.badge-#{$k}', $k, $v);
   @include mapped-outline-variant('.badge-outline-#{$k}', $k, $v);
+
+  .border-#{$k} {
+    border-color: map-get($v, 'bg')
+  }
+}
+
+@each $v in (0, 25, 50, 75, 100) {
+  .opacity-#{$v} {
+    opacity: $v/100;
+  }
 }
 
 :disabled,
 .disabled,
 [disable] {
-  cursor: not-allowed !important;
+  cursor: not-allowed;
   filter: grayscale(.8)
 }
 
@@ -62,7 +72,7 @@ input {
 .tabs-current,
 .alert-current {
   border: none;
-  background-color: currentColor !important;
+  background-color: currentColor;
   // color: currentColor !important;
 }
 
@@ -117,6 +127,14 @@ input {
   }
 }
 
+.shadow-inset {
+  &-1 {
+    &::before {
+      box-shadow: inset var(--black) 0 3px 9px -3px;
+    }
+  }
+}
+
 [class*=shadow-] {
   position: relative;
   z-index: 1;
@@ -154,5 +172,5 @@ body a,
 }
 
 a:not(.link) {
-  text-decoration: none !important;
+  text-decoration: none;
 }

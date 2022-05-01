@@ -5,91 +5,18 @@
 * @Description Menu styles which includes:
 *              1. sidemenu
 *              2. fullmenu (fullscreen floating)
+*              2. floatmenu (miniscreen corner floating)
 */
-.appmenu-trigger {
-  /* @include absolute-content; */
-  position: fixed !important;
-  left: 0;
-  top: 0;
-  padding: 0 !important;
-  margin: 0 !important;
-  height: 100% !important;
-  width: 100% !important;
-  transition: background-color 0.5s ease-in;
-  border-radius: 0 !important;
-  z-index: -1;
 
-  &::after {
-    display: none !important;
-  }
-
-  &:checked {
-
-    ~,
-    ~* {
-      .page {
-
-        >footer {
-          background-color: var(--primary);
-          color: var(--primary-c);
-        }
-      }
-    }
-  }
-
-}
-
-.appmenu-toggle {
-  position: relative;
-  /* font-size: 120%; */
-  margin-bottom: 0;
-  /* z-index: 1; */
-}
-
-
-.nav-menu {
-  /* border-top: 1px solid; */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  font-size: 120%;
-  gap: 0.5rem;
-
-  .nav-item {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    text-decoration: none;
-    color: currentColor;
-  }
-}
-
-/* Sidemenu */
-.sidemenu-container {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-
-  &.rtl {
-    .page {
-      order: -1;
-    }
-  }
-}
-
-@mixin minimized-sidemenu {
+@mixin md-toggled-sidemenu {
   width: 15%;
   flex-basis: 15%;
 
   .menu-header {
-    .app-logo {
-      display: none;
-    }
 
-    .menu-logo {
-      display: inline-block;
+    .menu-logo,
+    .appmenu-toggle {
+      display: none;
     }
 
     .title {
@@ -129,6 +56,99 @@
   }
 }
 
+.appmenu-trigger {
+  /* @include absolute-content; */
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  transition: background-color 0.5s ease-in;
+  border-radius: 0 !important;
+  z-index: -1;
+
+  &::after {
+    display: none !important;
+  }
+
+  &:checked {
+
+    ~,
+    ~* {
+
+      .sidemenu.md {
+        opacity: 1;
+        @include md-toggled-sidemenu;
+      }
+
+      .page {
+
+        >footer {
+          background-color: var(--primary);
+          color: var(--primary-c);
+        }
+      }
+    }
+  }
+
+  &:not(:checked) {
+
+    ~,
+    ~* {
+
+      .menu-logo-alt {
+        display: none;
+      }
+    }
+  }
+
+}
+
+.appmenu-toggle {
+  position: relative;
+  /* font-size: 120%; */
+  margin-bottom: 0;
+  /* z-index: 1; */
+}
+
+.menu-header {
+  display: flex;
+}
+
+.nav-menu {
+  /* border-top: 1px solid; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 120%;
+  gap: 0.5rem;
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: currentColor;
+  }
+}
+
+/* Sidemenu */
+.sidemenu-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+
+  &.rtl {
+    .page {
+      order: -1;
+    }
+  }
+}
+
 .sidemenu {
   display: flex;
   flex-direction: column;
@@ -153,10 +173,6 @@
 
   .menu-header {
     padding: 1rem;
-
-    .menu-logo {
-      display: none;
-    }
 
     .title {
       transition: height 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
@@ -225,6 +241,16 @@
   }
 }
 
+.floatmenu {
+  display: flex;
+
+  .nav-menu {
+    .nav-item {
+      gap: 1rem;
+    }
+  }
+}
+
 /* Page */
 
 .page {
@@ -278,12 +304,15 @@
       ~,
       ~* {
 
-        .sidemenu.md {
-          @include minimized-sidemenu;
+        .sidemenu.minimized {
+          @include md-toggled-sidemenu;
         }
 
-        .page .app-header .appmenu-toggle {
-          display: none;
+        .page .app-header {
+          .appmenu-toggle {
+            display: none;
+          }
+
         }
       }
     }
@@ -294,16 +323,22 @@
 
 /* Above <---> Mobile */
 @media (min-width:576px) {
+
+  .floatmenu,
   .fullmenu {
     align-items: center;
 
     .menu-header {
 
-      .app-logo,
+      // .menu-logo,
       .appmenu-toggle {
         display: none;
       }
     }
+  }
+
+  .floatmenu {
+    /* width: 75%; */
   }
 
   .appmenu-trigger {
@@ -358,7 +393,7 @@
       ~,
       ~* {
         .sidemenu {
-          @include minimized-sidemenu;
+          @include md-toggled-sidemenu;
         }
       }
     }
@@ -377,6 +412,9 @@
     }
   }
 
+  .floatmenu {
+    /* width: 50%; */
+  }
 }
 
 /* Tablets/Mini PC <---> BELOW */
@@ -401,13 +439,17 @@
       ~,
       ~* {
 
-        .fullmenu,
-        .app-header .fullmenu {
+        .fullmenu {
           .nav-menu {
             display: none;
             /* transform: translateY(-100%); */
             /* opacity: 0; */
           }
+        }
+
+        // 3, Floatmenu
+        .floatmenu>*:not(.appmenu-toggle) {
+          display: none;
         }
       }
     }
@@ -428,17 +470,23 @@
           .appmenu-toggle {
             transform: translateX(0)
           }
+
+          .menu-logo-alt {
+            display: none;
+          }
         }
 
         // 2. Fullmenu
         .fullmenu {
+          --background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.125);
           position: fixed;
           flex-direction: column;
           transform: translateY(0);
           opacity: 1;
           font-size: 125%;
-          background-color: var(--secondary);
+          background-color: var(--background-color);
           color: var(--secondary-c);
+          backdrop-filter: blur(10px);
           z-index: 2;
 
           .btn {
@@ -454,14 +502,27 @@
             order: -1;
             padding: 1rem;
 
+            .menu-logo {
+              display: none;
+            }
+
+            .menu-logo-alt {
+              fill: var(--white)
+            }
+
             .silhouette {
-              filter: saturate(0%) brightness(250%);
+              filter: saturate(0%) brightness(500%);
             }
           }
 
           .nav-menu {
             flex-direction: column;
           }
+        }
+
+        // 3, Floatmenu
+        .floatmenu {
+          width: 100%;
         }
 
         .page .app-header .appmenu-toggle {
@@ -501,6 +562,25 @@
 
     .menu-header {
       width: 100%
+    }
+  }
+
+  .floatmenu {
+    position: fixed;
+    bottom: 0;
+    /* left: 0; */
+    right: 0;
+    display: flex;
+    flex-direction: column;
+
+    .nav-menu {
+      flex-direction: column;
+    }
+
+    .nav-menu,
+    .menu-header,
+    .menu-footer {
+      padding: 1rem;
     }
   }
 

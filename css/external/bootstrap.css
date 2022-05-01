@@ -6662,7 +6662,7 @@ button.close {
 }
 
 .bg-primary {
-  background-color: var(--primary) !important
+  background-color: var(--primary)
 }
 
 a.bg-primary:focus,
@@ -6673,7 +6673,7 @@ button.bg-primary:hover {
 }
 
 .bg-secondary {
-  background-color: var(--secondary) !important
+  background-color: var(--secondary)
 }
 
 a.bg-secondary:focus,
@@ -6684,7 +6684,7 @@ button.bg-secondary:hover {
 }
 
 .bg-success {
-  background-color: var(--success) !important
+  background-color: var(--success)
 }
 
 a.bg-success:focus,
@@ -6695,7 +6695,7 @@ button.bg-success:hover {
 }
 
 .bg-info {
-  background-color: var(--info) !important
+  background-color: var(--info)
 }
 
 a.bg-info:focus,
@@ -6706,7 +6706,7 @@ button.bg-info:hover {
 }
 
 .bg-warning {
-  background-color: var(--warning) !important
+  background-color: var(--warning)
 }
 
 a.bg-warning:focus,
@@ -6717,7 +6717,7 @@ button.bg-warning:hover {
 }
 
 .bg-danger {
-  background-color: var(--danger) !important
+  background-color: var(--danger)
 }
 
 a.bg-danger:focus,
@@ -6728,7 +6728,7 @@ button.bg-danger:hover {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important
+  background-color: #f8f9fa
 }
 
 a.bg-light:focus,
@@ -6739,7 +6739,7 @@ button.bg-light:hover {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  background-color: #343a40;
   color: #FFFFFF
 }
 
@@ -6751,31 +6751,31 @@ button.bg-dark:hover {
 }
 
 .bg-white {
-  background-color: #fff !important
+  background-color: #fff
 }
 
 .bg-transparent {
-  background-color: transparent !important
+  background-color: transparent
 }
 
 .border {
-  border: 1px solid #dee2e6 !important
+  border: 1px solid #dee2e6
 }
 
 .border-top {
-  border-top: 1px solid #dee2e6 !important
+  border-top: 1px solid #dee2e6
 }
 
 .border-right {
-  border-right: 1px solid #dee2e6 !important
+  border-right: 1px solid #dee2e6
 }
 
 .border-bottom {
-  border-bottom: 1px solid #dee2e6 !important
+  border-bottom: 1px solid #dee2e6
 }
 
 .border-left {
-  border-left: 1px solid #dee2e6 !important
+  border-left: 1px solid #dee2e6
 }
 
 .border-0 {
@@ -10238,7 +10238,7 @@ a.text-dark:hover {
   }
 
   abbr[title]::after {
-    content: " ("attr(title) ")"
+    content: attr(title)
   }
 
   pre {

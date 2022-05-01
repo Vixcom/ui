@@ -8,6 +8,7 @@ $quarter-sizes: (0, 25, 50, 75, 100);
 $number-sizes: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 $decimal-number-sizes: (d25: 0.25, d5: 0.5, d75: 0.75);
 $non-sizes: (unset, auto);
+$directions: (t:'top', r:'right', b:'bottom', l:'left');
 
 /**
 * BoxSizing - Height & Width of a layout
@@ -56,10 +57,23 @@ $non-sizes: (unset, auto);
 
 @each $size in $number-sizes {
   @include layoutLooper($size, 'rem', true);
+
+  .rounded-#{$size} {
+    border-radius: $size * 0.2rem !important;
+  }
 }
 
 @each $size in $quarter-sizes {
   @include layoutLooper($size, '%', true);
+
+  @each $direction-key,
+  $direction in $directions {
+    $_value: if($size==0, $size, #{$size}#{'%'});
+
+    .p#{$direction-key}-#{$size} {
+      padding-#{$direction}: #{$_value};
+    }
+  }
 }
 
 @each $size in $non-sizes {
@@ -89,40 +103,18 @@ $breakpoint in $grid-breakpoints {
   }
 }
 
-.h1,
-h1,
-.font-5 {
-  font-size: 200%
-}
+$heading-start: (k: 1, v: 200);
+$heading-end: (k: 6, v: 100);
+$heading-difference: (map-get($heading-start, 'v') - map-get($heading-end, 'v')) / (map-get($heading-end, 'k') - map-get($heading-start, 'k'));
 
-.h2,
-h2,
-.font-4 {
-  font-size: 180%
-}
+@for $n from map-get($heading-start, 'k') through map-get($heading-end, 'k') {
+  $_value: map-get($heading-start, 'v') - (($n - 1) * $heading-difference);
 
-.h3,
-h3,
-.font-3 {
-  font-size: 160%
-}
-
-.h4,
-h4,
-.font-2 {
-  font-size: 140%
-}
-
-.h5,
-h5,
-.font-1 {
-  font-size: 120%
-}
-
-.h6,
-h6,
-.font-0 {
-  font-size: 100%
+  h#{$n},
+  .h#{$n},
+  .font-#{map-get($heading-end, 'k') - $n} {
+    font-size: #{$_value}#{'%'};
+  }
 }
 
 .font-sm {

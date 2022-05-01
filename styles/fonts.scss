@@ -1,0 +1,17 @@
+/** 
+* @Author Vixson
+* @Description Font variables and Logics
+*/
+$heading-start: (k: 1, v: 200);
+$heading-end: (k: 6, v: 100);
+$heading-difference: (map-get($heading-start, 'v') - map-get($heading-end, 'v')) / (map-get($heading-end, 'k') - map-get($heading-start, 'k'));
+
+@for $n from map-get($heading-start, 'k') through map-get($heading-end, 'k') {
+  $_value: map-get($heading-start, 'v') - (($n - 1) * $heading-difference);
+
+  h#{$n},
+  .h#{$n},
+  .font-#{map-get($heading-end, 'k') - $n} {
+    font-size: #{$_value}#{'%'};
+  }
+}

@@ -3,6 +3,7 @@
 * @Description: Unique and Very Responsive Admin Dashboard UI
 */
 @import 'mixins';
+// @import 'https://unpkg.com/bootstrap@latest/dist/css/bootstrap.min.css';
 @import 'external/bootstrap.css';
 @import 'variables.css';
 @import 'app.css';
@@ -10,16 +11,6 @@
 @import 'colors.css';
 @import 'animations.css';
 @import 'polyfills.css';
-
-body {
-  font-family: 'AppContent', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--background-color, --default-c, --white);
-  color: var(--default, --white-c);
-  font-size: var(--font-size);
-  font-weight: normal;
-}
-
-/* Mobile --> BELOW */
 
 @font-face {
   font-family: 'AppTitle';
