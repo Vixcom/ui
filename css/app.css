@@ -48,26 +48,101 @@ body {
   font-weight: normal;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
 h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-.title {
+.h6, h5,
+.h5, h4,
+.h4, h3,
+.h3, h2,
+.h2, h1,
+.h1, .title {
   font-family: "AppTitle", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
+  font-size: var(--heading-size);
   /* color: var(--primary); */
 }
 
 b {
   font-weight: bold;
+}
+
+:disabled,
+.disabled,
+[disable] {
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+}
+
+.bg-text,
+.bg-text-color {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg-text:hover::after,
+.bg-text-color:hover::after {
+  opacity: 0.125;
+}
+.bg-text::after,
+.bg-text-color::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: currentColor;
+  opacity: 0.055;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+}
+
+.is-blur {
+  position: relative;
+  transition: background-color 0.5s;
+}
+.is-blur {
+  position: relative;
+}
+.is-blur > * {
+  /* position: relative; */
+  z-index: 1;
+}
+.is-blur::before {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.is-blur::before:not(img::before, img::after) {
+  content: "";
+}
+.is-blur::before {
+  backdrop-filter: blur(10px);
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+body a,
+.link {
+  color: var(--secondary);
+  cursor: pointer;
+}
+body a:hover,
+.link:hover {
+  color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 10%));
+}
+
+a:not(.link) {
+  text-decoration: none;
 }
 
 .app-icon {
@@ -659,7 +734,7 @@ option[disabled]:first-of-type {
   position: relative;
 }
 .progress > * {
-  position: relative;
+  /* position: relative; */
   z-index: 1;
 }
 .progress::before {
@@ -722,7 +797,7 @@ option[disabled]:first-of-type {
   position: relative;
 }
 .progress.dotted > * {
-  position: relative;
+  /* position: relative; */
   z-index: 1;
 }
 .progress.dotted::before {
@@ -1336,7 +1411,7 @@ table {
   position: relative;
 }
 .card > * {
-  position: relative;
+  /* position: relative; */
   z-index: 1;
 }
 .card::before {
@@ -1356,12 +1431,12 @@ table {
   content: "";
 }
 .card:not(.flat) {
-  overflow: unset;
+  /* overflow: unset; */
   border: none;
   z-index: 0;
 }
 .card:not(.flat) > * {
-  position: relative;
+  /* position: relative; */
 }
 .card:not(.flat)::before {
   box-shadow: var(--card-shadow);

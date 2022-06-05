@@ -1,7 +1,9 @@
 :root {
-  --font-size: 0.75rem;
+  --font-size: var(--o-font-size, 0.75rem);
   --card-shadow: 0 1px 30px -10px rgba(0, 0, 0, 0.5);
   --background-color: #FFFFFF;
+  --heading-start: 200%;
+  --heading-end: 100%;
   /* Color Variables */
   /* ---COLOR-default-START--- */
   --default: #5B5B5B;
@@ -248,8 +250,8 @@
 }
 
 @media (max-width: 575.98px) {
-  body {
-    --font-size: calc(var(--font-size) - 100rem);
+  :root {
+    --font-size: calc(var(--o-font-size) / 1.15);
   }
 }
 

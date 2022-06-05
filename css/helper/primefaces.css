@@ -1,5 +1,5 @@
 .p-component {
-  font-size: unset !important;
+  font-size: 100%;
   font-family: unset;
 }
 
@@ -262,7 +262,7 @@ p-chart canvas {
 
 .p-button {
   font-size: 120%;
-  border-color: unset !important;
+  border-color: unset;
   background-color: unset;
 }
 .p-button:hover {

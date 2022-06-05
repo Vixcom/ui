@@ -1,13 +1,14 @@
 @import 'mixins';
 
 :root {
-  --font-size: #{$font-size};
+  --font-size: var(--o-font-size, #{$font-size});
   --card-shadow: #{$card-shadow};
   --background-color: #{$background-color};
+  --heading-start: 200%;
+  --heading-end: 100%;
 
   /* Color Variables */
-  @each $k,
-  $v in $app-colors-mapped {
+  @each $k, $v in $app-colors-mapped {
     /* ---COLOR-#{$k}-START--- */
     --#{$k}: #{map-get($v, 'bg')};
     /* ---HSL-#{$k}--- */
@@ -22,10 +23,8 @@
   }
 }
 
-@media (max-width:575.98px) {
-  body {
-    // --font-size: calc(#{$font-size} / 1.125);
-    --font-size: calc(var(--font-size) - 100rem);
-    // --font-size: 0.725rem;
+@media (max-width: 575.98px) {
+  :root {
+    --font-size: calc(var(--o-font-size) / 1.15);
   }
 }

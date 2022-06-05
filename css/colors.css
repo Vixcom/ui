@@ -5505,13 +5505,6 @@ button.badge-outline-muted:active,
   opacity: 1;
 }
 
-:disabled,
-.disabled,
-[disable] {
-  cursor: not-allowed;
-  filter: grayscale(0.8);
-}
-
 button.focus, button:focus-within, button:focus,
 input.focus,
 input:focus-within,
@@ -5537,67 +5530,8 @@ input:focus {
   background-color: currentColor;
 }
 
-.bg-text,
-.bg-text-color {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.bg-text:hover::after,
-.bg-text-color:hover::after {
-  opacity: 0.125;
-}
-.bg-text::after,
-.bg-text-color::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: currentColor;
-  opacity: 0.055;
-  height: 100%;
-  width: 100%;
-  border-radius: inherit;
-}
-
 .inactive {
   color: #BCBCCB;
-}
-
-.is-blur {
-  position: relative;
-  transition: background-color 0.5s;
-}
-.is-blur {
-  position: relative;
-}
-.is-blur > * {
-  position: relative;
-  z-index: 1;
-}
-.is-blur::before {
-  content: "";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  border-radius: inherit;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-.is-blur::before:not(img::before, img::after) {
-  content: "";
-}
-.is-blur::before {
-  backdrop-filter: blur(10px);
-}
-
-.blur {
-  filter: blur(5px);
 }
 
 .shadow-1::before {
@@ -5619,7 +5553,7 @@ input:focus {
   position: relative;
 }
 [class*=shadow-] > * {
-  position: relative;
+  /* position: relative; */
   z-index: 1;
 }
 [class*=shadow-]::before {
@@ -5652,20 +5586,6 @@ input::-webkit-input-placeholder {
 
 .text-current {
   color: currentColor;
-}
-
-body a,
-.link {
-  color: var(--secondary);
-  cursor: pointer;
-}
-body a:hover,
-.link:hover {
-  color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 10%));
-}
-
-a:not(.link) {
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=colors.css.map */

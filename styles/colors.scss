@@ -40,13 +40,6 @@ $v in $app-colors-mapped {
   }
 }
 
-:disabled,
-.disabled,
-[disable] {
-  cursor: not-allowed;
-  filter: grayscale(.8)
-}
-
 button,
 input {
 
@@ -76,48 +69,10 @@ input {
   // color: currentColor !important;
 }
 
-.bg-text,
-.bg-text-color {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover::after {
-    opacity: 0.125;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: currentColor;
-    opacity: 0.055;
-    height: 100%;
-    width: 100%;
-    border-radius: inherit;
-  }
-}
-
 .inactive {
   color: #BCBCCB
 }
 
-.is-blur {
-  position: relative;
-  transition: background-color 0.5s;
-
-  @include before-content;
-
-  &::before {
-    backdrop-filter: blur(10px);
-  }
-}
-
-.blur {
-  filter: blur(5px)
-}
 
 .shadow- {
   &1 {
@@ -159,18 +114,4 @@ input::-webkit-input-placeholder {
 
 .text-current {
   color: currentColor
-}
-
-body a,
-.link {
-  color: var(--secondary);
-  cursor: pointer;
-
-  &:hover {
-    color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 10%));
-  }
-}
-
-a:not(.link) {
-  text-decoration: none;
 }

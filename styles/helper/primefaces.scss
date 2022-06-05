@@ -1,7 +1,7 @@
 @import '../mixins';
 
 .p-component {
-  font-size: unset !important;
+  font-size: 100%;
   font-family: unset;
 }
 
@@ -87,12 +87,12 @@
     .btn {
       margin: 0;
 
-      &+.btn {
+      & + .btn {
         margin-left: 0.5rem;
       }
     }
 
-    >* {
+    > * {
       margin-top: 1rem;
     }
   }
@@ -120,7 +120,7 @@
   font-size: 0.75rem !important;
 }
 
-.input>.p-inputtext {
+.input > .p-inputtext {
   padding: 0;
   color: unset;
   font-size: unset;
@@ -142,7 +142,7 @@
   border-color: currentColor;
 }
 
-*:not(.p-paginator)>.p-dropdown {
+*:not(.p-paginator) > .p-dropdown {
   width: 100%;
 }
 
@@ -170,7 +170,7 @@ p-chart {
     &:not(.p-datepicker-inline) {
       box-shadow: unset;
 
-      &>* {
+      & > * {
         position: relative;
       }
 
@@ -188,7 +188,7 @@ p-chart {
       }
     }
 
-    table td>span {
+    table td > span {
       width: 2.25rem;
       height: 2.25rem;
     }
@@ -212,7 +212,7 @@ p-chart {
     }
   }
 
-  &+.p-panel {
+  & + .p-panel {
     margin-top: 1rem;
   }
 }
@@ -247,7 +247,7 @@ p-chart {
     }
 
     .p-carousel-next {
-      right: 0
+      right: 0;
     }
   }
 
@@ -268,7 +268,6 @@ p-chart {
         &:hover {
           border-color: var(--primary);
         }
-
       }
     }
 
@@ -297,7 +296,7 @@ p-chart {
   }
 }
 
-@media (max-width:575.98px) {
+@media (max-width: 575.98px) {
   .p-dialog {
     min-width: 95%;
 
@@ -330,7 +329,7 @@ p-chart {
 .p-selectbutton {
   display: flex;
 
-  >.p-button {
+  > .p-button {
     width: 100%;
     padding: 1rem;
   }
@@ -338,7 +337,7 @@ p-chart {
 
 .p-button {
   font-size: 120%;
-  border-color: unset !important;
+  border-color: unset;
   background-color: unset;
   // background-color: var(--primary);
 

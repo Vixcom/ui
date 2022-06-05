@@ -42,7 +42,7 @@
   }
 
   &>* {
-    position: relative;
+    /* position: relative; */
     z-index: 1;
   }
 
@@ -92,8 +92,8 @@ $pink: #ED028C !default;
 $cyan: #16F1D9 !default;
 $lemon: #62FFB1 !default;
 $success: #24B624 !default;
-$warning: #FFA500 !default;
-$danger: #DC3545 !default;
+$warn: #FFA500 !default;
+$error: #DC3545 !default;
 $info: #17A2b8 !default;
 $muted: #7D7D7D !default;
 $background-color: #FFFFFF !default;
@@ -115,14 +115,14 @@ $app-colors-mapped: map-merge(( // ===
     'silver': (bg: $silver, c: $white),
     'gold': (bg: $gold, c: $white),
     'info': (bg: $info, c: $white),
-    'error': (bg: $danger, c: $white),
-    // 'failed': (bg: $danger, c: $white),
-    // 'danger': (bg: $danger, c: $white),
+    'error': (bg: $error, c: $white),
+    // 'failed': (bg: $error, c: $white),
+    // 'danger': (bg: $error, c: $white),
     'success': (bg: $success, c: $white),
     // 'successful': (bg: $success, c: $white),
-    'warn': (bg: $warning, c: $black),
-    // 'warning': (bg: $warning, c: $black),
-    // 'pending': (bg: $warning, c: $black),
+    'warn': (bg: $warn, c: $black),
+    // 'warning': (bg: $warn, c: $black),
+    // 'pending': (bg: $warn, c: $black),
     'red': (bg: $red, c: $white),
     'orange': (bg: $orange, c: $black),
     'yellow': (bg: $yellow, c: $black),
