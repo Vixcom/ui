@@ -83,9 +83,9 @@ b {
 .bg-text,
 .bg-text-color {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex;
+  // align-items: center;
+  // justify-content: center;
 
   &:hover::after {
     opacity: 0.125;
@@ -101,6 +101,7 @@ b {
     height: 100%;
     width: 100%;
     border-radius: inherit;
+    z-index: 0;
   }
 }
 
@@ -119,7 +120,7 @@ b {
   filter: blur(5px);
 }
 
-body a,
+a,
 .link {
   color: var(--secondary);
   cursor: pointer;
@@ -865,7 +866,8 @@ option[disabled]:first-of-type {
       background-color: currentColor;
     }
 
-    .dot {
+    .dot,
+    .item {
       background-color: currentColor;
       border-radius: 50%;
       width: 0.5rem;
@@ -873,11 +875,11 @@ option[disabled]:first-of-type {
       z-index: 1;
       position: relative;
 
-      & + .dot {
+      & + :is(.dot, .item) {
         margin-left: 0.5rem;
       }
 
-      &.active ~ .dot {
+      &.active ~ :is(.dot, .item) {
         opacity: 0.5;
       }
     }
@@ -908,6 +910,7 @@ option[disabled]:first-of-type {
     min-width: 5rem;
     flex: 0 0 auto;
     transition: background-color 0.25s;
+    z-index: 1;
   }
 
   &.pills {
@@ -1192,13 +1195,13 @@ table {
 
   thead,
   .table-header {
-    position: sticky !important;
+    position: sticky;
     /* color: hsl(var(--secondary-hs), calc(var(--secondary-l) + 10%)); */
     font-weight: bold;
     width: fit-content;
     top: 0;
     bottom: 0;
-    z-index: 1 !important;
+    z-index: 1;
 
     &.sticky-header {
       th {
@@ -1581,27 +1584,32 @@ table {
     gap: 0.5rem;
   }
 
+  &.h .item {
+    flex-direction: column;
+  }
+
   &.has-connector {
     .item {
       margin: 0;
 
-      &:not(:first-child) .connector::before,
-      &:not(:last-child) .connector::after {
+      &:not(:first-child) :is(.connector, li::marker)::before,
+      &:not(:last-child) :is(.connector, li::marker)::after {
         content: '';
       }
 
-      .connector {
+      .connector,
+      li::marker {
         display: flex;
         flex-direction: column;
-      }
 
-      .connector::before,
-      .connector::after {
-        margin: 0 auto;
-        width: 1px;
-        height: 100%;
-        background-color: currentColor;
-        display: block;
+        &::before,
+        &::after {
+          margin: 0 auto;
+          width: 1px;
+          height: 100%;
+          background-color: currentColor;
+          display: block;
+        }
       }
     }
 

@@ -3,7 +3,7 @@
     "selected": 1
   },
   "1 error pnpm": {
-    "errno": 1,
+    "errno": 3221225786,
     "code": "ELIFECYCLE",
     "pkgid": "vx-dashboard@",
     "stage": "start",
@@ -11,9 +11,9 @@
     "pkgname": "vx-dashboard",
     "err": {
       "name": "pnpm",
-      "message": "vx-dashboard@ start: `http-server -P=http://127.0.0.1 -p=1400 -s --cors`\nExit status 1",
+      "message": "vx-dashboard@ start: `http-server -P=http://127.0.0.1 -p=1400 -s --cors`\nExit status 3221225786",
       "code": "ELIFECYCLE",
-      "stack": "pnpm: vx-dashboard@ start: `http-server -P=http://127.0.0.1 -p=1400 -s --cors`\nExit status 1\n    at EventEmitter.<anonymous> (C:\\Users\\Web Dev\\AppData\\Roaming\\npm\\pnpm-global\\5\\node_modules\\.pnpm\\pnpm@6.31.0\\node_modules\\pnpm\\dist\\pnpm.cjs:105664:20)\n    at EventEmitter.emit (events.js:400:28)\n    at ChildProcess.<anonymous> (C:\\Users\\Web Dev\\AppData\\Roaming\\npm\\pnpm-global\\5\\node_modules\\.pnpm\\pnpm@6.31.0\\node_modules\\pnpm\\dist\\pnpm.cjs:92211:18)\n    at ChildProcess.emit (events.js:400:28)\n    at maybeClose (internal/child_process.js:1055:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)"
+      "stack": "pnpm: vx-dashboard@ start: `http-server -P=http://127.0.0.1 -p=1400 -s --cors`\nExit status 3221225786\n    at EventEmitter.<anonymous> (C:\\Users\\Web Dev\\AppData\\Roaming\\npm\\pnpm-global\\5\\node_modules\\.pnpm\\pnpm@6.31.0\\node_modules\\pnpm\\dist\\pnpm.cjs:105664:20)\n    at EventEmitter.emit (events.js:400:28)\n    at ChildProcess.<anonymous> (C:\\Users\\Web Dev\\AppData\\Roaming\\npm\\pnpm-global\\5\\node_modules\\.pnpm\\pnpm@6.31.0\\node_modules\\pnpm\\dist\\pnpm.cjs:92211:18)\n    at ChildProcess.emit (events.js:400:28)\n    at maybeClose (internal/child_process.js:1055:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)"
     }
   }
 }

@@ -33,14 +33,14 @@
 .p-dialog-mask,
 .p-component-overlay,
 .p-dialog-mask.p-component-overlay {
-  z-index: 4 !important;
+  z-index: 4;
 }
 
 .p-dialog {
   min-width: 50%;
   max-width: 95%;
   max-height: 95%;
-  z-index: 1 !important;
+  z-index: 1;
 }
 .p-dialog .p-confirm-dialog .p-confirm-dialog-icon {
   font-size: 300%;
@@ -130,7 +130,7 @@ p-chart canvas {
 }
 
 .p-calendar {
-  width: 100%;
+  /* width: 100%; */
 }
 .p-calendar .p-datepicker {
   min-width: unset;

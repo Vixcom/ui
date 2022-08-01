@@ -75,9 +75,7 @@ b {
 .bg-text,
 .bg-text-color {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex;
 }
 .bg-text:hover::after,
 .bg-text-color:hover::after {
@@ -94,6 +92,7 @@ b {
   height: 100%;
   width: 100%;
   border-radius: inherit;
+  z-index: 0;
 }
 
 .is-blur {
@@ -131,12 +130,12 @@ b {
   filter: blur(5px);
 }
 
-body a,
+a,
 .link {
   color: var(--secondary);
   cursor: pointer;
 }
-body a:hover,
+a:hover,
 .link:hover {
   color: hsla(var(--secondary-hs), calc(var(--secondary-l) - 10%));
 }
@@ -820,7 +819,8 @@ option[disabled]:first-of-type {
   opacity: 0.125;
   background-color: currentColor;
 }
-.progress.dotted .dot {
+.progress.dotted .dot,
+.progress.dotted .item {
   background-color: currentColor;
   border-radius: 50%;
   width: 0.5rem;
@@ -828,10 +828,12 @@ option[disabled]:first-of-type {
   z-index: 1;
   position: relative;
 }
-.progress.dotted .dot + .dot {
+.progress.dotted .dot + :is(.dot, .item),
+.progress.dotted .item + :is(.dot, .item) {
   margin-left: 0.5rem;
 }
-.progress.dotted .dot.active ~ .dot {
+.progress.dotted .dot.active ~ :is(.dot, .item),
+.progress.dotted .item.active ~ :is(.dot, .item) {
   opacity: 0.5;
 }
 
@@ -859,6 +861,7 @@ option[disabled]:first-of-type {
   min-width: 5rem;
   flex: 0 0 auto;
   transition: background-color 0.25s;
+  z-index: 1;
 }
 .tabs.pills > .tab {
   border-radius: 5rem;
@@ -1084,13 +1087,13 @@ table {
 }
 .table-container thead,
 .table-container .table-header {
-  position: sticky !important;
+  position: sticky;
   /* color: hsl(var(--secondary-hs), calc(var(--secondary-l) + 10%)); */
   font-weight: bold;
   width: fit-content;
   top: 0;
   bottom: 0;
-  z-index: 1 !important;
+  z-index: 1;
 }
 .table-container thead.sticky-header th,
 .table-container .table-header.sticky-header th {
@@ -1495,24 +1498,33 @@ table {
 .item-list:not(.has-connector) {
   gap: 0.5rem;
 }
+.flex-list.h .item,
+.item-list.h .item {
+  flex-direction: column;
+}
 .flex-list.has-connector .item,
 .item-list.has-connector .item {
   margin: 0;
 }
-.flex-list.has-connector .item:not(:first-child) .connector::before, .flex-list.has-connector .item:not(:last-child) .connector::after,
-.item-list.has-connector .item:not(:first-child) .connector::before,
-.item-list.has-connector .item:not(:last-child) .connector::after {
+.flex-list.has-connector .item:not(:first-child) :is(.connector, li::marker)::before, .flex-list.has-connector .item:not(:last-child) :is(.connector, li::marker)::after,
+.item-list.has-connector .item:not(:first-child) :is(.connector, li::marker)::before,
+.item-list.has-connector .item:not(:last-child) :is(.connector, li::marker)::after {
   content: "";
 }
 .flex-list.has-connector .item .connector,
-.item-list.has-connector .item .connector {
+.flex-list.has-connector .item li::marker,
+.item-list.has-connector .item .connector,
+.item-list.has-connector .item li::marker {
   display: flex;
   flex-direction: column;
 }
-.flex-list.has-connector .item .connector::before,
-.flex-list.has-connector .item .connector::after,
+.flex-list.has-connector .item .connector::before, .flex-list.has-connector .item .connector::after,
+.flex-list.has-connector .item li::marker::before,
+.flex-list.has-connector .item li::marker::after,
 .item-list.has-connector .item .connector::before,
-.item-list.has-connector .item .connector::after {
+.item-list.has-connector .item .connector::after,
+.item-list.has-connector .item li::marker::before,
+.item-list.has-connector .item li::marker::after {
   margin: 0 auto;
   width: 1px;
   height: 100%;

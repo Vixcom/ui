@@ -45,7 +45,7 @@
 }
 .appmenu-trigger:checked ~ .sidemenu.md .icon,
 .appmenu-trigger:checked ~ * .sidemenu.md .icon {
-  margin-right: 0;
+  /* margin-right: 0; */
 }
 .appmenu-trigger:checked ~ .sidemenu.md .menu-header .nav-item .label,
 .appmenu-trigger:checked ~ .sidemenu.md .menu-header .nav-title .label,
@@ -194,10 +194,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.sidemenu .icon {
-  margin: 0.125rem 1em;
-  margin-left: 0;
-}
 .sidemenu footer,
 .sidemenu .menu-footer {
   margin-top: auto;
@@ -282,7 +278,7 @@
   }
   .appmenu-trigger:not(:checked) ~ .sidemenu.minimized .icon,
 .appmenu-trigger:not(:checked) ~ * .sidemenu.minimized .icon {
-    margin-right: 0;
+    /* margin-right: 0; */
   }
   .appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-header .nav-item .label,
 .appmenu-trigger:not(:checked) ~ .sidemenu.minimized .menu-header .nav-title .label,
@@ -374,7 +370,7 @@
   }
   .appmenu-trigger:checked ~ .sidemenu .icon,
 .appmenu-trigger:checked ~ * .sidemenu .icon {
-    margin-right: 0;
+    /* margin-right: 0; */
   }
   .appmenu-trigger:checked ~ .sidemenu .menu-header .nav-item .label,
 .appmenu-trigger:checked ~ .sidemenu .menu-header .nav-title .label,
@@ -455,7 +451,11 @@
   }
   .appmenu-trigger:checked ~ .fullmenu,
 .appmenu-trigger:checked ~ * .fullmenu {
-    --background-color: hsla(var(--secondary-hs), var(--secondary-l), 0.125);
+    --background-color: hsla(
+      var(--secondary-hs),
+      var(--secondary-l),
+      0.125
+    );
     position: fixed;
     flex-direction: column;
     transform: translateY(0);
