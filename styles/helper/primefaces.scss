@@ -8,12 +8,12 @@
 .p-steps {
   .p-steps-item {
     &.p-highlight .p-steps-number {
-      background-color: var(--secondary) !important;
+      background-color: var(--secondary);
     }
 
     .p-steps-number {
-      background-color: var(--primary) !important;
-      color: var(--white) !important;
+      background-color: var(--primary);
+      color: var(--white);
     }
   }
 }
@@ -27,7 +27,7 @@
     align-items: stretch;
     flex-wrap: nowrap;
     overflow-x: scroll;
-    border: none !important;
+    border: none;
 
     li {
       min-width: 20%;
@@ -64,12 +64,16 @@
     border-top-right-radius: inherit;
 
     .p-dialog-header-close:hover {
-      color: var(--danger) !important;
+      color: var(--danger);
     }
   }
 
   .p-dialog-content {
     padding: 0.25rem 1.5rem;
+
+    .p-confirm-dialog-message {
+      white-space: pre-wrap;
+    }
   }
 
   .p-dialog-footer {
@@ -82,14 +86,7 @@
     button {
       border: none;
       padding: 0.5rem 1.25rem;
-    }
-
-    .btn {
-      margin: 0;
-
-      & + .btn {
-        margin-left: 0.5rem;
-      }
+      text-transform: capitalize;
     }
 
     > * {
@@ -103,7 +100,7 @@
   flex-direction: column;
   max-width: 100%;
   max-height: 100%;
-  z-index: 1 !important;
+  z-index: 1;
 
   .p-overlaypanel-content {
     display: flex;
@@ -113,11 +110,11 @@
 }
 
 .p-toast {
-  z-index: 5 !important;
+  z-index: 5;
 }
 
 .p-badge {
-  font-size: 0.75rem !important;
+  font-size: 0.75rem;
 }
 
 .input > .p-inputtext {
@@ -138,6 +135,19 @@
   }
 }
 
+.p-input-icon-left,
+.p-input-icon-right {
+  display: flex;
+
+  i {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0;
+    margin-top: 0;
+  }
+}
+
 .p-dropdown {
   border-color: currentColor;
 }
@@ -147,11 +157,11 @@
 }
 
 p-chart {
-  width: 100% !important;
+  width: 100%;
 
   canvas {
-    width: 100% !important;
-    min-width: 100% !important;
+    width: 100%;
+    min-width: 100%;
   }
 }
 
@@ -202,13 +212,13 @@ p-chart {
 .p-panel {
   > {
     :first-child {
-      border-top-left-radius: inherit !important;
-      border-top-right-radius: inherit !important;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
     }
 
     :last-child {
-      border-bottom-left-radius: inherit !important;
-      border-bottom-right-radius: inherit !important;
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
     }
   }
 
@@ -219,7 +229,7 @@ p-chart {
 
 .p-accordion {
   .p-accordion-header-link {
-    border-radius: inherit !important;
+    border-radius: inherit;
   }
 
   // &:not(.default) {
@@ -280,8 +290,8 @@ p-chart {
   .p-carousel-indicators {
     .p-carousel-indicator button {
       border: none;
-      height: 0.25rem !important;
-      border-radius: 0.125rem !important;
+      height: 0.25rem;
+      border-radius: 0.125rem;
     }
   }
 }
@@ -307,9 +317,9 @@ p-chart {
   }
 
   .p-toast {
-    width: auto !important;
-    left: 0.5rem !important;
-    right: 0.5rem !important;
+    width: auto;
+    left: 0.5rem;
+    right: 0.5rem;
   }
 }
 
@@ -322,7 +332,7 @@ p-chart {
 .p-toast .p-toast-message {
   .p-toast-icon-close {
     min-width: 2rem;
-    border: none !important;
+    border: none;
   }
 }
 
@@ -336,10 +346,8 @@ p-chart {
 }
 
 .p-button {
+  text-transform: capitalize;
   font-size: 120%;
-  border-color: unset;
-  background-color: unset;
-  // background-color: var(--primary);
 
   &:hover {
     background-color: hsl(var(--primary-hs), calc(var(--primary-l) - 20%));
@@ -353,12 +361,12 @@ p-chart {
 // @each $color,
 // $colorValue in $app-colors-mapped {
 //   .p-toast-message-#{$color} {
-//     background-color: var(--#{$color}) !important;
-//     color: var(--#{$color}-c) !important;
+//     background-color: var(--#{$color});
+//     color: var(--#{$color}-c);
 //   }
 
 //   .p-badge-#{$color} {
-//     background-color: var(--#{$color}) !important;
-//     color: var(--#{$color}-c) !important;
+//     background-color: var(--#{$color});
+//     color: var(--#{$color}-c);
 //   }
 // }

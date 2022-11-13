@@ -183,7 +183,7 @@ a:not(.link) {
     margin-bottom: 0;
   }
 
-  // .btn {
+  // .button {
   //   margin-bottom: 0;
   // }
 }
@@ -206,7 +206,7 @@ a:not(.link) {
     }
   }
 
-  .btn {
+  .button {
     min-width: auto;
   }
 }
@@ -246,7 +246,7 @@ a:not(.link) {
     color: var(--primary);
   }
 
-  .btn {
+  .button {
     min-width: auto;
   }
 }
@@ -374,10 +374,10 @@ hr[class*='s-']:not(.default) {
   }
 }
 
+input,
 *:not(.input) > {
-  .input,
-  input {
-    background-color: transparent;
+  .input {
+    /* background-color: transparent; */
     /* margin: 0.25rem 0 1rem; */
     border-radius: 0.25rem;
     border: 1px solid currentColor;
@@ -1033,12 +1033,12 @@ option[disabled]:first-of-type {
   // }
 }
 
-.btn-group,
-.btn-group-vertical {
+.button-group,
+.button-group-vertical {
   border-radius: 0.5rem;
 }
 
-.btn {
+.button {
   position: relative;
   padding: 0.25rem 1.5rem;
   font-size: 120%;
@@ -1058,11 +1058,11 @@ option[disabled]:first-of-type {
   //   border-radius: 0.125rem;
   // }
 
-  &.btn-block {
+  &.button-block {
     width: 100%;
   }
 
-  &.btn-circle {
+  &.button-circle {
     width: 3rem;
     height: 3rem;
     display: inline-flex;
@@ -1072,29 +1072,29 @@ option[disabled]:first-of-type {
     justify-content: center;
     border-radius: 50%;
 
-    &.btn-sm {
+    &.button-sm {
       width: 2rem;
       height: 2rem;
     }
   }
 
-  &.btn-lg {
+  &.button-lg {
     font-size: 150%;
     padding: 0.5rem 1.25rem;
     min-width: 10rem;
   }
 
-  &.btn-sm {
+  &.button-sm {
     font-size: 80%;
   }
 
-  &.btn-xs {
+  &.button-xs {
     font-size: 75%;
     padding: 0.125rem 0.5rem;
     min-width: 5rem;
   }
 
-  &.btn-block + .btn {
+  &.button-block + .button {
     margin-top: 0.5rem;
   }
 
@@ -1103,17 +1103,17 @@ option[disabled]:first-of-type {
   // }
 }
 
-.btn-group {
+.button-group {
   /*  margin: 1rem 0; */
   align-items: stretch;
 
   &.no-rounded {
-    .btn {
+    .button {
       border-radius: 0;
     }
   }
 
-  .btn {
+  .button {
     border-radius: inherit;
     align-self: stretch;
     margin: 0;
@@ -1122,7 +1122,7 @@ option[disabled]:first-of-type {
   }
 }
 
-.btn-group-vertical .btn {
+.button-group-vertical .button {
   border-radius: inherit;
 }
 
@@ -1591,6 +1591,7 @@ table {
   &.has-connector {
     .item {
       margin: 0;
+      width: 100%;
 
       &:not(:first-child) :is(.connector, li::marker)::before,
       &:not(:last-child) :is(.connector, li::marker)::after {
@@ -1636,7 +1637,6 @@ table {
     display: flex;
     /* align-items: center; */
     /* justify-content: space-between; */
-    width: 100%;
     gap: 0.25rem;
     padding: 0 1rem;
     cursor: pointer;
@@ -1948,7 +1948,7 @@ section {
     /* flex-direction: column; */
     width: 100%;
 
-    .btn {
+    .button {
       width: 100%;
     }
   }

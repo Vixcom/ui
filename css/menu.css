@@ -181,7 +181,7 @@
   transition: opacity 0.5s;
 }
 .sidemenu .nav-menu .nav-item.active {
-  border-right: 2px solid;
+  /* border-right: 2px solid; */
 }
 .sidemenu .nav-menu .nav-item.active::before {
   opacity: 0.25;
@@ -203,6 +203,7 @@
   display: flex;
   transition: transform 0.5s;
   align-items: center;
+  justify-content: center;
 }
 .fullmenu .menu-header {
   display: flex;

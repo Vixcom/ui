@@ -111,7 +111,7 @@ $directions: (
   @include layoutLooper($size, 'rem', true);
 
   .rounded-#{$size} {
-    border-radius: $size * 0.2rem !important;
+    border-radius: $size * 0.2rem;
   }
 }
 

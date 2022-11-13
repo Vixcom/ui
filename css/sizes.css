@@ -83,7 +83,7 @@
 }
 
 .rounded-1 {
-  border-radius: 0.2rem !important;
+  border-radius: 0.2rem;
 }
 
 .h-2 {
@@ -162,7 +162,7 @@
 }
 
 .rounded-2 {
-  border-radius: 0.4rem !important;
+  border-radius: 0.4rem;
 }
 
 .h-3 {
@@ -241,7 +241,7 @@
 }
 
 .rounded-3 {
-  border-radius: 0.6rem !important;
+  border-radius: 0.6rem;
 }
 
 .h-4 {
@@ -320,7 +320,7 @@
 }
 
 .rounded-4 {
-  border-radius: 0.8rem !important;
+  border-radius: 0.8rem;
 }
 
 .h-5 {
@@ -399,7 +399,7 @@
 }
 
 .rounded-5 {
-  border-radius: 1rem !important;
+  border-radius: 1rem;
 }
 
 .h-6 {
@@ -478,7 +478,7 @@
 }
 
 .rounded-6 {
-  border-radius: 1.2rem !important;
+  border-radius: 1.2rem;
 }
 
 .h-7 {
@@ -557,7 +557,7 @@
 }
 
 .rounded-7 {
-  border-radius: 1.4rem !important;
+  border-radius: 1.4rem;
 }
 
 .h-8 {
@@ -636,7 +636,7 @@
 }
 
 .rounded-8 {
-  border-radius: 1.6rem !important;
+  border-radius: 1.6rem;
 }
 
 .h-9 {
@@ -715,7 +715,7 @@
 }
 
 .rounded-9 {
-  border-radius: 1.8rem !important;
+  border-radius: 1.8rem;
 }
 
 .h-10 {
@@ -794,7 +794,7 @@
 }
 
 .rounded-10 {
-  border-radius: 2rem !important;
+  border-radius: 2rem;
 }
 
 .h-0 {
