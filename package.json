@@ -1,5 +1,6 @@
 {
-  "name": "vx-dashboard",
+  "name": "@vixcom/ui",
+  "version": "1.0.0",
   "scripts": {
     "start": "http-server -P=http://127.0.0.1 -p=1400 -s --cors",
     "serve": "sass styles:css --watch",
