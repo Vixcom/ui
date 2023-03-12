@@ -1,0 +1,566 @@
+@import 'mixins';
+
+/**
+* @Author vixson https://vixson.github.io
+* @Description Menu styles which includes:
+*              1. side-menu
+*              2. full-menu (fullscreen floating)
+*              2. float-menu (miniscreen corner floating)
+*/
+
+@mixin md-toggled-side-menu {
+  width: 15%;
+  flex-basis: 15%;
+
+  .menu-header {
+    .menu-logo,
+    .main-menu-toggle {
+      display: none;
+    }
+
+    .title {
+      opacity: 0;
+      height: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .nav-menu .nav-item {
+    justify-content: center;
+  }
+
+  .icon {
+    /* margin-right: 0; */
+  }
+
+  .menu-header,
+  .menu-footer,
+  .nav-menu {
+    .nav-item,
+    .nav-title {
+      .label {
+        opacity: 0;
+        transform: translateX(100%);
+        position: absolute;
+      }
+    }
+
+    .nav-title {
+      border-bottom: thin solid;
+      padding: 0;
+
+      &::before {
+      }
+    }
+  }
+}
+
+.main-menu-trigger {
+  /* @include absolute-content; */
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  transition: background-color 0.5s ease-in;
+  border-radius: 0 !important;
+  z-index: -1;
+
+  &::after {
+    display: none !important;
+  }
+
+  &:checked {
+    ~,
+    ~ * {
+      .side-menu.md {
+        opacity: 1;
+        @include md-toggled-side-menu;
+      }
+
+      .page {
+        > footer {
+          background-color: var(--primary);
+          color: var(--primary-c);
+        }
+      }
+    }
+  }
+
+  &:not(:checked) {
+    ~,
+    ~ * {
+      .menu-logo-alt {
+        display: none;
+      }
+    }
+  }
+}
+
+.main-menu-toggle {
+  position: relative;
+  /* font-size: 120%; */
+  margin-bottom: 0;
+  /* z-index: 1; */
+}
+
+.menu-header {
+  display: flex;
+}
+
+.nav-menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 120%;
+  gap: 0.5rem;
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: currentColor;
+  }
+}
+
+/* side-menu */
+.side-menu-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+
+  &.rtl {
+    .page {
+      order: -1;
+    }
+  }
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  margin: 0;
+  flex: 1 1 30%;
+  /* border-right: thin solid var(--secondary); */
+  transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
+  overflow: hidden;
+  z-index: 1;
+
+  /* side-menu scrollbar */
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: currentColor;
+  }
+
+  .menu-header {
+    padding: 1rem;
+
+    .title {
+      transition: height 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
+    }
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .nav-item {
+      @include before-content;
+
+      &::before {
+        background-color: currentColor;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      &.active {
+        /* border-right: 2px solid; */
+
+        &::before {
+          opacity: 0.25;
+        }
+      }
+
+      &:hover::before {
+        opacity: 0.125;
+      }
+
+      .label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .icon {
+    // margin: 0.125rem 1em;
+    // margin-left: 0;
+  }
+
+  footer,
+  .menu-footer {
+    margin-top: auto;
+  }
+}
+
+.full-menu {
+  display: flex;
+  transition: transform 0.5s;
+  align-items: center;
+  justify-content: center;
+
+  .menu-header {
+    display: flex;
+  }
+
+  .nav-menu {
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+  }
+}
+
+.float-menu {
+  display: flex;
+
+  .nav-menu {
+    .nav-item {
+      gap: 1rem;
+    }
+  }
+}
+
+/* Page */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  flex: 1 1 100%;
+  transition: width 0.5s;
+  overflow: hidden;
+  z-index: 1;
+
+  footer {
+    background-color: var(--secondary);
+    color: var(--white);
+  }
+}
+
+.page-content {
+  position: relative;
+  padding: 3em;
+  width: 100%;
+  flex: 1 1 100%;
+  // border: thin solid var(--white);
+  transition: margin 0.2s;
+}
+
+/* Above <---> Tablets/Mini PC */
+@media (min-width: 768px) {
+  .main-menu-trigger {
+    &:checked {
+      ~,
+      ~ * {
+        .side-menu {
+          width: 0;
+          flex-basis: 0;
+          opacity: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    &:not(:checked) {
+      ~,
+      ~ * {
+        .side-menu.minimized {
+          @include md-toggled-side-menu;
+        }
+
+        .page .app-header {
+          .main-menu-toggle {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Above <---> Mobile */
+@media (min-width: 576px) {
+  .float-menu,
+  .full-menu {
+    align-items: center;
+
+    .menu-header {
+      // .menu-logo,
+      .main-menu-toggle {
+        display: none;
+      }
+    }
+  }
+
+  .float-menu {
+    /* width: 75%; */
+  }
+
+  .main-menu-trigger {
+    &,
+    &::before,
+    &::after {
+      background-color: transparent !important;
+    }
+
+    &:not(:checked) {
+      ~,
+      ~ * {
+        .page {
+          /* TODO: Use this on Sibemenu Type 2 - Page overlaps side-menu */
+          /* 
+          border-left: thin solid;
+          @include before-content;
+
+          &::before {
+            box-shadow: 0 0 2.5rem -1.75rem hsla(var(--black-hs), var(--black-l), 0.125);
+          } */
+          /* ---- */
+        }
+      }
+    }
+  }
+}
+
+/* Mobile <---> Tablets/Mini PC */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main-menu-trigger {
+    &:not(:checked) {
+      ~,
+      ~ * {
+        .side-menu * > {
+          .label {
+            transition: position 0.25s linear 0.125s,
+              transform 0.25s linear 0.125s, opacity 0.5s linear 0.125s;
+          }
+        }
+      }
+    }
+
+    &:checked {
+      ~,
+      ~ * {
+        .side-menu {
+          @include md-toggled-side-menu;
+        }
+      }
+    }
+  }
+
+  .side-menu {
+    .btn,
+    .nav-menu .nav-item {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .main-menu-toggle {
+      display: none;
+    }
+  }
+
+  .float-menu {
+    /* width: 50%; */
+  }
+}
+
+/* Tablets/Mini PC <---> BELOW */
+@media (max-width: 767.98px) {
+  .side-menu .btn {
+    min-width: auto;
+  }
+}
+
+/* Mobile <--> BELOW */
+@media (max-width: 575.98px) {
+  .main-menu-trigger {
+    &:not(:checked) {
+      &,
+      &::before,
+      &::after {
+        background-color: transparent !important;
+      }
+
+      ~,
+      ~ * {
+        .full-menu {
+          .nav-menu {
+            display: none;
+            /* transform: translateY(-100%); */
+            /* opacity: 0; */
+          }
+        }
+
+        // 3, float-menu
+        .float-menu > *:not(.main-menu-toggle) {
+          display: none;
+        }
+      }
+    }
+
+    &:checked {
+      width: 100vw;
+      background-color: hsla(var(--black-hs), var(--black-l), 0.2);
+      z-index: 2;
+
+      ~,
+      ~ * {
+        // 1. side-menu
+        .side-menu {
+          transform: translateX(0);
+          opacity: 1;
+
+          .main-menu-toggle {
+            transform: translateX(0);
+          }
+
+          .menu-logo-alt {
+            display: none;
+          }
+        }
+
+        // 2. full-menu
+        .full-menu {
+          --background-color: hsla(
+            var(--secondary-hs),
+            var(--secondary-l),
+            0.125
+          );
+          position: fixed;
+          flex-direction: column;
+          transform: translateY(0);
+          opacity: 1;
+          font-size: 125%;
+          background-color: var(--background-color);
+          color: var(--secondary-c);
+          backdrop-filter: blur(10px);
+          z-index: 2;
+
+          .btn {
+            color: var(--secondary-c) !important;
+
+            &:hover {
+              background-color: var(--secondary-c) !important;
+              color: var(--secondary) !important;
+            }
+          }
+
+          .menu-header {
+            order: -1;
+            padding: 1rem;
+
+            .menu-logo {
+              display: none;
+            }
+
+            .menu-logo-alt {
+              fill: var(--white);
+            }
+
+            .silhouette {
+              filter: saturate(0%) brightness(500%);
+            }
+          }
+
+          .nav-menu {
+            flex-direction: column;
+          }
+        }
+
+        // 3, float-menu
+        .float-menu {
+          width: 100%;
+        }
+
+        .page .app-header .main-menu-toggle {
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    flex-basis: 80%;
+    transform: translateX(-100%);
+    opacity: 0;
+    box-shadow: 0 0 50px hsla(var(--black-hs), var(--black-l), 0.25);
+    z-index: 2;
+  }
+
+  .full-menu {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* transform: translateY(-100%); */
+    /* opacity: 0; */
+    z-index: 2;
+
+    .main-menu-trigger:not(:checked) & {
+    }
+
+    // .nav-menu {
+    //   display: none;
+    // }
+
+    .menu-header {
+      width: 100%;
+    }
+  }
+
+  .float-menu {
+    position: fixed;
+    bottom: 0;
+    /* left: 0; */
+    right: 0;
+    display: flex;
+    flex-direction: column;
+
+    .nav-menu {
+      flex-direction: column;
+    }
+
+    .nav-menu,
+    .menu-header,
+    .menu-footer {
+      padding: 1rem;
+    }
+  }
+
+  .page {
+    .page-content {
+      padding: 3em 1em;
+    }
+  }
+}

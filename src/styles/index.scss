@@ -1,0 +1,25 @@
+/* 
+* @Author: Vixson
+* @Description: Unique and Very Responsive Admin Dashboard UI
+*/
+@import 'mixins';
+// @import 'https://unpkg.com/bootstrap@latest/dist/css/bootstrap.min.css';
+@import 'external/bootstrap.css';
+@import 'variables.css';
+@import 'app.css';
+@import 'sizes.css';
+@import 'colors.css';
+@import 'animations.css';
+@import 'polyfills.css';
+
+@font-face {
+  font-family: 'AppTitle';
+  src: url('/fonts/NotoSans-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'AppContent';
+  src: url('/fonts/Roboto-Regular.ttf');
+  font-weight: normal;
+}

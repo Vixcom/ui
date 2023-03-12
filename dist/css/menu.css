@@ -1,0 +1,549 @@
+/**
+* @Author vixson https://vixson.github.io
+* @Description Menu styles which includes:
+*              1. side-menu
+*              2. full-menu (fullscreen floating)
+*              2. float-menu (miniscreen corner floating)
+*/
+.main-menu-trigger {
+  /* @include absolute-content; */
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  transition: background-color 0.5s ease-in;
+  border-radius: 0 !important;
+  z-index: -1;
+}
+.main-menu-trigger::after {
+  display: none !important;
+}
+.main-menu-trigger:checked ~ .side-menu.md,
+.main-menu-trigger:checked ~ * .side-menu.md {
+  opacity: 1;
+  width: 15%;
+  flex-basis: 15%;
+}
+.main-menu-trigger:checked ~ .side-menu.md .menu-header .menu-logo,
+.main-menu-trigger:checked ~ .side-menu.md .menu-header .main-menu-toggle,
+.main-menu-trigger:checked ~ * .side-menu.md .menu-header .menu-logo,
+.main-menu-trigger:checked ~ * .side-menu.md .menu-header .main-menu-toggle {
+  display: none;
+}
+.main-menu-trigger:checked ~ .side-menu.md .menu-header .title,
+.main-menu-trigger:checked ~ * .side-menu.md .menu-header .title {
+  opacity: 0;
+  height: 0;
+  margin-bottom: 0;
+}
+.main-menu-trigger:checked ~ .side-menu.md .nav-menu .nav-item,
+.main-menu-trigger:checked ~ * .side-menu.md .nav-menu .nav-item {
+  justify-content: center;
+}
+.main-menu-trigger:checked ~ .side-menu.md .icon,
+.main-menu-trigger:checked ~ * .side-menu.md .icon {
+  /* margin-right: 0; */
+}
+.main-menu-trigger:checked ~ .side-menu.md .menu-header .nav-item .label,
+.main-menu-trigger:checked ~ .side-menu.md .menu-header .nav-title .label,
+.main-menu-trigger:checked ~ .side-menu.md .menu-footer .nav-item .label,
+.main-menu-trigger:checked ~ .side-menu.md .menu-footer .nav-title .label,
+.main-menu-trigger:checked ~ .side-menu.md .nav-menu .nav-item .label,
+.main-menu-trigger:checked ~ .side-menu.md .nav-menu .nav-title .label,
+.main-menu-trigger:checked ~ * .side-menu.md .menu-header .nav-item .label,
+.main-menu-trigger:checked ~ * .side-menu.md .menu-header .nav-title .label,
+.main-menu-trigger:checked ~ * .side-menu.md .menu-footer .nav-item .label,
+.main-menu-trigger:checked ~ * .side-menu.md .menu-footer .nav-title .label,
+.main-menu-trigger:checked ~ * .side-menu.md .nav-menu .nav-item .label,
+.main-menu-trigger:checked ~ * .side-menu.md .nav-menu .nav-title .label {
+  opacity: 0;
+  transform: translateX(100%);
+  position: absolute;
+}
+.main-menu-trigger:checked ~ .side-menu.md .menu-header .nav-title,
+.main-menu-trigger:checked ~ .side-menu.md .menu-footer .nav-title,
+.main-menu-trigger:checked ~ .side-menu.md .nav-menu .nav-title,
+.main-menu-trigger:checked ~ * .side-menu.md .menu-header .nav-title,
+.main-menu-trigger:checked ~ * .side-menu.md .menu-footer .nav-title,
+.main-menu-trigger:checked ~ * .side-menu.md .nav-menu .nav-title {
+  border-bottom: thin solid;
+  padding: 0;
+}
+.main-menu-trigger:checked ~ .page > footer,
+.main-menu-trigger:checked ~ * .page > footer {
+  background-color: var(--primary);
+  color: var(--primary-c);
+}
+.main-menu-trigger:not(:checked) ~ .menu-logo-alt,
+.main-menu-trigger:not(:checked) ~ * .menu-logo-alt {
+  display: none;
+}
+
+.main-menu-toggle {
+  position: relative;
+  /* font-size: 120%; */
+  margin-bottom: 0;
+  /* z-index: 1; */
+}
+
+.menu-header {
+  display: flex;
+}
+
+.nav-menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 120%;
+  gap: 0.5rem;
+}
+.nav-menu .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  text-decoration: none;
+  color: currentColor;
+}
+
+/* side-menu */
+.side-menu-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.side-menu-container.rtl .page {
+  order: -1;
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  margin: 0;
+  flex: 1 1 30%;
+  /* border-right: thin solid var(--secondary); */
+  transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
+  overflow: hidden;
+  z-index: 1;
+  /* side-menu scrollbar */
+}
+.side-menu ::-webkit-scrollbar {
+  width: 0;
+}
+.side-menu ::-webkit-scrollbar-thumb {
+  background-color: currentColor;
+}
+.side-menu .menu-header {
+  padding: 1rem;
+}
+.side-menu .menu-header .title {
+  transition: height 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
+}
+.side-menu .nav-menu {
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.side-menu .nav-menu .nav-item {
+  position: relative;
+}
+.side-menu .nav-menu .nav-item > * {
+  /* position: relative; */
+  z-index: 1;
+}
+.side-menu .nav-menu .nav-item::before {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.side-menu .nav-menu .nav-item::before:not(img::before, img::after) {
+  content: "";
+}
+.side-menu .nav-menu .nav-item::before {
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.side-menu .nav-menu .nav-item.active {
+  /* border-right: 2px solid; */
+}
+.side-menu .nav-menu .nav-item.active::before {
+  opacity: 0.25;
+}
+.side-menu .nav-menu .nav-item:hover::before {
+  opacity: 0.125;
+}
+.side-menu .nav-menu .nav-item .label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.side-menu footer,
+.side-menu .menu-footer {
+  margin-top: auto;
+}
+
+.full-menu {
+  display: flex;
+  transition: transform 0.5s;
+  align-items: center;
+  justify-content: center;
+}
+.full-menu .menu-header {
+  display: flex;
+}
+.full-menu .nav-menu {
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
+
+.float-menu {
+  display: flex;
+}
+.float-menu .nav-menu .nav-item {
+  gap: 1rem;
+}
+
+/* Page */
+.page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  flex: 1 1 100%;
+  transition: width 0.5s;
+  overflow: hidden;
+  z-index: 1;
+}
+.page footer {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.page-content {
+  position: relative;
+  padding: 3em;
+  width: 100%;
+  flex: 1 1 100%;
+  transition: margin 0.2s;
+}
+
+/* Above <---> Tablets/Mini PC */
+@media (min-width: 768px) {
+  .main-menu-trigger:checked ~ .side-menu,
+  .main-menu-trigger:checked ~ * .side-menu {
+    width: 0;
+    flex-basis: 0;
+    opacity: 0;
+    padding: 0;
+  }
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized {
+    width: 15%;
+    flex-basis: 15%;
+  }
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .menu-header .menu-logo,
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .menu-header .main-menu-toggle,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .menu-header .menu-logo,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .menu-header .main-menu-toggle {
+    display: none;
+  }
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .menu-header .title,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .menu-header .title {
+    opacity: 0;
+    height: 0;
+    margin-bottom: 0;
+  }
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .nav-menu .nav-item,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .nav-menu .nav-item {
+    justify-content: center;
+  }
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .icon,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .icon {
+    /* margin-right: 0; */
+  }
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .menu-header .nav-item .label,
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .menu-header .nav-title .label,
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .menu-footer .nav-item .label,
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .menu-footer .nav-title .label,
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .nav-menu .nav-item .label,
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .nav-menu .nav-title .label,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .menu-header .nav-item .label,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .menu-header .nav-title .label,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .menu-footer .nav-item .label,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .menu-footer .nav-title .label,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .nav-menu .nav-item .label,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .nav-menu .nav-title .label {
+    opacity: 0;
+    transform: translateX(100%);
+    position: absolute;
+  }
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .menu-header .nav-title,
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .menu-footer .nav-title,
+  .main-menu-trigger:not(:checked) ~ .side-menu.minimized .nav-menu .nav-title,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .menu-header .nav-title,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .menu-footer .nav-title,
+  .main-menu-trigger:not(:checked) ~ * .side-menu.minimized .nav-menu .nav-title {
+    border-bottom: thin solid;
+    padding: 0;
+  }
+  .main-menu-trigger:not(:checked) ~ .page .app-header .main-menu-toggle,
+  .main-menu-trigger:not(:checked) ~ * .page .app-header .main-menu-toggle {
+    display: none;
+  }
+}
+/* Above <---> Mobile */
+@media (min-width: 576px) {
+  .float-menu,
+  .full-menu {
+    align-items: center;
+  }
+  .float-menu .menu-header .main-menu-toggle,
+  .full-menu .menu-header .main-menu-toggle {
+    display: none;
+  }
+  .float-menu {
+    /* width: 75%; */
+  }
+  .main-menu-trigger, .main-menu-trigger::before, .main-menu-trigger::after {
+    background-color: transparent !important;
+  }
+  .main-menu-trigger:not(:checked) ~ .page,
+  .main-menu-trigger:not(:checked) ~ * .page {
+    /* TODO: Use this on Sibemenu Type 2 - Page overlaps side-menu */
+    /* 
+    border-left: thin solid;
+    @include before-content;
+
+    &::before {
+      box-shadow: 0 0 2.5rem -1.75rem hsla(var(--black-hs), var(--black-l), 0.125);
+    } */
+    /* ---- */
+  }
+}
+/* Mobile <---> Tablets/Mini PC */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main-menu-trigger:not(:checked) ~ .side-menu * > .label,
+  .main-menu-trigger:not(:checked) ~ * .side-menu * > .label {
+    transition: position 0.25s linear 0.125s, transform 0.25s linear 0.125s, opacity 0.5s linear 0.125s;
+  }
+  .main-menu-trigger:checked ~ .side-menu,
+  .main-menu-trigger:checked ~ * .side-menu {
+    width: 15%;
+    flex-basis: 15%;
+  }
+  .main-menu-trigger:checked ~ .side-menu .menu-header .menu-logo,
+  .main-menu-trigger:checked ~ .side-menu .menu-header .main-menu-toggle,
+  .main-menu-trigger:checked ~ * .side-menu .menu-header .menu-logo,
+  .main-menu-trigger:checked ~ * .side-menu .menu-header .main-menu-toggle {
+    display: none;
+  }
+  .main-menu-trigger:checked ~ .side-menu .menu-header .title,
+  .main-menu-trigger:checked ~ * .side-menu .menu-header .title {
+    opacity: 0;
+    height: 0;
+    margin-bottom: 0;
+  }
+  .main-menu-trigger:checked ~ .side-menu .nav-menu .nav-item,
+  .main-menu-trigger:checked ~ * .side-menu .nav-menu .nav-item {
+    justify-content: center;
+  }
+  .main-menu-trigger:checked ~ .side-menu .icon,
+  .main-menu-trigger:checked ~ * .side-menu .icon {
+    /* margin-right: 0; */
+  }
+  .main-menu-trigger:checked ~ .side-menu .menu-header .nav-item .label,
+  .main-menu-trigger:checked ~ .side-menu .menu-header .nav-title .label,
+  .main-menu-trigger:checked ~ .side-menu .menu-footer .nav-item .label,
+  .main-menu-trigger:checked ~ .side-menu .menu-footer .nav-title .label,
+  .main-menu-trigger:checked ~ .side-menu .nav-menu .nav-item .label,
+  .main-menu-trigger:checked ~ .side-menu .nav-menu .nav-title .label,
+  .main-menu-trigger:checked ~ * .side-menu .menu-header .nav-item .label,
+  .main-menu-trigger:checked ~ * .side-menu .menu-header .nav-title .label,
+  .main-menu-trigger:checked ~ * .side-menu .menu-footer .nav-item .label,
+  .main-menu-trigger:checked ~ * .side-menu .menu-footer .nav-title .label,
+  .main-menu-trigger:checked ~ * .side-menu .nav-menu .nav-item .label,
+  .main-menu-trigger:checked ~ * .side-menu .nav-menu .nav-title .label {
+    opacity: 0;
+    transform: translateX(100%);
+    position: absolute;
+  }
+  .main-menu-trigger:checked ~ .side-menu .menu-header .nav-title,
+  .main-menu-trigger:checked ~ .side-menu .menu-footer .nav-title,
+  .main-menu-trigger:checked ~ .side-menu .nav-menu .nav-title,
+  .main-menu-trigger:checked ~ * .side-menu .menu-header .nav-title,
+  .main-menu-trigger:checked ~ * .side-menu .menu-footer .nav-title,
+  .main-menu-trigger:checked ~ * .side-menu .nav-menu .nav-title {
+    border-bottom: thin solid;
+    padding: 0;
+  }
+  .side-menu .btn,
+  .side-menu .nav-menu .nav-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .side-menu .main-menu-toggle {
+    display: none;
+  }
+  .float-menu {
+    /* width: 50%; */
+  }
+}
+/* Tablets/Mini PC <---> BELOW */
+@media (max-width: 767.98px) {
+  .side-menu .btn {
+    min-width: auto;
+  }
+}
+/* Mobile <--> BELOW */
+@media (max-width: 575.98px) {
+  .main-menu-trigger:not(:checked), .main-menu-trigger:not(:checked)::before, .main-menu-trigger:not(:checked)::after {
+    background-color: transparent !important;
+  }
+  .main-menu-trigger:not(:checked) ~ .full-menu .nav-menu,
+  .main-menu-trigger:not(:checked) ~ * .full-menu .nav-menu {
+    display: none;
+    /* transform: translateY(-100%); */
+    /* opacity: 0; */
+  }
+  .main-menu-trigger:not(:checked) ~ .float-menu > *:not(.main-menu-toggle),
+  .main-menu-trigger:not(:checked) ~ * .float-menu > *:not(.main-menu-toggle) {
+    display: none;
+  }
+  .main-menu-trigger:checked {
+    width: 100vw;
+    background-color: hsla(var(--black-hs), var(--black-l), 0.2);
+    z-index: 2;
+  }
+  .main-menu-trigger:checked ~ .side-menu,
+  .main-menu-trigger:checked ~ * .side-menu {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .main-menu-trigger:checked ~ .side-menu .main-menu-toggle,
+  .main-menu-trigger:checked ~ * .side-menu .main-menu-toggle {
+    transform: translateX(0);
+  }
+  .main-menu-trigger:checked ~ .side-menu .menu-logo-alt,
+  .main-menu-trigger:checked ~ * .side-menu .menu-logo-alt {
+    display: none;
+  }
+  .main-menu-trigger:checked ~ .full-menu,
+  .main-menu-trigger:checked ~ * .full-menu {
+    --background-color: hsla(
+      var(--secondary-hs),
+      var(--secondary-l),
+      0.125
+    );
+    position: fixed;
+    flex-direction: column;
+    transform: translateY(0);
+    opacity: 1;
+    font-size: 125%;
+    background-color: var(--background-color);
+    color: var(--secondary-c);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+  }
+  .main-menu-trigger:checked ~ .full-menu .btn,
+  .main-menu-trigger:checked ~ * .full-menu .btn {
+    color: var(--secondary-c) !important;
+  }
+  .main-menu-trigger:checked ~ .full-menu .btn:hover,
+  .main-menu-trigger:checked ~ * .full-menu .btn:hover {
+    background-color: var(--secondary-c) !important;
+    color: var(--secondary) !important;
+  }
+  .main-menu-trigger:checked ~ .full-menu .menu-header,
+  .main-menu-trigger:checked ~ * .full-menu .menu-header {
+    order: -1;
+    padding: 1rem;
+  }
+  .main-menu-trigger:checked ~ .full-menu .menu-header .menu-logo,
+  .main-menu-trigger:checked ~ * .full-menu .menu-header .menu-logo {
+    display: none;
+  }
+  .main-menu-trigger:checked ~ .full-menu .menu-header .menu-logo-alt,
+  .main-menu-trigger:checked ~ * .full-menu .menu-header .menu-logo-alt {
+    fill: var(--white);
+  }
+  .main-menu-trigger:checked ~ .full-menu .menu-header .silhouette,
+  .main-menu-trigger:checked ~ * .full-menu .menu-header .silhouette {
+    filter: saturate(0%) brightness(500%);
+  }
+  .main-menu-trigger:checked ~ .full-menu .nav-menu,
+  .main-menu-trigger:checked ~ * .full-menu .nav-menu {
+    flex-direction: column;
+  }
+  .main-menu-trigger:checked ~ .float-menu,
+  .main-menu-trigger:checked ~ * .float-menu {
+    width: 100%;
+  }
+  .main-menu-trigger:checked ~ .page .app-header .main-menu-toggle,
+  .main-menu-trigger:checked ~ * .page .app-header .main-menu-toggle {
+    transform: translateX(-50%);
+  }
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    flex-basis: 80%;
+    transform: translateX(-100%);
+    opacity: 0;
+    box-shadow: 0 0 50px hsla(var(--black-hs), var(--black-l), 0.25);
+    z-index: 2;
+  }
+  .full-menu {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* transform: translateY(-100%); */
+    /* opacity: 0; */
+    z-index: 2;
+  }
+  .full-menu .menu-header {
+    width: 100%;
+  }
+  .float-menu {
+    position: fixed;
+    bottom: 0;
+    /* left: 0; */
+    right: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .float-menu .nav-menu {
+    flex-direction: column;
+  }
+  .float-menu .nav-menu,
+  .float-menu .menu-header,
+  .float-menu .menu-footer {
+    padding: 1rem;
+  }
+  .page .page-content {
+    padding: 3em 1em;
+  }
+}
+
+/*# sourceMappingURL=menu.css.map */

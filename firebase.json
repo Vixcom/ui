@@ -19,7 +19,7 @@
     },
     {
       "target": "dashboard",
-      "public": "./",
+      "public": "dist",
       "ignore": [
         "**.map",
         "firebase.json",
@@ -32,11 +32,11 @@
       "rewrites": [
         {
           "source": "/styles{,/**}",
-          "destination": "/pages/error/index.html"
+          "destination": "/pages/401.html"
         },
         {
           "source": "**",
-          "destination": "/pages/error/index.html"
+          "destination": "/pages/404.html"
         }
       ],
       "headers": [
