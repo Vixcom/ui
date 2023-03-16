@@ -1,8 +1,10 @@
+@use 'sass:math';
 /**
 *  Author Vixson
 *  Description Layout sizing and breakpoints
 *  Created On October 27th, 2020 4:22pm
 */
+
 $grid-breakpoints: (
   sm: 576px,
   md: 768px,
@@ -165,8 +167,10 @@ $heading-end: (
   k: 6,
   v: 100,
 );
-$heading-difference: (map-get($heading-start, 'v') - map-get($heading-end, 'v')) /
-  (map-get($heading-end, 'k') - map-get($heading-start, 'k'));
+$heading-difference: math.div(
+  (map-get($heading-start, 'v') - map-get($heading-end, 'v')),
+  (map-get($heading-end, 'k') - map-get($heading-start, 'k'))
+);
 
 @for $n from map-get($heading-start, 'k') through map-get($heading-end, 'k') {
   $_value: map-get($heading-start, 'v') - (($n - 1) * $heading-difference);

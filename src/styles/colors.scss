@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'mixins';
 
 /**
@@ -10,8 +11,7 @@
 * {color}-c = The corresponding Text color of the color, if it is used as a background.
 */
 
-@each $k,
-$v in $app-colors-mapped {
+@each $k, $v in $app-colors-mapped {
   // Texts
   @include mapped-color-variant('.text-#{$k}', $k, $v);
   @include mapped-neon-color-variant('.text-neon-#{$k}', $k, $v);
@@ -30,24 +30,23 @@ $v in $app-colors-mapped {
   @include mapped-outline-variant('.badge-outline-#{$k}', $k, $v);
 
   .border-#{$k} {
-    border-color: map-get($v, 'bg')
+    border-color: map-get($v, 'bg');
   }
 }
 
 @each $v in (0, 25, 50, 75, 100) {
   .opacity-#{$v} {
-    opacity: $v/100;
+    opacity: math.div($v, 100);
   }
 }
 
 button,
 input {
-
   &.focus,
   &:focus-within,
   &:focus {
     outline: none;
-    box-shadow: none !important
+    box-shadow: none;
   }
 }
 
@@ -56,8 +55,8 @@ input {
 .tabs-transparent,
 .alert-transparent {
   border: none;
-  background-color: transparent !important;
-  color: currentColor !important;
+  background-color: transparent;
+  color: currentColor;
 }
 
 .bg-current,
@@ -66,13 +65,11 @@ input {
 .alert-current {
   border: none;
   background-color: currentColor;
-  // color: currentColor !important;
 }
 
 .inactive {
-  color: #BCBCCB
+  color: #bcbccb;
 }
-
 
 .shadow- {
   &1 {
@@ -90,11 +87,11 @@ input {
   }
 }
 
-[class*=shadow-] {
+[class*='shadow-'] {
   position: relative;
   z-index: 1;
 
-  &>* {
+  & > * {
     position: relative;
   }
 
@@ -104,14 +101,14 @@ input {
 input,
 input::placeholder,
 input::-webkit-input-placeholder {
-  color: currentColor !important
+  color: currentColor;
 }
 
 .text-unset,
 .text-color-unset {
-  color: unset
+  color: unset;
 }
 
 .text-current {
-  color: currentColor
+  color: currentColor;
 }

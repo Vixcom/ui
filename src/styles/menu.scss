@@ -8,7 +8,7 @@
 *              2. float-menu (miniscreen corner floating)
 */
 
-@mixin md-toggled-side-menu {
+@mixin mini-side-menu-toggled {
   width: 15%;
   flex-basis: 15%;
 
@@ -55,30 +55,36 @@
   }
 }
 
-.main-menu-trigger {
+input.main-menu-trigger {
   /* @include absolute-content; */
-  position: fixed !important;
+  position: fixed;
   left: 0;
   top: 0;
-  padding: 0 !important;
-  margin: 0 !important;
-  height: 100% !important;
-  width: 100% !important;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
   transition: background-color 0.5s ease-in;
-  border-radius: 0 !important;
+  border-radius: 0;
   z-index: -1;
 
   &::after {
-    display: none !important;
+    display: none;
+  }
+
+  &,
+  &::before,
+  &::after {
+    background-color: transparent;
   }
 
   &:checked {
     ~,
     ~ * {
-      .side-menu.md {
-        opacity: 1;
-        @include md-toggled-side-menu;
-      }
+      // .side-menu.mini {
+      //   opacity: 1;
+      //   @include mini-side-menu-toggled;
+      // }
 
       .page {
         > footer {
@@ -127,7 +133,7 @@
 }
 
 /* side-menu */
-.side-menu-container {
+.main-menu-container {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -139,13 +145,26 @@
       order: -1;
     }
   }
+
+  &:is(body) {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &.grid {
+    display: grid;
+    transition: 0.5s;
+
+    // .side-menu {
+    //   width: 100%;
+    // }
+  }
 }
 
 .side-menu {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 30%;
   height: 100%;
   margin: 0;
   flex: 1 1 30%;
@@ -245,7 +264,8 @@
 
 /* Page */
 
-.page {
+.page,
+main {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -274,29 +294,37 @@
 
 /* Above <---> Tablets/Mini PC */
 @media (min-width: 768px) {
-  .main-menu-trigger {
-    &:checked {
-      ~,
-      ~ * {
-        .side-menu {
-          width: 0;
-          flex-basis: 0;
-          opacity: 0;
-          padding: 0;
-        }
-      }
+  .main-menu-container {
+    &.grid:has(> .side-menu):has(> input.main-menu-trigger:checked) {
+      grid-template-columns: 0fr 1fr;
     }
 
-    &:not(:checked) {
-      ~,
-      ~ * {
-        .side-menu.minimized {
-          @include md-toggled-side-menu;
+    &:not(.grid) {
+      input.main-menu-trigger {
+        &:checked {
+          ~,
+          ~ * {
+            .side-menu:not(.mini) {
+              width: 0;
+              flex-basis: 0;
+              opacity: 0;
+              padding: 0;
+            }
+          }
         }
 
-        .page .app-header {
-          .main-menu-toggle {
-            display: none;
+        &:not(:checked) {
+          ~,
+          ~ * {
+            .side-menu.mini {
+              @include mini-side-menu-toggled;
+            }
+
+            .page .page-header {
+              .main-menu-toggle {
+                display: none;
+              }
+            }
           }
         }
       }
@@ -306,6 +334,25 @@
 
 /* Above <---> Mobile */
 @media (min-width: 576px) {
+  .main-menu-container {
+    &.grid {
+      &:has(> .side-menu),
+      &:has(> .side-menu.mini):has(> input.main-menu-trigger:checked) {
+        grid-template-columns: 1fr 4fr;
+      }
+
+      &:has(> .side-menu.mini) {
+        grid-template-columns: 1fr 11fr;
+      }
+    }
+
+    &:not(.grid) {
+      .side-menu {
+        width: 30%;
+      }
+    }
+  }
+
   .float-menu,
   .full-menu {
     align-items: center;
@@ -321,67 +368,50 @@
   .float-menu {
     /* width: 75%; */
   }
-
-  .main-menu-trigger {
-    &,
-    &::before,
-    &::after {
-      background-color: transparent !important;
-    }
-
-    &:not(:checked) {
-      ~,
-      ~ * {
-        .page {
-          /* TODO: Use this on Sibemenu Type 2 - Page overlaps side-menu */
-          /* 
-          border-left: thin solid;
-          @include before-content;
-
-          &::before {
-            box-shadow: 0 0 2.5rem -1.75rem hsla(var(--black-hs), var(--black-l), 0.125);
-          } */
-          /* ---- */
-        }
-      }
-    }
-  }
 }
 
 /* Mobile <---> Tablets/Mini PC */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .main-menu-trigger {
-    &:not(:checked) {
-      ~,
-      ~ * {
-        .side-menu * > {
-          .label {
-            transition: position 0.25s linear 0.125s,
-              transform 0.25s linear 0.125s, opacity 0.5s linear 0.125s;
+  .main-menu-container {
+    &.grid:has(> .side-menu):has(> input.main-menu-trigger:checked) {
+      grid-template-columns: 1fr 11fr;
+    }
+
+    &:not(.grid) {
+      input.main-menu-trigger {
+        &:not(:checked) {
+          ~,
+          ~ * {
+            .side-menu * > {
+              .label {
+                transition: position 0.25s linear 0.125s,
+                  transform 0.25s linear 0.125s, opacity 0.5s linear 0.125s;
+              }
+            }
+          }
+        }
+
+        &:checked {
+          ~,
+          ~ * {
+            .side-menu {
+              @include mini-side-menu-toggled;
+            }
           }
         }
       }
-    }
 
-    &:checked {
-      ~,
-      ~ * {
-        .side-menu {
-          @include md-toggled-side-menu;
+      .side-menu {
+        .btn,
+        .nav-menu .nav-item {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .main-menu-toggle {
+          display: none;
         }
       }
-    }
-  }
-
-  .side-menu {
-    .btn,
-    .nav-menu .nav-item {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    .main-menu-toggle {
-      display: none;
     }
   }
 
@@ -399,14 +429,8 @@
 
 /* Mobile <--> BELOW */
 @media (max-width: 575.98px) {
-  .main-menu-trigger {
+  input.main-menu-trigger {
     &:not(:checked) {
-      &,
-      &::before,
-      &::after {
-        background-color: transparent !important;
-      }
-
       ~,
       ~ * {
         .full-menu {
@@ -463,11 +487,11 @@
           z-index: 2;
 
           .btn {
-            color: var(--secondary-c) !important;
+            color: var(--secondary-c);
 
             &:hover {
-              background-color: var(--secondary-c) !important;
-              color: var(--secondary) !important;
+              background-color: var(--secondary-c);
+              color: var(--secondary);
             }
           }
 
@@ -498,10 +522,15 @@
           width: 100%;
         }
 
-        .page .app-header .main-menu-toggle {
+        .page .page-header .main-menu-toggle {
           transform: translateX(-50%);
         }
       }
+    }
+  }
+  .main-menu-container {
+    &.grid:has(> .side-menu) {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -527,7 +556,7 @@
     /* opacity: 0; */
     z-index: 2;
 
-    .main-menu-trigger:not(:checked) & {
+    input.main-menu-trigger:not(:checked) & {
     }
 
     // .nav-menu {
