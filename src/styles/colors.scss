@@ -71,6 +71,10 @@ input {
   color: #bcbccb;
 }
 
+.silhouette {
+  filter: saturate(0%) brightness(500%);
+}
+
 .shadow- {
   &1 {
     &::before {

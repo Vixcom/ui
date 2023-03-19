@@ -4,7 +4,7 @@
 */
 @import 'mixins';
 // @import 'https://unpkg.com/bootstrap@latest/dist/css/bootstrap.min.css';
-@import 'external/bootstrap.css';
+// @import 'external/bootstrap.css';
 @import 'variables.css';
 @import 'app.css';
 @import 'sizes.css';
@@ -13,13 +13,13 @@
 @import 'polyfills.css';
 
 @font-face {
-  font-family: 'AppTitle';
+  font-family: 'Title';
   src: url('/fonts/NotoSans-Bold.ttf');
   font-weight: bold;
 }
 
 @font-face {
-  font-family: 'AppContent';
+  font-family: 'Content';
   src: url('/fonts/Roboto-Regular.ttf');
   font-weight: normal;
 }

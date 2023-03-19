@@ -44,7 +44,7 @@
 /* Scrollbar - End */
 
 body {
-  font-family: 'AppContent', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Content', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color, --default-c, --white);
   color: var(--default, --white-c);
   font-size: var(--font-size);
@@ -52,17 +52,16 @@ body {
 }
 
 %title {
-  font-family: 'AppTitle', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Title', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   font-size: var(--heading-size);
-  /* color: var(--primary); */
 }
 
 .title {
   @extend %title;
 }
 
-@for $n from 1 through 6 {
+@for $n from 6 through 1 {
   h#{$n},
   .h#{$n} {
     @extend %title;
@@ -134,13 +133,13 @@ a:not(.link) {
   text-decoration: none;
 }
 
-.app-icon {
+.main-icon {
   object-fit: contain;
   width: 4rem;
   height: 4rem;
 }
 
-.app-logo {
+.main-logo {
   display: inline-flex;
   width: 10rem;
   max-width: 100%;
@@ -161,7 +160,7 @@ a:not(.link) {
     left: 0;
   }
 
-  .app-title {
+  .main-title {
     margin-bottom: 0;
     font-size: 125%;
 
@@ -182,10 +181,6 @@ a:not(.link) {
     /* align-self: flex-start; */
     margin-bottom: 0;
   }
-
-  // .button {
-  //   margin-bottom: 0;
-  // }
 }
 
 .page-header {
@@ -484,7 +479,7 @@ input {
     width: 2rem;
     min-width: 2rem;
     height: 1rem;
-    padding: 0 !important;
+    padding: 0;
     margin: 0;
     border-radius: 0.5rem;
     background-color: hsla(var(--white-hs), var(--white-l), 0.5);

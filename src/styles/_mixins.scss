@@ -1,5 +1,5 @@
 // /* All color definition for buttons, inputs, filter-effects */
-@use "sass:selector";
+@use 'sass:selector';
 
 @mixin unify-selector($a, $b) {
   @at-root #{selector.unify($a, $b)} {
@@ -21,7 +21,7 @@
 
 @mixin absolute-content {
   &:not(img::before, img::after) {
-    // Safari Fix.
+    // HACK: Safari Fix.
     content: '';
   }
 
@@ -41,13 +41,13 @@
     position: relative;
   }
 
-  &>* {
+  & > * {
     /* position: relative; */
     z-index: 1;
   }
 
   &::before {
-    @include absolute-content()
+    @include absolute-content();
   }
 }
 
@@ -56,13 +56,13 @@
     position: relative;
   }
 
-  &>* {
+  & > * {
     // position: relative;
     z-index: 1;
   }
 
   &::after {
-    @include absolute-content()
+    @include absolute-content();
   }
 }
 
@@ -72,86 +72,173 @@
 //   }
 // }
 
-$default: #5B5B5B !default;
-$accent: #BFBFBF !default;
-$primary: #34A853 !default;
-$secondary: #5C2B6D !default;
-$white: #FFFFFF !default;
-$light: #F8F9FA !default;
+$default: #5b5b5b !default;
+$accent: #bfbfbf !default;
+$primary: #34a853 !default;
+$secondary: #5c2b6d !default;
+$white: #ffffff !default;
+$light: #f8f9fa !default;
 $black: #000000 !default;
-$dark: #343A40 !default;
-$green: #1D5C2E !default;
-$orange: #F58220 !default;
+$dark: #343a40 !default;
+$green: #1d5c2e !default;
+$orange: #f58220 !default;
 $purple: #561843 !default;
-$red: #C54646 !default;
-$blue: #0365A3 !default;
-$yellow: #C4C400 !default;
-$gold: #FFDF00 !default;
-$silver: #BFBFBF !default;
-$pink: #ED028C !default;
-$cyan: #16F1D9 !default;
-$lemon: #62FFB1 !default;
-$success: #24B624 !default;
-$warn: #FFA500 !default;
-$error: #DC3545 !default;
-$info: #17A2b8 !default;
-$muted: #7D7D7D !default;
-$background-color: #FFFFFF !default;
-$border-color: #E4E4E4 !default;
+$red: #c54646 !default;
+$blue: #0365a3 !default;
+$yellow: #c4c400 !default;
+$gold: #ffdf00 !default;
+$silver: #bfbfbf !default;
+$pink: #ed028c !default;
+$cyan: #16f1d9 !default;
+$lemon: #62ffb1 !default;
+$success: #24b624 !default;
+$warn: #ffa500 !default;
+$error: #dc3545 !default;
+$info: #17a2b8 !default;
+$muted: #7d7d7d !default;
+$background-color: #ffffff !default;
+$border-color: #e4e4e4 !default;
 $card-shadow: 0 1px 30px -10px transparentize($black, 0.5) !default;
-$font-size: 0.75rem;
+$font-size: 0.75rem !default;
 
 $app-colors-mapped: () !default;
 
-$app-colors-mapped: map-merge(( // ===
-    'default': (bg: $default, c: $white),
-    'accent': (bg: $accent, c: darken($accent, 45%)),
-    'primary': (bg: $primary, c: $white),
-    'secondary': (bg: $secondary, c: $white),
-    'white': (bg: $white, c: $default),
-    'light': (bg: $light, c: $dark),
-    'black': (bg: $black, c: $white),
-    'dark': (bg: $dark, c: $light),
-    'silver': (bg: $silver, c: $white),
-    'gold': (bg: $gold, c: $white),
-    'info': (bg: $info, c: $white),
-    'error': (bg: $error, c: $white),
+$app-colors-mapped: map-merge(
+  (
+    // ===
+    'default':
+      (
+        bg: $default,
+        c: $white,
+      ),
+    'accent': (
+      bg: $accent,
+      c: darken($accent, 45%),
+    ),
+    'primary': (
+      bg: $primary,
+      c: $white,
+    ),
+    'secondary': (
+      bg: $secondary,
+      c: $white,
+    ),
+    'white': (
+      bg: $white,
+      c: $default,
+    ),
+    'light': (
+      bg: $light,
+      c: $dark,
+    ),
+    'black': (
+      bg: $black,
+      c: $white,
+    ),
+    'dark': (
+      bg: $dark,
+      c: $light,
+    ),
+    'silver': (
+      bg: $silver,
+      c: $white,
+    ),
+    'gold': (
+      bg: $gold,
+      c: $white,
+    ),
+    'info': (
+      bg: $info,
+      c: $white,
+    ),
+    'error': (
+      bg: $error,
+      c: $white,
+    ),
     // 'failed': (bg: $error, c: $white),
     // 'danger': (bg: $error, c: $white),
-    'success': (bg: $success, c: $white),
+    'success':
+      (
+        bg: $success,
+        c: $white,
+      ),
     // 'successful': (bg: $success, c: $white),
-    'warn': (bg: $warn, c: $black),
+    'warn':
+      (
+        bg: $warn,
+        c: $black,
+      ),
     // 'warning': (bg: $warn, c: $black),
     // 'pending': (bg: $warn, c: $black),
-    'red': (bg: $red, c: $white),
-    'orange': (bg: $orange, c: $black),
-    'yellow': (bg: $yellow, c: $black),
-    'green': (bg: $green, c: $white),
-    'blue': (bg: $blue, c: $white),
-    'cyan': (bg: $cyan, c: $white),
-    'purple': (bg: $purple, c: $white),
+    'red':
+      (
+        bg: $red,
+        c: $white,
+      ),
+    'orange': (
+      bg: $orange,
+      c: $black,
+    ),
+    'yellow': (
+      bg: $yellow,
+      c: $black,
+    ),
+    'green': (
+      bg: $green,
+      c: $white,
+    ),
+    'blue': (
+      bg: $blue,
+      c: $white,
+    ),
+    'cyan': (
+      bg: $cyan,
+      c: $white,
+    ),
+    'purple': (
+      bg: $purple,
+      c: $white,
+    ),
     // 'pink': (bg: $pink, c: $white),
     // 'lemon': (bg: $lemon, c: $white),
-    'muted': (bg: $muted, c: $white),
+    'muted':
+      (
+        bg: $muted,
+        c: $white,
+      ),
     // 'color-1': (bg: $primary, c: $white),
     // 'color-2': (bg: $secondary, c: $white),
     // 'transparent': (bg: transparent, c: $default)
     // ===
-  ), $app-colors-mapped);
+  ),
+  $app-colors-mapped
+);
 
 // /* Functions and Mixins */
 
 @mixin mapped-bg-color-variant($selector, $k, $v) {
   #{$selector} {
-    background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a)) !important;
-    color: var(--#{$k}-c, map-get($v, "c")) !important;
-    border-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a));
+    background-color: hsla(
+      var(--#{$k}-hs),
+      var(--#{$k}-l),
+      var(--#{$k}-a)
+    ) !important;
+    color: var(--#{$k}-c, map-get($v, 'c')) !important;
+    border-color: hsla(
+      var(--#{$k}-hs),
+      calc(var(--#{$k}-l) - 20%),
+      var(--#{$k}-a)
+    );
 
     &.is-blur {
       background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.5) !important;
 
       &:hover {
-        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.75) !important;
+        background-color: hsla(
+          var(--#{$k}-hs),
+          var(--#{$k}-l),
+          0.75
+        ) !important;
       }
     }
 
@@ -164,13 +251,21 @@ $app-colors-mapped: map-merge(( // ===
   #{$selector}.link,
   button#{$selector} {
     &:hover {
-      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a)) !important;
+      background-color: hsla(
+        var(--#{$k}-hs),
+        calc(var(--#{$k}-l) - 10%),
+        var(--#{$k}-a)
+      ) !important;
       border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
-      color: var(--#{$k}-c, map-get($v, "c"));
+      color: var(--#{$k}-c, map-get($v, 'c'));
     }
 
     &:active {
-      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)) !important;
+      background-color: hsla(
+        var(--#{$k}-hs),
+        calc(var(--#{$k}-l) - 20%),
+        var(--#{$k}-a)
+      ) !important;
     }
   }
 }
@@ -192,7 +287,11 @@ $app-colors-mapped: map-merge(( // ===
 
       &.active {
         background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.125);
-        color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a));
+        color: hsla(
+          var(--#{$k}-hs),
+          calc(var(--#{$k}-l) - 10%),
+          var(--#{$k}-a)
+        );
       }
     }
 
@@ -204,8 +303,12 @@ $app-colors-mapped: map-merge(( // ===
         }
 
         &.active {
-          background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
-          color: var(--#{$k}-c, map-get($v, "c"));
+          background-color: hsla(
+            var(--#{$k}-hs),
+            var(--#{$k}-l),
+            var(--#{$k}-a)
+          );
+          color: var(--#{$k}-c, map-get($v, 'c'));
         }
       }
     }
@@ -215,22 +318,19 @@ $app-colors-mapped: map-merge(( // ===
         background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.125);
       }
     }
-
-
   }
 }
 
 @mixin mapped-neon-color-variant($selector, $k, $v) {
   #{$selector} {
     /* color: var(--white) !important; */
-    text-shadow: 0 0 20px var(--#{$k}, map-get($v, "bg")),
-    0 0 10px var(--white);
+    text-shadow: 0 0 20px var(--#{$k}, map-get($v, 'bg')), 0 0 10px var(--white);
   }
 }
 
 @mixin mapped-color-variant($selector, $k, $v) {
   #{$selector} {
-    color: var(--#{$k}, map-get($v, "bg")) !important;
+    color: var(--#{$k}, map-get($v, 'bg')) !important;
   }
 
   a#{$selector},
@@ -243,37 +343,61 @@ $app-colors-mapped: map-merge(( // ===
       color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a));
     }
   }
-
 }
 
 @mixin mapped-g-color-variant($selector, $k, $v) {
   #{$selector} {
-    background-image: linear-gradient(var(--#{$k}, map-get($v, "bg")), hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a))) !important;
-    color: var(--#{$k}-c, map-get($v, "c"));
+    background-image: linear-gradient(
+      var(--#{$k}, map-get($v, 'bg')),
+      hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a))
+    ) !important;
+    color: var(--#{$k}-c, map-get($v, 'c'));
     border: none;
   }
 
   a#{$selector},
   button#{$selector} {
     &:hover {
-      background-image: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 20%), var(--#{$k}-a)), var(--#{$k}, map-get($v, "bg"))) !important;
-      color: var(--#{$k}-c, map-get($v, "c"));
+      background-image: linear-gradient(
+        hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 20%), var(--#{$k}-a)),
+        var(--#{$k}, map-get($v, 'bg'))
+      ) !important;
+      color: var(--#{$k}-c, map-get($v, 'c'));
     }
 
     &:active {
-      background-image: linear-gradient(hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)), var(--#{$k}, map-get($v, "bg"))) !important;
+      background-image: linear-gradient(
+        hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)),
+        var(--#{$k}, map-get($v, 'bg'))
+      ) !important;
     }
   }
 }
 
 @mixin mapped-alert-variant($selector, $k, $v) {
   #{$selector} {
-    background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 45%), var(--#{$k}-a)) !important;
-    color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 45%), var(--#{$k}-a)) !important;
-    border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a)) !important;
+    background-color: hsla(
+      var(--#{$k}-hs),
+      calc(var(--#{$k}-l) + 45%),
+      var(--#{$k}-a)
+    ) !important;
+    color: hsla(
+      var(--#{$k}-hs),
+      calc(var(--#{$k}-l) - 45%),
+      var(--#{$k}-a)
+    ) !important;
+    border-color: hsla(
+      var(--#{$k}-hs),
+      var(--#{$k}-l),
+      var(--#{$k}-a)
+    ) !important;
 
     &.is-blur:not(:hover) {
-      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 45%), 0.5) !important;
+      background-color: hsla(
+        var(--#{$k}-hs),
+        calc(var(--#{$k}-l) + 45%),
+        0.5
+      ) !important;
     }
   }
 }
@@ -286,7 +410,11 @@ $app-colors-mapped: map-merge(( // ===
     // border-color: currentColor !important;
 
     &.is-blur {
-      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 45%), 0.5) !important;
+      background-color: hsla(
+        var(--#{$k}-hs),
+        calc(var(--#{$k}-l) - 45%),
+        0.5
+      ) !important;
     }
   }
 
@@ -296,14 +424,22 @@ $app-colors-mapped: map-merge(( // ===
   #{$selector}:focus,
   #{$selector}:focus-within {
     &:hover {
-      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 10%), var(--#{$k}-a)) !important;
-      color: var(--#{$k}-c, map-get($v, "c")) !important;
+      background-color: hsla(
+        var(--#{$k}-hs),
+        calc(var(--#{$k}-l) - 10%),
+        var(--#{$k}-a)
+      ) !important;
+      color: var(--#{$k}-c, map-get($v, 'c')) !important;
     }
 
     &.active,
     &:active {
-      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)) !important;
-      color: var(--#{$k}-c, map-get($v, "c")) !important;
+      background-color: hsla(
+        var(--#{$k}-hs),
+        calc(var(--#{$k}-l) - 20%),
+        var(--#{$k}-a)
+      ) !important;
+      color: var(--#{$k}-c, map-get($v, 'c')) !important;
     }
   }
 }
