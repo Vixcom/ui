@@ -10,8 +10,7 @@
 
 @mixin mini-side-menu-toggled {
   .menu-header {
-    .menu-logo,
-    .main-menu-toggle {
+    .menu-logo {
       display: none;
     }
 
@@ -22,11 +21,15 @@
     }
   }
 
-  nav .item {
-    justify-content: center;
+  nav,
+  .nav {
+    .item {
+      justify-content: center;
+    }
   }
 
   nav,
+  .nav,
   .menu-header,
   .menu-footer {
     .item,
@@ -96,13 +99,15 @@ input.main-menu-trigger {
 }
 
 nav,
+.nav,
 .menu-header,
 .menu-footer {
   width: 100%;
   display: flex;
 }
 
-nav {
+nav,
+.nav {
   height: 100%;
   font-size: 120%;
   gap: 0.5rem;
@@ -122,13 +127,13 @@ nav {
   }
 }
 
-/* side-menu */
+/* Menu */
+
 .main-menu-container {
   position: relative;
-  display: flex;
-  flex-direction: row;
   width: 100%;
   height: 100%;
+  transition: 0.5s;
 
   &.rtl {
     .page {
@@ -141,12 +146,11 @@ nav {
     height: 100vh;
   }
 
-  &.grid {
-    display: grid;
-    grid-template-rows: 1fr;
-    transition: 0.5s;
-
-    &:has(> .side-menu) > {
+  &:has(> .side-menu) {
+    &.grid {
+      grid-template-columns: 1fr 4fr;
+    }
+    > {
       main,
       .page {
         section {
@@ -155,6 +159,20 @@ nav {
         }
       }
     }
+  }
+
+  &.flex {
+    display: flex;
+    flex-direction: row;
+    > .side-menu {
+      flex-basis: 25%;
+    }
+  }
+
+  &.grid {
+    display: grid;
+    // TODO: set grid direction to `row`
+    grid-template-rows: 1fr;
 
     > .side-menu {
       grid-row: 1 / -1;
@@ -168,8 +186,6 @@ nav {
   position: relative;
   height: 100%;
   margin: 0;
-  flex: 1 1 30%;
-  /* border-right: thin solid var(--secondary); */
   transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
   overflow: hidden;
   z-index: 1;
@@ -185,7 +201,7 @@ nav {
 
   .menu-header,
   .menu-footer {
-    padding: 1rem;
+    // padding: 1rem;
     align-items: center;
 
     .title {
@@ -193,7 +209,8 @@ nav {
     }
   }
 
-  nav {
+  nav,
+  .nav {
     flex-direction: column;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -241,7 +258,8 @@ nav {
   align-items: center;
   justify-content: center;
 
-  nav {
+  nav,
+  .nav {
     align-items: center;
     justify-content: center;
     overflow: scroll;
@@ -251,7 +269,8 @@ nav {
 .float-menu {
   display: flex;
 
-  nav {
+  nav,
+  .nav {
     .item {
       gap: 1rem;
     }
@@ -279,45 +298,28 @@ main {
   }
 }
 
-.page-content {
-  position: relative;
-  padding: 3em;
-  width: 100%;
-  flex: 1 1 100%;
-  transition: margin 0.2s;
+/* Mobile or PC (Tablet Excluded) */
+@media (max-width: 576px) or (min-width: 769px) {
 }
 
-/* Excluding Tablets */
-@media (max-width: 575.98px) or (min-width: 768px) {
-  input.main-menu-trigger {
-    &:checked {
-      ~,
-      ~ * {
-        .side-menu .menu-logo-alt {
-          display: none;
-        }
-      }
-    }
-    &:not(:checked) {
-      ~,
-      ~ * {
-        .side-menu:not(.mini) .menu-logo-alt {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-/* Above <---> Tablets/Mini PC */
-@media (min-width: 768px) {
-  // TODO: Flip minimized state, Make Above tablet minimized when checked, table minimized when unchecked
+/* Above Tablets/Mini PC */
+@media (min-width: 769px) {
   .main-menu-container {
+    &.grid:has(> input.main-menu-trigger:not(:checked)),
+    &.grid:has(> .side-menu:not(.mini)):has(> input.main-menu-trigger:checked) {
+      .menu-logo-alt {
+        display: none;
+      }
+    }
     &.grid:has(> .side-menu:not(.mini)):has(> input.main-menu-trigger:checked) {
       grid-template-columns: 0fr 1fr;
     }
+    &.grid:has(> .side-menu.mini):has(> input.main-menu-trigger:checked) {
+      grid-template-columns: 1fr 20fr;
+      @include mini-side-menu-toggled;
+    }
 
-    &:not(.grid) {
+    &.flex {
       input.main-menu-trigger {
         &:checked {
           ~,
@@ -327,6 +329,15 @@ main {
               flex-basis: 0;
               opacity: 0;
               padding: 0;
+
+              .menu-logo-alt {
+                display: none;
+              }
+            }
+            .side-menu.mini {
+              width: 5%;
+              flex-basis: 5%;
+              @include mini-side-menu-toggled;
             }
           }
         }
@@ -334,19 +345,8 @@ main {
         &:not(:checked) {
           ~,
           ~ * {
-            .side-menu.mini {
-              width: 15%;
-              flex-basis: 15%;
-              @include mini-side-menu-toggled;
-            }
-
-            main,
-            .page {
-              .page-header {
-                .main-menu-toggle {
-                  display: none;
-                }
-              }
+            .menu-logo-alt {
+              display: none;
             }
           }
         }
@@ -355,41 +355,17 @@ main {
   }
 }
 
-/* Above <---> Mobile */
-@media (min-width: 576px) {
-  .main-menu-container {
-    &.grid {
-      &:has(> .side-menu:not(.mini)),
-      &:has(> .side-menu.mini):has(> input.main-menu-trigger:checked) {
-        grid-template-columns: 1fr 4fr;
-      }
-
-      &:has(> .side-menu.mini):has(> input.main-menu-trigger:not(:checked)) {
-        grid-template-columns: 1fr 11fr;
-        @include mini-side-menu-toggled;
-      }
-      > .side-menu {
-        align-items: center;
-      }
-    }
-
-    &:not(.grid) {
-      .side-menu {
-        width: 30%;
-      }
-    }
-  }
-
+/* Above Mobile */
+@media (min-width: 577px) {
   .float-menu,
   .full-menu {
     align-items: center;
 
-    .menu-header {
-      .menu-logo, // TODO: Review
-      .main-menu-toggle {
-        display: none;
-      }
-    }
+    // .menu-header {
+    //   .main-menu-toggle {
+    //     display: none;
+    //   }
+    // }
   }
 
   .float-menu {
@@ -397,8 +373,8 @@ main {
   }
 }
 
-/* Mobile <---> Tablets/Mini PC */
-@media (min-width: 576px) and (max-width: 767.98px) {
+/* Tablets/Mini PC (Tablet Only) */
+@media (min-width: 577px) and (max-width: 768px) {
   // DEBUG: https://sass-lang.com/d/bogus-combinators
   // input.main-menu-trigger:checked {
   //   ~,
@@ -410,40 +386,36 @@ main {
   // }
 
   .main-menu-container {
-    &:has(> .side-menu.mini):has(> input.main-menu-trigger:checked),
-    &:has(> .side-menu:not(.mini)):has(
-        > input.main-menu-trigger:not(:checked)
-      ) {
+    // WARN: Browser compatibility on :has pseudo-property
+
+    &.grid:has(> input.main-menu-trigger:checked) {
       .menu-logo-alt {
         display: none;
       }
     }
-    &.grid:has(> .side-menu:not(.mini)):has(> input.main-menu-trigger:checked) {
-      grid-template-columns: 1fr 11fr;
+
+    &.grid:has(> input.main-menu-trigger:not(:checked)) {
+      grid-template-columns: 1fr 12fr;
       @include mini-side-menu-toggled;
     }
 
-    &:not(.grid) {
-      input.main-menu-trigger:checked {
-        ~,
-        ~ * {
-          .side-menu {
-            width: 15%;
-            flex-basis: 15%;
-            @include mini-side-menu-toggled;
+    &.flex {
+      input.main-menu-trigger {
+        &:checked {
+          .menu-logo-alt {
+            display: none;
           }
         }
-      }
 
-      .side-menu {
-        .btn,
-        nav .item {
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
-
-        .main-menu-toggle {
-          display: none;
+        &:not(:checked) {
+          ~,
+          ~ * {
+            .side-menu {
+              width: 7.5%;
+              flex-basis: 7.5%;
+              @include mini-side-menu-toggled;
+            }
+          }
         }
       }
     }
@@ -454,28 +426,21 @@ main {
   }
 }
 
-/* Tablets/Mini PC <---> BELOW */
-@media (max-width: 767.98px) {
-  .side-menu .btn {
-    min-width: auto;
-  }
-}
-
-/* Mobile <--> BELOW */
-@media (max-width: 575.98px) {
+/* Below Mobile */
+@media (max-width: 576px) {
   input.main-menu-trigger {
     &:not(:checked) {
       ~,
       ~ * {
         .full-menu {
-          nav {
+          nav,
+          .nav {
             display: none;
             /* transform: translateY(-100%); */
             /* opacity: 0; */
           }
         }
 
-        // 3, float-menu
         .float-menu > *:not(.main-menu-toggle) {
           display: none;
         }
@@ -484,12 +449,12 @@ main {
 
     &:checked {
       width: 100vw;
+      height: 100vh;
       background-color: hsla(var(--black-hs), var(--black-l), 0.2);
       z-index: 2;
 
       ~,
       ~ * {
-        // 1. side-menu
         .side-menu {
           transform: translateX(0);
           opacity: 1;
@@ -499,7 +464,6 @@ main {
           }
         }
 
-        // 2. full-menu
         .full-menu {
           --background-color: hsla(
             var(--secondary-hs),
@@ -516,7 +480,7 @@ main {
           backdrop-filter: blur(10px);
           z-index: 2;
 
-          .btn {
+          button {
             color: var(--secondary-c);
 
             &:hover {
@@ -529,17 +493,17 @@ main {
             order: -1;
             padding: 1rem;
 
-            .menu-logo {
-              display: none;
-            }
+            // .menu-logo {
+            //   display: none;
+            // }
           }
 
-          nav {
+          nav,
+          .nav {
             flex-direction: column;
           }
         }
 
-        // 3, float-menu
         .float-menu {
           width: 100%;
         }
@@ -555,6 +519,10 @@ main {
   }
 
   .main-menu-container {
+    .menu-logo-alt {
+      display: none;
+    }
+
     &.grid:has(> .side-menu) {
       grid-template-columns: 1fr;
     }
@@ -584,7 +552,7 @@ main {
       input.main-menu-trigger:not(:checked) & {
       }
 
-      // nav {
+      // nav,.nav {
       //   display: none;
       // }
 
@@ -601,20 +569,16 @@ main {
       display: flex;
       flex-direction: column;
 
-      nav {
+      nav,
+      .nav {
         flex-direction: column;
       }
 
       nav,
+      .nav,
       .menu-header,
       .menu-footer {
         padding: 1rem;
-      }
-    }
-
-    .page {
-      .page-content {
-        padding: 3em 1em;
       }
     }
   }

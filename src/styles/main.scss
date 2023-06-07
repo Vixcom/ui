@@ -1899,14 +1899,15 @@ section {
   padding: 1.25rem;
 }
 
-@media (min-width: 576px) {
+/* Above Mobile */
+@media (min-width: 577px) {
   .md-sticky {
     position: sticky;
   }
 }
 
-/* ABOVE <-- Tablets/Mini PC */
-@media (min-width: 768px) {
+/* Above Tablets/Mini PC */
+@media (min-width: 769px) {
   .item-list {
     .item > .value {
       margin-left: 1rem;
@@ -1923,8 +1924,8 @@ section {
   }
 }
 
-/* Tables/Mini PC <---> BELOW */
-@media (max-width: 767.98px) {
+/* Below Tables/Mini PC */
+@media (max-width: 768px) {
   .page-header,
   .section-header {
     padding: 0;
@@ -1989,8 +1990,8 @@ section {
   }
 }
 
-/* Mobile <---> BELOW */
-@media (max-width: 575.98px) {
+/* Below Mobile */
+@media (max-width: 576px) {
   .card {
     width: 100%;
   }
