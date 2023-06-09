@@ -1,3 +1,4 @@
+@use 'sass:selector';
 @import 'mixins';
 
 /**
@@ -12,6 +13,9 @@
   .menu-header {
     .menu-logo {
       display: none;
+    }
+    .menu-logo-alt {
+      display: block;
     }
 
     .title {
@@ -59,7 +63,6 @@ input.main-menu-trigger {
   width: 100%;
   transition: background-color 0.5s ease-in;
   border-radius: 0;
-  z-index: -1;
 
   &::after {
     display: none;
@@ -94,29 +97,41 @@ input.main-menu-trigger {
 .main-menu-toggle {
   position: relative;
   font-size: 120%;
-  margin-bottom: 0;
   z-index: 1;
+}
+
+.menu-container {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 nav,
 .nav,
 .menu-header,
-.menu-footer {
-  width: 100%;
+.menu-footer,
+.menu-container {
   display: flex;
+}
+
+.menu-header,
+.menu-footer {
+  align-items: center;
+}
+
+nav,
+.nav,
+.menu-container {
+  flex: 1 1 auto;
+  gap: 0.5rem;
 }
 
 nav,
 .nav {
-  height: 100%;
-  font-size: 120%;
-  gap: 0.5rem;
-
   .item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     color: currentColor;
 
@@ -135,6 +150,22 @@ nav,
   height: 100%;
   transition: 0.5s;
 
+  .side-menu {
+    nav,
+    .nav,
+    .menu-container {
+      flex-direction: column;
+    }
+  }
+
+  .menu-logo {
+    min-width: 7.5rem;
+  }
+
+  .menu-logo-alt {
+    display: none;
+  }
+
   &.rtl {
     .page {
       order: -1;
@@ -150,6 +181,7 @@ nav,
     &.grid {
       grid-template-columns: 1fr 4fr;
     }
+
     > {
       main,
       .page {
@@ -161,9 +193,15 @@ nav,
     }
   }
 
+  &:not(:has(> .side-menu)) {
+    &.flex {
+      flex-direction: column;
+    }
+  }
+
   &.flex {
     display: flex;
-    flex-direction: row;
+
     > .side-menu {
       flex-basis: 25%;
     }
@@ -180,42 +218,21 @@ nav,
   }
 }
 
-.side-menu {
+// FIXME: Grid parent overflow breaks
+.main-menu {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 100%;
+  padding: 0;
   margin: 0;
-  transition: width 0.5s, flex-basis 0.5s, transform 0.5s, opacity 0.25s;
-  overflow: hidden;
+  transition: transform 0.5s;
   z-index: 1;
-
-  /* side-menu scrollbar */
-  ::-webkit-scrollbar {
-    width: 0;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: currentColor;
-  }
-
-  .menu-header,
-  .menu-footer {
-    // padding: 1rem;
-    align-items: center;
-
-    .title {
-      transition: height 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
-    }
-  }
 
   nav,
   .nav {
-    flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    font-size: 120%;
 
     .item {
+      // NOTE: Modify this in implementations
+      /* border-radius: inherit; */
       @include before-content;
 
       &::before {
@@ -224,7 +241,6 @@ nav,
         transition: opacity 0.5s;
       }
 
-      // MARKED: Extend & modify this according to UI/Theme
       &.active::before {
         opacity: 0.25;
       }
@@ -241,44 +257,42 @@ nav,
     }
   }
 
-  .icon {
-    // margin: 0.125rem 1em;
-    // margin-left: 0;
+  > .main-menu-toggle {
+    font-size: 150%;
+  }
+}
+
+// TODO: upgrade: side-menu to edge-menu, This slides menu from all edge of the screen
+.side-menu {
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  transition: flex-basis 0.5s, transform 0.5s, opacity 0.25s;
+  overflow: hidden;
+
+  /* side-menu scrollbar */
+  ::-webkit-scrollbar {
+    width: 0;
   }
 
-  footer,
+  ::-webkit-scrollbar-thumb {
+    background-color: currentColor;
+  }
+
+  .menu-header,
   .menu-footer {
-    margin-top: auto;
-  }
-}
-
-.full-menu {
-  display: flex;
-  transition: transform 0.5s;
-  align-items: center;
-  justify-content: center;
-
-  nav,
-  .nav {
-    align-items: center;
-    justify-content: center;
-    overflow: scroll;
-  }
-}
-
-.float-menu {
-  display: flex;
-
-  nav,
-  .nav {
-    .item {
-      gap: 1rem;
+    .title {
+      transition: height 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
     }
+  }
+  #{selector.nest('nav, .nav','.item')} {
+    min-width: auto;
   }
 }
 
 /* Page */
 
+// FIXME: Scrolling breaks
 .page,
 main {
   display: flex;
@@ -289,8 +303,8 @@ main {
   margin: 0;
   flex: 1 1 100%;
   transition: width 0.5s;
-  overflow: hidden;
-  z-index: 1;
+  overflow-y: scroll;
+  z-index: 0;
 
   footer {
     background-color: var(--primary);
@@ -305,12 +319,14 @@ main {
 /* Above Tablets/Mini PC */
 @media (min-width: 769px) {
   .main-menu-container {
-    &.grid:has(> input.main-menu-trigger:not(:checked)),
-    &.grid:has(> .side-menu:not(.mini)):has(> input.main-menu-trigger:checked) {
-      .menu-logo-alt {
-        display: none;
+    .float-menu,
+    .full-menu {
+      nav,
+      .nav {
+        overflow-x: scroll;
       }
     }
+
     &.grid:has(> .side-menu:not(.mini)):has(> input.main-menu-trigger:checked) {
       grid-template-columns: 0fr 1fr;
     }
@@ -325,28 +341,13 @@ main {
           ~,
           ~ * {
             .side-menu:not(.mini) {
-              width: 0;
               flex-basis: 0;
-              opacity: 0;
-              padding: 0;
-
-              .menu-logo-alt {
-                display: none;
-              }
+              // opacity: 0;
+              // padding: 0;
             }
             .side-menu.mini {
-              width: 5%;
               flex-basis: 5%;
               @include mini-side-menu-toggled;
-            }
-          }
-        }
-
-        &:not(:checked) {
-          ~,
-          ~ * {
-            .menu-logo-alt {
-              display: none;
             }
           }
         }
@@ -357,19 +358,22 @@ main {
 
 /* Above Mobile */
 @media (min-width: 577px) {
-  .float-menu,
-  .full-menu {
-    align-items: center;
-
-    // .menu-header {
-    //   .main-menu-toggle {
-    //     display: none;
-    //   }
-    // }
-  }
-
-  .float-menu {
-    /* width: 75%; */
+  .main-menu-container {
+    .full-menu,
+    .float-menu {
+      .menu-container {
+        &,
+        nav,
+        .nav {
+          align-items: center;
+        }
+        nav,
+        .nav {
+          width: 100%;
+          overflow-x: scroll;
+        }
+      }
+    }
   }
 }
 
@@ -388,31 +392,18 @@ main {
   .main-menu-container {
     // WARN: Browser compatibility on :has pseudo-property
 
-    &.grid:has(> input.main-menu-trigger:checked) {
-      .menu-logo-alt {
-        display: none;
-      }
-    }
-
-    &.grid:has(> input.main-menu-trigger:not(:checked)) {
+    &.grid:has(> .side-menu):has(> input.main-menu-trigger:not(:checked)) {
       grid-template-columns: 1fr 12fr;
       @include mini-side-menu-toggled;
     }
 
     &.flex {
       input.main-menu-trigger {
-        &:checked {
-          .menu-logo-alt {
-            display: none;
-          }
-        }
-
         &:not(:checked) {
           ~,
           ~ * {
             .side-menu {
-              width: 7.5%;
-              flex-basis: 7.5%;
+              flex-basis: 8.25%;
               @include mini-side-menu-toggled;
             }
           }
@@ -426,92 +417,99 @@ main {
   }
 }
 
-/* Below Mobile */
-@media (max-width: 576px) {
-  input.main-menu-trigger {
-    &:not(:checked) {
-      ~,
-      ~ * {
-        .full-menu {
-          nav,
-          .nav {
-            display: none;
-            /* transform: translateY(-100%); */
-            /* opacity: 0; */
+/* Tablet Below */
+@media (max-width: 768px) {
+  .main-menu-container {
+    input.main-menu-trigger {
+      &:not(:checked) {
+        ~,
+        ~ * {
+          .full-menu,
+          .float-menu {
+            .menu-container {
+              nav,
+              .nav {
+                max-height: 0;
+                max-width: 0;
+              }
+            }
           }
-        }
-
-        .float-menu > *:not(.main-menu-toggle) {
-          display: none;
         }
       }
     }
 
+    .float-menu {
+      .menu-container {
+        position: fixed;
+        bottom: 0;
+
+        &.right,
+        &:not(.left) {
+          right: 0;
+        }
+
+        &.left {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Below */
+@media (max-width: 576px) {
+  // TODO: Move into main-menu-container
+
+  input.main-menu-trigger {
     &:checked {
       width: 100vw;
       height: 100vh;
       background-color: hsla(var(--black-hs), var(--black-l), 0.2);
-      z-index: 2;
+      z-index: 1;
 
       ~,
       ~ * {
-        .side-menu {
-          transform: translateX(0);
-          opacity: 1;
+        .main-menu {
+          flex-direction: column;
 
-          .main-menu-toggle {
-            transform: translateX(0);
+          .menu-header {
+            order: -1;
           }
         }
 
-        .full-menu {
+        .side-menu {
+          transform: translateX(0);
+          opacity: 1;
+        }
+
+        %blur-behind {
           --background-color: hsla(
             var(--secondary-hs),
             var(--secondary-l),
             0.125
           );
-          position: fixed;
-          flex-direction: column;
-          transform: translateY(0);
-          opacity: 1;
-          font-size: 125%;
           background-color: var(--background-color);
           color: var(--secondary-c);
-          backdrop-filter: blur(10px);
-          z-index: 2;
-
-          button {
-            color: var(--secondary-c);
-
-            &:hover {
-              background-color: var(--secondary-c);
-              color: var(--secondary);
-            }
-          }
-
-          .menu-header {
-            order: -1;
-            padding: 1rem;
-
-            // .menu-logo {
-            //   display: none;
-            // }
-          }
-
-          nav,
-          .nav {
-            flex-direction: column;
-          }
+          backdrop-filter: blur(0.75rem);
         }
 
         .float-menu {
-          width: 100%;
+          .menu-container {
+            @extend %blur-behind;
+          }
+        }
+        .full-menu {
+          @extend %blur-behind;
         }
 
-        main,
-        .page {
-          .page-header .main-menu-toggle {
-            transform: translateX(-50%);
+        .full-menu {
+          position: fixed;
+          transform: translateY(0);
+          opacity: 1;
+          font-size: 125%;
+
+          .menu-container {
+            background-color: unset;
           }
         }
       }
@@ -519,12 +517,17 @@ main {
   }
 
   .main-menu-container {
-    .menu-logo-alt {
-      display: none;
+    #{selector.nest('.main-menu', 'nav, .nav,.menu-container')},
+    &.flex {
+      flex-direction: column;
     }
 
     &.grid:has(> .side-menu) {
       grid-template-columns: 1fr;
+    }
+
+    #{selector.nest('.main-menu', 'nav, .nav')} {
+      overflow-y: scroll;
     }
 
     .side-menu {
@@ -537,7 +540,6 @@ main {
       transform: translateX(-100%);
       opacity: 0;
       box-shadow: 0 0 50px hsla(var(--black-hs), var(--black-l), 0.25);
-      z-index: 2;
     }
 
     .full-menu {
@@ -545,40 +547,9 @@ main {
       left: 0;
       right: 0;
       bottom: 0;
-      /* transform: translateY(-100%); */
-      /* opacity: 0; */
-      z-index: 2;
-
-      input.main-menu-trigger:not(:checked) & {
-      }
-
-      // nav,.nav {
-      //   display: none;
-      // }
 
       .menu-header {
         width: 100%;
-      }
-    }
-
-    .float-menu {
-      position: fixed;
-      bottom: 0;
-      /* left: 0; */
-      right: 0;
-      display: flex;
-      flex-direction: column;
-
-      nav,
-      .nav {
-        flex-direction: column;
-      }
-
-      nav,
-      .nav,
-      .menu-header,
-      .menu-footer {
-        padding: 1rem;
       }
     }
   }

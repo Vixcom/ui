@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - VX Dashboard</title>
+  <link rel="stylesheet" href="css/icons/external/bootstrap.icons.css">
+  <link rel="stylesheet" href="css/external/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+  <script src="js/alpine" defer></script>
+</head>
+
+<body class="main-menu-container" :class="container" x-data="{type:'full-menu',container:'flex',mini: true,active: false}">
+  <input type="checkbox" id="main-menu-trigger" class="main-menu-trigger" x-model="active">
+  <menu :class="`main-menu bg-primary ${type} ${mini ? 'mini':'max'}`">
+    <header class="menu-header">
+      <img src="assets/img/logo.png" class="main-logo menu-logo silhouette" alt="icon">
+      <img src="assets/img/icon.png" class="main-logo menu-logo-alt" alt="icon-alt">
+    </header>
+    <div class="menu-container p-1 rounded-2 bg-inherit">
+      <nav>
+        <template x-for="(v,k) of {flex:'bounding-box', grid: 'grid'}">
+          <label class="item" :class="{active: k === container}" :title="k">
+            <i :class="`icon bi bi-${v}`"></i>
+            <input type="radio" name="container" :value="k" x-model="container" hidden>
+            <span class="label" x-text="k"></span>
+          </label>
+        </template>
+        <divider></divider>
+        <template x-for="(v,k) of {
+          'full-menu':'window-fullscreen',
+          'float-menu':'menu-up',
+          'side-menu':'layout-sidebar',
+        }">
+          <label class="item" :class="{active: k === type}" :title="k">
+            <i :class="`icon bi bi-${v}`"></i>
+            <input type="radio" name="type" :value="k" x-model="type" hidden>
+            <span class="label" x-text="k"></span>
+          </label>
+        </template>
+        <button class="bg-green"><i class="icon bi bi-check"></i><span class="label">Activate</span></button>
+        <button class="bg-blue"><i class="icon bi bi-share"></i><span class="label">Share</span></button>
+        <button class="bg-white"><i class="icon bi bi-person"></i><span class="label">Account</span></button>
+      </nav>
+      <label for="main-menu-trigger" class="bi bi-list main-menu-toggle icon border bg-text p-2 rounded-circle align-self-center" />
+    </div>
+  </menu>
+  <main class="bg-white">
+    <section>
+      <h1 x-text="`VX Dashboard ${type}`"></h1>
+      <menu>
+        <div class="tabs tabs-secondary prefill">
+          <template x-for="(v,k) of {flex:'bounding-box', grid: 'grid'}">
+            <label class="tab" :class="{active: k === container}" :title="k">
+              <i :class="`icon bi bi-${v}`"></i>
+              <input type="radio" name="container" :value="k" x-model="container" hidden>
+              <span class="label" x-text="k"></span>
+            </label>
+          </template>
+          <template x-for="(v,k) of {
+            'full-menu':'window-fullscreen',
+            'float-menu':'menu-up',
+            'side-menu':'layout-sidebar',
+          }">
+            <label class="tab" :class="{active: k === type}" :title="k">
+              <i :class="`icon bi bi-${v}`"></i>
+              <input type="radio" name="type" :value="k" x-model="type" hidden>
+              <span class="label" x-text="k"></span>
+            </label>
+          </template>
+        </div>
+        <label class="item gap-1 checkbox">
+          <input class="default" type="checkbox" name="mini" x-model="mini">
+          <span class="label">Mini</span>
+        </label>
+        <label class="item gap-1 checkbox">
+          <input class="default" type="checkbox" name="menu" x-model="active">
+          <span class="label">Toggle Menu</span>
+        </label>
+      </menu>
+      <template x-for="(v,k) in Array(10)">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </template>
+    </section>
+    <footer>All rights reserved</footer>
+  </main>
+</body>
+
+</html>

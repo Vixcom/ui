@@ -218,12 +218,8 @@ $app-colors-mapped: map-merge(
 
 @mixin mapped-bg-color-variant($selector, $k, $v) {
   #{$selector} {
-    background-color: hsla(
-      var(--#{$k}-hs),
-      var(--#{$k}-l),
-      var(--#{$k}-a)
-    ) !important;
-    color: var(--#{$k}-c, map-get($v, 'c')) !important;
+    background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
+    color: var(--#{$k}-c, map-get($v, 'c'));
     border-color: hsla(
       var(--#{$k}-hs),
       calc(var(--#{$k}-l) - 20%),
@@ -231,14 +227,10 @@ $app-colors-mapped: map-merge(
     );
 
     &.is-blur {
-      background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.5) !important;
+      background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.5);
 
       &:hover {
-        background-color: hsla(
-          var(--#{$k}-hs),
-          var(--#{$k}-l),
-          0.75
-        ) !important;
+        background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.75);
       }
     }
 
@@ -255,7 +247,7 @@ $app-colors-mapped: map-merge(
         var(--#{$k}-hs),
         calc(var(--#{$k}-l) - 10%),
         var(--#{$k}-a)
-      ) !important;
+      );
       border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
       color: var(--#{$k}-c, map-get($v, 'c'));
     }
@@ -265,7 +257,7 @@ $app-colors-mapped: map-merge(
         var(--#{$k}-hs),
         calc(var(--#{$k}-l) - 20%),
         var(--#{$k}-a)
-      ) !important;
+      );
     }
   }
 }
@@ -323,14 +315,14 @@ $app-colors-mapped: map-merge(
 
 @mixin mapped-neon-color-variant($selector, $k, $v) {
   #{$selector} {
-    /* color: var(--white) !important; */
+    /* color: var(--white); */
     text-shadow: 0 0 20px var(--#{$k}, map-get($v, 'bg')), 0 0 10px var(--white);
   }
 }
 
 @mixin mapped-color-variant($selector, $k, $v) {
   #{$selector} {
-    color: var(--#{$k}, map-get($v, 'bg')) !important;
+    color: var(--#{$k}, map-get($v, 'bg'));
   }
 
   a#{$selector},
@@ -350,7 +342,7 @@ $app-colors-mapped: map-merge(
     background-image: linear-gradient(
       var(--#{$k}, map-get($v, 'bg')),
       hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a))
-    ) !important;
+    );
     color: var(--#{$k}-c, map-get($v, 'c'));
     border: none;
   }
@@ -361,7 +353,7 @@ $app-colors-mapped: map-merge(
       background-image: linear-gradient(
         hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 20%), var(--#{$k}-a)),
         var(--#{$k}, map-get($v, 'bg'))
-      ) !important;
+      );
       color: var(--#{$k}-c, map-get($v, 'c'));
     }
 
@@ -369,7 +361,7 @@ $app-colors-mapped: map-merge(
       background-image: linear-gradient(
         hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 20%), var(--#{$k}-a)),
         var(--#{$k}, map-get($v, 'bg'))
-      ) !important;
+      );
     }
   }
 }
@@ -380,41 +372,25 @@ $app-colors-mapped: map-merge(
       var(--#{$k}-hs),
       calc(var(--#{$k}-l) + 45%),
       var(--#{$k}-a)
-    ) !important;
-    color: hsla(
-      var(--#{$k}-hs),
-      calc(var(--#{$k}-l) - 45%),
-      var(--#{$k}-a)
-    ) !important;
-    border-color: hsla(
-      var(--#{$k}-hs),
-      var(--#{$k}-l),
-      var(--#{$k}-a)
-    ) !important;
+    );
+    color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 45%), var(--#{$k}-a));
+    border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
 
     &.is-blur:not(:hover) {
-      background-color: hsla(
-        var(--#{$k}-hs),
-        calc(var(--#{$k}-l) + 45%),
-        0.5
-      ) !important;
+      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 45%), 0.5);
     }
   }
 }
 
 @mixin mapped-outline-variant($selector, $k, $v) {
   #{$selector} {
-    background-color: transparent !important;
-    color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a)) !important;
+    background-color: transparent;
+    color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
     border: thin solid;
-    // border-color: currentColor !important;
+    // border-color: currentColor;
 
     &.is-blur {
-      background-color: hsla(
-        var(--#{$k}-hs),
-        calc(var(--#{$k}-l) - 45%),
-        0.5
-      ) !important;
+      background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 45%), 0.5);
     }
   }
 
@@ -428,8 +404,8 @@ $app-colors-mapped: map-merge(
         var(--#{$k}-hs),
         calc(var(--#{$k}-l) - 10%),
         var(--#{$k}-a)
-      ) !important;
-      color: var(--#{$k}-c, map-get($v, 'c')) !important;
+      );
+      color: var(--#{$k}-c, map-get($v, 'c'));
     }
 
     &.active,
@@ -438,8 +414,8 @@ $app-colors-mapped: map-merge(
         var(--#{$k}-hs),
         calc(var(--#{$k}-l) - 20%),
         var(--#{$k}-a)
-      ) !important;
-      color: var(--#{$k}-c, map-get($v, 'c')) !important;
+      );
+      color: var(--#{$k}-c, map-get($v, 'c'));
     }
   }
 }

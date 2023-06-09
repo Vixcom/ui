@@ -1,6 +1,6 @@
 {
   "name": "@vixcom/ui",
-  "version": "1.1.0",
+  "version": "1.4.0",
   "scripts": {
     "start": "http-server -P=http://127.0.0.1 src -p=1400 -s --cors",
     "serve": "sass src/styles:src/css -w",

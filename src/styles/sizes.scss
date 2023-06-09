@@ -50,7 +50,7 @@ $directions: (
           'vh',
           $_dimension
         );
-        #{$limit}height: #{$size}#{$_boxDimension} !important;
+        #{$limit}height: #{$size}#{$_boxDimension};
       }
 
       #{'.'}#{$limit}#{$dimensionType}#{'w-'}#{$breakPointKey}#{$sizeKey} {
@@ -59,7 +59,7 @@ $directions: (
           'vw',
           $_dimension
         );
-        #{$limit}width: #{$size}#{$_boxDimension} !important;
+        #{$limit}width: #{$size}#{$_boxDimension};
       }
     }
   }

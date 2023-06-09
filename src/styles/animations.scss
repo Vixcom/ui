@@ -22,14 +22,14 @@
 }
 
 .loading::after {
-  content: '\f110' !important;
+  content: '\f110';
   /* font-size: 200%; */
   font-family: 'FontAwesome';
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 1 !important;
-  background-color: unset !important;
+  opacity: 1;
+  background-color: unset;
   animation: rotate-clockwise 0.25s linear infinite;
 }
 
@@ -108,7 +108,7 @@
 }
 
 .infinite {
-  animation-iteration-count: infinite
+  animation-iteration-count: infinite;
 }
 
 @keyframes fade-out-half {
@@ -123,44 +123,44 @@
 
 @keyframes x-ind-move {
   from {
-    transform: translateX(1rem)
+    transform: translateX(1rem);
   }
 }
 
 @keyframes drop-down {
   from {
-    transform: translateY(0)
+    transform: translateY(0);
   }
 }
 
 @keyframes rotate-clockwise {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(1turn)
+    transform: rotate(1turn);
   }
 }
 
 @-webkit-keyframes rotate-clockwise {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(1turn)
+    transform: rotate(1turn);
   }
 }
 
 @keyframes zoom-in-logo {
   from {
     transform-origin: center;
-    transform: scale(0)
+    transform: scale(0);
   }
 
   to {
-    transform: scale(1)
+    transform: scale(1);
   }
 }
 
@@ -177,15 +177,14 @@
   z-index: 1;
 
   &.show {
-    display: flex
+    display: flex;
   }
 }
 
 .show,
 .collapsed {
-
-  &[class*="collapse-icon"],
-  [class*="collapse-icon"] {
+  &[class*='collapse-icon'],
+  [class*='collapse-icon'] {
     transform: rotateX(-0.5turn);
   }
 }
