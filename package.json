@@ -1,12 +1,21 @@
 {
   "name": "@vixcom/ui",
-  "version": "1.4.0",
+  "version": "1.5.0",
+  "keywords": [
+    "ui",
+    "styling",
+    "component",
+    "dashboard",
+    "css",
+    "html"
+  ],
   "scripts": {
     "start": "http-server -P=http://127.0.0.1 src -p=1400 -s --cors",
     "serve": "sass src/styles:src/css -w",
     "build": "sass src/styles:dist/css",
     "preview": "npm run build && firebase serve --only hosting:dashboard --port=9000",
-    "deploy": "npm run build && firebase deploy --only hosting:dashboard"
+    "deploy": "npm run build && firebase deploy --only hosting:dashboard",
+    "publish": "npm run build && npm publish"
   },
   "devDependencies": {
     "http-server": "^14.1.1",

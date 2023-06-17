@@ -11,23 +11,16 @@
 * {color}-c = The corresponding Text color of the color, if it is used as a background.
 */
 
-@each $k, $v in $app-colors-mapped {
+@each $k, $v in $colors-mapped {
   // Texts
-  @include mapped-color-variant('.text-#{$k}', $k, $v);
-  @include mapped-neon-color-variant('.text-neon-#{$k}', $k, $v);
+  @include color-variant('.text-#{$k}', $k, $v);
+  @include neon-color-variant('.text-neon-#{$k}', $k, $v);
   // Background
-  @include mapped-bg-color-variant('.bg-#{$k}', $k, $v);
-  @include mapped-g-color-variant('.bg-g-#{$k}', $k, $v);
-  @include mapped-tabs-variant('.tabs-#{$k}', $k, $v);
-  @include mapped-alert-variant('.alert-#{$k}', $k, $v);
-  @include mapped-outline-variant('.bg-outline-#{$k}', $k, $v);
-  // Buttons
-  @include mapped-bg-color-variant('.btn-#{$k}', $k, $v);
-  @include mapped-g-color-variant('.btn-g-#{$k}', $k, $v);
-  @include mapped-outline-variant('.btn-outline-#{$k}', $k, $v);
-  // Badges
-  @include mapped-bg-color-variant('.badge-#{$k}', $k, $v);
-  @include mapped-outline-variant('.badge-outline-#{$k}', $k, $v);
+  @include bg-color-variant('.bg-#{$k}', $k, $v);
+  @include gradient-variant('.bg-g-#{$k}', $k, $v);
+  @include outline-variant('.bg-outline-#{$k}', $k, $v);
+  @include group-bg-color-variant('.tabs-#{$k}', $k, $v);
+  @include group-bg-color-variant('.dots-#{$k}', $k, $v);
 
   .border-#{$k} {
     border-color: map-get($v, 'bg');
@@ -99,7 +92,7 @@ input {
   position: relative;
   z-index: 1;
 
-  & > * {
+  > * {
     position: relative;
   }
 

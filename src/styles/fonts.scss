@@ -2,15 +2,52 @@
 * @Author Vixson
 * @Description Font variables and Logics
 */
+@import 'mixins';
 
-@for $n from 1 through 6 {
+%heading-size {
+  font-size: var(--heading-size);
+  @include unify-selector(svg, &) {
+    transform: scale(calc(var(--heading-size) / 10));
+  }
+}
+
+$heading-start: (
+  k: 1,
+  v: 200,
+);
+$heading-end: (
+  k: 6,
+  v: 100,
+);
+
+@for $n from map-get($heading-start, 'k') through map-get($heading-end, 'k') {
   h#{$n},
   .h#{$n},
-  .font-#{7 - $n} {
+  .font-#{(map-get($heading-end, 'k') - $n+1)} {
     --heading-size: calc(
-      var(--heading-start) -
-        (#{$n - 1} * (var(--heading-start) - var(--heading-end)) / 5)
+      var(--heading-start, #{map-get($heading-start, 'v')}#{'%'}) -
+        (
+          #{$n -
+            1} *
+            (
+              var(--heading-start, #{map-get($heading-start, 'v')}#{'%'}) -
+                var(--heading-end, #{map-get($heading-end, 'v')}#{'%'})
+            ) /
+            #{(map-get($heading-end, 'k') - map-get($heading-start, 'k'))}
+        )
     );
-    font-size: var(--heading-size);
+    @extend %heading-size;
   }
+}
+
+.font-sm {
+  font-size: 75%;
+}
+
+.font-md {
+  font-size: 90%;
+}
+
+.font-lg {
+  font-size: 250%;
 }

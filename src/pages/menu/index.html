@@ -9,8 +9,11 @@
   <title>Menu - VX Dashboard</title>
   <link rel="stylesheet" href="css/icons/external/bootstrap.icons.css">
   <link rel="stylesheet" href="css/external/bootstrap.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/sizes.css">
+  <link rel="stylesheet" href="css/colors.css">
   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
   <script src="js/alpine" defer></script>
 </head>
@@ -43,14 +46,15 @@
             <span class="label" x-text="k"></span>
           </label>
         </template>
-        <button class="bg-green"><i class="icon bi bi-check"></i><span class="label">Activate</span></button>
-        <button class="bg-blue"><i class="icon bi bi-share"></i><span class="label">Share</span></button>
-        <button class="bg-white"><i class="icon bi bi-person"></i><span class="label">Account</span></button>
+        <button class="bg-green item"><i class="icon bi bi-check"></i><span class="label">Activate</span></button>
+        <button class="bg-blue item"><i class="icon bi bi-share"></i><span class="label">Share</span></button>
+        <button class="bg-white item"><i class="icon bi bi-person"></i><span class="label">Account</span></button>
       </nav>
       <label for="main-menu-trigger" class="bi bi-list main-menu-toggle icon border bg-text p-2 rounded-circle align-self-center" />
     </div>
   </menu>
-  <main class="bg-white">
+  <main class="bg-light">
+    <header class="p-3 bg-white"></header>
     <section>
       <h1 x-text="`VX Dashboard ${type}`"></h1>
       <menu>
@@ -87,7 +91,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </template>
     </section>
-    <footer>All rights reserved</footer>
+    <footer class="bg-secondary">All rights reserved</footer>
   </main>
 </body>
 

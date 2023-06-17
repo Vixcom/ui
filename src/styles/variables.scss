@@ -2,13 +2,13 @@
 
 :root {
   --font-size: var(--o-font-size, #{$font-size});
-  --card-shadow: #{$card-shadow};
+  --card-shadow: var(--shadow-1);
   --background-color: #{$background-color};
   --heading-start: 200%;
   --heading-end: 100%;
 
   /* Color Variables */
-  @each $k, $v in $app-colors-mapped {
+  @each $k, $v in $colors-mapped {
     /* ---COLOR-#{$k}-START--- */
     --#{$k}: #{map-get($v, 'bg')};
     /* ---HSL-#{$k}--- */
@@ -23,7 +23,7 @@
   }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
   :root {
     --font-size: calc(var(--o-font-size) / 1.15);
   }
