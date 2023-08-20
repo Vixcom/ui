@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu - VX Dashboard</title>
   <link rel="stylesheet" href="css/icons/external/bootstrap.icons.css">
-  <link rel="stylesheet" href="css/external/bootstrap.css">
+  <!-- <link rel="stylesheet" href="css/external/bootstrap.css"> -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/menu.css">
@@ -21,11 +21,16 @@
 <body class="main-menu-container" :class="container" x-data="{type:'full-menu',container:'flex',mini: true,active: false}">
   <input type="checkbox" id="main-menu-trigger" class="main-menu-trigger" x-model="active">
   <menu :class="`main-menu bg-primary ${type} ${mini ? 'mini':'max'}`">
-    <header class="menu-header">
-      <img src="assets/img/logo.png" class="main-logo menu-logo silhouette" alt="icon">
-      <img src="assets/img/icon.png" class="main-logo menu-logo-alt" alt="icon-alt">
-    </header>
+    <nav class="menu-snap bg-text text-black">
+      <img src="assets/img/icon.png" class="item icon" alt="icon">
+      <!-- <template x-for="() in Array(10)">
+      </template> -->
+    </nav>
     <div class="menu-container p-1 rounded-2 bg-inherit">
+      <header class="menu-header">
+        <img src="assets/img/logo.png" class="main-logo menu-logo silhouette" alt="icon">
+        <img src="assets/img/icon.png" class="main-logo menu-logo-alt" alt="icon-alt">
+      </header>
       <nav>
         <template x-for="(v,k) of {flex:'bounding-box', grid: 'grid'}">
           <label class="item" :class="{active: k === container}" :title="k">
@@ -50,7 +55,7 @@
         <button class="bg-blue item"><i class="icon bi bi-share"></i><span class="label">Share</span></button>
         <button class="bg-white item"><i class="icon bi bi-person"></i><span class="label">Account</span></button>
       </nav>
-      <label for="main-menu-trigger" class="bi bi-list main-menu-toggle icon border bg-text p-2 rounded-circle align-self-center" />
+      <label for="main-menu-trigger" class="bi bi-list main-menu-toggle icon border bg-text p-2 m-auto rounded-circle align-self-center" />
     </div>
   </menu>
   <main class="bg-light">

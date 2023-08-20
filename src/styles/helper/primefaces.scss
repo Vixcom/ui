@@ -1,16 +1,17 @@
 @import '../mixins';
 
 .p-component {
-  & [class*='p-']:not(.pi) {
+  &,
+  [class*='p-']:not(.pi) {
     font: {
       size: inherit;
       weight: inherit;
     }
   }
 
-  * {
-    font-family: inherit;
-  }
+  // * {
+  //   font-family: inherit;
+  // }
 }
 
 .p-steps {
@@ -136,6 +137,8 @@
 }
 
 .p-float-label {
+  display: flex;
+
   .p-dropdown .p-placeholder {
     opacity: 1;
   }
@@ -173,16 +176,15 @@
   }
 }
 
+.p-dropdown-panel {
+  width: 1px;
+}
+
 .p-dropdown {
-  border-color: currentColor;
+  border-radius: var(--border-radius);
+
   & &-label {
     display: flex;
-  }
-
-  &-item {
-    > img {
-      width: 100%;
-    }
   }
 }
 
@@ -280,7 +282,7 @@ p-chart {
 .p-carousel {
   width: 100%;
 
-  .p-carousel-container {
+  &-container {
     position: relative;
 
     .p-carousel-prev,
@@ -295,7 +297,7 @@ p-chart {
     }
   }
 
-  .p-carousel-items-content {
+  &-items-content {
     /* padding: 1rem; */
     position: relative;
     z-index: 0;
@@ -337,6 +339,21 @@ p-chart {
 
   &-right-content {
     margin-left: none;
+  }
+}
+
+.p-datatable {
+  &-thead {
+    text-transform: capitalize;
+  }
+
+  &-thead > tr > th,
+  &-tbody > tr > td {
+    padding: 0.25rem 0.5rem;
+
+    .p-row-toggler {
+      min-width: unset;
+    }
   }
 }
 
