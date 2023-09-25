@@ -2,8 +2,9 @@
 
 .p-component {
   &,
-  [class*='p-']:not(.pi) {
+  [class^='p-']:not(.pi) {
     font: {
+      /* size: var(--o-font-size); */
       size: inherit;
       weight: inherit;
     }
@@ -84,6 +85,7 @@
 
   &-content {
     padding: 0.25rem 1.5rem;
+    align-items: unset;
 
     .p-confirm-dialog-message {
       white-space: pre-wrap;
@@ -136,8 +138,9 @@
   font-size: 0.75rem;
 }
 
-.p-float-label {
+body .p-float-label {
   display: flex;
+  flex-wrap: wrap;
 
   .p-dropdown .p-placeholder {
     opacity: 1;
@@ -150,19 +153,6 @@
   font-size: unset;
 }
 
-.p-inputtext,
-.p-inputnumber {
-  width: 100%;
-
-  &:enabled {
-    margin-bottom: 0;
-
-    :hover {
-      border-color: unset;
-    }
-  }
-}
-
 .p-input-icon-left,
 .p-input-icon-right {
   display: flex;
@@ -173,6 +163,11 @@
     position: relative;
     top: 0;
     margin-top: 0;
+  }
+}
+.p-input-group {
+  .p-button {
+    width: unset;
   }
 }
 
@@ -188,8 +183,29 @@
   }
 }
 
-*:not(.p-paginator) > .p-dropdown {
-  width: 100%;
+.p-inputswitch {
+  position: relative;
+  height: 1.5rem;
+
+  .p-inputswitch-slider {
+    display: block;
+    height: 100%;
+
+    :before {
+      width: 1rem;
+      height: 1rem;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+*:not(.p-paginator) > {
+  .p-dropdown,
+  .p-inputtext,
+  .p-inputnumber {
+    width: 100%;
+  }
 }
 
 p-chart {
@@ -357,23 +373,6 @@ p-chart {
   }
 }
 
-@media (max-width: 576px) {
-  .p-dialog {
-    min-width: 95%;
-
-    .p-dialog-footer p-footer {
-      /* justify-content: center; */
-      /* flex-direction: column; */
-    }
-  }
-
-  .p-toast {
-    width: auto;
-    left: 0.5rem;
-    right: 0.5rem;
-  }
-}
-
 .p-message {
   .p-message-wrapper {
     flex-wrap: wrap;
@@ -392,13 +391,15 @@ p-chart {
   display: flex;
 
   > .p-button {
-    width: 100%;
-    padding: 1rem;
+    flex: 1 1 100%;
+    // padding: 1rem;
   }
 }
 
 .p-button {
-  text-transform: capitalize;
+  width: unset;
+  min-width: 2.5rem;
+  /* text-transform: capitalize; */
 
   &:hover {
     background-color: hsl(var(--primary-hs), calc(var(--primary-l) - 20%));
@@ -407,6 +408,23 @@ p-chart {
 
 .p-hidden-accessible {
   display: none;
+}
+
+@media (max-width: 576px) {
+  .p-dialog {
+    min-width: 95%;
+
+    .p-dialog-footer p-footer {
+      /* justify-content: center; */
+      /* flex-direction: column; */
+    }
+  }
+
+  .p-toast {
+    width: auto;
+    left: 0.5rem;
+    right: 0.5rem;
+  }
 }
 
 // @each $color,

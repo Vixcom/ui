@@ -33,7 +33,7 @@
   border-radius: inherit;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
 }
 
 @mixin before-content {
@@ -43,7 +43,7 @@
 
   & > * {
     /* position: relative; */
-    z-index: 1;
+    /* z-index: 1; */
   }
 
   &::before {
@@ -58,7 +58,7 @@
 
   & > * {
     // position: relative;
-    z-index: 1;
+    /* z-index: 1; */
   }
 
   &::after {
@@ -216,13 +216,21 @@ $colors-mapped: map-merge(
 
 @mixin bg-color-variant($selector, $k, $v) {
   #{$selector} {
-    background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
     color: var(--#{$k}-c, map-get($v, 'c'));
+    background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
     border-color: hsla(
       var(--#{$k}-hs),
       calc(var(--#{$k}-l) - 20%),
       var(--#{$k}-a)
     );
+
+    // a,
+    // &.link {
+    //   &,
+    //   &:hover {
+    //     color: var(--#{$k}-c, map-get($v, 'c'));
+    //   }
+    // }
 
     &.is-blur {
       background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.5);

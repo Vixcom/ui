@@ -104,9 +104,9 @@ $directions: (
     min-width: $_value;
   }
 
-  .gap-#{$breakPointKey}#{$sizeKey} {
-    gap: $_value;
-  }
+  // .gap-#{$breakPointKey}#{$sizeKey} {
+  //   gap: $_value;
+  // }
 }
 
 @each $size in $number-sizes {

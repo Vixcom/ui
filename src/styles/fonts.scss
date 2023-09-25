@@ -7,7 +7,7 @@
 %heading-size {
   font-size: var(--heading-size);
   @include unify-selector(svg, &) {
-    transform: scale(calc(var(--heading-size) / 10));
+    font-size: calc(var(--heading-size) * 2.5);
   }
 }
 
@@ -20,7 +20,7 @@ $heading-end: (
   v: 100,
 );
 
-@for $n from map-get($heading-start, 'k') through map-get($heading-end, 'k') {
+@for $n from map-get($heading-end, 'k') through map-get($heading-start, 'k') {
   h#{$n},
   .h#{$n},
   .font-#{(map-get($heading-end, 'k') - $n+1)} {
