@@ -79,7 +79,8 @@ input.main-menu-trigger {
     ~ * {
       main,
       .page {
-        > footer {
+        > footer,
+        & + footer {
           background-color: var(--secondary);
           color: var(--secondary-c);
         }
@@ -179,6 +180,20 @@ nav,
   &:has(> .side-menu) {
     &.grid {
       grid-template-columns: 1fr 4fr;
+
+      > *:not(.main-menu) {
+        grid-column: 2;
+      }
+      &:has(> header + main) {
+        grid-auto-rows: 1fr;
+
+        .main-menu {
+          grid-row: span 20;
+        }
+        main {
+          grid-row: span 18;
+        }
+      }
     }
 
     > {
@@ -208,8 +223,6 @@ nav,
 
   &.grid {
     display: grid;
-    // TODO: set grid direction to `row`
-    grid-template-rows: 1fr;
 
     > .side-menu {
       grid-row: 1 / -1;
@@ -274,6 +287,7 @@ nav,
 .menu-snap {
   display: flex;
   overflow: scroll;
+  flex-basis: auto;
 
   .item {
     padding: 0.125%;
@@ -323,11 +337,11 @@ main {
   transition: width 0.5s;
   overflow-y: scroll;
   z-index: 0;
+}
 
-  footer {
-    background-color: var(--primary);
-    color: var(--primary-c);
-  }
+footer {
+  background-color: var(--primary);
+  color: var(--primary-c);
 }
 
 /* Mobile or PC (Tablet Excluded) */
@@ -346,7 +360,7 @@ main {
     }
 
     #{selector.nest('input.main-menu-trigger:not(:checked)','~,~ *', '.side-menu > .menu-snap')} {
-      flex-basis: 25%;
+      /* flex-basis: 25%; */
     }
 
     &.grid:has(> .side-menu:not(.mini)):has(> input.main-menu-trigger:checked) {
@@ -354,7 +368,7 @@ main {
     }
 
     &.grid:has(> .side-menu.mini):has(> input.main-menu-trigger:checked) {
-      grid-template-columns: 1fr 20fr;
+      grid-template-columns: 1fr 10fr;
       @include mini-side-menu-toggled;
     }
 
@@ -420,7 +434,7 @@ main {
     // WARN: Browser compatibility on :has pseudo-property
 
     &.grid:has(> .side-menu):has(> input.main-menu-trigger:not(:checked)) {
-      grid-template-columns: 1fr 12fr;
+      grid-template-columns: 1fr 6fr;
       @include mini-side-menu-toggled;
     }
 
@@ -446,7 +460,7 @@ main {
 @media (max-width: 768px) {
   .main-menu-container {
     #{selector.nest('input.main-menu-trigger:checked','~,~ *', '.side-menu > .menu-snap')} {
-      flex-basis: 25%;
+      /* flex-basis: 25%; */
     }
 
     input.main-menu-trigger {
@@ -547,7 +561,7 @@ main {
   }
 
   .main-menu-container {
-    #{selector.nest('input.main-menu-trigger:checked','~,~ *','.main-menu', 'nav, .nav,.menu-container')},
+    #{selector.nest('input.main-menu-trigger:checked','~,~ *','.main-menu', selector.unify('nav, .nav,.menu-container',':not(.menu-snap)'))},
     &.flex {
       flex-direction: column;
     }

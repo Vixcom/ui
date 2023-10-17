@@ -15,16 +15,17 @@
   <link rel="stylesheet" href="css/sizes.css">
   <link rel="stylesheet" href="css/colors.css">
   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
-  <script src="js/alpine" defer></script>
+  <script src="http://unpkg.com/alpinejs" defer></script>
+  <!-- <script src="js/alpine" defer></script> -->
 </head>
 
-<body class="main-menu-container" :class="container" x-data="{type:'full-menu',container:'flex',mini: true,active: false}">
+<body class="main-menu-container" :class="container" x-data="{type:'side-menu', container:'grid', mini: true, active: false, flat: false}">
   <input type="checkbox" id="main-menu-trigger" class="main-menu-trigger" x-model="active">
   <menu :class="`main-menu bg-primary ${type} ${mini ? 'mini':'max'}`">
     <nav class="menu-snap bg-text text-black">
-      <img src="assets/img/icon.png" class="item icon" alt="icon">
-      <!-- <template x-for="() in Array(10)">
-      </template> -->
+      <template x-for="() in 5">
+        <img src="assets/img/icon.png" class="item icon" alt="icon">
+      </template>
     </nav>
     <div class="menu-container p-1 rounded-2 bg-inherit">
       <header class="menu-header">
@@ -58,11 +59,22 @@
       <label for="main-menu-trigger" class="bi bi-list main-menu-toggle icon border bg-text p-2 m-auto rounded-circle align-self-center" />
     </div>
   </menu>
-  <main class="bg-light">
-    <header class="p-3 bg-white"></header>
+  <template x-if="flat">
+    <header class="p-3 bg-white"><img class="sq-2 ml-auto" src="assets/img/avatar.svg" alt="P"></header>
+  </template>
+  <main>
+    <template x-if="!flat">
+      <header class="p-3 bg-white"><img class="sq-2 ml-auto" src="assets/img/avatar.svg" alt="P"></header>
+    </template>
     <section>
       <h1 x-text="`VX Dashboard ${type}`"></h1>
       <menu>
+        <div class="tabs tabs-primary md">
+          <label>
+            <input class="default" type="checkbox" name="flat" x-model="flat">
+            <span class="label" x-text="`Flat: ${flat}`"></span>
+          </label>
+        </div>
         <div class="tabs tabs-secondary prefill">
           <template x-for="(v,k) of {flex:'bounding-box', grid: 'grid'}">
             <label class="tab" :class="{active: k === container}" :title="k">
@@ -72,10 +84,10 @@
             </label>
           </template>
           <template x-for="(v,k) of {
-            'full-menu':'window-fullscreen',
-            'float-menu':'menu-up',
-            'side-menu':'layout-sidebar',
-          }">
+              'full-menu':'window-fullscreen',
+              'float-menu':'menu-up',
+              'side-menu':'layout-sidebar',
+            }">
             <label class="tab" :class="{active: k === type}" :title="k">
               <i :class="`icon bi bi-${v}`"></i>
               <input type="radio" name="type" :value="k" x-model="type" hidden>
@@ -96,8 +108,13 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </template>
     </section>
-    <footer class="bg-secondary">All rights reserved</footer>
+    <template x-if="!flat">
+      <footer>All rights reserved</footer>
+    </template>
   </main>
+  <template x-if="flat">
+    <footer>All rights reserved</footer>
+  </template>
 </body>
 
 </html>
