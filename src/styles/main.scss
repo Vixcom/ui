@@ -1440,6 +1440,7 @@ table {
 
   &:not(.flat)::before {
     box-shadow: var(--card-shadow);
+    z-index: -1;
   }
 
   &:not(.card-body) > {
@@ -1778,8 +1779,13 @@ img {
   @include after-content;
 
   & > .img-bg {
-    z-index: 0;
+    /* z-index: 0; */
     position: absolute;
+  }
+
+  & > *:not(.img-bg) {
+    position: relative;
+    z-index: 1;
   }
 
   &::after {
@@ -1831,7 +1837,7 @@ img {
 }
 
 [class*='float-'] {
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .section,
