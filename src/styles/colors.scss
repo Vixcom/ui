@@ -13,14 +13,14 @@
 
 @each $k, $v in $colors-mapped {
   // Texts
-  @include color-variant('.text-#{$k}', $k, $v);
-  @include neon-color-variant('.text-neon-#{$k}', $k, $v);
+  @include fg-variant('.text-#{$k}', $k, $v);
+  @include neon-fg-variant('.text-neon-#{$k}', $k, $v);
   // Background
-  @include bg-color-variant('.bg-#{$k}', $k, $v);
-  @include gradient-variant('.bg-g-#{$k}', $k, $v);
-  @include outline-variant('.bg-outline-#{$k}', $k, $v);
-  @include group-bg-color-variant('.tabs-#{$k}', $k, $v);
-  @include group-bg-color-variant('.dots-#{$k}', $k, $v);
+  @include bg-variant('.bg-#{$k}', $k, $v);
+  @include bg-gradient-variant('.bg-gradient-#{$k}', $k, $v);
+  @include bg-outline-variant('.bg-outline-#{$k}', $k, $v);
+  @include group-bg-variant('.tabs-#{$k}', $k, $v);
+  @include group-bg-variant('.dots-#{$k}', $k, $v);
 
   .border-#{$k} {
     border-color: map-get($v, 'bg');
@@ -97,12 +97,6 @@ input {
   }
 
   @include before-content;
-}
-
-input,
-input::placeholder,
-input::-webkit-input-placeholder {
-  color: currentColor;
 }
 
 .text-unset,

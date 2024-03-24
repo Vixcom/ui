@@ -360,9 +360,16 @@ textarea {
   &::-moz-input-placeholder,
   &:-webkit-input-placeholder,
   &::-webkit-input-placeholder {
+    text-transform: capitalize;
     display: none;
     color: currentColor;
-    opacity: 0.75;
+  }
+
+  &:focus {
+    &::placeholder,
+    &::-webkit-input-placeholder {
+      opacity: 0.75;
+    }
   }
 }
 
@@ -378,20 +385,18 @@ label {
 
   &.radio,
   &.checkbox {
-    &,
-    &-container {
-      display: flex;
-      align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 
-      .label > * {
-        margin-bottom: 0;
-      }
+    .label > * {
+      margin-bottom: 0;
+    }
 
-      & + {
-        .radio,
-        .checkbox {
-          margin-top: 1rem;
-        }
+    & + {
+      .radio,
+      .checkbox {
+        /* margin-top: 1rem; */
       }
     }
   }
@@ -1396,7 +1401,7 @@ table {
 
 .grid-item {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: minmax(1.5rem, 1fr) 6fr;
   grid-template-rows: 1fr;
   align-items: center;
 
@@ -1433,11 +1438,13 @@ table {
 
 .card {
   display: flex;
-  flex-direction: column;
   border-radius: var(--border-radius);
 
   @include before-content;
 
+  &:not(.h) {
+    flex-direction: column;
+  }
   &:not(.flat)::before {
     box-shadow: var(--card-shadow);
     z-index: -1;

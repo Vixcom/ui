@@ -214,7 +214,7 @@ $colors-mapped: map-merge(
 
 // /* Functions and Mixins */
 
-@mixin bg-color-variant($selector, $k, $v) {
+@mixin bg-variant($selector, $k, $v) {
   #{$selector} {
     color: var(--#{$k}-c, map-get($v, 'c'));
     background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
@@ -265,7 +265,7 @@ $colors-mapped: map-merge(
   }
 }
 
-@mixin group-bg-color-variant($selector, $k, $v) {
+@mixin group-bg-variant($selector, $k, $v) {
   #{$selector} {
     // &:hover >.active {
     //   background-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), 0.275);
@@ -316,14 +316,14 @@ $colors-mapped: map-merge(
   }
 }
 
-@mixin neon-color-variant($selector, $k, $v) {
+@mixin neon-fg-variant($selector, $k, $v) {
   #{$selector} {
     /* color: var(--white); */
     text-shadow: 0 0 20px var(--#{$k}, map-get($v, 'bg')), 0 0 10px var(--white);
   }
 }
 
-@mixin color-variant($selector, $k, $v) {
+@mixin fg-variant($selector, $k, $v) {
   #{$selector} {
     color: var(--#{$k}, map-get($v, 'bg'));
   }
@@ -339,7 +339,7 @@ $colors-mapped: map-merge(
   }
 }
 
-@mixin gradient-variant($selector, $k, $v) {
+@mixin bg-gradient-variant($selector, $k, $v) {
   #{$selector} {
     background-image: linear-gradient(
       var(--#{$k}, map-get($v, 'bg')),
@@ -367,23 +367,7 @@ $colors-mapped: map-merge(
   }
 }
 
-// @mixin bg-color-light-variant($selector, $k, $v) {
-//   #{$selector} {
-//     background-color: hsla(
-//       var(--#{$k}-hs),
-//       calc(var(--#{$k}-l) + 45%),
-//       var(--#{$k}-a)
-//     );
-//     color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) - 45%), var(--#{$k}-a));
-//     border-color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
-
-//     &.is-blur:not(:hover) {
-//       background-color: hsla(var(--#{$k}-hs), calc(var(--#{$k}-l) + 45%), 0.5);
-//     }
-//   }
-// }
-
-@mixin outline-variant($selector, $k, $v) {
+@mixin bg-outline-variant($selector, $k, $v) {
   #{$selector} {
     background-color: transparent;
     color: hsla(var(--#{$k}-hs), var(--#{$k}-l), var(--#{$k}-a));
