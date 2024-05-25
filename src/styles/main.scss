@@ -7,6 +7,7 @@ script {
 }
 
 * {
+  box-sizing: border-box;
   scrollbar-color: hsl(var(--muted-hs), calc(var(--muted-l) + 40%)) transparent;
   scrollbar-width: thin;
   word-break: break-word;
@@ -141,8 +142,6 @@ a:not(.link) {
 
 .main-logo {
   display: inline-flex;
-  max-width: 100%;
-  object-fit: contain;
 }
 
 .page-header {
@@ -241,6 +240,7 @@ a:not(.link) {
 
 .icon {
   @include flex-center;
+  aspect-ratio: 1;
   font-size: 150%;
 }
 
@@ -518,7 +518,7 @@ input {
     background-color: transparent;
     border: 0.125rem solid currentColor;
     border-radius: 50%;
-    display: inline-block;
+    /* display: inline-block; */
     justify-content: center;
     align-items: center;
     width: 1rem;

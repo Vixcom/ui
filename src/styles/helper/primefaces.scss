@@ -136,6 +136,13 @@
   }
 }
 
+.p-dialog,
+.p-overlaypanel {
+  ul {
+    list-style: inside;
+  }
+}
+
 .p-toast {
   z-index: 5;
 }
@@ -453,7 +460,7 @@ p-chart {
   display: flex;
 
   > .p-button {
-    flex: 1 1 100%;
+    /* flex: 1 1 100%; */
     // padding: 1rem;
   }
 }
@@ -464,7 +471,8 @@ p-chart {
   /* text-transform: capitalize; */
 
   &:hover {
-    background-color: hsl(var(--primary-hs), calc(var(--primary-l) - 20%));
+    /* background-color: hsl(var(--primary-hs), calc(var(--primary-l) - 20%)); */
+    /* color: var(--primary-c); */
   }
 }
 
