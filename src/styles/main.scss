@@ -1,3 +1,4 @@
+@use 'sass:string';
 @import 'mixins';
 
 /* Scrollbar - Start */
@@ -81,12 +82,23 @@ b {
   filter: grayscale(0.8);
 }
 
+.bg-current {
+  background-color: string.unquote(
+    'rgb(from var(--background-color, var(--color, currentColor)) r g b / var(--background-opacity, 0.055))'
+  );
+
+  &:hover {
+    --background-opacity: 0.125;
+  }
+}
+
 .bg-text,
 .bg-text-color {
+  --opacity: 0.055;
   position: relative;
 
   &:hover::after {
-    opacity: 0.125;
+    opacity: var(--opacity-hover, calc(var(--opacity + 0.75)));
   }
 
   &::after {
@@ -95,7 +107,7 @@ b {
     top: 0;
     left: 0;
     background-color: currentColor;
-    opacity: 0.055;
+    opacity: var(--opacity);
     height: 100%;
     width: 100%;
     border-radius: inherit;
@@ -159,6 +171,7 @@ a:not(.link) {
   .page-title {
     text-transform: capitalize;
     margin-right: auto;
+
     font: {
       size: 200%;
       weight: normal;
@@ -167,6 +180,7 @@ a:not(.link) {
     .button {
       min-width: auto;
     }
+
     @include unify-selector(img, &) {
       width: 10rem;
     }
@@ -1350,9 +1364,10 @@ table {
     }
   }
 
-  .img,
-  .icon {
+  > .img,
+  > .icon {
     position: relative;
+    border-radius: inherit;
     display: flex;
     flex-direction: column;
     align-self: stretch;
@@ -1360,18 +1375,14 @@ table {
     object-fit: cover;
     text-align: center;
     font-size: 200%;
-    z-index: 1;
   }
 
-  .img {
+  > .img {
     flex: 1 1 40%;
-    border-radius: inherit;
   }
 
-  .icon {
+  > .icon {
     flex: 1 1 25%;
-    /* padding-left: 0.75rem; */
-    /* font-weight: bold; */
   }
 
   .addon {

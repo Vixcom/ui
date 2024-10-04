@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Areas - VX Dashboard</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+  <!-- <script src="http://unpkg.com/alpinejs" defer></script> -->
+  <!-- <script src="js/alpine" defer></script> -->
+</head>
+
+<body>
+  <div data-tags="vx" class="top">top</div>
+  <div data-tags="vx" class="side">side</div>
+  <div data-tags="vx">center</div>
+  <div data-tags="vx">center</div>
+  <div data-tags="vx">center</div>
+  <div data-tags="vx" class="bottom">bottom</div>
+</body>
+<style>
+  body {
+    font: 1.4em Sansita, sans-serif;
+    display: grid;
+    padding: 3rem;
+    gap: 3rem;
+    grid-template-columns: [side-start] 20% [side-end] auto;
+    grid-template-rows: [side-start top-start] 1fr [top-end center-start] 80% [center-end bottom-start] 1fr [bottom-end side-end];
+  }
+
+  body>div[data-tags="vx"] {
+    text-align: center;
+    align-content: center;
+    text-transform: capitalize;
+    color: var(--primary);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: medium solid;
+    background-color: hsl(from var(--primary) h s l / .25);
+  }
+
+  body>div[data-tags="vx"]:not(.side) {
+    grid-column: 2;
+  }
+
+  .top {
+    grid-area: top;
+  }
+
+  .bottom {
+    grid-area: bottom;
+  }
+
+  .side {
+    grid-area: side;
+  }
+</style>
+
+</html>

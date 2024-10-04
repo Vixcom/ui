@@ -1,6 +1,9 @@
 @import '../mixins';
 
 .p-component {
+  grid-row: unset;
+  grid-column: unset;
+
   &,
   [class^='p-']:not(.pi) {
     font: {
@@ -75,6 +78,11 @@
     font-size: 300%;
   }
 
+  &-title {
+    font-size: 120%;
+    font-weight: 400;
+  }
+
   &-header {
     display: flex;
     align-items: center;
@@ -84,6 +92,7 @@
     &-close:hover {
       color: var(--danger);
     }
+
     &-icons button {
       min-width: unset;
     }
@@ -114,15 +123,11 @@
 }
 
 .p-overlaypanel {
-  display: flex;
-  flex-direction: column;
   max-width: 100%;
   max-height: 100%;
   z-index: 1;
 
-  .p-overlaypanel-content {
-    display: flex;
-    flex-direction: column;
+  &-content {
     min-height: 100%;
 
     & > {
@@ -143,6 +148,14 @@
   }
 }
 
+.p-overlaypanel,
+.p-overlaypanel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .p-toast {
   z-index: 5;
 }
@@ -155,6 +168,14 @@
   &,
   &.p-inputgroup {
     display: flex;
+  }
+
+  > {
+    .p-inputtext,
+    .p-inputwrapper {
+      width: 100%;
+      flex: 1 1 auto;
+    }
   }
 
   :focus,
@@ -239,16 +260,16 @@
   }
 }
 
-.p-dropdown,
-.p-calendar,
-.p-password,
-.p-inputtext,
-.p-inputnumber {
-  width: 100%;
-  flex: 1 1 auto;
-}
+// .p-dropdown,
+// .p-calendar,
+// .p-password,
+// .p-inputtext,
+// .p-inputnumber {
+//   width: 100%;
+//   flex: 1 1 auto;
+// }
 
-p-chart {
+.p-chart {
   width: 100%;
 
   canvas {
@@ -427,7 +448,7 @@ p-chart {
 
   &-thead > tr > th,
   &-tbody > tr > td {
-    /* max-width: 1px; */
+    max-width: 1px;
     padding: 0.5rem;
 
     .p-row-toggler {
@@ -467,8 +488,6 @@ p-chart {
 
 .p-button {
   width: unset;
-  /* min-width: 2.5rem; */
-  /* text-transform: capitalize; */
 
   &:hover {
     /* background-color: hsl(var(--primary-hs), calc(var(--primary-l) - 20%)); */

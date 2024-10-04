@@ -153,7 +153,7 @@
   }
 }
 
-@keyframes zoom-in-logo {
+@keyframes zoom-in {
   from {
     transform-origin: center;
     transform: scale(0);
@@ -183,8 +183,8 @@
 
 .show,
 .collapsed {
-  &[class*='collapse-icon'],
-  [class*='collapse-icon'] {
+  &[class~='collapse-icon'],
+  [class~='collapse-icon'] {
     transform: rotateX(-0.5turn);
   }
 }

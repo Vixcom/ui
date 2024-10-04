@@ -19,7 +19,7 @@
   <!-- <script src="js/alpine" defer></script> -->
 </head>
 
-<body class="main-menu-container" :class="container" x-data="{type:'side-menu', container:'grid', mini: true, removed:false, active: false, flat: false}">
+<body class="main-menu-container" :class="container" x-data="{type:'side-menu', container:'grid', mini: true, removed:false, active: false, spread: false}">
   <input type="checkbox" id="main-menu-trigger" class="main-menu-trigger" x-model="active">
   <template x-if="!removed">
     <menu :class="`main-menu bg-primary ${type} ${mini ? 'mini':'max'}`">
@@ -61,24 +61,18 @@
       </div>
     </menu>
   </template>
-  <template x-if="flat">
-    <header class="p-3 bg-white"><img class="sq-2 ml-auto" src="assets/img/avatar.svg" alt="P"></header>
-  </template>
-  <template x-else>Else</template>
-  <main>
-    <template x-if="!flat">
-      <header class="p-3 bg-white"><img class="sq-2 ml-auto" src="assets/img/avatar.svg" alt="P"></header>
-    </template>
+  <template x-if="spread">
     <template x-for="(v,k) in Array(10)">
       <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
     </template>
-    <template x-if="!flat">
-      <footer>All rights reserved</footer>
-    </template>
-  </main>
-  <template x-if="flat">
-    <footer>All rights reserved</footer>
   </template>
+  <main x-else>
+    <header class="p-3 bg-white"><img class="sq-2 ml-auto" src="assets/img/avatar.svg" alt="P"></header>
+    <template x-for="(v,k) in Array(10)">
+      <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
+    </template>
+    <footer>All rights reserved</footer>
+  </main>
   <menu id="menu" class="float-menu bg-primary">
     <nav>
       <template x-for="(v,k) of {flex: 'bounding-box', grid: 'grid'}">
@@ -103,8 +97,8 @@
     </nav>
     <div class="flex">
       <label class="item gap-1 checkbox">
-        <input class="default" type="checkbox" name="flat" x-model="flat">
-        <span class="label">Flat</span>
+        <input class="default" type="checkbox" name="spread" x-model="spread">
+        <span class="label">Spread</span>
       </label>
       <label class="item gap-1 checkbox">
         <input class="default" type="checkbox" name="mini" x-model="mini">

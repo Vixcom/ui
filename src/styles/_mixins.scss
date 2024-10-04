@@ -325,7 +325,8 @@ $colors-mapped: map-merge(
 
 @mixin fg-variant($selector, $k, $v) {
   #{$selector} {
-    color: var(--#{$k}, map-get($v, 'bg'));
+    --color: var(--#{$k}, map-get($v, 'bg'));
+    color: var(--color);
   }
 
   #{selector.append('a,button,.link',$selector)} {

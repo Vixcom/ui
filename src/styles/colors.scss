@@ -23,7 +23,8 @@
   @include group-bg-variant('.dots-#{$k}', $k, $v);
 
   .border-#{$k} {
-    border-color: map-get($v, 'bg');
+    border-style: solid;
+    border-color: var(--#{$k}, map-get($v, 'bg'));
   }
 }
 
@@ -50,14 +51,6 @@ input {
   border: none;
   background-color: transparent;
   color: currentColor;
-}
-
-.bg-current,
-.btn-current,
-.tabs-current,
-.alert-current {
-  border: none;
-  background-color: currentColor;
 }
 
 .bg-inherit {
@@ -88,7 +81,7 @@ input {
   }
 }
 
-[class*='shadow-'] {
+[class~='shadow-'] {
   position: relative;
   z-index: 1;
 
@@ -102,8 +95,4 @@ input {
 .text-unset,
 .text-color-unset {
   color: unset;
-}
-
-.text-current {
-  color: currentColor;
 }
