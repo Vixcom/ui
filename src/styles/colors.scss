@@ -62,7 +62,7 @@ input {
 }
 
 .silhouette {
-  filter: saturate(0%) brightness(500%);
+  filter: brightness(0) invert(1) sepia(1) hue-rotate(240deg) saturate(5);
 }
 
 .shadow- {

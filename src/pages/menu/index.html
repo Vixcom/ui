@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/sizes.css">
   <link rel="stylesheet" href="css/colors.css">
-  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
   <script src="http://unpkg.com/alpinejs" defer></script>
   <!-- <script src="js/alpine" defer></script> -->
 </head>
@@ -25,13 +25,13 @@
     <menu :class="`main-menu bg-primary ${type} ${mini ? 'mini':'max'}`">
       <nav class="menu-snap bg-text text-black">
         <template x-for="() in 5">
-          <img src="assets/img/icon.png" class="item icon" alt="icon">
+          <img src="assets/images/icon.png" class="item icon" alt="icon">
         </template>
       </nav>
       <div class="menu-container p-1 rounded-2 bg-inherit">
         <header class="menu-header">
-          <img src="assets/img/logo.png" class="main-logo menu-logo silhouette" alt="icon">
-          <img src="assets/img/icon.png" class="main-logo menu-logo-alt" alt="icon-alt">
+          <img src="assets/images/logo.png" class="main-logo menu-logo silhouette" alt="icon">
+          <img src="assets/images/icon.png" class="main-logo menu-logo-alt" alt="icon-alt">
         </header>
         <nav>
           <template x-for="(v,k) of {flex:'bounding-box', grid: 'grid'}">
@@ -67,7 +67,7 @@
     </template>
   </template>
   <main x-else>
-    <header class="p-3 bg-white"><img class="sq-2 ml-auto" src="assets/img/avatar.svg" alt="P"></header>
+    <header class="p-3 bg-white"><img class="sq-2 ml-auto" src="assets/images/avatar.svg" alt="P"></header>
     <template x-for="(v,k) in Array(10)">
       <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
     </template>

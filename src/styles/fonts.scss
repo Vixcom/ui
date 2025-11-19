@@ -25,16 +25,19 @@ $heading-end: (
   .h#{$n},
   .font-#{(map-get($heading-end, 'k') - $n+1)} {
     --heading-size: calc(
-      var(--heading-start, #{map-get($heading-start, 'v')}#{'%'}) -
-        (
-          #{$n -
-            1} *
+      (
+          var(--heading-start, #{map-get($heading-start, 'v')}#{'%'}) -
             (
-              var(--heading-start, #{map-get($heading-start, 'v')}#{'%'}) -
-                var(--heading-end, #{map-get($heading-end, 'v')}#{'%'})
-            ) /
-            #{(map-get($heading-end, 'k') - map-get($heading-start, 'k'))}
-        )
+              #{$n -
+                1} *
+                (
+                  var(--heading-start, #{map-get($heading-start, 'v')}#{'%'}) -
+                    var(--heading-end, #{map-get($heading-end, 'v')}#{'%'})
+                ) /
+                #{(map-get($heading-end, 'k') - map-get($heading-start, 'k'))}
+            )
+        ) *
+        var(--heading-size-r, 1)
     );
     @extend %heading-size;
   }

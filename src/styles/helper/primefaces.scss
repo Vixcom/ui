@@ -31,6 +31,10 @@
   }
 }
 
+.p-progressbar {
+  height: 1rem;
+}
+
 .p-tabview {
   &.no-header .p-tabview-nav {
     display: none;
@@ -158,6 +162,10 @@
 
 .p-toast {
   z-index: 5;
+
+  &-icon-close-icon {
+    padding: 0;
+  }
 }
 
 .p-badge {
@@ -178,9 +186,13 @@
     }
   }
 
-  :focus,
-  .p-filled {
-    ~ label {
+  &.active,
+  &.focus-within,
+  &:focus-within,
+  & :focus ~,
+  & .p-filled ~ {
+    label,
+    .float {
       top: 0;
       transform: translateY(-100%);
     }
@@ -319,6 +331,13 @@
   table td > span {
     width: 2.25rem;
     height: 2.25rem;
+  }
+}
+
+.p-datatable-table {
+  .p-frozen-column {
+    left: 0;
+    right: 0;
   }
 }
 

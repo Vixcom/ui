@@ -346,7 +346,7 @@ input,
     /* margin: 0.25rem 0 1rem; */
     border-radius: 0.25rem;
     border: 1px solid currentColor;
-    /* width: 100%; */
+    max-width: 100%;
 
     &:not(.has-addon) {
       /* align-self: stretch; */
@@ -994,7 +994,8 @@ button,
   border-radius: var(--border-radius, 0.25rem);
   padding: 0.25rem 0.75rem;
   font-size: 120%;
-  min-width: 5rem;
+  max-width: 5rem;
+  min-width: fit-content;
   gap: 0.25rem;
   justify-content: center;
   align-items: center;
@@ -1002,6 +1003,7 @@ button,
   text-overflow: ellipsis;
   white-space: nowrap;
   border: 1px;
+  cursor: pointer;
 
   &:focus {
     outline: 1px solid hsl(var(--secondary-hs), calc(var(--secondary-l) + 50%));

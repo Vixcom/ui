@@ -1,7 +1,8 @@
 @import 'mixins';
 
 :root {
-  --font-size: var(--o-font-size, #{$font-size});
+  --o-font-size: #{$font-size}* var(--font-size-r, 1);
+  --font-size: var(--o-font-size);
   --card-shadow: var(--shadow-1);
   --background-color: #{$background-color};
   --heading-start: 200%;
