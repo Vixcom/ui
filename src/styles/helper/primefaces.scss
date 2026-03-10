@@ -134,7 +134,8 @@
   &-content {
     min-height: 100%;
 
-    & > {
+    &> {
+
       header,
       footer {
         display: flex;
@@ -160,6 +161,14 @@
   gap: 0.5rem;
 }
 
+.p-tree {
+  padding: 0;
+
+  &#{node-children} {
+    padding-left: 0.75rem;
+  }
+}
+
 .p-toast {
   z-index: 5;
 
@@ -173,12 +182,14 @@
 }
 
 .p-float-label {
+
   &,
   &.p-inputgroup {
     display: flex;
   }
 
   > {
+
     .p-inputtext,
     .p-inputwrapper {
       width: 100%;
@@ -189,8 +200,9 @@
   &.active,
   &.focus-within,
   &:focus-within,
-  & :focus ~,
-  & .p-filled ~ {
+  & :focus~,
+  & .p-filled~ {
+
     label,
     .float {
       top: 0;
@@ -217,7 +229,7 @@
   }
 }
 
-.input > .p-inputtext {
+.input>.p-inputtext {
   padding: 0;
   color: unset;
   font-size: unset;
@@ -251,7 +263,9 @@
   border-radius: var(--border-radius);
 
   & &-label {
-    /* display: flex; */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 }
 
@@ -302,7 +316,7 @@
   &:not(.p-datepicker-inline) {
     box-shadow: unset;
 
-    & > * {
+    &>* {
       position: relative;
     }
 
@@ -328,7 +342,7 @@
     font-size: inherit;
   }
 
-  table td > span {
+  table td>span {
     width: 2.25rem;
     height: 2.25rem;
   }
@@ -354,7 +368,7 @@
     }
   }
 
-  & + .p-panel {
+  &+.p-panel {
     margin-top: 1rem;
   }
 }
@@ -363,6 +377,7 @@
   &.p-timeline-left .p-timeline-event-opposite {
     text-align: left;
   }
+
   &.p-timeline-right .p-timeline-event-opposite {
     text-align: right;
   }
@@ -465,8 +480,8 @@
     text-transform: capitalize;
   }
 
-  &-thead > tr > th,
-  &-tbody > tr > td {
+  &-thead>tr>th,
+  &-tbody>tr>td {
     max-width: 1px;
     padding: 0.5rem;
 
@@ -474,7 +489,8 @@
       min-width: unset;
     }
   }
-  tr.p-datatable-row-expansion > td {
+
+  tr.p-datatable-row-expansion>td {
     padding: {
       left: 5%;
       right: 5%;
@@ -499,7 +515,7 @@
 .p-selectbutton {
   display: flex;
 
-  > .p-button {
+  >.p-button {
     /* flex: 1 1 100%; */
     // padding: 1rem;
   }

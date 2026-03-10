@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-    # Optionally configure to run only for specific files. For example:
     # paths:
     # - "website/**"
 
@@ -13,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # Add any build steps here. For example:
       - run: npm run build
       # - uses: actions/upload-artifact@v2
       #   with:

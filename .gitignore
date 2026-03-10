@@ -1,4 +1,18 @@
+# Folders
 dist
+output
+temp
 src/css
 node_modules
+.DS_Store
+.nuxt
+.nitro
+.vercel
+.netlify
+
+# Files
 *.cache
+*.log
+temp.*
+*.env
+.env.*
