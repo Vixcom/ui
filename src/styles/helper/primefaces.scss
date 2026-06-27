@@ -505,10 +505,18 @@
   }
 }
 
-.p-toast .p-toast-message {
-  .p-toast-icon-close {
-    min-width: 2rem;
-    border: none;
+.p-toast {
+  white-space: unset;
+
+  .p-toast-message {
+    .p-toast-icon-close {
+      min-width: 2rem;
+      border: none;
+    }
+  }
+
+  ul {
+    list-style: disc;
   }
 }
 
